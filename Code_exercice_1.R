@@ -1,5 +1,5 @@
 ##EXERCICE 1
-
+## Hello Guillaume 
 install.packages("RCurl")
 library(RCurl)
 x <- getURL("https://raw.githubusercontent.com/kosukeimai/qss/master/INTRO/turnout.csv")
