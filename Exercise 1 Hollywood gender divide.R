@@ -65,5 +65,4 @@ library(ggplot2)
 
 ggplot(data = df_tilgraf) + 
   geom_bar(mapping = aes(x = merged, y = mean_bech, fill = role, color = role), stat = "identity") +
-  theme(axis.title.x=element_blank()) + #fjerne titlen på x-aksen
-  labs(y = "Bechdel average", x = "Directors and writers gender", title = "Women give higher Bechdel average")
+    labs(y = "Bechdel average", x = "Directors and writers gender", title = "Women give higher Bechdel average")
