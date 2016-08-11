@@ -6,6 +6,8 @@ link = "data/bechdel.csv"
 data.link = paste0(gh.link, user.repo, branch, link)
 df = read_csv(data.link)
 
+library(dplyr)
+
 df.mutated= df %>%
   mutate(mean_male= count_male/count, mean_female= count_female/count)
 df.mutated
@@ -43,6 +45,11 @@ gender_mean_coll= gender_mean
 gender_mean_coll$merged= paste(gender_mean_coll$role, gender_mean_coll$Status, sep="-")
 gender_mean_coll= filter(gender_mean_coll, role !="actsin")
 
-ggplot(data = gender_mean_coll) + 
-  geom_bar(mapping = aes(x = merged, y= mean_bech, fill=role), stat="identity")
+gender_mean_coll_2= arrange(gender_mean_coll, desc(mean_bech))
 
+tableau<- ggplot(data = gender_mean_coll_2) + 
+  geom_bar(mapping = aes(x = reorder(merged, -mean_bech), y= mean_bech, fill=role),stat="identity")
+
+tableau %>% 
+  + xlab("") %>% 
+ +ylab("Bechdel Score")
