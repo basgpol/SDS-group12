@@ -72,7 +72,7 @@ player.stats.links[1:200]
 
 ## creates vector with links to all the players detailed stat page for season 14/15
 season.stat.links = paste(player.stats.links,"/plus/1?saison=2014", sep = "")
-season.stat.links[1:200]
+season.stat.links[1:170]
 
 ## Create function to find player stats
 scrape_playerstats = function(link){
@@ -157,7 +157,7 @@ scrape_playerstats = function(link){
 
 
 ## Create data frame with player states by using function
-player.stats.season = season.stat.links[190:200]  %>% 
+player.stats.season = season.stat.links[160:170]  %>% 
   map_df(scrape_playerstats)
 
 ######### Transferdata
