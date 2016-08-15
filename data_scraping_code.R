@@ -11,9 +11,7 @@
 ## missing:
 # code to gather transferdata
 # need to create code til gather stats for defensive players (modification)
-# code to combine alle the specific datasæts
-
-
+# code to combine alle the specific datas?ts
 
 ## load libraries
 library("rvest")
@@ -41,13 +39,16 @@ scrape_transfer_info = function(link){
   parsed.link = link %>% 
     read_html
   name = parsed.link %>% 
-    helper_function(".table-header+ .responsive-table .spielprofil_tooltip")
+    helper_function(".table-header+ .responsive-table .hide-for-small .spielprofil_tooltip")
+
   #position = parsed.link %>% 
     #helper_function(".table-header+ .responsive-table .pos-transfer-cell")
   from.club = parsed.link %>% 
-    helper_function(".table-header+ .responsive-table .verein-flagge-transfer-cell .vereinprofil_tooltip")
+    helper_function(".table-header+ .responsive-table .verein-flagge-transfer-cell a")
+
   transfer.fee = parsed.link %>% 
     helper_function(".responsive-table:nth-child(2) .rechts a")
+
   return(
     data.frame(name = name, 
                from.club = from.club,
@@ -55,7 +56,7 @@ scrape_transfer_info = function(link){
   )}
 
 # iterate over links, extract data, bind rows
-transferPL.df = pl.tranfers.link %>% 
+transferPL.df = pl.tranfers.link%>% 
   map_df(scrape_transfer_info)
 
 
