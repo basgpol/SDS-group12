@@ -177,7 +177,7 @@ all.transfers.partly = unlist(all.tranferlinks2.partly) # transform from list to
 
 ## merging to get the full links to the transfers
 transfer.links = paste(base.link,all.transfers.partly, sep ="")
-transfer.links[190:200]
+transfer.links[160:170]
 
 ## Create function to find transfer stats
 scrape_transferstats = function(link){
@@ -205,7 +205,7 @@ scrape_transferstats = function(link){
                     transfer.fee = transfer.fee
   ))}
 
-transfer.stats = transfer.links[190:200]  %>% 
+transfer.stats = transfer.links[160:170]  %>% 
   map_df(scrape_transferstats)
 
 
