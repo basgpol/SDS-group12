@@ -10,9 +10,8 @@
 # code to gather transferdata
 
 ## TO DO:
-# need to create code til gather stats for defensive players (modification)
-# code to combine alle the specific datas?ts
-# code to combine alle the specific datas?ts
+# need to create code to gather stats for defensive players (modification)
+# code to combine all the specific data
 
 ## MISSING:
 # need to create code til gather stats for goalkeepers players (modification)
@@ -32,15 +31,17 @@ bl.transfer.link = "http://www.transfermarkt.co.uk/1-bundesliga/transfers/wettbe
 ll.transfer.link = "http://www.transfermarkt.co.uk/laliga/transfers/wettbewerb/ES1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
 sa.tranfer.link = "http://www.transfermarkt.co.uk/serie-a/transfers/wettbewerb/IT1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
 l1.transfer.link = "http://www.transfermarkt.co.uk/ligue-1/transfers/wettbewerb/FR1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
-css.selector.profile = ".table-header+ .responsive-table .spielprofil_tooltip"
+all.transferlinks = c(pl.tranfers.link, bl.transfer.link, ll.transfer.link, sa.tranfer.link, l1.transfer.link) 
+
+#CSS selectors
+css.selector.profile = ".table-header+ .responsive-table .hide-for-small .spielprofil_tooltip"
 css.selector.transfer = ".table-header+ .responsive-table .rechts a"
-all.transferlinks = c(pl.tranfers.link, bl.transfer.link, ll.transfer.link, sa.tranfer.link, l1.transfer.link)
 
 ## creating a function that finds all the links to transfered players in all major european football leagues
 link.collector = function(vector){
   out = vector %>% 
     read_html(encoding = "UTF-8") %>% #inddrager special danish character 
-    html_nodes(css = css.selector.profile) %>%
+    html_nodes(css = css.selector.profile) %>% 
     html_attr(name = 'href') #tager den attribut med navnet hret
   return (out)
 }
@@ -48,23 +49,20 @@ link.collector = function(vector){
 # applying the function and thereby creating a vector of all the links to transfered players
 all.tranferlinks.partly = lapply(all.transferlinks, link.collector)
 all.profiles.partly = unlist(all.tranferlinks.partly) # transform from list to vector
-all.profile.links.partly.clean = all.profiles.partly[c(TRUE, FALSE)] # removing copies of links
-all.profile.links.partly.clean
 
 ########################################
 
-## Creates vector that indclude all links to player profiles who were transfered to PL
+## Creates vector that indclude all links to player profiles who were transfered to PL (Premier League)
 profile.links.partly = pl.tranfers.link %>% 
   read_html(encoding = "UTF-8") %>% #inddrager special danish character 
   html_nodes(css = css.selector.profile) %>%
   html_attr(name = 'href') #tager den attribut med navnet hret
 profile.links.partly
-profile.links.partly.clean = profile.links.partly[c(TRUE, FALSE)] # Remove every second character, so we have only on for each player
 
-profile.links = paste(base.link,profile.links.partly.clean, sep ="")
+profile.links = paste(base.link,profile.links.partly, sep ="")
 profile.links[1:7]
 
-profile.links = paste(base.link,all.profile.links.partly.clean, sep ="")
+profile.links = paste(base.link,all.profile.links.partly, sep ="")
 profile.links[1:200]
 
 
