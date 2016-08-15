@@ -8,22 +8,22 @@
 ## DONE:
 # created code to gather stats for field players
 # code to gather transferdata
-<<<<<<< HEAD
+
+## TO DO:
 # need to create code til gather stats for defensive players (modification)
 # code to combine alle the specific datas?ts
-=======
-# code to combine alle the specific datasæts
+# code to combine alle the specific datas?ts
 
-## missing:
+## MISSING:
 # need to create code til gather stats for goalkeepers players (modification)
 # need code to add google searches
->>>>>>> origin/master
+
 
 ## load libraries
 library("rvest")
 library("stringr")
 library("purrr")
-
+library("dplyr")
 
 ## defines key links
 base.link = "http://www.transfermarkt.co.uk/"
@@ -36,7 +36,7 @@ css.selector.profile = ".table-header+ .responsive-table .spielprofil_tooltip"
 css.selector.transfer = ".table-header+ .responsive-table .rechts a"
 all.transferlinks = c(pl.tranfers.link, bl.transfer.link, ll.transfer.link, sa.tranfer.link, l1.transfer.link)
 
-## creating a function that finds alle the links to transfered players in alle majer european football leagues
+## creating a function that finds all the links to transfered players in all major european football leagues
 link.collector = function(vector){
   out = vector %>% 
     read_html(encoding = "UTF-8") %>% #inddrager special danish character 
@@ -45,39 +45,11 @@ link.collector = function(vector){
   return (out)
 }
 
-# applying the function and thereby creating a vector of alle the links to transfered players
+# applying the function and thereby creating a vector of all the links to transfered players
 all.tranferlinks.partly = lapply(all.transferlinks, link.collector)
 all.profiles.partly = unlist(all.tranferlinks.partly) # transform from list to vector
 all.profile.links.partly.clean = all.profiles.partly[c(TRUE, FALSE)] # removing copies of links
 all.profile.links.partly.clean
-
-<<<<<<< HEAD
-# scraping function for scrabing tranfer infomation
-scrape_transfer_info = function(link){
-  parsed.link = link %>% 
-    read_html
-  name = parsed.link %>% 
-    helper_function(".table-header+ .responsive-table .hide-for-small .spielprofil_tooltip")
-
-  #position = parsed.link %>% 
-    #helper_function(".table-header+ .responsive-table .pos-transfer-cell")
-  from.club = parsed.link %>% 
-    helper_function(".table-header+ .responsive-table .verein-flagge-transfer-cell a")
-
-  transfer.fee = parsed.link %>% 
-    helper_function(".responsive-table:nth-child(2) .rechts a")
-
-  return(
-    data.frame(name = name, 
-               from.club = from.club,
-               transfer.fee = transfer.fee)
-  )}
-
-# iterate over links, extract data, bind rows
-transferPL.df = pl.tranfers.link%>% 
-  map_df(scrape_transfer_info)
-
-
 
 ########################################
 
@@ -91,10 +63,10 @@ profile.links.partly.clean = profile.links.partly[c(TRUE, FALSE)] # Remove every
 
 profile.links = paste(base.link,profile.links.partly.clean, sep ="")
 profile.links[1:7]
-=======
+
 profile.links = paste(base.link,all.profile.links.partly.clean, sep ="")
 profile.links[1:200]
->>>>>>> origin/master
+
 
 ##creates vector with links to all the players stat page
 player.stats.links = str_replace(profile.links,"profil","leistungsdaten") 
@@ -104,7 +76,7 @@ player.stats.links[1:200]
 season.stat.links = paste(player.stats.links,"/plus/1?saison=2014", sep = "")
 season.stat.links[1:200]
 
-## Create function to find player states
+## Create function to find player stats
 scrape_playerstats = function(link){
   my.link = link %>% 
     read_html(encoding = "UTF-8")
@@ -192,7 +164,7 @@ player.stats.season = season.stat.links[190:200]  %>%
 
 ######### Transferdata
 
-## creating a function that finds alle the links to all transfers in the major european football leagues
+## creating a function that finds all the links to all transfers in the major european football leagues
 link.collector2 = function(vector){
   out = vector %>% 
     read_html(encoding = "UTF-8") %>% #inddrager special danish character 
@@ -241,3 +213,4 @@ transfer.stats = transfer.links[190:200]  %>%
 
 #### Merging playing and transferstats
 final_player_data = left_join(transfer.stats, player.stats.season)
+
