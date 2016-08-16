@@ -8,7 +8,7 @@
 ## DONE:
 # created code to gather stats for field players
 # code to gather transferdata
-# code to combine alle the specific datasæts
+# code to combine all the specific datasæts
 
 ## missing:
 # need to create code til gather stats for goalkeepers players (modification)
@@ -18,6 +18,7 @@
 library("rvest")
 library("stringr")
 library("purrr")
+library("dplyr")
 
 
 ## defines key links
@@ -27,11 +28,13 @@ bl.transfer.link = "http://www.transfermarkt.co.uk/1-bundesliga/transfers/wettbe
 ll.transfer.link = "http://www.transfermarkt.co.uk/laliga/transfers/wettbewerb/ES1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
 sa.tranfer.link = "http://www.transfermarkt.co.uk/serie-a/transfers/wettbewerb/IT1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
 l1.transfer.link = "http://www.transfermarkt.co.uk/ligue-1/transfers/wettbewerb/FR1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
-css.selector.profile = ".table-header+ .responsive-table .spielprofil_tooltip"
-css.selector.transfer = ".table-header+ .responsive-table .rechts a"
 all.transferlinks = c(pl.tranfers.link, bl.transfer.link, ll.transfer.link, sa.tranfer.link, l1.transfer.link)
 
-## creating a function that finds alle the links to transfered players in alle majer european football leagues
+## Define CSS selectors
+css.selector.profile = ".table-header+ .responsive-table .hide-for-small .spielprofil_tooltip"
+css.selector.transfer = ".table-header+ .responsive-table .rechts a"
+
+## creating a function that finds all the links to transfered players in all majer european football leagues
 link.collector = function(vector){
   out = vector %>% 
     read_html(encoding = "UTF-8") %>% #inddrager special danish character 
@@ -40,13 +43,11 @@ link.collector = function(vector){
   return (out)
 }
 
-# applying the function and thereby creating a vector of alle the links to transfered players
+# applying the function and thereby creating a vector of all the links to transfered players
 all.tranferlinks.partly = lapply(all.transferlinks, link.collector)
 all.profiles.partly = unlist(all.tranferlinks.partly) # transform from list to vector
-all.profile.links.partly.clean = all.profiles.partly[c(TRUE, FALSE)] # removing copies of links
-all.profile.links.partly.clean
 
-profile.links = paste(base.link,all.profile.links.partly.clean, sep ="")
+profile.links = paste(base.link,all.profile.links.partly, sep ="")
 profile.links[1:200]
 
 ##creates vector with links to all the players stat page
@@ -136,7 +137,7 @@ scrape_playerstats = function(link){
                     penaltygoals = penaltygoals,
                     minutes.pr.goal = minutes.pr.goal,
                     total.minutes.played = minutes.played
-  ))}
+  )) sys.sleep(0.5)}
 
 
 ## Create data frame with player states by using function
@@ -145,7 +146,7 @@ player.stats.season = season.stat.links[190:200]  %>%
 
 ######### Transferdata
 
-## creating a function that finds alle the links to all transfers in the major european football leagues
+## creating a function that finds all the links to all transfers in the major european football leagues
 link.collector2 = function(vector){
   out = vector %>% 
     read_html(encoding = "UTF-8") %>% #inddrager special danish character 
@@ -154,7 +155,7 @@ link.collector2 = function(vector){
   return (out)
 }
 
-# applying the function and thereby creating a vector of alle the links to transfered players
+# applying the function and thereby creating a vector of all the links to transfered players
 all.tranferlinks2.partly = lapply(all.transferlinks, link.collector2)
 all.transfers.partly = unlist(all.tranferlinks2.partly) # transform from list to vector
 
@@ -178,6 +179,10 @@ scrape_transferstats = function(link){
     html_nodes(".no-border-rechts br+ .vereinprofil_tooltip") %>% 
     html_text()
   club.from = club.from[1]
+  club.to = my.link %>% 
+    html_nodes(".no-border-links br+ .vereinprofil_tooltip") %>% 
+    html_text()
+  club.to = club.to[1]
   transfer.fee = my.link %>% 
     html_nodes(".hauptfact") %>% 
     html_text()
@@ -185,8 +190,10 @@ scrape_transferstats = function(link){
   return(data.frame(name = name,
                     transfer.date = transfer.date,
                     club.from = club.from,
+                    club.to = club.to,
                     transfer.fee = transfer.fee
-  ))}
+  ))
+  sys.sleep(0.5)}
 
 transfer.stats = transfer.links[190:200]  %>% 
   map_df(scrape_transferstats)
