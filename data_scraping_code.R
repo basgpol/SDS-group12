@@ -48,6 +48,7 @@ library("dplyr")
 
 ## defines key links
 base.link = "http://www.transfermarkt.co.uk/"
+
 pl.tranfers.link = "http://www.transfermarkt.co.uk/premier-league/transfers/wettbewerb/GB1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
 bl.transfer.link = "http://www.transfermarkt.co.uk/1-bundesliga/transfers/wettbewerb/L1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
 ll.transfer.link = "http://www.transfermarkt.co.uk/laliga/transfers/wettbewerb/ES1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
@@ -55,9 +56,17 @@ sa.tranfer.link = "http://www.transfermarkt.co.uk/serie-a/transfers/wettbewerb/I
 l1.transfer.link = "http://www.transfermarkt.co.uk/ligue-1/transfers/wettbewerb/FR1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
 all.transferlinks = c(pl.tranfers.link, bl.transfer.link, ll.transfer.link, sa.tranfer.link, l1.transfer.link)
 
+pl.table14.link = "http://www.transfermarkt.co.uk/premier-league/tabelle/wettbewerb/GB1?saison_id=2014"
+bl.table14.link = "http://www.transfermarkt.co.uk/1-bundesliga/tabelle/wettbewerb/L1?saison_id=2014"
+ll.table14.link = "http://www.transfermarkt.co.uk/laliga/tabelle/wettbewerb/ES1?saison_id=2014"
+sa.table14.link = "http://www.transfermarkt.co.uk/serie-a/tabelle/wettbewerb/IT1?saison_id=2014"
+l1.table14.link = "http://www.transfermarkt.co.uk/ligue-1/tabelle/wettbewerb/FR1?saison_id=2014"
+all.table14.links = c(pl.table14.link, bl.table14.link, ll.table14.link, sa.table14.link,l1.table14.link)
+
 ## Define CSS selectors
 css.selector.profile = ".table-header+ .responsive-table .hide-for-small .spielprofil_tooltip"
 css.selector.transfer = ".table-header+ .responsive-table .rechts a"
+css.selector.table = ".responsive-table .hauptlink .vereinprofil_tooltip"
 
 ## creating a function that finds all the links to transfered players in all majer european football leagues
 link.collector = function(vector){
@@ -73,7 +82,9 @@ all.tranferlinks.partly = lapply(all.transferlinks, link.collector)
 all.profiles.partly = unlist(all.tranferlinks.partly) # transform from list to vector
 
 profile.links = paste(base.link,all.profiles.partly, sep ="")
-profile.links[1:200]
+
+profile.links[1:300]
+
 
 ##creates vector with links to all the players stat page
 player.stats.links = str_replace(profile.links,"profil","leistungsdaten") 
@@ -166,7 +177,9 @@ scrape_playerstats = function(link){
 
 
 ## Create data frame with player states by using function
-player.stats.season = season.stat.links[100:200]  %>% 
+
+player.stats.season = season.stat.links[150:200]  %>% 
+
   map_df(scrape_playerstats)
 
 ######### Transferdata
@@ -217,15 +230,17 @@ scrape_transferstats = function(link){
                     club.from = club.from,
                     club.to = club.to,
                     transfer.fee = transfer.fee
-  ))
-  sys.sleep(0.5)}
+  ))}
 
-transfer.stats = transfer.links[100:200]  %>% 
+
+transfer.stats = transfer.links[150:200]  %>% 
+
   map_df(scrape_transferstats)
 
 
 #### Merging playing and transferstats
 final_player_data = left_join(transfer.stats, player.stats.season)
+
 
 ###Changing pound character and converting transfer fee to numeric value
 
@@ -245,5 +260,47 @@ final_player_data_2$transfer.fee = str_replace(final_player_data_2$transfer.fee,
 final_player_data_2<- transform(final_player_data_2, transfer.fee = as.numeric(transfer.fee)) #convert character string in numeric string
 head(final_player_data_2)
 
+
+
+########################################
+
+## importing table placements for all clubs in the major european leagues  
+
+pl.table14 = "https://en.wikipedia.org/wiki/2014-15_Premier_League" %>%
+  read_html() %>% 
+  html_node(".wikitable:nth-child(26)") %>% 
+  html_table() %>%  # then convert the HTML table into a data frame
+  mutate(league = "Premier league")
+
+sa.table14 = "https://en.wikipedia.org/wiki/2014-15_Serie_A" %>%
+  read_html() %>% 
+  html_node(".wikitable:nth-child(28)") %>% 
+  html_table() %>%  # then convert the HTML table into a data frame
+  mutate(league = "Serie A")
+
+bl.table14 = "https://en.wikipedia.org/wiki/2014-15_Bundesliga" %>%
+  read_html() %>% 
+  html_node(".wikitable:nth-child(22)") %>% 
+  html_table() %>%  # then convert the HTML table into a data frame
+  mutate(league = "Bundesliga")
+
+ll.table14 = "https://en.wikipedia.org/wiki/2014-15_La_Liga" %>%
+  read_html() %>% 
+  html_node(".wikitable:nth-child(29)") %>% 
+  html_table() %>%  # then convert the HTML table into a data frame
+  mutate(league = "La Liga")
+
+l1.table14 = "https://en.wikipedia.org/wiki/2014-15_Ligue_1" %>%
+  read_html() %>% 
+  html_node(".wikitable:nth-child(19)") %>% 
+  html_table() %>%  # then convert the HTML table into a data frame
+  mutate(league = "Ligue 1")
+
+## merging the league specific data frames into one
+club.data = rbind(pl.table14, bl.table14, ll.table14, l1.table14, sa.table14)
+
+# Following doesn't work:
+club.data %>% 
+  mutate(club.data$club.status = ifelse(Pos >=5, "Top club", "Not top club"))
 
 
