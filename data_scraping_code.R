@@ -5,14 +5,39 @@
 #############################################################################################
 ## NOTES
 
+#########DATA SCRAPPING#########
 ## DONE:
 # created code to gather stats for field players
 # code to gather transferdata
-# code to combine all the specific datasæts
+# code to combine all the specific datas?ts
+# converting transfer.fee to numeric value 
 
-## missing:
+##DOING
+#creating club categories
+
+## TO DO:
 # need to create code til gather stats for goalkeepers players (modification)
 # need code to add google searches
+
+#########VISUALISATION#########
+##TO DO
+#average transfer value per league, 
+#age vs transfer value, 
+#position vs transfer value, 
+#goals per minute vs transfer value
+#visualise the best models
+
+#########MODELISATION#########
+##TO DO
+#Linear model
+#LASSO and RIDGE
+#Cross validation using Kfold
+#Decision tree
+#Random forest
+#test and compare
+
+#############################################################################################
+## CODE
 
 ## load libraries
 library("rvest")
@@ -47,7 +72,7 @@ link.collector = function(vector){
 all.tranferlinks.partly = lapply(all.transferlinks, link.collector)
 all.profiles.partly = unlist(all.tranferlinks.partly) # transform from list to vector
 
-profile.links = paste(base.link,all.profile.links.partly, sep ="")
+profile.links = paste(base.link,all.profiles.partly, sep ="")
 profile.links[1:200]
 
 ##creates vector with links to all the players stat page
@@ -137,11 +162,11 @@ scrape_playerstats = function(link){
                     penaltygoals = penaltygoals,
                     minutes.pr.goal = minutes.pr.goal,
                     total.minutes.played = minutes.played
-  )) sys.sleep(0.5)}
+  ))}
 
 
 ## Create data frame with player states by using function
-player.stats.season = season.stat.links[190:200]  %>% 
+player.stats.season = season.stat.links[100:200]  %>% 
   map_df(scrape_playerstats)
 
 ######### Transferdata
@@ -161,7 +186,7 @@ all.transfers.partly = unlist(all.tranferlinks2.partly) # transform from list to
 
 ## merging to get the full links to the transfers
 transfer.links = paste(base.link,all.transfers.partly, sep ="")
-transfer.links[190:200]
+transfer.links[100:200]
 
 ## Create function to find transfer stats
 scrape_transferstats = function(link){
@@ -195,9 +220,30 @@ scrape_transferstats = function(link){
   ))
   sys.sleep(0.5)}
 
-transfer.stats = transfer.links[190:200]  %>% 
+transfer.stats = transfer.links[100:200]  %>% 
   map_df(scrape_transferstats)
 
 
 #### Merging playing and transferstats
 final_player_data = left_join(transfer.stats, player.stats.season)
+
+###Changing pound character and converting transfer fee to numeric value
+
+final_player_data_2<- final_player_data
+
+###Removing pound character
+final_player_data_2$transfer.fee = str_replace(final_player_data_2$transfer.fee,"Â£","")
+
+###Transforming free transfer to O
+#final_player_data_2$transfer.fee = str_replace(final_player_data_2$transfer.fee,"Free transfer","0")
+
+###Converting to numeric value
+final_player_data_2$transfer.fee = str_replace(final_player_data_2$transfer.fee,"\\.","") #removing the dots
+final_player_data_2$transfer.fee = str_replace(final_player_data_2$transfer.fee,"m","0000") #removing the m 
+final_player_data_2$transfer.fee = str_replace(final_player_data_2$transfer.fee,"k","000") #removing the k
+
+final_player_data_2<- transform(final_player_data_2, transfer.fee = as.numeric(transfer.fee)) #convert character string in numeric string
+head(final_player_data_2)
+
+
+
