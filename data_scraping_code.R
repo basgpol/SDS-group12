@@ -8,21 +8,17 @@
 ## DONE:
 # created code to gather stats for field players
 # code to gather transferdata
+# code to combine alle the specific datasæts
 
-## TO DO:
-# need to create code to gather stats for defensive players (modification)
-# code to combine all the specific data
-
-## MISSING:
+## missing:
 # need to create code til gather stats for goalkeepers players (modification)
 # need code to add google searches
-
 
 ## load libraries
 library("rvest")
 library("stringr")
 library("purrr")
-library("dplyr")
+
 
 ## defines key links
 base.link = "http://www.transfermarkt.co.uk/"
@@ -31,40 +27,27 @@ bl.transfer.link = "http://www.transfermarkt.co.uk/1-bundesliga/transfers/wettbe
 ll.transfer.link = "http://www.transfermarkt.co.uk/laliga/transfers/wettbewerb/ES1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
 sa.tranfer.link = "http://www.transfermarkt.co.uk/serie-a/transfers/wettbewerb/IT1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
 l1.transfer.link = "http://www.transfermarkt.co.uk/ligue-1/transfers/wettbewerb/FR1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
-all.transferlinks = c(pl.tranfers.link, bl.transfer.link, ll.transfer.link, sa.tranfer.link, l1.transfer.link) 
-
-#CSS selectors
-css.selector.profile = ".table-header+ .responsive-table .hide-for-small .spielprofil_tooltip"
+css.selector.profile = ".table-header+ .responsive-table .spielprofil_tooltip"
 css.selector.transfer = ".table-header+ .responsive-table .rechts a"
+all.transferlinks = c(pl.tranfers.link, bl.transfer.link, ll.transfer.link, sa.tranfer.link, l1.transfer.link)
 
-## creating a function that finds all the links to transfered players in all major european football leagues
+## creating a function that finds alle the links to transfered players in alle majer european football leagues
 link.collector = function(vector){
   out = vector %>% 
     read_html(encoding = "UTF-8") %>% #inddrager special danish character 
-    html_nodes(css = css.selector.profile) %>% 
+    html_nodes(css = css.selector.profile) %>%
     html_attr(name = 'href') #tager den attribut med navnet hret
   return (out)
 }
 
-# applying the function and thereby creating a vector of all the links to transfered players
+# applying the function and thereby creating a vector of alle the links to transfered players
 all.tranferlinks.partly = lapply(all.transferlinks, link.collector)
 all.profiles.partly = unlist(all.tranferlinks.partly) # transform from list to vector
+all.profile.links.partly.clean = all.profiles.partly[c(TRUE, FALSE)] # removing copies of links
+all.profile.links.partly.clean
 
-########################################
-
-## Creates vector that indclude all links to player profiles who were transfered to PL (Premier League)
-profile.links.partly = pl.tranfers.link %>% 
-  read_html(encoding = "UTF-8") %>% #inddrager special danish character 
-  html_nodes(css = css.selector.profile) %>%
-  html_attr(name = 'href') #tager den attribut med navnet hret
-profile.links.partly
-
-profile.links = paste(base.link,profile.links.partly, sep ="")
-profile.links[1:7]
-
-profile.links = paste(base.link,all.profile.links.partly, sep ="")
+profile.links = paste(base.link,all.profile.links.partly.clean, sep ="")
 profile.links[1:200]
-
 
 ##creates vector with links to all the players stat page
 player.stats.links = str_replace(profile.links,"profil","leistungsdaten") 
@@ -72,9 +55,9 @@ player.stats.links[1:200]
 
 ## creates vector with links to all the players detailed stat page for season 14/15
 season.stat.links = paste(player.stats.links,"/plus/1?saison=2014", sep = "")
-season.stat.links[1:170]
+season.stat.links[1:200]
 
-## Create function to find player stats
+## Create function to find player states
 scrape_playerstats = function(link){
   my.link = link %>% 
     read_html(encoding = "UTF-8")
@@ -157,12 +140,12 @@ scrape_playerstats = function(link){
 
 
 ## Create data frame with player states by using function
-player.stats.season = season.stat.links[160:170]  %>% 
+player.stats.season = season.stat.links[190:200]  %>% 
   map_df(scrape_playerstats)
 
 ######### Transferdata
 
-## creating a function that finds all the links to all transfers in the major european football leagues
+## creating a function that finds alle the links to all transfers in the major european football leagues
 link.collector2 = function(vector){
   out = vector %>% 
     read_html(encoding = "UTF-8") %>% #inddrager special danish character 
@@ -177,7 +160,7 @@ all.transfers.partly = unlist(all.tranferlinks2.partly) # transform from list to
 
 ## merging to get the full links to the transfers
 transfer.links = paste(base.link,all.transfers.partly, sep ="")
-transfer.links[160:170]
+transfer.links[190:200]
 
 ## Create function to find transfer stats
 scrape_transferstats = function(link){
@@ -205,10 +188,9 @@ scrape_transferstats = function(link){
                     transfer.fee = transfer.fee
   ))}
 
-transfer.stats = transfer.links[160:170]  %>% 
+transfer.stats = transfer.links[190:200]  %>% 
   map_df(scrape_transferstats)
 
 
 #### Merging playing and transferstats
 final_player_data = left_join(transfer.stats, player.stats.season)
-
