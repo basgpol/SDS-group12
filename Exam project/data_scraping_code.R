@@ -2,7 +2,7 @@
 ################################### Test Project #######################################
 ########################################################################################
 
-#############################################################################################
+
 ## NOTES
 
 #########DATA SCRAPPING#########
@@ -139,6 +139,10 @@ scrape_playerstats = function(link){
     html_nodes(".hide-for-small+ p .dataValue span") %>% 
     html_text()
   nationality = nationality[1]
+  birth_place = my.link %>% 
+    html_nodes(".hide-for-small .dataValue span") %>% 
+    html_text()
+  birth_place = birth_place[1]
   apps = my.link %>% 
     html_nodes(".hide+ td") %>% 
     html_text()
@@ -187,6 +191,7 @@ scrape_playerstats = function(link){
                     positions = position,
                     age = age,
                     nationality = nationality,
+                    birth_place = birth_place,
                     appearances = apps,
                     total.goals = goals,
                     total.assists = assists,
@@ -224,11 +229,16 @@ scrape_transferstats = function(link){
     html_nodes(".hauptfact") %>% 
     html_text()
   transfer.fee = transfer.fee[1]
+  contract.period.left = my.link %>% 
+    html_nodes("tr:nth-child(9) .zentriert") %>% 
+    html_text()
+  contract.period.left = contract.period.left[1]  
   return(data.frame(name = name,
                     transfer.date = transfer.date,
                     club.from = club.from,
                     club.to = club.to,
-                    transfer.fee = transfer.fee
+                    transfer.fee = transfer.fee,
+                    contract.period.left = contract.period.left
   ))}
 
 ##===================== 1.5 Applying functions to generate links =============================
@@ -258,12 +268,13 @@ transfer.links[100:200]
 ##=========== 1.6 Applying functions to scrape the performance and transfer stats ============
 
 ## Create data frame with performance stats using function 3
-player.stats.season = season.stat.links[150:200]  %>% 
+player.stats.season = season.stat.links  %>% 
   map_df(scrape_playerstats)
 
 ## Create data frame with transfer stats using function 4
-transfer.stats = transfer.links[150:200]  %>% 
+transfer.stats = transfer.links  %>% 
   map_df(scrape_transferstats)
+  
 
 ##============ 1.7 Importing table rangig for the major leauges in season 14/15 ==============
 
@@ -306,42 +317,51 @@ l1.table14 = l1.table14.link %>%
 
 
 ## merging the performance and transfer data frames into one player data frame
-player_data = left_join(transfer.stats, player.stats.season)
+player.data = left_join(transfer.stats, player.stats.season)
+
+## saving uncleaned player data as csv
+write.table(player.data, file = "player_data_unclean.csv",
+            sep = ",", col.names = NA, qmethod = "double")
 
 ## merging the league specific data frames into one club data frame
 club.data = rbind(pl.table14, bl.table14, ll.table14, sa.table14, l1.table14)
 
-
-
+## saving uncleaned club data as csv
+write.table(club.data, file = "club_data_unclean.csv",
+             sep = ",", col.names = NA, qmethod = "double")
 
 
 ##=========================================================================================
 ##--------------------------------- 2. Cleaning -------------------------------------------
 ##=========================================================================================
 
+
+
 ##================ 2.1 Cleaning player data and creating useful predictors ================
+player.data = read.csv("player_data_unclean.csv") # loading saved version of uncleaned player data
 
 ###Changing pound character and converting transfer fee to numeric value
 
-player_data_clean<- player_data
+player.data.cleaning<- player.data
 
 ###Removing pound character
-player_data_clean$transfer.fee = str_replace(player_data_clean$transfer.fee,"£","")
+player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"£","")
 
 ###Transforming free transfer to O (not used because we want to remove these obs)
 #player_data_2$transfer.fee = str_replace(player_data_2$transfer.fee,"Free transfer","0")
 
 ###Converting to numeric value
-player_data_clean$transfer.fee = str_replace(player_data_clean$transfer.fee,"\\.","") #removing the dots
-player_data_clean$transfer.fee = str_replace(player_data_clean$transfer.fee,"m","0000") #removing the m 
-player_data_clean$transfer.fee = str_replace(player_data_clean$transfer.fee,"k","000") #removing the k
+player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"\\.","") #removing the dots
+player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"m","0000") #removing the m 
+player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"k","000") #removing the k
 
-player_data_clean = transform(player_data_clean, transfer.fee = as.numeric(transfer.fee)) #convert character string in numeric string
-head(player_data_clean)
+player.data.cleaning = transform(player.data.cleaning, transfer.fee = as.numeric(transfer.fee)) #convert character string in numeric string
+head(player.data.cleaning)
 
 
 
 ##================ 2.2 Cleaning club data and creating useful predictors ================
+club.data = read.csv("club_data_unclean.csv") # loading saved version of uncleaned club data
 
 ## Giving different status to different clubs depending on which position they ended at in the league.
 attach(club.data)
