@@ -299,8 +299,12 @@ l1.table14 = "https://en.wikipedia.org/wiki/2014-15_Ligue_1" %>%
 ## merging the league specific data frames into one
 club.data = rbind(pl.table14, bl.table14, ll.table14, l1.table14, sa.table14)
 
-# Following doesn't work:
-club.data %>% 
-  mutate(club.data$club.status = ifelse(Pos >=5, "Top club", "Not top club"))
 
+# Giving different status to different clubs depending on which position they
+# ended at in the league.
 
+attach(club.data)
+club.data$Status[Pos <= 5] = "Top Club"
+club.data$Status[Pos <= 15 & Pos > 5] = "Middle Club"
+club.data$Status[Pos >= 16] = "Buttom Club"
+detach(club.data)
