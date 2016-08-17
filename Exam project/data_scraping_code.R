@@ -298,7 +298,12 @@ l1.table14 = l1.table14.link %>%
   mutate(league = "Ligue 1")
             
 
+
 ##============================ 1.8 Merging data frames ====================================
+
+###Changing pound character and converting transfer fee to numeric value
+####!!!!! TO change to right dataset !!!#####
+
 
 ## merging the performance and transfer data frames into one player data frame
 player_data = left_join(transfer.stats, player.stats.season)
