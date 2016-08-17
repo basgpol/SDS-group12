@@ -338,14 +338,14 @@ write.table(club.data, file = "club_data_unclean.csv",
 
 
 ##================ 2.1 Cleaning player data and creating useful predictors ================
-player.data = read.csv("player_data_unclean.csv") # loading saved version of uncleaned player data
+player.data = read.csv("player_data_unclean.csv", header=FALSE, stringsAsFactors=FALSE, fileEncoding="latin1") # loading saved version of uncleaned player data
 
 ###Changing pound character and converting transfer fee to numeric value
 
 player.data.cleaning<- player.data
 
 ###Removing pound character
-player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"£","")
+player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"?","")
 
 ###Transforming free transfer to O (not used because we want to remove these obs)
 #player_data_2$transfer.fee = str_replace(player_data_2$transfer.fee,"Free transfer","0")
