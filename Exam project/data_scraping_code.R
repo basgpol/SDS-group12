@@ -243,6 +243,7 @@ final_player_data = left_join(transfer.stats, player.stats.season)
 
 
 ###Changing pound character and converting transfer fee to numeric value
+####!!!!! TO change to right dataset !!!#####
 
 final_player_data_2<- final_player_data
 
