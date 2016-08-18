@@ -352,6 +352,11 @@ player.data.cleaning$total.minutes.played = str_sub(player.data.cleaning$total.m
 player.data.cleaning$total.minutes.played = str_replace(player.data.cleaning$total.minutes.played,"\\.","")
 
 
+write.table(player.data.cleaning, file = "player_data_partclean.csv",
+             sep = ",", col.names = NA, qmethod = "double")
+
+player.data.partcleaning = read.csv("player_data_partclean.csv")
+
 # ### contract length variable: Only the period left
 # player.data.cleaning$contract.period.left = gsub("(?<=\\()[^()]*(?=\\))(*SKIP)(*F)|.", "", player.data.cleaning$contract.period.left, perl=T) #extract the date when the contract expires
 # player.data.cleaning$transfer.year = sub(".*,", "", player.data.cleaning$transfer.date) # subtract the year
