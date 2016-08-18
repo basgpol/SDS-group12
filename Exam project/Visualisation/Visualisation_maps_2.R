@@ -21,7 +21,7 @@ library(stringr)
 
 myLocation <- "Zurich"
 myMap <- get_map(location= myLocation,
-source="stamen", maptype="watercolor", crop=FALSE,,zoom=3)
+source="stamen", maptype="watercolor", crop=FALSE,,zoom=4)
 ggmap(myMap)
 
 
@@ -53,19 +53,28 @@ mydata$team = str_replace(mydata$team,"[1234567890]","")
 mydata$team = str_replace(mydata$team,"[1234567890]","")
 mydata$team = str_replace(mydata$team,"[1234567890]","")
 mydata$team = str_replace(mydata$team,"*\\[.*?\\] *","")#removing the unwanted characters between brackets
-mydata$team = str_replace(mydata$team,"Mönchen","München")
-mydata$team = str_replace(mydata$team,"Borussia Münchengladbach","Münchengladbach Borussia")
+mydata$team = str_replace(mydata$team,"Borussia Mönchengladbach","Mönchengladbach Borussia")
 mydata$team = str_replace(mydata$team,"FC Augsburg","Augsburg FC")
-mydata$team = str_replace(mydata$team,"FC Köln","Köln FC")
+mydata$team = str_replace(mydata$team,"FC Köln","Cologne FC")
 mydata$team = str_replace(mydata$team,"VfB Stuttgart","Stuttgart VfB")
-mydata$team = str_replace(mydata$team,"Hellas Verona","Hellas Verona FC")
+mydata$team = str_replace(mydata$team,"Hellas Verona","Verona FC")
 mydata$team = str_replace(mydata$team,"BSC","Berlin")
+mydata$team = str_replace(mydata$team,"Juventus","Juventus Turin")
 mydata$team = str_replace(mydata$team,"\\.","")
 mydata$team = str_replace(mydata$team," *\\(.*?\\) *","") #remove (C) for champions
 
 #class transforming to numeric value or character value
 mydata$Pts <- as.numeric(mydata$Pts)
 mydata$team <- as.character(mydata$team)
+
+###ADD COUNTRIES TO TEAM NAMES (in order to find them on gmap)
+
+mydata$team <- with(mydata, ifelse(league=="Bundesliga", paste(team,"GERMANY", sep = " "),
+                                   ifelse(league=="Ligue 1", paste(team,"FRANCE", sep = " "),
+                                          ifelse(league=="Serie A", paste(team,"ITALY", sep = " "),
+                                                 ifelse(league=="Premier league", paste(team,"UK", sep = " "),
+                                                        ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
+
 
 #Looping for club coordinate
 for (i in 1:nrow(mydata)) {
@@ -74,12 +83,13 @@ for (i in 1:nrow(mydata)) {
   mydata$lat[i] = as.numeric(latlon[2])
   
 }
-?geocode
+
 #coordinates should be between lon [-10,20] and lat [35:60]
 out.of.europe<-filter(mydata, lon < -10 |lat < 35)
 out.of.europe.2<- filter(mydata, lon>20 |lat>60)
 out.full= rbind(out.of.europe.2, out.of.europe)
-write(mydata,file="club.csv")
+
+# write(mydata,file="club_for_viz.csv")
 # Creating a cleaner dataset
 clubs.points = data.frame(mydata$Pts, mydata$lon, mydata$lat)
 colnames(clubs.points) = c('Pts','lon','lat')#naming the variables
@@ -128,7 +138,7 @@ transfer.data= completeFun(transfer.data,"V4") #function applied to transfer dat
 
 
 
-#Looping for club coordinate
+###Looping for club coordinate
 transfer.path.origin<-for (i in 1:nrow(transfer.data)) { #getting origin coordinates
   latlon = geocode(transfer.data[i,4])
   transfer.data$lon[i] = as.numeric(latlon[1])
