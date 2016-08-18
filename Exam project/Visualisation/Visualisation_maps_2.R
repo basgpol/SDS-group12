@@ -14,7 +14,7 @@ library(maps)
 library("ggplot2")
 library(dplyr)
 library(rworldmap)
-
+library(stringr)
 
 
 #Getting starting map
@@ -33,10 +33,13 @@ ggmap(myMap)
 #######################################################
 
 #Getting data from club
+club.data<-read.csv("club_data_unclean.csv",header=TRUE, stringsAsFactors=TRUE, fileEncoding="latin1")
 mydata = club.data
+#mydata <- mydata[sample(1:nrow(mydata), 50,# taking a random 50 sample
+#                        replace=FALSE),]
 
 #tidying data frame
-colnames(mydata)[2] <- "team"#change "team/N/E/V" to "team"
+colnames(mydata)[3] <- "team"#change "team/N/E/V" to "team"
 
 #POINTS
 
@@ -66,12 +69,17 @@ mydata$team <- as.character(mydata$team)
 
 #Looping for club coordinate
 for (i in 1:nrow(mydata)) {
-  latlon = geocode(mydata[i,2])
+  latlon = geocode(mydata[i,3],source=c("google","dsk"))
   mydata$lon[i] = as.numeric(latlon[1])
   mydata$lat[i] = as.numeric(latlon[2])
   
 }
-
+?geocode
+#coordinates should be between lon [-10,20] and lat [35:60]
+out.of.europe<-filter(mydata, lon < -10 |lat < 35)
+out.of.europe.2<- filter(mydata, lon>20 |lat>60)
+out.full= rbind(out.of.europe.2, out.of.europe)
+write(mydata,file="club.csv")
 # Creating a cleaner dataset
 clubs.points = data.frame(mydata$Pts, mydata$lon, mydata$lat)
 colnames(clubs.points) = c('Pts','lon','lat')#naming the variables
@@ -106,7 +114,7 @@ mapclubs
 #############################################################################################
 
 #Getting data from df
-player.data = read.csv("player_data_unclean.csv", header=FALSE, stringsAsFactors=FALSE, fileEncoding="latin1") # loading saved version of uncleaned player data
+player.data = read.csv("player_data_unclean.csv", header=TRUE, stringsAsFactors=TRUE, fileEncoding="latin1") # loading saved version of uncleaned player data
 transfer.data = player.data 
 
 transfer.data <- transfer.data[sample(1:nrow(transfer.data), 50,# taking a random 50 sample
@@ -126,7 +134,7 @@ transfer.path.origin<-for (i in 1:nrow(transfer.data)) { #getting origin coordin
   transfer.data$lon[i] = as.numeric(latlon[1])
   transfer.data$lat[i] = as.numeric(latlon[2])
 }
-?geocode
+
 transfer.path.origin = data.frame(rep(i, nrow(transfer.data)), transfer.data$V1, transfer.data$lon, transfer.data$lat) #creating a dataset with origin
 
 transfer.path.destination<-for (i in 1:nrow(transfer.data)) { #getting destination coordinates
@@ -140,7 +148,7 @@ transfer.path.destination= data.frame(rep(i, nrow(transfer.data)), transfer.data
 #BINDING
 
 transfer.path.full= rbind(transfer.path.origin, transfer.path.destination)#binding
-colnames(transfer.path.full) = c('index','lon','lat')#naming the columns
+colnames(transfer.path.full) = c("wut",'index','lon','lat')#naming the columns
 transfer.path.full= arrange(transfer.path.full, desc(index))# organising in descending order
 write.csv(transfer.path.full, "transfer_path_full.csv")
 
