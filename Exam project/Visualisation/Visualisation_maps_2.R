@@ -60,7 +60,7 @@ mydata$team = str_replace(mydata$team,"BSC","Berlin")
 mydata$team = str_replace(mydata$team,"\\.","")
 mydata$team = str_replace(mydata$team," *\\(.*?\\) *","") #remove (C) for champions
 
-#class
+#class transforming to numeric value or character value
 mydata$Pts <- as.numeric(mydata$Pts)
 mydata$team <- as.character(mydata$team)
 
@@ -74,7 +74,7 @@ for (i in 1:nrow(mydata)) {
 
 # Creating a cleaner dataset
 clubs.points = data.frame(mydata$Pts, mydata$lon, mydata$lat)
-colnames(clubs.points) = c('Pts','lon','lat')
+colnames(clubs.points) = c('Pts','lon','lat')#naming the variables
 
 # Getting data on the map
 
