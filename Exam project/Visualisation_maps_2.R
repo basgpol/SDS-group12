@@ -113,39 +113,35 @@ transfer.data = player.data
 transfer.data <- transfer.data[sample(1:nrow(transfer.data), 50,
                           replace=FALSE),]
 #Looping for club coordinate
-for (i in 1:nrow(transfer.data)) {
+for (i in 1:nrow(transfer.data)) { #getting origin coordinates
   latlon = geocode(transfer.data[i,4])
   transfer.data$lon[i] = as.numeric(latlon[1])
   transfer.data$lat[i] = as.numeric(latlon[2])
 }
 
-transfer.path = data.frame(rep(i, nrow(transfer.data)), transfer.data$lon, transfer.data$lat)
+transfer.path = data.frame(rep(i, nrow(transfer.data)), transfer.data$lon, transfer.data$lat) #creating a dataset with origin
 
-for (i in 1:nrow(transfer.data)) {
+for (i in 1:nrow(transfer.data)) { #getting destination coordinates
   latlon = geocode(transfer.data[i,5])
   transfer.data$lon[i] = as.numeric(latlon[1])
   transfer.data$lat[i] = as.numeric(latlon[2])
 }
 
-transfer.path2= data.frame(rep(i, nrow(transfer.data)), transfer.data$lon, transfer.data$lat)
+transfer.path2= data.frame(rep(i, nrow(transfer.data)), transfer.data$lon, transfer.data$lat) #creating a dataset with destination coordinates
 
 #BINDING
 
-transfer.path.full= rbind(transfer.path2, transfer.path)
-colnames(transfer.path.full) = c('index','lon','lat')
-transfer.path.full= arrange(transfer.path.full, desc(index))
+transfer.path.full= rbind(transfer.path2, transfer.path)#binding
+colnames(transfer.path.full) = c('index','lon','lat')#naming the columns
+transfer.path.full= arrange(transfer.path.full, desc(index))# organising in descending order
 
-completeFun <- function(data, desiredCols) {
+completeFun <- function(data, desiredCols) { #function to remove NA
   completeVec <- complete.cases(data[, desiredCols])
   return(data[completeVec, ])
 }
-transfer.path.full= completeFun(transfer.path.full,"lon")
+transfer.path.full= completeFun(transfer.path.full,"lon")#applying the function to transfer.path
 
-ggmap(myMap)+
-  geom_path(aes(x = lon, y = lat, group = factor(index)), 
-            colour="red", data = transfer.path.full, alpha=0.6)
+ggmap(myMap)+#calling map
+  geom_path(aes(x = lon, y = lat, group = factor(index)), #putting paths on the map
+            colour="red", data = transfer.path.full, alpha=0.3)
 
-?group_by
-map.transfer
-?group
-?geom_path
