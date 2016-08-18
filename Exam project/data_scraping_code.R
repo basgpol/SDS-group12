@@ -335,42 +335,49 @@
 ##================ 2.1 Cleaning player data and creating useful predictors ================
 player.data.cleaning = read.csv("player_data_unclean.csv") # loading saved version of uncleaned player data
 
-### Transfer fee variable: Removing pound character and equalize measures
+### Cleaning transfer fee variable
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"£","")
-
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"\\.","") #removing the dots
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"m","0000") #removing the m 
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"k","000") #removing the k
-player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"\?","000") #removing the k
-#player.data.cleaning$transfer.fee = gsub("?",NA,player.data.cleaning$transfer.date, fixed = TRUE)
+player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"-", NA) #removing the - and turn into NA
+player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"\\?", NA) #removing ? and turn into NA
+
+### cleaning goals pr. minutes
+player.data.cleaning$minutes.pr.goal = str_sub(player.data.cleaning$minutes.pr.goal, start=1, end=-2)
+player.data.cleaning$minutes.pr.goal = str_replace(player.data.cleaning$minutes.pr.goal,"\\.","")
+
+### cleaning total minutes played
+player.data.cleaning$total.minutes.played = str_sub(player.data.cleaning$total.minutes.played, start=1, end=-2)
+player.data.cleaning$total.minutes.played = str_replace(player.data.cleaning$total.minutes.played,"\\.","")
 
 
-### contract length variable: Only the period left
-player.data.cleaning$contract.period.left = gsub("(?<=\\()[^()]*(?=\\))(*SKIP)(*F)|.", "", player.data.cleaning$contract.period.left, perl=T) #extract the date when the contract expires
-player.data.cleaning$transfer.year = sub(".*,", "", player.data.cleaning$transfer.date) # subtract the year
-player.data.cleaning$transfer.month = str_sub(player.data.cleaning$transfer.date, start=1, end=-9) #subtract month
-player.data.cleaning$transfer.month = ifelse(str_replace(player.data.cleaning$transfer.month,"Aug","8"),
-                                             ifelse(str_replace(player.data.cleaning$transfer.month,"Jan","1"))"andet") 
-                                      if
-?ifelse
-
-player.data.cleaning$transfer.month = ifelse(player.data.cleaning$transfer.month == "Aug","8", "andet")
-                                              ifelse(player.data.cleaning$transfer.month ="Jan","1")) 
-
-
-player.data.cleaning$transfer.day = str_sub(player.data.cleaning$transfer.date, start=4, end=-7) #subtract day
-player.data.cleaning$transfer.date.new = paste(player.data.cleaning$transfer.year,"/", 
-                                               player.data.cleaning$transfer.month,"/",
-                                               player.data.cleaning$transfer.day)
-?as.date
-?str_detect
-
-b
-?sub
-player.data.cleaning$transfer.date = as.Date(player.data.cleaning$transfer.date)
-??as.date
-
-?na.string
+# ### contract length variable: Only the period left
+# player.data.cleaning$contract.period.left = gsub("(?<=\\()[^()]*(?=\\))(*SKIP)(*F)|.", "", player.data.cleaning$contract.period.left, perl=T) #extract the date when the contract expires
+# player.data.cleaning$transfer.year = sub(".*,", "", player.data.cleaning$transfer.date) # subtract the year
+# player.data.cleaning$transfer.month = str_sub(player.data.cleaning$transfer.date, start=1, end=-9) #subtract month
+# player.data.cleaning$transfer.month = ifelse(str_replace(player.data.cleaning$transfer.month,"Aug","8"),
+#                                              ifelse(str_replace(player.data.cleaning$transfer.month,"Jan","1"))"andet") 
+#                                       if
+# ?ifelse
+# 
+# player.data.cleaning$transfer.month = ifelse(player.data.cleaning$transfer.month == "Aug","8", "andet")
+#                                               ifelse(player.data.cleaning$transfer.month ="Jan","1")) 
+# 
+# 
+# player.data.cleaning$transfer.day = str_sub(player.data.cleaning$transfer.date, start=4, end=-7) #subtract day
+# player.data.cleaning$transfer.date.new = paste(player.data.cleaning$transfer.year,"/", 
+#                                                player.data.cleaning$transfer.month,"/",
+#                                                player.data.cleaning$transfer.day)
+# ?as.date
+# ?str_detect
+# 
+# b
+# ?sub
+# player.data.cleaning$transfer.date = as.Date(player.data.cleaning$transfer.date)
+# ??as.date
+# 
+# ?na.string
 
 ### Transforming number variables into numeric variables
 sapply(player.data.cleaning, class) #inspecting the class of all variables
