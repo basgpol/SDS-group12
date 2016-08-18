@@ -21,7 +21,7 @@ library(rworldmap)
 
 myLocation <- "Zurich"
 myMap <- get_map(location= myLocation,
-source="stamen", maptype="watercolor", crop=FALSE,,zoom=5)
+source="stamen", maptype="watercolor", crop=FALSE,,zoom=3)
 ggmap(myMap)
 
 
@@ -108,36 +108,43 @@ mapclubs
 #Getting data from df
 player.data = read.csv("player_data_unclean.csv", header=FALSE, stringsAsFactors=FALSE, fileEncoding="latin1") # loading saved version of uncleaned player data
 transfer.data = player.data 
-transfer.data <- transfer.data[sample(1:nrow(transfer.data), 50,
+
+transfer.data <- transfer.data[sample(1:nrow(transfer.data), 50,# taking a random 50 sample
                           replace=FALSE),]
+
+completeFun <- function(data, desiredCols) { #function to remove empty/NA
+  completeVec <- complete.cases(data[, desiredCols])
+  return(data[completeVec, ])
+}
+transfer.data= completeFun(transfer.data,"V4") #function applied to transfer data to remove unknown origin
+
+
+
 #Looping for club coordinate
-for (i in 1:nrow(transfer.data)) { #getting origin coordinates
+transfer.path.origin<-for (i in 1:nrow(transfer.data)) { #getting origin coordinates
   latlon = geocode(transfer.data[i,4])
   transfer.data$lon[i] = as.numeric(latlon[1])
   transfer.data$lat[i] = as.numeric(latlon[2])
 }
+?geocode
+transfer.path.origin = data.frame(rep(i, nrow(transfer.data)), transfer.data$V1, transfer.data$lon, transfer.data$lat) #creating a dataset with origin
 
-transfer.path = data.frame(rep(i, nrow(transfer.data)), transfer.data$lon, transfer.data$lat) #creating a dataset with origin
-
-for (i in 1:nrow(transfer.data)) { #getting destination coordinates
+transfer.path.destination<-for (i in 1:nrow(transfer.data)) { #getting destination coordinates
   latlon = geocode(transfer.data[i,5])
   transfer.data$lon[i] = as.numeric(latlon[1])
   transfer.data$lat[i] = as.numeric(latlon[2])
 }
 
-transfer.path2= data.frame(rep(i, nrow(transfer.data)), transfer.data$lon, transfer.data$lat) #creating a dataset with destination coordinates
+transfer.path.destination= data.frame(rep(i, nrow(transfer.data)), transfer.data$V1, transfer.data$lon, transfer.data$lat) #creating a dataset with destination coordinates
 
 #BINDING
 
-transfer.path.full= rbind(transfer.path2, transfer.path)#binding
+transfer.path.full= rbind(transfer.path.origin, transfer.path.destination)#binding
 colnames(transfer.path.full) = c('index','lon','lat')#naming the columns
 transfer.path.full= arrange(transfer.path.full, desc(index))# organising in descending order
+write.csv(transfer.path.full, "transfer_path_full.csv")
 
-completeFun <- function(data, desiredCols) { #function to remove NA
-  completeVec <- complete.cases(data[, desiredCols])
-  return(data[completeVec, ])
-}
-transfer.path.full= completeFun(transfer.path.full,"lon")#applying the function to transfer.path
+transfer.path.full= completeFun(transfer.path.full,"lon")#applying the function to remove NA/unidentified to transfer.path
 
 ggmap(myMap)+#calling map
   geom_path(aes(x = lon, y = lat, group = factor(index)), #putting paths on the map
