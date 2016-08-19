@@ -587,8 +587,11 @@ write.csv(club.data.clean, file("club.data.clean.3variables.csv")
 
 
 ##================ 2.3 Merging player and club data into one tidy data frame ================
+
 player.data.clean= read.csv(file="player_data_clean.csv", encoding = "latin1")
-club.data.clean=read.csv(file = "club.data.clean.3variables.csv", encoding="latin1")
+iconv(player.data.clean, from = "latin1", to = "UTF8", sub = NA, mark = TRUE, toRaw = FALSE)
+
+club.data.clean=read.csv(file = "club.data.clean.3variables.csv", encoding="UTF8")
 
 
 transferdata.tidy = left_join(player.data.clean,
