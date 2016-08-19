@@ -7,9 +7,9 @@ library(dplyr)
 
 ####LOAD the DATA
 
-df.stats<-read.csv(file="player_data_partclean.csv", header=TRUE, stringsAsFactors=FALSE, fileEncoding="latin1")
+df.stats<-read.csv(/Users/guillaumeslizewicz/Documents/SDS-group12/Exam_project/transferdata.tidy.csv)
 df.stats$transfer.fee<-as.numeric(df.stats$transfer.fee) #set as numeric for transfer fees
-df.stats<-transferdata.tidy
+
 ####change transfer fees in categories
 
 df.stats.simp<- df.stats
@@ -155,7 +155,7 @@ df.stats.simp<-arrange(df.stats.simp,transfer.fee.cat)
 ############################################################################################    
 ####################### BAR CHART ##########################################################  
 ############################################################################################    
-change label order
+#change label order
  df.stats.simp$transfer.fee.label <- factor(df.stats.simp$transfer.fee.label, levels = df.stats.simp$transfer.fee.label[order(df.stats.simp$transfer.fee.cat)])
 
 library("ggplot2")
@@ -179,9 +179,11 @@ p + geom_bar()+
   geom_text(aes(label=league))
 
 library("plyr")
-ddply(df.stats.simp, .(league), summarize, ratio=transfer.fee.cat/sum(transfer.fee.cat)) 
+m1<-ddply(df.stats.simp, .(league), summarize, ratio=transfer.fee.cat/sum(transfer.fee.cat)) 
+m2 = df.stats.simp[order(df.stats.simp$league),]
+mydf = data.frame(m2,ratio=m1$ratio)
 
-?ddply
+#df.stats.simp
 # geom_text(aes(y=n,label=league), colour="white",position=position_dodge(width=0.9), vjust=-0.25)
 # 
 # 
