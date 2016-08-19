@@ -49,51 +49,30 @@ mutate(transfer.fee.label = ifelse(transfer.fee.cat==5,"Between 10m and 20m",
 
 df.stats.simp.occ<-arrange(df.stats.simp.occ,transfer.fee.cat)
 
-##########Working bar chart############
+##########Working bar chart 1############
 library("ggplot2")
-p = ggplot(df.stats.simp.occ, aes(x = transfer.fee.cat, y = n, fill=transfer.fee.label))
+#change label order
+df.stats.simp.occ$transfer.fee.label <- factor(df.stats.simp.occ$transfer.fee.label, levels = df.stats.simp.occ$transfer.fee.label[order(df.stats.simp.occ$transfer.fee.cat)])
+#draw graph
+p = ggplot(df.stats.simp.occ, aes(x =transfer.fee.label, y = n))
+
+#change graph appearance
 p + geom_bar(stat = "identity", position = "identity")+ 
-  theme(axis.title.x=element_blank(),
-       axis.text.x =element_blank(),
-      # element_text(size  = 7,
-      #        angle = 45,
-      #         hjust = 1,
-      #       vjust = 1),
+  theme(#axis.title.x=element_blank(),
+       axis.text.x =element_text(size  = 7,
+              angle = 45,
+               hjust = 1,
+             vjust = 1),
       axis.ticks= element_line(color=NA),
       axis.ticks= element_line(color=NA),
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(),
       panel.background = element_blank(),
-      axis.title.y=element_blank())+
-  scale_fill_manual(values=c("grey", "#E08E79", "#F1D4AF", "#ECE5CE", "#C5E0DC", "#774F38"))
+      axis.title.y=element_blank(),
+      axis.title.x=element_blank())
 
 
-##########test bar chart############
-p = ggplot(df.stats.simp.occ, aes(x = transfer.fee.cat, y = n, fill=transfer.fee.cat))
-p + geom_bar(stat = "identity", position = "identity") + 
-  theme(axis.text.x =element_blank(),
-        # element_text(size  = 7,
-        #        angle = 45,
-        #         hjust = 1,
-        #       vjust = 1),
-        axis.ticks= element_line(color=NA),
-        axis.text.x=element_blank(),
-        axis.ticks= element_line(color=NA),
-        panel.grid.major = element_blank(), 
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank(),
-        axis.title.x=element_blank(),
-        axis.title.y=element_blank())
 
-p + scale_fill_discrete(breaks = rev(levels(df.stats.simp.occ$transfer.fee.cat)))
-+
-?theme
-      scale_fill_manual(values=c("grey", "#E08E79", "#F1D4AF", "#ECE5CE", "#C5E0DC", "#774F38"))
-)
-
-#p + labs(title =" New title", x = "number", y = "value") #+
-  #coord_flip() +
-  #labs(x = NULL)
 #######################################
 #######################################
 #######################################
@@ -120,12 +99,7 @@ p + geom_bar(stat = "identity", position = "identity")+
 
 levels(df.stats.simp.occ$transfer.fee.cat)
 df.stats.simp.occ$transfer.fee.cat<-as.numeric(df.stats.simp.occ$transfer.fee.cat)
-?scale_fill_manual
-?levels
-??font
-?element_text
-??plots.title)
-?theme
+
 ##############################################################################
 #######################################
 #######################################
