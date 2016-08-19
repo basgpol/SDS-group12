@@ -583,6 +583,7 @@ club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barce
 # Selecting the useful clubvariables
 names(club.data.cleaning)
 club.data.clean = subset(club.data.cleaning, select=c(Team, league, Status))
+write.csv(club.data.clean, file("club.data.clean.3variables.csv")
 
 
 ##================ 2.3 Merging player and club data into one tidy data frame ================
