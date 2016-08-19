@@ -587,16 +587,21 @@ write.csv(club.data.clean, file("club.data.clean.3variables.csv")
 
 
 ##================ 2.3 Merging player and club data into one tidy data frame ================
-
+setwd("/Users/guillaumeslizewicz/Documents/SDS-group12/Exam_project")
 player.data.clean= read.csv(file="player_data_clean.csv", encoding = "latin1")
 iconv(player.data.clean, from = "latin1", to = "UTF8", sub = NA, mark = TRUE, toRaw = FALSE)
 
 club.data.clean=read.csv(file = "club.data.clean.3variables.csv", encoding="UTF8")
 
 
-transferdata.tidy = left_join(player.data.clean,
-                             club.data.clean,
-                             by=c("club.to" = "Team"))
+
+colnames(club.data.clean)[2] <- "club.to"
+club.data.clean<-select(club.data.clean, club.to, league, Status)
+player.data.clean<-select(player.data.clean,-c(X))
+
+
+
+transferdata.tidy = merge(player.data.clean,club.data.clean,by.x="club.to")
 
 ## Handeling promoted clubs
 transferdata.tidy$Status[is.na(transferdata.tidy$Status)] = "Promoted"
@@ -615,7 +620,7 @@ transferdata.tidy$league[(transferdata.tidy$club.to == "SCO Angers")|
                            (transferdata.tidy$club.to == "Troyes")|
                            (transferdata.tidy$club.to == "G. Ajaccio")] = "Ligue 1"
 
-
-
-list(transferdata.tidy$league)
-
+transferdata.tidy<-as.data.frame(transferdata.tidy)
+warning()
+unlist(transferdata.tidy$league)
+write(transferdata.tidy,file="transfer_data.csv")
