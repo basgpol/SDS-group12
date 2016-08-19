@@ -622,7 +622,8 @@ write.table(transferdata.tidy, file = "transferdata.tidy.csv",
 ##=========================================================================================
 
 transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.tidy.csv", encoding = "UTF8", header = TRUE)
-transfer.data = subset(transfer.data, select=-c(X.1,X))
+transfer.data = subset(transfer.data, select=-c(X.1, X.2,X))
+transfer.data = transfer.data[!duplicated(transfer.data), ] ## removing dublicated observations (replace!)
 
 ##================ 3.1 XXXXX  ================
 
