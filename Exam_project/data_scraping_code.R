@@ -515,7 +515,7 @@ player.data.clean = subset(player.data.cleaning, select=-c(X, contract.period.le
                                                                birth.year, birth.month, birth.day))
 
 
-# ###### GOOGLE SEARCH
+# ###### GOOGLE SEARCH #######
 # GoogleHits <- function(input)  #Function that seach for the input specified
 # {
 #   input = gsub(" ", "+", input)
@@ -532,14 +532,27 @@ player.data.clean = subset(player.data.cleaning, select=-c(X, contract.period.le
 #   #cat("\nNo. of Hits:\n")
 #   return(as.integer(gsub("[^0-9]", "", res)))
 # }
-# partlyclean.test=partlyclean[1:5,]
 # 
-# search.1=dQuote(partlyclean.test$name)  #Put quotation marks around name of the player
-# search.2=paste(search.1,"footballer",partlyclean.test$nationality[1:5], sep=" ") #Paste name of footballer, the word footballer and nationality
+# 
+# search.1=dQuote(player.data.clean$name)  #Put quotation marks around name of the player
+# search.2=paste(search.1,"footballer", sep=" ") #Paste name of footballer, the word footballer and nationality
 # search.2
 # 
+# player.data.clean.pt1=player.data.clean[1:250,]
+# list.pt.1=lapply(search.2[1:250], GoogleHits)
+# player.data.clean.pt1$searchresults=unlist(list.pt.1) #New column reporting number of search results
 # 
-# partlyclean.test$searchresults=unlist(lapply(search.2, GoogleHits)) #New column reporting number of search results
+# player.data.clean.pt2=player.data.clean[251:500,]
+# list.pt.2=lapply(search.2[251:500], GoogleHits)
+# player.data.clean.pt2$searchresults=unlist(list.pt.2) #New column reporting number of search results
+# 
+# player.data.clean.pt3=player.data.clean[501:709,]
+# list.pt.3=lapply(search.2[501:709], GoogleHits)
+# player.data.clean.pt3$searchresults=unlist(list.pt.3) #New column reporting number of search results
+# 
+# player_data_clean = rbind(player.data.clean.pt1, player.data.clean.pt2, player.data.clean.pt3)
+# 
+
 
 ## saving uncleaned player data as csv
 write.table(player.data.clean, file = "player_data_clean.csv",
