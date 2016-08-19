@@ -639,7 +639,21 @@ transfer.data = subset(transfer.data, select=-c(X.1,X))
 ##--------------------------------- 4. Prediction Models _---------------------------------
 ##=========================================================================================
 
-##================ 4.1 XXXXX  ================
+## Notes ##
+Possible prediction models
+Average
+OlS    
+Lasso
+Support Vector machine
+Regression Tree
+Random forest
+
+
+
+
+##================ 4.1 Cross validation: Dividing into a train and test sample  ================
+
+
 
 ##================ 4.2 XXXXX  ================
 
