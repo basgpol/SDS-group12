@@ -339,7 +339,7 @@ library("XML")
 player.data.cleaning = read.csv("player_data_unclean.csv", encoding = "Latin1") # loading saved version of uncleaned player data
 
 ## Cleaning transfer fee variable
-player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"£","")
+player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"?","")
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"\\.","") #removing the dots
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"m","0000") #removing the m 
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"k","000") #removing the k
@@ -541,6 +541,9 @@ player.data.clean = subset(player.data.cleaning, select=-c(X, contract.period.le
 # 
 # partlyclean.test$searchresults=unlist(lapply(search.2, GoogleHits)) #New column reporting number of search results
 
+## saving uncleaned player data as csv
+write.table(player.data.clean, file = "player_data_clean.csv",
+            sep = ",", col.names = NA, qmethod = "double")
 
 
 ##================ 2.2 Cleaning club data and creating useful predictors ================
@@ -559,6 +562,7 @@ names(club.data.cleaning)[names(club.data)=="Team..v.t.e"] <- "Team"
 names(club.data.cleaning)
 
 ## Renaming clubs in Wikipedia-tabel first
+
 club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barcelona", "Valencia"="Valencia CF", "Málaga"="Málaga CF", "Elche[d](R)"="Elche CF", 
                                "Levante"="Levante UD", "Getafe"="Getafe CF", "Deportivo"="Dep. La Coruña", "Granada"="Granada CF",
                                "Eibar"="SD Eibar", "Almería (R)"="UD Almería", "Córdoba (R)"="Córdoba CF", "Sevilla"="Sevilla FC",
@@ -574,6 +578,7 @@ club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barce
                                "West Bromwich"="West Brom", "Tottenham Hotspur"="Spurs","Swansea City"="Swansea", 
                                "Manchester United"="Manchester Utd.", "West Ham United"="West Ham", "Leicester City"="Leicester", 
                                "Newcastle "="Newcastle United")
+
 
 # Selecting the useful clubvariables
 names(club.data.cleaning)
