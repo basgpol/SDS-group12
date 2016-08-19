@@ -2,12 +2,14 @@
 ######################################### BAR CHART ##################################################################
 ######################################################################################################################
 ######################################################################################################################
+library(plyr)
 library(ggplot2)
 library(dplyr)
+library(tidyr)
 
 ####LOAD the DATA
 
-df.stats<-read.csv(/Users/guillaumeslizewicz/Documents/SDS-group12/Exam_project/transferdata.tidy.csv)
+df.stats<-read.csv("/Users/guillaumeslizewicz/Documents/SDS-group12/Exam_project/transferdata.tidy.csv")
 df.stats$transfer.fee<-as.numeric(df.stats$transfer.fee) #set as numeric for transfer fees
 
 ####change transfer fees in categories
@@ -151,14 +153,13 @@ df.stats.simp<-  df.stats.simp%>%
                                                                    ifelse(transfer.fee.cat==6,"More than 20m",  transfer.fee.cat )))))))
 
 
-df.stats.simp<-arrange(df.stats.simp,transfer.fee.cat)
+#df.stats.simp<-arrange(df.stats.simp,transfer.fee.cat)
 ############################################################################################    
 ####################### BAR CHART ##########################################################  
 ############################################################################################    
 #change label order
  df.stats.simp$transfer.fee.label <- factor(df.stats.simp$transfer.fee.label, levels = df.stats.simp$transfer.fee.label[order(df.stats.simp$transfer.fee.cat)])
 
-library("ggplot2")
 #ggplot(df.stats.simp, aes(x = transfer.fee.cat)) + geom_bar()
 p = ggplot(df.stats.simp, aes(x = transfer.fee.label, fill=league))
 p + geom_bar()+
@@ -175,25 +176,98 @@ p + geom_bar()+
         text=element_text(family="Goudy Old Style"))+
   scale_fill_manual("National leagues",
                     values=c("grey", "#E08E79", "#F1D4AF", "#ECE5CE", "#C5E0DC", "#774F38"))+
+  ggtitle("Number of transfers per transfer fee")
+
+########################################################################################################################
+############################################################################################################################################
+###### GET PERCENTAGES ####################################################################################################
+#########################################################################################################################
+#####################################################################################################################################
+
+#create my DF
+
+mydf<-df.stats.simp %>% 
+  select( name,club.to ,transfer.fee.cat, transfer.fee, transfer.fee.label,league)
+
+#mean cat per league
+mean.cat<-mydf %>% 
+  group_by(league)%>%
+  dplyr::summarise(
+    fre = n(),
+    category = mean(transfer.fee.cat, na.rm = TRUE)
+  )
+#frequence by league and cat
+leak<-mydf %>% 
+  group_by(transfer.fee.cat,league,transfer.fee.label)%>%
+  dplyr::summarise(
+    fre = n()
+  )
+#percentage
+percentage_df<-leak %>% 
+  group_by(transfer.fee.cat)%>%
+  dplyr::mutate(
+    percentages = fre/sum(fre)*100)
+  )
+percentage_df$percentages<-round(percentage_df$percentages, digit=1)
+
+########################################################################################################################
+############################################################################################################################################
+###### NEW BAR CHART WITH PERCENTAGES ####################################################################################################
+#########################################################################################################################
+#####################################################################################################################################
+
+# order the bar chart so it's increasing cats.
+percentage_df$transfer.fee.label <- factor(percentage_df$transfer.fee.label, levels = percentage_df$transfer.fee.label[order(percentage_df$transfer.fee.cat)])
+
+# add new variable for positionning geom_text in the middle of the bar chart
+percentage_df <- ddply(percentage_df, .(transfer.fee.label), mutate, csum = cumsum(fre)-fre/2)
+
+# creating the bar chart
+percentage_df<-arrange(percentage_df,fre,transfer.fee.label,transfer.fee.cat,league,percentages)
+p = ggplot(percentage_df, aes(x = transfer.fee.label, y=fre, fill=league))
+
+#plotting it
+p + geom_bar(stat="identity")+
+  scale_fill_manual("National leagues",
+                    values=c("grey", "#E08E79", "#F1D4AF", "#ECE5CE", "#C5E0DC", "#774F38"))+
   ggtitle("Number of transfers per transfer fee")+
-  geom_text(aes(label=league))
+  geom_text(aes(y = csum, ymax=fre, ymin=fre, label =paste(round(percentages),"%",sep=""), fontfamily = "Garamond"),  #adding percentages
+            size = 2.5, hjust = 0.5, vjust = 0.5)+
+  theme(axis.title.x=element_blank(),
+        axis.text.x =element_text(size  = 7,
+                                  angle = 45,
+                                  hjust = 1,
+                                  vjust = 1),
+        axis.ticks= element_line(color=NA),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title.y=element_blank(),
+        text=element_text(family="Goudy Old Style"))
 
-library("plyr")
-m1<-ddply(df.stats.simp, .(league), summarize, ratio=transfer.fee.cat/sum(transfer.fee.cat)) 
-m2 = df.stats.simp[order(df.stats.simp$league),]
-mydf = data.frame(m2,ratio=m1$ratio)
+########################################################################################################################
+############################################################################################################################################
+###### NEW BAR CHART WITH FACETS ####################################################################################################
+#########################################################################################################################
+#####################################################################################################################################
 
-#df.stats.simp
-# geom_text(aes(y=n,label=league), colour="white",position=position_dodge(width=0.9), vjust=-0.25)
-# 
-# 
-# gh<-(sum((df.stats.simp$league=="Bundesliga")&(df.stats.simp$transfer.fee.cat==4)))/sum(df.stats.simp$transfer.fee.cat==4)*100
-#   
-# 
-# summary((df.stats.simp$transfer.fee.cat==4)&(df.stats.simp$league=="Bundesliga"))
-# 
-# 
-# geom_text(aes(label=Number), position=position_dodge(width=0.9), vjust=-0.25)+
-#   
-#   levels(df.stats.simp.occ$transfer.fee.cat)
-# df.stats.simp.occ$transfer.fee.cat<-as.numeric(df.stats.simp.occ$transfer.fee.cat)
+p = ggplot(percentage_df, aes(x = transfer.fee.label, y=fre, fill=league))
+p + geom_bar(stat="identity")+
+  scale_fill_manual("National leagues",
+                    values=c( "#BF9692", "#FFAA00", "#3B8686", "#1f3057","#779C00", "#DEE3DC"))+
+  ggtitle("Number of transfers per transfer fee")+
+  #geom_text(aes(y = fre, ymax=fre, ymin=fre, label =paste(round(percentages),"%",sep=""), fontfamily = "Garamond"),
+  #          size = 2, position="dodge", vjust=-0.5)+
+  theme(axis.title.x=element_blank(),
+        axis.text.x =element_text(size  = 7,
+                                  angle = 45,
+                                  hjust = 1,
+                                  vjust = 1),
+        axis.ticks= element_line(color=NA),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title.y=element_blank(),
+        text=element_text(family="Goudy Old Style"))+
+  facet_wrap(~ league)
+
