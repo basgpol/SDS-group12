@@ -587,13 +587,12 @@ write.csv(club.data.clean, file("club.data.clean.csv")
 
 
 ##================ 2.3 Merging player and club data into one tidy data frame ================
-
+setwd("/Users/guillaumeslizewicz/Documents/SDS-group12/Exam_project")
 player.data.clean= read.csv(file="player_data_clean.csv", encoding = "latin1")
 iconv(player.data.clean, from = "latin1", to = "UTF8", sub = NA, mark = TRUE, toRaw = FALSE)
 
 club.data.clean=read.csv(file = "club.data.clean.csv", encoding="UTF8")
 
-transferdata.tidy=merge(player.data.clean,club.data.clean, by.x=c("club.to"),by.y=c("Team"), all.x=TRUE)
 
 ## Handeling promoted clubs
 transferdata.tidy$Status[is.na(transferdata.tidy$Status)] = "Promoted"
@@ -612,6 +611,7 @@ transferdata.tidy$league[(transferdata.tidy$club.to == "SCO Angers")|
                            (transferdata.tidy$club.to == "Troyes")|
                            (transferdata.tidy$club.to == "G. Ajaccio")] = "Ligue 1"
 
+<<<<<<< HEAD
 ## Saving the tidy final data set
 write.table(transferdata.tidy, file = "transferdata.tidy.csv",
                       sep = ",", col.names = NA, qmethod = "double")
@@ -660,3 +660,6 @@ Random forest
 ##================ 4.3 XXXXX  ================
 
 ##================ 4.4 XXXXX  ================
+=======
+
+>>>>>>> origin/master
