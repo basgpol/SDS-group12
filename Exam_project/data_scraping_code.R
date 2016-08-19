@@ -575,7 +575,7 @@ club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barce
                                "Hamburger SV (O)"="Hamburger SV", "Borussia Mönchengladbach"="Bor. M'gladbach", "Schalke 04"="FC Schalke 04",
                                "Bayer Leverkusen"="Bay. Leverkusen", "Eintracht Frankfurt"="E. Frankfurt", "Borussia Dortmund"="Bor. Dortmund",
                                "1899 Hoffenheim" = "TSG Hoffenheim", "FSV Mainz 05"="1.FSV Mainz 05","Chelsea (C)"="Chelsea", "Hull City (R)"="Hull City", "Burnley"="Burnley FC", "Queens Park Rangers (R)"="QPR",
-                               "West Bromwich"="West Brom", "Tottenham Hotspur"="Spurs","Swansea City"="Swansea", 
+                               "West Bromwich Albion"="West Brom", "Tottenham Hotspur"="Spurs","Swansea City"="Swansea", 
                                "Manchester United"="Manchester Utd.", "West Ham United"="West Ham", "Leicester City"="Leicester", 
                                "Newcastle "="Newcastle United")
 
