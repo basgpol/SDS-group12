@@ -553,6 +553,7 @@ player.data.clean = subset(player.data.cleaning, select=-c(X, contract.period.le
 # player_data_clean = rbind(player.data.clean.pt1, player.data.clean.pt2, player.data.clean.pt3)
 # 
 
+player_data_clean = player_data_clean[!duplicated(player_data_clean), ] ## removing dublicated observations (replace!)
 
 ## saving uncleaned player data as csv
 write.table(player.data.clean, file = "player_data_clean.csv",
@@ -636,7 +637,6 @@ write.table(transferdata.tidy, file = "transferdata.tidy.csv",
 
 transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.tidy.csv", encoding = "UTF8", header = TRUE)
 transfer.data = subset(transfer.data, select=-c(X.1, X.2,X))
-transfer.data = transfer.data[!duplicated(transfer.data), ] ## removing dublicated observations (replace!)
 
 ##================ 3.1 XXXXX  ================
 
