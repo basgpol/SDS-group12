@@ -61,12 +61,12 @@
 
 ##========================== 1.1 Loading R-packages =======================================
 
-# library("rvest")
-# library("stringr")
-# library("purrr")
-# library("dplyr")
-# library("RCurl")
-# library("XML")
+library("rvest")
+library("stringr")
+library("purrr")
+library("dplyr")
+library("RCurl")
+library("XML")
 #
 #
 # ##========================== 1.2 Defining key links =======================================
@@ -339,7 +339,7 @@
 player.data.cleaning = read.csv("player_data_unclean.csv") # loading saved version of uncleaned player data
 
 ## Cleaning transfer fee variable
-player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"£","")
+player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"�","")
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"\\.","") #removing the dots
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"m","0000") #removing the m 
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"k","000") #removing the k
@@ -541,6 +541,9 @@ player.data.clean = subset(player.data.cleaning, select=-c(X, contract.period.le
 # 
 # partlyclean.test$searchresults=unlist(lapply(search.2, GoogleHits)) #New column reporting number of search results
 
+## saving uncleaned player data as csv
+write.table(player.data.clean, file = "player_data_clean.csv",
+            sep = ",", col.names = NA, qmethod = "double")
 
 
 ##================ 2.2 Cleaning club data and creating useful predictors ================
@@ -559,7 +562,7 @@ names(club.data.cleaning)[names(club.data)=="Team..v.t.e"] <- "Team"
 names(club.data.cleaning)
 
 ## Renaming clubs in Wikipedia-tabel first
-club.data.cleaning$Team=recode(club.data.cleaning$Team, "Chelsea (C)"="Chelsea", "Hull City (R)"="Hull City", "Burnley"="Burnley FC", "Queens Park Rangers (R)"="QPR",
+club.data.cleaning$Team=recode(club.data.cleaning$Team, "Chelsea (C)"="Chelsea", "Hull City (R)"="Hull City", "Burnley (R)"="Burnley FC", "Queens Park Rangers (R)"="QPR",
 "West Bromwich"="West Brom", "Tottenham Hotspur"="Spurs","Swansea City"="Swansea", 
 "Manchester United"="Manchester Utd.", "West Ham United"="West Ham", "Leicester City"="Leicester", 
 "Newcastle "="Newcastle", "West Bromwich Albion"="West Brom", "Barcelona (C)"="FC Barcelona", "Valencia"="Valencia CF", "MÃ¡laga"="Málaga CF", "Elche[d](R)"="Elche CF", 
@@ -571,7 +574,7 @@ club.data.cleaning$Team=recode(club.data.cleaning$Team, "Chelsea (C)"="Chelsea",
 "Cagliari (R)"="Cagliari Calcio", "Paris Saint-Germain (C)"="Paris SG", "Evian (R)"="Evian", "Metz (R)"="FC Metz", "Lyon"="Olympique Lyon",
 "Bordeaux"="G. Bordeaux", "Lille"="LOSC Lille", "Nice"="OGC Nice", "Caen"="SM Caen", "Nantes"="FC Nantes",
 "Lorient"="FC Lorient", "Bordeaux"="G. Bordeaux", "Lens[b](R)"="RC Lens", "Bastia"="SC Bastia", "Bayern Munich (C)"="Bayern Munich", "SC Freiburg (R)"="SC Freiburg", "SC Paderborn 07 (R)"="SC Paderborn",
-"Hamburger SV (O)"="Hamburger SV", "Borussia MÃ¶nchengladbach"="Bor. M'gladbach", "Schalke 04"="FC Schalke 04",
+"Hamburger SV (O)"="Hamburger SV", "Borussia M�nchengladbach"="Bor. M'gladbach", "Schalke 04"="FC Schalke 04",
 "Bayer Leverkusen"="Bay. Leverkusen", "Eintracht Frankfurt"="E. Frankfurt", "Borussia Dortmund"="Bor. Dortmund",
 "1899 Hoffenheim" = "TSG Hoffenheim", "FSV Mainz 05"="1.FSV Mainz 05")
 
