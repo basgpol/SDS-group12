@@ -155,9 +155,9 @@ df.stats.simp<-  df.stats.simp%>%
 
 #df.stats.simp<-arrange(df.stats.simp,transfer.fee.cat)
 ############################################################################################    
-####################### BAR CHART ##########################################################  
+####################### BAR CHART NUMBER OF TRANSFER PER CAT PER LEAGUE##########################################################  
 ############################################################################################    
-#change label order
+#change chart order
  df.stats.simp$transfer.fee.label <- factor(df.stats.simp$transfer.fee.label, levels = df.stats.simp$transfer.fee.label[order(df.stats.simp$transfer.fee.cat)])
 
 #ggplot(df.stats.simp, aes(x = transfer.fee.cat)) + geom_bar()
@@ -174,8 +174,7 @@ p + geom_bar()+
         panel.background = element_blank(),
         axis.title.y=element_blank(),
         text=element_text(family="Goudy Old Style"))+
-  scale_fill_manual("National leagues",
-                    values=c("grey", "#E08E79", "#F1D4AF", "#ECE5CE", "#C5E0DC", "#774F38"))+
+  scale_fill_manual("National leagues", values=c("grey", "#E08E79", "#F1D4AF", "#ECE5CE", "#C5E0DC", "#774F38"))+
   ggtitle("Number of transfers per transfer fee")
 
 ########################################################################################################################
@@ -231,7 +230,7 @@ p + geom_bar(stat="identity")+
   scale_fill_manual("National leagues",
                     values=c("grey", "#E08E79", "#F1D4AF", "#ECE5CE", "#C5E0DC", "#774F38"))+
   ggtitle("Number of transfers per transfer fee")+
-  geom_text(aes(y = csum, ymax=fre, ymin=fre, label =paste(round(percentages),"%",sep=""), fontfamily = "Garamond"),  #adding percentages
+  geom_text(aes(y = csum, ymax=fre, ymin=fre, label =paste(round(percentages),"%",sep=""), fontfamily = "Garamond"), colour="white",  #adding percentages
             size = 2.5, hjust = 0.5, vjust = 0.5)+
   theme(axis.title.x=element_blank(),
         axis.text.x =element_text(size  = 7,
@@ -270,4 +269,38 @@ p + geom_bar(stat="identity")+
         axis.title.y=element_blank(),
         text=element_text(family="Goudy Old Style"))+
   facet_wrap(~ league)
+
+##############################################################################################################################
+#################################################################################################################   
+####################### BAR CHART NUMBER OF TRANSFER PER transfer CAT PER club cat##########################################################  
+#################################################################################################################    
+#########################################################################################################
+#loading df
+df.club.cat<- df.stats
+#change chart order
+df.stats.simp$transfer.fee.label <- factor(df.stats.simp$transfer.fee.label, levels = df.stats.simp$transfer.fee.label[order(df.stats.simp$transfer.fee.cat)])
+
+#change legend order/names
+df.stats.simp$Status <- as.character(df.stats.simp$Status)
+df.stats.simp$Status[df.stats.simp$Status == "Promoted"] <- "Accessed league this year (Promoted)"
+df.stats.simp$Status[df.stats.simp$Status == "Buttom Club"] <- "Bottom clubs"
+df.stats.simp$Status <- as.factor(df.stats.simp$Status)
+
+
+#ggplot(df.stats.simp, aes(x = transfer.fee.cat)) + geom_bar()
+p = ggplot(df.stats.simp, aes(x = transfer.fee.label, fill=Status))
+p + geom_bar()+
+  theme(axis.title.x=element_blank(),
+        axis.text.x =element_text(size  = 7,
+                                  angle = 45,
+                                  hjust = 1,
+                                  vjust = 1),
+        axis.ticks= element_line(color=NA),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title.y=element_blank(),
+        text=element_text(family="Goudy Old Style"))+
+  scale_fill_manual("National leagues", values=c("grey", "#E08E79", "#F1D4AF", "#ECE5CE", "#C5E0DC", "#774F38"))+
+  ggtitle("Number of transfers per transfer fee")
 
