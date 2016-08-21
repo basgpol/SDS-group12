@@ -104,9 +104,18 @@ train_sample.1<- train_sample.1%>%
 p = ggplot(train_sample.1, aes(x = index , y = transfer.fee))+
   geom_segment(aes(x= index, xend=index, y=transfer.fee, yend=estimate_M1), color="red") +
   geom_point(aes(x = index, y = transfer.fee,text = paste(name, " to ", club.to)), color = "black")   +
-  geom_line(aes(x = index, y = estimate_M1), color="green", size =1)
+  geom_line(aes(x = index, y = estimate_M1), color="green", size =1)+
+  theme(axis.title.x=element_blank(),
+         axis.text.x =element_blank(),
+         axis.ticks= element_line(color=NA),
+         panel.grid.major = element_blank(),
+         panel.grid.minor = element_blank(),
+         panel.background = element_blank(),
+         text=element_text(family="Goudy Old Style"))
+
 gg <- ggplotly(p)  #using plotly to make it interactive
 gg
+<<<<<<< HEAD
 ##================ 4.5 Lasso model  ================
 ## Creating matrices with regressors
 # As the Lasso syntax needs a seperated data.matrix of regressors and a vector of outcomes, we split the set vertically:
@@ -132,3 +141,19 @@ estimate_M3
 get.rmse(test_sample$transfer.fee, estimate_M2)
 
 summary(train_sample$positions)
+=======
+
+#adding theme
+gg+theme(axis.title.x=element_blank(),
+         axis.text.x =element_text(size  = 7,
+                                   angle = 45,
+                                   hjust = 1,
+                                   vjust = 1),
+         axis.ticks= element_line(color=NA),
+         panel.grid.major = element_blank(),
+         panel.grid.minor = element_blank(),
+         panel.background = element_blank(),
+         axis.title.y=element_blank(),
+         text=element_text(family="Goudy Old Style"))
+##================ 4.4 XXXXX  ================>>>>>>> origin/master
+>>>>>>> origin/master
