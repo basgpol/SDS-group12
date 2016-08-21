@@ -26,6 +26,13 @@ library(caret)
 ## Loading the final data set
 transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.tidy.csv", encoding = "UTF8", header = TRUE)
 
+## creating a vector with selected predictors for transferfee ()
+predictors = c(transfer.data$positions, transfer.data$nationality, transfer.data$appearances,
+               transfer.data$total.goals, transfer.data$total.assists, transfer.data$minutes.pr.goal, 
+               transfer.data$total.minutes.played, transfer.data$contract.left.month, 
+               transfer.data$transferage, transfer.data$league, transfer.data$Status, transfer.data$searchresults)
+
+
 ##================ 4.1 Dividing into a train and test sample  ================
 
 ## Creating a vector with the count of 70 pct. of the sample size  
@@ -49,11 +56,8 @@ get.rmse = function(real, estimate){
 }
 
 ##================ 4.3 Baseline model: Simple average from training sample  ================
-estimate_M1 = mean(train_sample$transfer.fee)
-
-get.rmse(mean(test_sample$transfer.fee, estimate_M1)
-
-result.model1 = get.rmse(mean(test_sample$transfer.fee), train_sample$transfer.fee)
+estimate_M1 = mean(train_sample$transfer.fee) #calculating estimate from model 1
+get.rmse(test_sample$transfer.fee, estimate_M1) # calculating RMSE from estimate on test sample 
 
 
 ##================ 4.4 XXXXX  ================
