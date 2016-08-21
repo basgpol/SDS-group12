@@ -27,10 +27,10 @@ library(caret)
 transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.tidy.csv", encoding = "UTF8", header = TRUE)
 
 ## creating a vector with selected predictors for transferfee ()
-predictors = c(transfer.data$positions, transfer.data$nationality, transfer.data$appearances,
-               transfer.data$total.goals, transfer.data$total.assists, transfer.data$minutes.pr.goal, 
-               transfer.data$total.minutes.played, transfer.data$contract.left.month, 
-               transfer.data$transferage, transfer.data$league, transfer.data$Status, transfer.data$searchresults)
+predicting.var = c("transfer.fee", "positions", #"nationality", 
+                   "appearances", "total.goals", "total.assists", 
+               "minutes.pr.goal", "total.minutes.played", "contract.left.month", "transferage",
+               "league", "Status", "searchresults")
 
 
 ##================ 4.1 Dividing into a train and test sample  ================
@@ -45,8 +45,9 @@ set.seed(123)
 train.indicator = sample(seq_len(nrow(transfer.data)), size = train_size)
 
 ## Splitting the data frame into a train (70 pct.) and test sample (30 pct.)
-train_sample = transfer.data[train.indicator, ] # selecting observations with a train indicator
-test_sample = transfer.data[-train.indicator, ] # selecting observations without a train indicator
+train_sample = transfer.data[train.indicator, predicting.var] # selecting observations with a train indicator
+test_sample = transfer.data[-train.indicator, predicting.var] # selecting observations without a train indicator
+
 
 
 ##================ 4.2 Create evaluation function  ================
@@ -60,4 +61,16 @@ estimate_M1 = mean(train_sample$transfer.fee) #calculating estimate from model 1
 get.rmse(test_sample$transfer.fee, estimate_M1) # calculating RMSE from estimate on test sample 
 
 
-##================ 4.4 XXXXX  ================
+##================ 4.4 Ordinary least square model   ================
+Model_2 = lm(transfer.fee ~ ., data = (train_sample) # generating linear model on training data
+summary(Model_2)
+
+estimate_M2 = predict(Model_2, test_sample)
+
+get.rmse(test_sample$transfer.fee, estimate_M2)
+
+
+
+
+
+
