@@ -13,6 +13,8 @@ library(tidyr)
 
 df.stats<-read.csv("/Users/guillaumeslizewicz/Documents/SDS-group12/Exam_project/transferdata.tidy.csv")
 df.stats$transfer.fee<-as.numeric(df.stats$transfer.fee) #set as numeric for transfer fees
+
+####remove player with transfer fee= 0 et contract time left=0
 df.stats<- filter(df.stats,transfer.fee>0 | is.na(contract.left.month)==FALSE)
 
 
@@ -21,97 +23,7 @@ df.stats<- filter(df.stats,transfer.fee>0 | is.na(contract.left.month)==FALSE)
 df.stats.simp<- df.stats
 df.stats.simp$transfer.fee<-cut(x=df.stats.simp$transfer.fee,c(0,10^5,10^6,5000000,10^7,2*10^7,10^9,10^15))
 
-#### Counting the occurences of each cat and creating a new dataframe with only 2 variables
-
-# df.stats.simp.occ = df.stats.simp %>% 
-#   count(transfer.fee) %>% 
-#   arrange(-n) %>% 
-#   ungroup() %>% 
-#   mutate(
-#     #transfer_fee_read = reorder(as.factor(transfer.fee), n)
-#   )
-
-
-###Filter NA
-# df.stats.simp.occ<-df.stats.simp.occ %>% 
-#   filter(!is.na(transfer.fee))
-
-##Add
-
-# df.stats.simp.occ<-  df.stats.simp.occ %>% 
-#   mutate( transfer.fee.cat= as.numeric(transfer.fee))
-
-#### df.stats.simp.occ<-  df.stats.simp.occ %>%
-####  mutate( transfer_free_label=replace(transfer_fee_label, transfer_fee_label==5,"more than 10m" ), replace(transfer_fee_label, transfer_fee_label==4,"between 3m and 10m"))
-
-##create new labels depending on 
-# df.stats.simp.occ<-  df.stats.simp.occ %>% 
-# mutate(transfer.fee.label = ifelse(transfer.fee.cat==5,"Between 10m and 20m",
-#                                     ifelse(transfer.fee.cat==4,"Between 5m and 10m",
-#                                            ifelse( transfer.fee.cat==2,"Between 100k and 1m", 
-#                                                    ifelse( transfer.fee.cat==3,"Between 1m and 5m",
-#                                                            ifelse(transfer.fee.cat==1,"Less than 100k",
-#                                                                   ifelse(transfer.fee.cat==6,"More than 20m",  transfer.fee.cat )))))))
-# 
-# 
-# df.stats.simp.occ<-arrange(df.stats.simp.occ,transfer.fee.cat)
-# ##########Working bar chart 1############
-# library("ggplot2")
-# #change label order
-# df.stats.simp.occ$transfer.fee.label <- factor(df.stats.simp.occ$transfer.fee.label, levels = df.stats.simp.occ$transfer.fee.label[order(df.stats.simp.occ$transfer.fee.cat)])
-# #draw graph
-# p = ggplot(df.stats.simp.occ, aes(x =transfer.fee.label, y = n))
-# 
-# #change graph appearance
-# p + geom_bar(stat = "identity", position = "identity")+ 
-#   theme(#axis.title.x=element_blank(),
-#     axis.text.x =element_text(size  = 7,
-#                               angle = 45,
-#                               hjust = 1,
-#                               vjust = 1),
-#     axis.ticks= element_line(color=NA),
-#     axis.ticks= element_line(color=NA),
-#     panel.grid.major = element_blank(), 
-#     panel.grid.minor = element_blank(),
-#     panel.background = element_blank(),
-#     axis.title.y=element_blank(),
-#     axis.title.x=element_blank())
-# 
-# 
-# 
-# #######################################
-# #######################################
-# #######################################
-# library("ggplot2")
-# p = ggplot(df.stats.simp.occ, aes(x = transfer.fee.cat, y = n, fill=factor(transfer.fee.label)))
-# p + geom_bar(stat = "identity", position = "identity")+ 
-#   theme(axis.title.x=element_blank(),
-#         axis.text.x =element_blank(),
-#         # element_text(size  = 7,
-#         #        angle = 45,
-#         #         hjust = 1,
-#         #       vjust = 1),
-#         axis.ticks= element_line(color=NA),
-#         axis.ticks= element_line(color=NA),
-#         panel.grid.major = element_blank(), 
-#         panel.grid.minor = element_blank(),
-#         panel.background = element_blank(),
-#         axis.title.y=element_blank(),
-#         text=element_text(family="Goudy Old Style"))+
-#   scale_fill_manual("Transfer fees",
-#                     values=c("grey", "#E08E79", "#F1D4AF", "#ECE5CE", "#C5E0DC", "#774F38"),
-#                     breaks=c("Less than 100k","Between 100k and 1m","Between 1m and 5m","Between 5m and 10m","Between 10m and 20m","More than 20m"))+
-#   ggtitle("Number of transfers per transfer fee")
-# 
-# levels(df.stats.simp.occ$transfer.fee.cat)
-# df.stats.simp.occ$transfer.fee.cat<-as.numeric(df.stats.simp.occ$transfer.fee.cat)
-
-##############################################################################
-#######################################
-#######################################
-
-
-p<- plot(df.stats$transfer.fee)
+#p<- plot(df.stats$transfer.fee)
 ####TRANSFER FOR APPEARANCE####
 p.stats = ggplot(df.stats, aes(x = , y = transfer.fee))
 p.stats + geom_point(stat = "identity")
@@ -126,7 +38,7 @@ p <- ggplot(data=df.stats, aes(x = transferage, y = transfer.fee)) +
 gg <- ggplotly(p)
 gg
 
-####TRANSFER FOR AGE, NAME and League####
+####TRANSFER FOR TIME left, NAME and League####
 p <- ggplot(data=df.stats, aes(x = contract.left.month , y = transfer.fee)) +
   geom_point(aes(text = paste(name, " to ", club.to)), size = 4) +
   geom_smooth(aes(colour = league, fill = league))+
@@ -134,6 +46,13 @@ p <- ggplot(data=df.stats, aes(x = contract.left.month , y = transfer.fee)) +
 gg <- ggplotly(p)
 gg
 
+####TRANSFER FOR TIME left, NAME and Status####
+p <- ggplot(data=df.stats, aes(x = contract.left.month , y = transfer.fee)) +
+  geom_point(aes(text = paste(name, " to ", club.to)), size = 4) +
+  geom_smooth(aes(colour = Status, fill = Status))+
+  facet_wrap(~Status )
+gg <- ggplotly(p)
+gg
 
 
 ####TRANSFER FOR NAMES####
