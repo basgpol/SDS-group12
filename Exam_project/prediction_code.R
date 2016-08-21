@@ -2,6 +2,9 @@
 ##--------------------------------- 4. Prediction Models _---------------------------------
 ##=========================================================================================
 
+install.packages("glmnet")
+library("glmnet")
+
 ## Notes ##
 # Possible prediction models
 #   Average
@@ -73,6 +76,15 @@ get.rmse(test_sample$transfer.fee, estimate_M2)
 
 
 
+Model_2 = lm(train_sample$transfer.fee~ train_sample$positions+train_sample$Status+train_sample$transferage+train_sample$searchresults+train_sample$league) # generating linear model on training data
+             summary(Model_2)
+             
+estimate_M2 = predict(Model_2, test_sample)
+estimate_M2
+             
+get.rmse(test_sample$transfer.fee, estimate_M2)
+
+
 <<<<<<< HEAD
 =======
 get.rmse(test_sample$transfer.fee, estimate_M1)
@@ -95,5 +107,28 @@ p = ggplot(train_sample.1, aes(x = index , y = transfer.fee))+
   geom_line(aes(x = index, y = estimate_M1), color="green", size =1)
 gg <- ggplotly(p)  #using plotly to make it interactive
 gg
-##================ 4.4 XXXXX  ================
->>>>>>> origin/master
+##================ 4.5 Lasso model  ================
+## Creating matrices with regressors
+# As the Lasso syntax needs a seperated data.matrix of regressors and a vector of outcomes, we split the set vertically:
+
+
+RegressorMatrix_test = as.matrix(test_sample[,c("transfer.fee","positions", "transferage",
+                                                 "league", "Status", "searchresults")])
+RegressorMatrix_train=model.matrix(~ positions+transferage+
+                league+Status+searchresults, train_sample)
+model.matrix(train_sample)
+
+RegressorMatrix_train=model.matrix(~ transfer.fee+transferage+
+                                     league+Status+searchresults, train_sample)
+
+## Training Lasso
+M3_Lasso = glmnet(x = RegressorMatrix_train, y = train_sample$transfer.fee)
+
+##
+estimate_M3 = predict(M3_Lasso, RegressorMatrix_test)
+estimate_M3
+?glmnet
+
+get.rmse(test_sample$transfer.fee, estimate_M2)
+
+summary(train_sample$positions)
