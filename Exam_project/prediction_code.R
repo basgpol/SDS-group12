@@ -20,8 +20,10 @@
 ## 
 
 
-install.packages("caret")
+#install.packages("caret")
 library(caret)
+library(plotly)
+library(ggplot2)
 
 ## Loading the final data set
 transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.tidy.csv", encoding = "UTF8", header = TRUE)
@@ -71,6 +73,27 @@ get.rmse(test_sample$transfer.fee, estimate_M2)
 
 
 
+<<<<<<< HEAD
+=======
+get.rmse(test_sample$transfer.fee, estimate_M1)
+>>>>>>> origin/master
 
 
+<<<<<<< HEAD
 
+=======
+#create new data frame
+train_sample.1<- train_sample %>% 
+  select(name,transfer.fee,Status,club.to) 
+train_sample.1<- train_sample.1%>% 
+  mutate(index=1:496)
+
+#creating GGplot
+p = ggplot(train_sample.1, aes(x = index , y = transfer.fee))+
+  geom_segment(aes(x= index, xend=index, y=transfer.fee, yend=estimate_M1), color="red") +
+  geom_point(aes(x = index, y = transfer.fee,text = paste(name, " to ", club.to)), color = "black")   +
+  geom_line(aes(x = index, y = estimate_M1), color="green", size =1)
+gg <- ggplotly(p)  #using plotly to make it interactive
+gg
+##================ 4.4 XXXXX  ================
+>>>>>>> origin/master
