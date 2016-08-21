@@ -2,6 +2,8 @@
 ######################################### BAR CHART ##################################################################
 ######################################################################################################################
 ######################################################################################################################
+
+library(plotly)
 library(plyr)
 library(ggplot2)
 library(dplyr)
@@ -11,6 +13,8 @@ library(tidyr)
 
 df.stats<-read.csv("/Users/guillaumeslizewicz/Documents/SDS-group12/Exam_project/transferdata.tidy.csv")
 df.stats$transfer.fee<-as.numeric(df.stats$transfer.fee) #set as numeric for transfer fees
+df.stats<- filter(df.stats,transfer.fee>0 | is.na(contract.left.month)==FALSE)
+
 
 ####change transfer fees in categories
 
@@ -105,7 +109,34 @@ df.stats.simp$transfer.fee<-cut(x=df.stats.simp$transfer.fee,c(0,10^5,10^6,50000
 ##############################################################################
 #######################################
 #######################################
+
+
+p<- plot(df.stats$transfer.fee)
 ####TRANSFER FOR APPEARANCE####
+p.stats = ggplot(df.stats, aes(x = , y = transfer.fee))
+p.stats + geom_point(stat = "identity")
+p<-qplot(appearances, transfer.fee, data=df.stats, colour=league)
+ggplotly()
+
+####TRANSFER FOR AGE, NAME and League####
+p <- ggplot(data=df.stats, aes(x = transferage, y = transfer.fee)) +
+  geom_point(aes(text = paste("Name:",name)), size = 4) +
+  geom_smooth(aes(colour = Status, fill = Status))+
+  facet_wrap(~Status )
+gg <- ggplotly(p)
+gg
+
+####TRANSFER FOR AGE, NAME and League####
+p <- ggplot(data=df.stats, aes(x = contract.left.month , y = transfer.fee)) +
+  geom_point(aes(text = paste(name, " to ", club.to)), size = 4) +
+  geom_smooth(aes(colour = league, fill = league))+
+  facet_wrap(~league )
+gg <- ggplotly(p)
+gg
+
+
+
+####TRANSFER FOR NAMES####
 p.stats = ggplot(df.stats, aes(x = appearances , y = transfer.fee))
 p.stats + geom_point(stat = "identity")
 
