@@ -34,12 +34,15 @@ library(dplyr)
 transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", encoding = "UTF8", header = TRUE)
 
 ## creating a vector with selected predictors for transferfee ()
-predicting.var = c("transfer.fee", "positions", #"nationality", 
-                   "appearances", "total.goals", "total.assists", 
+predicting.var = c("transfer.fee", "positions", "appearances", "total.goals", "total.assists", 
                "minutes.pr.goal", "total.minutes.played", "contract.left.month", "transferage",
+<<<<<<< Updated upstream
                "league", "Status", 
                #"searchresults",
                "Status")
+=======
+               "league", "Status")
+>>>>>>> Stashed changes
 
 
 
@@ -55,7 +58,7 @@ set.seed(123)
 train.indicator = sample(seq_len(nrow(transfer.data)), size = train_size)
 
 ## Splitting the data frame into a train (70 pct.) and test sample (30 pct.)
-train_sample = transfer.data[train.indicator, predicting.var] # selecting observations with a train indicator
+train_sample = transfer.data[train.indicator,predicting.var] # selecting observations with a train indicator
 test_sample = transfer.data[-train.indicator, predicting.var] # selecting observations without a train indicator
 
 
@@ -103,10 +106,16 @@ estimate_M2 = predict(Model_2, test_sample)
 get.rmse(test_sample$transfer.fee, estimate_M2)
 
 
+<<<<<<< Updated upstream
 Model_2 = lm(train_sample$transfer.fee~ train_sample$positions+train_sample$Status+train_sample$transferage+
                #train_sample$searchresults+
                train_sample$league) # generating linear model on training data
              summary(Model_2)
+=======
+
+Model_2 = lm(train_sample$transfer.fee~ train_sample$positions+train_sample$Status+train_sample$transferage+train_sample$league) # generating linear model on training data
+summary(Model_2)
+>>>>>>> Stashed changes
              
 estimate_M2 = predict(Model_2, test_sample)
 estimate_M2
@@ -158,7 +167,7 @@ ggplot(performance_Lasso, aes(x = lambda, y = RMSError))+
   geom_line() + 
   theme_minimal()
 
-## Identidying lambda with the lowest RMSE
+## Identifying lambda with the lowest RMSE
 best.lambda = performance_Lasso$lambda[performance_Lasso$RMSError == min(performance_Lasso$RMSError)]
 
 ## Coefficients for best models
@@ -169,17 +178,34 @@ get.rmse(predict(Model_3, RegressorMatrix_test, s=best.lambda), test_sample$tran
 
 
 ##================ 4.6 Decision tree   ================
+<<<<<<< Updated upstream
 # install.packages("rpart")
 library("rpart")
 Model_4=rpart(formula=transfer.fee~positions+transferage+
-                league+Status+
-                #searchresults+
-                contract.left.month+total.goals+appearances, data=train_sample)
+                league+Status+contract.left.month+total.goals+appearances, data=train_sample)
+Model_4$cptable
+
+##Finding CP value with lowest xerror
+alpha <-Model_4$cptable[which.min(Model_4$cptable[,"xerror"]),"CP"]
 
 printcp(Model_4)
 summary(Model_4)
+##Pruning the tree
+prune.Model_4 <- prune(Model_4,alpha)
+
+plot(Model_4)
+text(Model_4)
+
+plot(prune.Model_4, uniform=TRUE, branch=0.6, margin=0.05)
+text(prune.Model_4, all=TRUE, use.n=TRUE)
 
 
 
 ##================ 4.6   ================>>>>>>> origin/master
+=======
+
+
+## Using cross validation to see whether pruning the tree will increase performance
+
+
 
