@@ -120,7 +120,7 @@ gg <- ggplotly(p)  #using plotly to make it interactive
 gg
 <<<<<<< HEAD
 ##================ 4.5 Lasso model  ================
-## Creating matrices with regressors
+## Creating matrices with all regressors beacuse the glmnet function only works with matrices
 RegressorMatrix_train=model.matrix(~ positions+transferage+
                                     league+Status+searchresults, train_sample)
 RegressorMatrix_test=model.matrix(~ positions+transferage+
@@ -128,17 +128,53 @@ RegressorMatrix_test=model.matrix(~ positions+transferage+
 
 
 ## Training Lasso
-M3_Lasso = glmnet(x = RegressorMatrix_train, y = train_sample$transfer.fee)
-M3_Lasso
+Model_3 = glmnet(x = RegressorMatrix_train, y = train_sample$transfer.fee)
+Model_3
+
 ##
-estimate_M3 = predict(M3_Lasso, RegressorMatrix_test)
+estimate_M3 = predict(Model_3, RegressorMatrix_test)
 estimate_M3
 
 
 get.rmse(test_sample$transfer.fee, estimate_M3)
 
-summary(train_sample$positions)
-=======
+# Calculating RSME for each lambda
+lambda_values = Model_3$lambda
+
+performance_Lasso = data.frame()
+
+for (lambda in lambda_values){
+  performance_Lasso = rbind(performance_Lasso,
+                            data.frame(lambda = lambda,
+                                       RMSError = get.rmse(predict(Model_3, RegressorMatrix_test, s = lambda),
+                                                       test_sample$transfer.fee)))
+}
+performance_Lasso
+
+##Visualization of RSME as a function of lamda
+ggplot(performance_Lasso, aes(x = lambda, y = RMSError))+
+  geom_point() + 
+  geom_line() + 
+  theme_minimal()
+
+## Identidying lambda with the lowest RMSE
+best.lambda = performance_Lasso$lambda[performance_Lasso$RMSError == min(performance_Lasso$RMSError)]
+
+## Coefficients for best models
+coef(M3_Lasso, s = best.lambda)
+
+## RMSE for best model
+get.rmse(predict(Model_3, RegressorMatrix_test, s=best.lambda), test_sample$transfer.fee)
+
+
+##================ 4.6 Decision tree   ================
+
+
+
+
+
+
+##=====================================================
 
 #adding theme
 gg+theme(axis.title.x=element_blank(),
@@ -152,5 +188,5 @@ gg+theme(axis.title.x=element_blank(),
          panel.background = element_blank(),
          axis.title.y=element_blank(),
          text=element_text(family="Goudy Old Style"))
-##================ 4.4 XXXXX  ================>>>>>>> origin/master
+##================ 4.6   ================>>>>>>> origin/master
 
