@@ -69,7 +69,7 @@ df.viz<- filter(df.viz,transfer.fee>0)
 #                                                               ifelse(league=="Serie A", paste(team,"ITALY", sep = " "),
 #                                                                      ifelse(league=="Premier league", paste(team,"UK", sep = " "),
 #                                                                             ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
-# 
+
 #geocode team
 geocodes <- geocode(as.character(df.spending.club$team))
 
