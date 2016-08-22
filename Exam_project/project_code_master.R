@@ -338,7 +338,7 @@ library("XML")
 ##================ 2.1 Cleaning player data and creating useful predictors ================
 player.data.cleaning = read.csv("player_data_unclean.csv", encoding = "Latin1") # loading saved version of uncleaned player data
 
-## Cleaning transfer fee variable
+## 2.1.1: Cleaning transfer fee variable
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"£","")
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"\\.","") #removing the dots
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"m","0000") #removing the m 
@@ -347,15 +347,15 @@ player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fe
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"\\?", NA) #removing ? and turn into NA
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"Free transfer","0") # Setting free transfer to be equal to 0
 
-## cleaning goals pr. minutes
+## 2.1.2: Cleaning goals pr. minutes
 player.data.cleaning$minutes.pr.goal = str_sub(player.data.cleaning$minutes.pr.goal, start=1, end=-2)
 player.data.cleaning$minutes.pr.goal = str_replace(player.data.cleaning$minutes.pr.goal,"\\.","")
 
-## cleaning total minutes played
+## 2.1.3: Cleaning total minutes played
 player.data.cleaning$total.minutes.played = str_sub(player.data.cleaning$total.minutes.played, start=1, end=-2)
 player.data.cleaning$total.minutes.played = str_replace(player.data.cleaning$total.minutes.played,"\\.","")
 
-## Cleaning variable for transferdate
+## 2.1.4: Cleaning variable for transferdate
 player.data.cleaning$transfer.year = sub(".*,", "", player.data.cleaning$transfer.date) # subtract the year
 player.data.cleaning$transfer.month = str_sub(player.data.cleaning$transfer.date, start=1, end=-9) #subtract month
 player.data.cleaning$transfer.month = str_replace(player.data.cleaning$transfer.month, "Jan", 01) #month by number instead of character
@@ -377,7 +377,7 @@ player.data.cleaning$transfer.date = paste(player.data.cleaning$transfer.year,"/
 
 player.data.cleaning$transfer.date = str_replace_all(player.data.cleaning$transfer.date, " ","") 
 
-## cleaning contract length left
+## 2.1.5: Cleaning contract length left
 player.data.cleaning$contract.period.left = gsub("(?<=\\()[^()]*(?=\\))(*SKIP)(*F)|.", "", player.data.cleaning$contract.period.left, perl=T) #extract the date when the contract expires
 
 player.data.cleaning$end.year = sub(".*,", "", player.data.cleaning$contract.period.left) # subtract the year
@@ -409,10 +409,11 @@ player.data.cleaning$contract.left = as.Date(as.character(player.data.cleaning$c
 
 player.data.cleaning$contract.left.month = player.data.cleaning$contract.left / 30.4375 ## rescaling from days to months
 
-## mistakes at transfermarkt.co.uk does that we recieve som negative contract length -  we turn them into NA
+## mistakes at transfermarkt.co.uk does that we recieve some observations with a negative contract length 
+## we turn them into NA
 player.data.cleaning$contract.left.month[player.data.cleaning$contract.left.month < 0] = NA 
 
-## cleaning age variabel
+## 2.1.6: Cleaning age variabel
 player.data.cleaning$birth.date = player.data.cleaning$age
 player.data.cleaning$birth.date = str_replace_all(player.data.cleaning$birth.date, " ","")
 player.data.cleaning$birth.date = str_sub(player.data.cleaning$birth.date, start=1, end=-6) #birth date
@@ -443,18 +444,19 @@ player.data.cleaning$birth.date = str_replace_all(player.data.cleaning$birth.dat
 player.data.cleaning$birth.date = str_replace(player.data.cleaning$birth.date," ","")
 player.data.cleaning$birth.date = str_replace(player.data.cleaning$birth.date,"\n","")
 
-# calculating the age at the transferdate 
+## Calculating the age at the transferdate 
 player.data.cleaning$transferage = as.Date(as.character(player.data.cleaning$transfer.date), format = "%Y/%m/%d") -
   as.Date(as.character(player.data.cleaning$birth.date), format = "%Y/%m/%d")
 
 player.data.cleaning$transferage = player.data.cleaning$transferage / 365.25 #rescaling from days to years
 
 
-### Creating var that group players in defenders, midfielders and attackers 
+### 2.1.7: Creating variable that group players in defenders, midfielders and attackers 
+#player.data.cleaning$positions = str_replace(player.data.cleaning$positions," Defender","Defender")
 player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Right-Back","Defender")
 player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Left-Back","Defender")
 player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Centre Back","Defender")
-player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"-","Defender") # one observation has a -, but is defender - AMER?
+#player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"-","Defender") # one observation has a -, but is defender - AMER?
 player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Attacking Midfield","Midfield")
 player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Central Midfield","Midfield")
 player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Defensive Midfield","Midfield")
@@ -466,7 +468,8 @@ player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Cen
 player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Secondary Striker","Attacker")
 
 
-# For performance stats set - equal to 0
+### 2.1.8: General cleaning 
+## Setting "-" equal to 0 for the performance variables
 perform.var = c("appearances", "total.goals", "total.assists", 
                 "substitutions_in", "substitutions_out", "yellowcards", "secondyellow",
                 "redcards", "penaltygoals", "minutes.pr.goal","total.minutes.played")
@@ -475,37 +478,36 @@ player.data.cleaning[perform.var] =
 
 player.data.cleaning[perform.var][player.data.cleaning[perform.var] == "-"] = 0 #replacing - with 0 for performance variables
 
-# Removing rows where positions are unknown.
-player.data.cleaning = player.data.cleaning[-c(67, 78, 83, 105, 178, 457, 659), ]
+## Removing rows where positions are unknown.
+player.data.cleaning = player.data.cleaning[-c(30, 67, 78, 83, 105, 178, 457, 659), ]
 
-# Removing players who appear double in the sample
-#player.data.cleaning = player.data.cleaning[-c(59, 118, 131, 157, 161, 184, 291, 335, 357, 377, 379, 385, 394, 499, 521, 528, 557, 572, 578, 598, 645, 662, 745, 753), ]
+## Removing players who appear double in the sample
 player.data.cleaning = subset(player.data.cleaning, select=-c(X))
 player.data.cleaning = player.data.cleaning[!duplicated(player.data.cleaning), ] ## removing dublicated observations
 
-# Removing rows which contain transfer.fee = NA
+## Removing rows which contain transfer.fee = NA
 player.data.cleaning = subset(player.data.cleaning, !is.na(transfer.fee))
 
-# Removing keepers
+## Removing keepers
 player.data.cleaning = player.data.cleaning[!grepl("Keeper", player.data.cleaning$positions),]
 
-# Putting NA in all blank cells 
+## Putting NA in all blank cells 
 player.data.cleaning[player.data.cleaning == ""] = NA 
 
 
-### Transforming number variables into numeric variables
+### Transforming variables containing numbers into numeric variables
 sapply(player.data.cleaning, class) #inspecting the class of all variables
 
 var.to.numeric = c("age", "transfer.fee", "appearances", "total.goals", "total.assists", 
                    "substitutions_in", "substitutions_out", "yellowcards", "secondyellow",
-                   "redcards", "penaltygoals", "minutes.pr.goal","total.minutes.played")
-#creating a vector with the names of the variables that we want numeric
+                   "redcards", "penaltygoals", "minutes.pr.goal","total.minutes.played") #creating a 
+                    #vector with the names of the variables that we want numeric
 
 player.data.cleaning[var.to.numeric] = 
   sapply(player.data.cleaning[var.to.numeric], as.numeric) #  transforming the selected var into numeric
 
 
-# Selecting the Remocing column X.1 and X, which are not useful.
+## Removing column X.1 and X, which are not useful.
 names(player.data.cleaning)
 player.data.clean = subset(player.data.cleaning, select=-c(contract.period.left, age, 
                                                            transfer.year, transfer.month, 
@@ -514,7 +516,9 @@ player.data.clean = subset(player.data.cleaning, select=-c(contract.period.left,
                                                            birth.year, birth.month, birth.day))
 
 
-###### GOOGLE SEARCH #######
+### 2.2: Adding a variable with the number of google hits on the player
+
+## Creating a function that find the 
 GoogleHits <- function(input)  #Function that seach for the input specified
 {
   input = gsub(" ", "+", input)
@@ -532,10 +536,14 @@ GoogleHits <- function(input)  #Function that seach for the input specified
   return(as.integer(gsub("[^0-9]", "", res)))
 }
 
-
+##
 search.1=dQuote(player.data.clean$name)  #Put quotation marks around name of the player
 search.2=paste(search.1,"footballer", sep=" ") #Paste name of footballer, the word footballer and nationality
 search.2
+
+# OBS!
+# Google as maximum number of searches that you can make on one day. Therefore we splittet our
+# search in three parts and did the searches from different IP-addresses. 
 
 player.data.clean.pt1=player.data.clean[1:250,]
 list.pt.1=lapply(search.2[1:250], GoogleHits)
@@ -545,16 +553,15 @@ player.data.clean.pt2=player.data.clean[251:500,]
 list.pt.2=lapply(search.2[251:500], GoogleHits)
 player.data.clean.pt2$searchresults=unlist(list.pt.2) #New column reporting number of search results
 
-player.data.clean.pt3=player.data.clean[501:709,]
-list.pt.3=lapply(search.2[501:709], GoogleHits)
+player.data.clean.pt3=player.data.clean[501:696,]
+list.pt.3=lapply(search.2[501:696], GoogleHits)
 player.data.clean.pt3$searchresults=unlist(list.pt.3) #New column reporting number of search results
 
 player_data_clean = rbind(player.data.clean.pt1, player.data.clean.pt2, player.data.clean.pt3)
 
-
-## saving uncleaned player data as csv
+## saving cleaned player data as csv
 write.table(player.data.clean, file = "player_data_clean.csv",
-            sep = ",", col.names = NA, qmethod = "double")
+            sep = ",", col.names = NA, qmethod = "double", fileEncoding = "UTF-8")
 
 
 ##================ 2.2 Cleaning club data and creating useful predictors ================
@@ -574,16 +581,16 @@ names(club.data.cleaning)
 
 ## Renaming clubs in Wikipedia-tabel first
 
-club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barcelona", "Valencia"="Valencia CF", "MÃ¡laga"="MÃ¡laga CF", "Elche[d](R)"="Elche CF", 
-                               "Levante"="Levante UD", "Getafe"="Getafe CF", "Deportivo La CoruÃ±a"="Dep. La CoruÃ±a", "Granada"="Granada CF",
-                               "Eibar"="SD Eibar", "AlmerÃ�a (R)"="UD AlmerÃ�a", "CÃ³rdoba (R)"="CÃ³rdoba CF", "Sevilla"="Sevilla FC",
+club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barcelona", "Valencia"="Valencia CF", "Málaga"="Málaga CF", "Elche[d](R)"="Elche CF", 
+                               "Levante"="Levante UD", "Getafe"="Getafe CF", "Deportivo La Coruña"="Dep. La Coruña", "Granada"="Granada CF",
+                               "Eibar"="SD Eibar", "Almería (R)"="UD Almería", "Córdoba (R)"="Córdoba CF", "Sevilla"="Sevilla FC",
                                "Villarreal" = "Villarreal CF", "Celta Vigo" = "Celta de Vigo","Juventus (C)"="Juventus", "Cargliari (R)"="Cagliari Calcio", "Parma[c](R)"="Parma", "Cesena (R)"="Cesena",
                                "Internazionale"="Inter", "Genoa[b]"="Genoa", "Roma"="AS Roma", "Napoli"="SSC Napoli", "Milan"="AC Milan",
                                "Palermo"="US Palermo", "Chievo"="Chievo Verona", "Empoli"="FC Empoli", "Udinese"="Udinese Calcio",
                                "Cagliari (R)"="Cagliari Calcio","Paris Saint-Germain (C)"="Paris SG", "Evian (R)"="Evian", "Metz (R)"="FC Metz", "Lyon"="Olympique Lyon",
                                "Bordeaux"="G. Bordeaux", "Lille"="LOSC Lille", "Nice"="OGC Nice", "Caen"="SM Caen", "Nantes"="FC Nantes",
                                "Lorient"="FC Lorient", "Bordeaux"="G. Bordeaux", "Lens[b](R)"="RC Lens", "Bastia"="SC Bastia","Bayern Munich (C)"="Bayern Munich ", "SC Freiburg (R)"="SC Freiburg", "SC Paderborn 07 (R)"="SC Paderborn",
-                               "Hamburger SV (O)"="Hamburger SV", "Borussia MÃ¶nchengladbach"="Bor. M'gladbach", "Schalke 04"="FC Schalke 04",
+                               "Hamburger SV (O)"="Hamburger SV", "Borussia Mönchengladbach"="Bor. M'gladbach", "Schalke 04"="FC Schalke 04",
                                "Bayer Leverkusen"="Bay. Leverkusen", "Eintracht Frankfurt"="E. Frankfurt", "Borussia Dortmund"="Bor. Dortmund",
                                "1899 Hoffenheim" = "TSG Hoffenheim", "FSV Mainz 05"="1.FSV Mainz 05","Chelsea (C)"="Chelsea", "Hull City (R)"="Hull City", "Burnley"="Burnley FC", "Queens Park Rangers (R)"="QPR",
                                "West Bromwich Albion"="West Brom", "Tottenham Hotspur"="Spurs","Swansea City"="Swansea", 
@@ -595,49 +602,51 @@ club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barce
 names(club.data.cleaning)
 club.data.clean = subset(club.data.cleaning, select=c(Team, league, Status))
 write.csv(club.data.clean, file("club.data.clean.csv")
+
+## saving cleaned player data as csv
+write.table(club.data.clean, file = "club_data_clean.csv",
+            sep = ",", col.names = NA, qmethod = "double", fileEncoding = "UTF-8")          
+      
+# ##================ 2.3 Merging player and club data into one tidy data frame ================
+# setwd("/Users/guillaumeslizewicz/Documents/SDS-group12/Exam_project")
+# player.data.clean= read.csv(file="player_data_clean.csv", encoding = "latin1")
+# iconv(player.data.clean, from = "latin1", to = "UTF8", sub = NA, mark = TRUE, toRaw = FALSE)
+# 
+# club.data.clean=read.csv(file = "club.data.clean.csv", encoding="UTF8")
           
+transferdata.tidy=merge(player.data.clean,club.data.clean, by.x=c("club.to"),by.y=c("Team"), all.x=TRUE)
           
-          ##================ 2.3 Merging player and club data into one tidy data frame ================
-          setwd("/Users/guillaumeslizewicz/Documents/SDS-group12/Exam_project")
-          player.data.clean= read.csv(file="player_data_clean.csv", encoding = "latin1")
-          iconv(player.data.clean, from = "latin1", to = "UTF8", sub = NA, mark = TRUE, toRaw = FALSE)
+## Handeling promoted clubs
+transferdata.tidy$Status[is.na(transferdata.tidy$Status)] = "Promoted"
+transferdata.tidy$league[(transferdata.tidy$club.to == "Watford") | 
+                         (transferdata.tidy$club.to == "Norwich")|
+                         (transferdata.tidy$club.to == "Bournemouth")] = "Premier league"
+transferdata.tidy$league[(transferdata.tidy$club.to == "FC Ingolstadt") | 
+                         (transferdata.tidy$club.to == "SV Darmstadt 98")] = "Bundesliga"
+transferdata.tidy$league[(transferdata.tidy$club.to == "UD Las Palmas")| 
+                         (transferdata.tidy$club.to == "Sporting Gijón")|
+                         (transferdata.tidy$club.to == "Real Betis")] = "La Liga"
+transferdata.tidy$league[(transferdata.tidy$club.to == "Bologna")| 
+                         (transferdata.tidy$club.to == "Carpi")|
+                         (transferdata.tidy$club.to == "Frosinone")] = "Serie A"
+transferdata.tidy$league[(transferdata.tidy$club.to == "SCO Angers")| 
+                         (transferdata.tidy$club.to == "Troyes")|
+                         (transferdata.tidy$club.to == "G. Ajaccio")] = "Ligue 1"
           
-          club.data.clean=read.csv(file = "club.data.clean.csv", encoding="UTF8")
+## Saving the tidy final data set 
+write.table(transferdata.tidy, file = "transferdata.tidy.csv",
+            sep = ",", col.names = NA, qmethod = "double", fileEncoding = "UTF-8")
           
+##=========================================================================================
+##--------------------------------- 3. Visualization---------------------------------------
+##=========================================================================================
           
-          ## Handeling promoted clubs
-          transferdata.tidy$Status[is.na(transferdata.tidy$Status)] = "Promoted"
-          transferdata.tidy$league[(transferdata.tidy$club.to == "Watford") | 
-                                     (transferdata.tidy$club.to == "Norwich")|
-                                     (transferdata.tidy$club.to == "Bournemouth")] = "Premier league"
-          transferdata.tidy$league[(transferdata.tidy$club.to == "FC Ingolstadt") | 
-                                     (transferdata.tidy$club.to == "SV Darmstadt 98")] = "Bundesliga"
-          transferdata.tidy$league[(transferdata.tidy$club.to == "UD Las Palmas")| 
-                                     (transferdata.tidy$club.to == "Sporting GijÃ³n")|
-                                     (transferdata.tidy$club.to == "Real Betis")] = "La Liga"
-          transferdata.tidy$league[(transferdata.tidy$club.to == "Bologna")| 
-                                     (transferdata.tidy$club.to == "Carpi")|
-                                     (transferdata.tidy$club.to == "Frosinone")] = "Serie A"
-          transferdata.tidy$league[(transferdata.tidy$club.to == "SCO Angers")| 
-                                     (transferdata.tidy$club.to == "Troyes")|
-                                     (transferdata.tidy$club.to == "G. Ajaccio")] = "Ligue 1"
+transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.tidy.csv", encoding = "UTF8", header = TRUE)
+transfer.data = subset(transfer.data, select=-c(X.1, X.2,X))
           
-          <<<<<<< HEAD
-          ## Saving the tidy final data set
-          write.table(transferdata.tidy, file = "transferdata.tidy.csv",
-                      sep = ",", col.names = NA, qmethod = "double")
+##================ 3.1 XXXXX  ================
           
-          
-          ##=========================================================================================
-          ##--------------------------------- 3. Visualization---------------------------------------
-          ##=========================================================================================
-          
-          transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.tidy.csv", encoding = "UTF8", header = TRUE)
-          transfer.data = subset(transfer.data, select=-c(X.1, X.2,X))
-          
-          ##================ 3.1 XXXXX  ================
-          
-          ##================ 3.2 XXXXX  ================
+##================ 3.2 XXXXX  ================
 
 ##================ 3.3 XXXXX  ================
 
@@ -671,6 +680,4 @@ Random forest
 ##================ 4.3 XXXXX  ================
 
 ##================ 4.4 XXXXX  ================
-=======
 
->>>>>>> origin/master
