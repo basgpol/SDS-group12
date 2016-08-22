@@ -29,21 +29,20 @@ library(plotly)
 library(ggplot2)
 library(glmnet)
 library(dplyr)
+library(plotly)
 
 ## Loading the final data set
 transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", encoding = "UTF8", header = TRUE)
+## Creating a new variable which is age squared
+transfer.data$transferage_sq = transfer.data$transferage^2
+
 
 ## creating a vector with selected predictors for transferfee ()
 predicting.var = c("transfer.fee", "positions", "appearances", "total.goals", "total.assists", 
-               "minutes.pr.goal", "total.minutes.played", "contract.left.month", "transferage",
-<<<<<<< Updated upstream
-               "league", "Status", 
-               #"searchresults",
-               "Status")
-=======
-               "league", "Status")
->>>>>>> Stashed changes
-
+               "total.minutes.played", "contract.left.month","transferage",
+               "league", "Status", "searchresults","transferage_sq")
+## Removing observations where contract lenght is unknown
+transfer.data=filter(transfer.data , is.na(contract.left.month) == FALSE) 
 
 
 ##================ 4.1 Dividing into a train and test sample  ================
@@ -78,7 +77,7 @@ get.rmse(test_sample$transfer.fee, estimate_M1) # calculating RMSE from estimate
 train_sample.1<- train_sample %>% 
   select(transfer.fee,league) 
 train_sample.1<- train_sample.1%>% 
-  mutate(index=1:487)
+  mutate(index=1:258)
 
 #creating GGplot for visualisation
 p = ggplot(train_sample.1, aes(x = index , y = transfer.fee))+
@@ -106,16 +105,8 @@ estimate_M2 = predict(Model_2, test_sample)
 get.rmse(test_sample$transfer.fee, estimate_M2)
 
 
-<<<<<<< Updated upstream
-Model_2 = lm(train_sample$transfer.fee~ train_sample$positions+train_sample$Status+train_sample$transferage+
-               #train_sample$searchresults+
-               train_sample$league) # generating linear model on training data
-             summary(Model_2)
-=======
 
-Model_2 = lm(train_sample$transfer.fee~ train_sample$positions+train_sample$Status+train_sample$transferage+train_sample$league) # generating linear model on training data
-summary(Model_2)
->>>>>>> Stashed changes
+
              
 estimate_M2 = predict(Model_2, test_sample)
 estimate_M2
