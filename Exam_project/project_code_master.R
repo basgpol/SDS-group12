@@ -339,7 +339,7 @@ library("XML")
 player.data.cleaning = read.csv("player_data_unclean.csv", encoding = "Latin1") # loading saved version of uncleaned player data
 
 ## 2.1.1: Cleaning transfer fee variable
-player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"Â£","")
+player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"£","")
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"\\.","") #removing the dots
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"m","0000") #removing the m 
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"k","000") #removing the k
@@ -557,7 +557,7 @@ player.data.clean.pt3=player.data.clean[501:696,]
 list.pt.3=lapply(search.2[501:696], GoogleHits)
 player.data.clean.pt3$searchresults=unlist(list.pt.3) #New column reporting number of search results
 
-player_data_clean = rbind(player.data.clean.pt1, player.data.clean.pt2, player.data.clean.pt3)
+player.data.clean = rbind(player.data.clean.pt1, player.data.clean.pt2, player.data.clean.pt3)
 
 ## saving cleaned player data as csv
 write.table(player.data.clean, file = "player_data_clean.csv",
@@ -681,3 +681,4 @@ Random forest
 
 ##================ 4.4 XXXXX  ================
 
+player.data = read.csv("transferdata.tidy_withNA.csv", encoding="UTF-8")
