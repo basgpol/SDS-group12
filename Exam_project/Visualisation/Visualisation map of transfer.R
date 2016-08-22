@@ -88,7 +88,10 @@ g <- list(
 )
 g
 
-plot_ly(df.spending.club, lat = lat, lon = lon, text = team, color = transfer.fee.total,
+plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
+        #text = team,
+        hoverinfo = "text" ,
+        text=paste("Team = ", df.spending.club$team,"\n", "Total transfer = ", df.spending.club$transfer.fee.total),
         type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers', 
         marker = m) %>%
   layout(title = 'Football teams in Europe and transfer spending<br>(Hover for airport)', geo = g)
