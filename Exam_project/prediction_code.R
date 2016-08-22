@@ -27,6 +27,8 @@ library("glmnet")
 library(caret)
 library(plotly)
 library(ggplot2)
+library(glmnet)
+library(dplyr)
 
 ## Loading the final data set
 transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.tidy.csv", encoding = "UTF8", header = TRUE)
@@ -36,6 +38,7 @@ predicting.var = c("transfer.fee", "positions", #"nationality",
                    "appearances", "total.goals", "total.assists", 
                "minutes.pr.goal", "total.minutes.played", "contract.left.month", "transferage",
                "league", "Status", "searchresults")
+
 
 
 ##================ 4.1 Dividing into a train and test sample  ================
@@ -118,27 +121,21 @@ gg
 <<<<<<< HEAD
 ##================ 4.5 Lasso model  ================
 ## Creating matrices with regressors
-# As the Lasso syntax needs a seperated data.matrix of regressors and a vector of outcomes, we split the set vertically:
-
-
-RegressorMatrix_test = as.matrix(test_sample[,c("transfer.fee","positions", "transferage",
-                                                 "league", "Status", "searchresults")])
 RegressorMatrix_train=model.matrix(~ positions+transferage+
-                league+Status+searchresults, train_sample)
-model.matrix(train_sample)
+                                    league+Status+searchresults, train_sample)
+RegressorMatrix_test=model.matrix(~ positions+transferage+
+                                    league+Status+searchresults, test_sample)
 
-RegressorMatrix_train=model.matrix(~ transfer.fee+transferage+
-                                     league+Status+searchresults, train_sample)
 
 ## Training Lasso
 M3_Lasso = glmnet(x = RegressorMatrix_train, y = train_sample$transfer.fee)
-
+M3_Lasso
 ##
 estimate_M3 = predict(M3_Lasso, RegressorMatrix_test)
 estimate_M3
-?glmnet
 
-get.rmse(test_sample$transfer.fee, estimate_M2)
+
+get.rmse(test_sample$transfer.fee, estimate_M3)
 
 summary(train_sample$positions)
 =======
@@ -156,4 +153,4 @@ gg+theme(axis.title.x=element_blank(),
          axis.title.y=element_blank(),
          text=element_text(family="Goudy Old Style"))
 ##================ 4.4 XXXXX  ================>>>>>>> origin/master
->>>>>>> origin/master
+
