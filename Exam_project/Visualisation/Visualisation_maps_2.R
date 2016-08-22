@@ -7,7 +7,7 @@
 #install.packages("maptools")
 
 #calling libraries
-
+library(plotly)
 library("ggmap")
 library(maptools)
 library(maps)
@@ -91,8 +91,8 @@ out.full= rbind(out.of.europe.2, out.of.europe)
 
 # write(mydata,file="club_for_viz.csv")
 # Creating a cleaner dataset
-clubs.points = data.frame(mydata$Pts, mydata$lon, mydata$lat)
-colnames(clubs.points) = c('Pts','lon','lat')#naming the variables
+clubs.points = data.frame(mydata$Pts, mydata$lon, mydata$lat,mydata$team)
+colnames(clubs.points) = c('Pts','lon','lat','team')#naming the variables
 
 # Getting data on the map
 
@@ -118,7 +118,33 @@ mapclubs <- ggmap(myMap) +
         axis.line = element_line(color = NA))
 mapclubs
 
+#########trying with plotly
 
+m <- list(
+  colorbar = list(title = "Points per team"),
+  size = 10, opacity = 0.8, symbol = 'circle'
+)
+
+# geo styling
+g <- list(
+  scope = 'europe',
+  projection = list(type = 'mercator'),
+  showland = TRUE,
+  landcolor = toRGB("gray95"),
+  subunitcolor = toRGB("gray85"),
+  countrycolor = toRGB("gray85"),
+  countrywidth = 0.5,
+  subunitwidth = 0.5
+)
+g
+
+plot_ly(clubs.points, lat = lat, lon = lon, text = team, color = Pts,
+        type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers',
+        marker = m) %>%
+  layout(title = 'Football teams in Europe and points<br>(Hover for airport)', geo = g)
+
+?scope
+??scope
 #############################################################################################
 ################################ CREATING PLAYER PATHS ####################################
 #############################################################################################
