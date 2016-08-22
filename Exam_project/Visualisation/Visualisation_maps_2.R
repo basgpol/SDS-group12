@@ -21,7 +21,7 @@ library(stringr)
 
 myLocation <- "Zurich"
 myMap <- get_map(location= myLocation,
-source="stamen", maptype="watercolor", crop=FALSE,,zoom=4)
+source="stamen", maptype="watercolor", crop=FALSE,,zoom=3)
 ggmap(myMap)
 
 
@@ -150,47 +150,53 @@ plot_ly(clubs.points, lat = lat, lon = lon, text = team, color = Pts,
 #############################################################################################
 
 #Getting data from df
-player.data = read.csv("player_data_unclean.csv", header=TRUE, stringsAsFactors=TRUE, fileEncoding="latin1") # loading saved version of uncleaned player data
+player.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", header=TRUE, stringsAsFactors=TRUE, fileEncoding="latin1") # loading saved version of uncleaned player data
 transfer.data = player.data 
 
-transfer.data <- transfer.data[sample(1:nrow(transfer.data), 50,# taking a random 50 sample
-                          replace=FALSE),]
+# transfer.data <- transfer.data[sample(1:nrow(transfer.data), 50,# taking a random 50 sample
+#                           replace=FALSE),]
 
 completeFun <- function(data, desiredCols) { #function to remove empty/NA
   completeVec <- complete.cases(data[, desiredCols])
   return(data[completeVec, ])
 }
-transfer.data= completeFun(transfer.data,"V4") #function applied to transfer data to remove unknown origin
-
+transfer.data= completeFun(transfer.data,"club.to") #function applied to transfer data to remove unknown origin
 
 
 ###Looping for club coordinate
-transfer.path.origin<-for (i in 1:nrow(transfer.data)) { #getting origin coordinates
-  latlon = geocode(transfer.data[i,4])
-  transfer.data$lon[i] = as.numeric(latlon[1])
-  transfer.data$lat[i] = as.numeric(latlon[2])
-}
+geocodes.club.to <- geocode(as.character(transfer.data$club.to))
+transfer.path.origin <- data.frame(transfer.data,geocodes.club.to)
 
-transfer.path.origin = data.frame(rep(i, nrow(transfer.data)), transfer.data$V1, transfer.data$lon, transfer.data$lat) #creating a dataset with origin
+geocodes.club.from <- geocode(as.character(transfer.data$club.from))
+transfer.path.destination <- data.frame(transfer.data,geocodes.club.from)
 
-transfer.path.destination<-for (i in 1:nrow(transfer.data)) { #getting destination coordinates
-  latlon = geocode(transfer.data[i,5])
-  transfer.data$lon[i] = as.numeric(latlon[1])
-  transfer.data$lat[i] = as.numeric(latlon[2])
-}
-
-transfer.path.destination= data.frame(rep(i, nrow(transfer.data)), transfer.data$V1, transfer.data$lon, transfer.data$lat) #creating a dataset with destination coordinates
+# transfer.path.origin<-for (i in 1:nrow(transfer.data)) { #getting origin coordinates
+#   latlon = geocode(transfer.data[i,4])
+#   transfer.data$lon[i] = as.numeric(latlon[1])
+#   transfer.data$lat[i] = as.numeric(latlon[2])
+# }
+# 
+# transfer.path.origin = data.frame(rep(i, nrow(transfer.data)), transfer.data$V1, transfer.data$lon, transfer.data$lat) #creating a dataset with origin
+# 
+# transfer.path.destination<-for (i in 1:nrow(transfer.data)) { #getting destination coordinates
+#   latlon = geocode(transfer.data[i,5])
+#   transfer.data$lon[i] = as.numeric(latlon[1])
+#   transfer.data$lat[i] = as.numeric(latlon[2])
+# }
+# 
+# transfer.path.destination= data.frame(rep(i, nrow(transfer.data)), transfer.data$V1, transfer.data$lon, transfer.data$lat) #creating a dataset with destination coordinates
 
 #BINDING
 
 transfer.path.full= rbind(transfer.path.origin, transfer.path.destination)#binding
-colnames(transfer.path.full) = c("wut",'index','lon','lat')#naming the columns
+transfer.path.full<-transfer.path.full %>% 
+  select(lon,lat,name,club.to,club.from,transfer.fee)#selecting the columns
 transfer.path.full= arrange(transfer.path.full, desc(index))# organising in descending order
 write.csv(transfer.path.full, "transfer_path_full.csv")
 
 transfer.path.full= completeFun(transfer.path.full,"lon")#applying the function to remove NA/unidentified to transfer.path
 
-ggmap(myMap)+#calling map
-  geom_path(aes(x = lon, y = lat, group = factor(index)), #putting paths on the map
+gg<-ggmap(myMap)+#calling map
+  geom_path(aes(x = lon, y = lat, group = factor(name), size=transfer.fee), #putting paths on the map
             colour="red", data = transfer.path.full, alpha=0.3)
-
+gg
