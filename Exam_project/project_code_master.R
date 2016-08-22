@@ -506,6 +506,9 @@ var.to.numeric = c("age", "transfer.fee", "appearances", "total.goals", "total.a
 player.data.cleaning[var.to.numeric] = 
   sapply(player.data.cleaning[var.to.numeric], as.numeric) #  transforming the selected var into numeric
 
+## Rescaling transfer fees into million punds 
+player.data.cleaning$transfer.fee = player.data.cleaning$transfer.fee / 1000000
+
 
 ## Removing column X.1 and X, which are not useful.
 names(player.data.cleaning)
