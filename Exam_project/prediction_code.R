@@ -31,7 +31,7 @@ library(glmnet)
 library(dplyr)
 
 ## Loading the final data set
-transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.tidy.csv", encoding = "UTF8", header = TRUE)
+transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", encoding = "UTF8", header = TRUE)
 
 ## creating a vector with selected predictors for transferfee ()
 predicting.var = c("transfer.fee", "positions", #"nationality", 
