@@ -26,7 +26,8 @@ df.stats.simp$transfer.fee<-cut(x=df.stats.simp$transfer.fee,c(0,10^5,10^6,50000
 #p<- plot(df.stats$transfer.fee)
 ####TRANSFER FOR APPEARANCE####
 p.stats = ggplot(df.stats, aes(x = , y = transfer.fee))
-p.stats + geom_point(stat = "identity")
+p.stats + geom_point(stat = "identity")+
+  #add geom line black
 p<-qplot(appearances, transfer.fee, data=df.stats, colour=league)
 ggplotly()
 
@@ -56,14 +57,13 @@ gg
 
 
 ####TRANSFER FOR NAMES####
-p.stats = ggplot(df.stats, aes(x = appearances , y = transfer.fee))
-p.stats + geom_point(stat = "identity")
+# p.stats = ggplot(df.stats, aes(x = appearances , y = transfer.fee))
+# p.stats + geom_point(stat = "identity")
+# p.stats
 
 ####TRANSFER FEE FOR TOTAL GOALS####
 p.stats = ggplot(df.stats, aes(x = total.goals , y = transfer.fee))
 p.stats + geom_point(stat = "identity")
-+
-  scale_y_sqrt()
 
 ####TRANSFER FEE FOR time remaining of contract####
 p.stats = ggplot(df.stats, aes(x = contract.left.month , y = transfer.fee))
@@ -76,6 +76,8 @@ p.stats + geom_point(stat = "identity")
 ####TRANSFER FEE FOR Position####
 p.stats = ggplot(df.stats, aes(x = positions , y = transfer.fee))
 p.stats + geom_point(stat = "identity")
+
+#bar chart
 
 ####TRANSFER FEE FOR Search Result####
 p.stats = ggplot(df.stats, aes(x = searchresults , y = transfer.fee))

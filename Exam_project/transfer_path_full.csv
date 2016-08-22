@@ -1,95 +1,1393 @@
-"","wut","index","lon","lat"
-"1",47,865,9.4756096,47.0701893
-"2",47,865,NA,NA
-"3",47,853,5.04148,47.322047
-"4",47,853,NA,NA
-"5",47,852,-105.855461,50.266028
-"6",47,852,NA,NA
-"7",47,851,4.031696,49.258329
-"8",47,851,NA,NA
-"9",47,842,35.046183,48.464717
-"10",47,842,4.031696,49.258329
-"11",47,841,-4.466827,48.4600408
-"12",47,841,NA,NA
-"13",47,769,12.3996736,44.2048479
-"14",47,769,5.36978,43.296482
-"15",47,768,NA,NA
-"16",47,768,5.36978,43.296482
-"17",47,761,NA,NA
-"18",47,761,7.4246158,43.7384176
-"19",47,719,15.0830304,37.5078772
-"20",47,719,10.8796629,44.7838779
-"21",47,708,18.1750161,40.3515155
-"22",47,708,11.3426163,44.494887
-"23",47,705,9.0901144,39.2132322
-"24",47,705,11.3426163,44.494887
-"25",47,699,12.2253049,44.1325193
-"26",47,699,-49.7793508,-27.4224135
-"27",47,677,NA,NA
-"28",47,677,13.2056341,46.0408771
-"29",47,646,NA,NA
-"30",47,646,10.9466529,45.4575193
-"31",47,640,6.2230139,50.7654394
-"32",47,640,NA,NA
-"33",47,603,7.6868565,45.070312
-"34",47,603,6.2230139,50.7654394
-"35",47,582,29.3190451,40.8236671
-"36",47,582,-89.6412899,20.9544631
-"37",47,565,NA,NA
-"38",47,565,-100.7169119,20.0188739
-"39",47,546,-107.2650225,32.7997962
-"40",47,546,8.946256,44.4056499
-"41",47,536,12.2253049,44.1325193
-"42",47,536,NA,NA
-"43",47,523,35.046183,48.464717
-"44",47,523,10.5355882,42.9636137
-"45",47,502,-99.1404085,19.2937122
-"46",47,502,-58.5214952,-34.6284822
-"47",47,462,5.545162,50.610246
-"48",47,462,-97.7206863,26.2147808
-"49",47,435,-63.616672,-38.416097
-"50",47,435,-3.0106774,36.7460566
-"51",47,375,NA,NA
-"52",47,375,-2.7530628,43.298455
-"53",47,366,-4.4212655,36.721261
-"54",47,366,-0.1165001,39.9391986
-"55",47,360,6.2230139,50.7654394
-"56",47,360,-109.9259886,27.4907255
-"57",47,349,-43.2397455,-22.8926246
-"58",47,349,-0.5104759,39.0643597
-"59",47,342,-56.741207,-35.1944557
-"60",47,342,-3.7423397,40.3757325
-"61",47,292,12.3515611,51.3461081
-"62",47,292,NA,NA
-"63",47,256,NA,NA
-"64",47,256,8.809285,53.0696545
-"65",47,253,NA,NA
-"66",47,253,8.809285,53.0696545
-"67",47,252,4.7601215,52.62921
-"68",47,252,8.809285,53.0696545
-"69",47,226,NA,NA
-"70",47,226,7.3714033,51.4918469
-"71",47,223,8.274477,48.084436
-"72",47,223,NA,NA
-"73",47,220,11.3486838,49.5679426
-"74",47,220,NA,NA
-"75",47,209,8.4145779,49.0168232
-"76",47,209,NA,NA
-"77",47,208,NA,NA
-"78",47,208,NA,NA
-"79",47,178,-71.5642076,41.6885978
-"80",47,178,1.297355,52.6308859
-"81",47,164,-58.5214952,-34.6284822
-"82",47,164,-0.39032,51.656489
-"83",47,155,37.436128,55.817478
-"84",47,155,-0.39032,51.656489
-"85",47,153,-1.6777926,48.117266
-"86",47,153,-0.39032,51.656489
-"87",47,85,5.36978,43.296482
-"88",47,85,-1.1139932,51.2641437
-"89",47,59,-89.6412899,20.9544631
-"90",47,59,-2.179404,53.002668
-"91",47,50,-8.4052158,53.8761086
-"92",47,50,-1.4043509,50.9097004
-"93",47,15,-77.7914471,43.0824364
-"94",47,15,-71.4547891,42.9956397
+"","lon","lat","name","club.to","club.from","transfer.fee"
+"1",NA,NA,"Dominique Heintz","1. FC KÃ¶ln","1.FC K'lautern",1280000
+"2",NA,NA,"Frederik SÃ¶rensen","1. FC KÃ¶ln","Juventus",1360000
+"3",NA,NA,"Anthony Modeste","1. FC KÃ¶ln","TSG Hoffenheim",3830000
+"4",NA,NA,"Leonardo Bittencourt","1. FC KÃ¶ln","Hannover 96",2130000
+"5",NA,NA,"Filip Mladenovic","1. FC KÃ¶ln","BATE Borisov",1280000
+"6",NA,NA,"Milos Jojic","1. FC KÃ¶ln","Bor. Dortmund",2550000
+"7",NA,NA,"Besar Halimi","1.FSV Mainz 05","Stuttg. Kickers",298000
+"8",NA,NA,"Yoshinori Muto","1.FSV Mainz 05","FC Tokyo",2380000
+"9",NA,NA,"Emil Berggreen","1.FSV Mainz 05","E. Braunschweig",2130000
+"10",NA,NA,"Danny Latza","1.FSV Mainz 05","VfL Bochum",0
+"11",NA,NA,"Fabian Frei","1.FSV Mainz 05","FC Basel",3060000
+"12",NA,NA,"Giulio Donati","1.FSV Mainz 05","Bay. Leverkusen",850000
+"13",NA,NA,"GaÃ«tan Bussmann","1.FSV Mainz 05","FC Metz",850000
+"14",NA,NA,"Florian Niederlechner","1.FSV Mainz 05","1.FC Heidenheim",1700000
+"15",NA,NA,"Maximilian Beister","1.FSV Mainz 05","Hamburger SV",0
+"16",NA,NA,"Karim Onisiwo","1.FSV Mainz 05","SV Mattersburg",0
+"17",NA,NA,"Leon Balogun","1.FSV Mainz 05","SV Darmstadt 98",0
+"18",NA,NA,"Henrique Sereno","1.FSV Mainz 05","Kayserispor",0
+"19",6.2230139,50.7654394,"Carlos Bacca","AC Milan","Sevilla FC",25500000
+"20",6.2230139,50.7654394,"Alessio Romagnoli","AC Milan","AS Roma",21250000
+"21",6.2230139,50.7654394,"Andrea Bertolacci","AC Milan","AS Roma",1.7e+07
+"22",6.2230139,50.7654394,"Juraj Kucka","AC Milan","Genoa",2550000
+"23",6.2230139,50.7654394,"Simone Verdi","AC Milan","Torino",383000
+"24",6.2230139,50.7654394,"Luiz Adriano","AC Milan","Shakhtar D.",6800000
+"25",6.2230139,50.7654394,"Luca Antonelli","AC Milan","Genoa",3830000
+"26",6.2230139,50.7654394,"Matteo Pessina","AC Milan","Monza",17000
+"27",6.2230139,50.7654394,"Rodrigo Ely","AC Milan","Avellino",0
+"28",6.2230139,50.7654394,"JosÃ© Mauri","AC Milan","Parma",0
+"29",-98.496595,29.4148437,"IsmaÃ«l Bennacer","Arsenal","AC Arles-Avign.",255000
+"30",-98.496595,29.4148437,"Mohamed Elneny","Arsenal","FC Basel",10630000
+"31",-98.496595,29.4148437,"Jeff Reine-Adelaide","Arsenal","RC Lens U19",2130000
+"32",-58.5214952,-34.6284822,"Leandro Paredes","AS Roma","Boca Juniors",5100000
+"33",-58.5214952,-34.6284822,"Ezequiel Ponce","AS Roma","Newell's",3570000
+"34",-58.5214952,-34.6284822,"Ismail H'Maidat","AS Roma","Brescia",2680000
+"35",-58.5214952,-34.6284822,"Matteo Politano","AS Roma","Pescara",510000
+"36",-58.5214952,-34.6284822,"Nemanja Radonjic","AS Roma","Empoli U19",3400000
+"37",-58.5214952,-34.6284822,"Iago FalquÃ©","AS Roma","Genoa",5950000
+"38",-58.5214952,-34.6284822,"Andrea Bertolacci","AS Roma","Genoa",7230000
+"39",-58.5214952,-34.6284822,"Nicola Falasco","AS Roma","Pistoiese",170000
+"40",-58.5214952,-34.6284822,"Tiago Casasola","AS Roma","Fulham FC",0
+"41",-77.7914471,43.0824364,"Rudy Gestede","Aston Villa","Blackburn",7230000
+"42",-77.7914471,43.0824364,"Adama TraorÃ©","Aston Villa","FC Barcelona",8500000
+"43",-77.7914471,43.0824364,"Scott Sinclair","Aston Villa","Manchester City",2980000
+"44",-77.7914471,43.0824364,"Idrissa Gueye","Aston Villa","LOSC Lille",7650000
+"45",-77.7914471,43.0824364,"Adama TraorÃ©","Aston Villa","FC Barcelona",8500000
+"46",-77.7914471,43.0824364,"Micah Richards","Aston Villa","Manchester City",0
+"47",-77.7914471,43.0824364,"Jordan Veretout","Aston Villa","FC Nantes",8500000
+"48",-77.7914471,43.0824364,"Joleon Lescott","Aston Villa","West Brom",1190000
+"49",-77.7914471,43.0824364,"JosÃ© Crespo","Aston Villa","CÃ³rdoba CF",595000
+"50",-77.7914471,43.0824364,"Jordan Ayew","Aston Villa","FC Lorient",10200000
+"51",-77.7914471,43.0824364,"Jordan Amavi","Aston Villa","OGC Nice",9350000
+"52",-49.7793508,-27.4224135,"Marco Borriello","Atalanta","Carpi",0
+"53",-49.7793508,-27.4224135,"Marcos De Paula","Atalanta","Chievo Verona",0
+"54",-49.7793508,-27.4224135,"Berat Djimsiti","Atalanta","FC ZÃ¼rich",0
+"55",-49.7793508,-27.4224135,"Jasmin Kurtic","Atalanta","Sassuolo",2980000
+"56",-49.7793508,-27.4224135,"Marten de Roon","Atalanta","SC Heerenveen",1110000
+"57",-49.7793508,-27.4224135,"Rafael TolÃ³i","Atalanta","SÃ£o Paulo",2980000
+"58",-49.7793508,-27.4224135,"Mauricio Pinilla","Atalanta","Genoa",1700000
+"59",-49.7793508,-27.4224135,"Remo Freuler","Atalanta","FC Luzern",1280000
+"60",-49.7793508,-27.4224135,"Franck KessiÃ©","Atalanta","Stella Club",255000
+"61",-49.7793508,-27.4224135,"Andrea Petagna","Atalanta","AC Milan",850000
+"62",-49.7793508,-27.4224135,"Luca Valzania","Atalanta","AC Cesena",765000
+"63",-49.7793508,-27.4224135,"Gaetano Monachello","Atalanta","Monaco",425000
+"64",-2.7530628,43.298455,"Eneko BÃ³veda","Athletic Bilbao","SD Eibar",0
+"65",-2.7530628,43.298455,"RaÃºl GarcÃ­a","Athletic Bilbao","AtlÃ©tico Madrid",6800000
+"66",-2.7530628,43.298455,"Javi Eraso","Athletic Bilbao","CD LeganÃ©s",0
+"67",-2.7530628,43.298455,"Gorka Elustondo","Athletic Bilbao","Real Sociedad",0
+"68",-3.7037902,40.4167754,"Bernard Mensah","AtlÃ©tico Madrid","Vit. GuimarÃ£es",5100000
+"69",-3.7037902,40.4167754,"Augusto FernÃ¡ndez","AtlÃ©tico Madrid","Celta de Vigo",3400000
+"70",-3.7037902,40.4167754,"Santos BorrÃ©","AtlÃ©tico Madrid","Deportivo Cali",2340000
+"71",-3.7037902,40.4167754,"Jackson MartÃ­nez","AtlÃ©tico Madrid","FC Porto",31540000
+"72",-3.7037902,40.4167754,"Filipe LuÃ­s","AtlÃ©tico Madrid","Chelsea",13600000
+"73",-3.7037902,40.4167754,"Stefan Savic","AtlÃ©tico Madrid","Fiorentina",21250000
+"74",-3.7037902,40.4167754,"Luciano Vietto","AtlÃ©tico Madrid","Villarreal CF",1.7e+07
+"75",-3.7037902,40.4167754,"Yannick Carrasco","AtlÃ©tico Madrid","Monaco",14670000
+"76",-3.7037902,40.4167754,"MatÃ­as Kranevitter","AtlÃ©tico Madrid","River Plate",6800000
+"77",6.9946126,51.0157534,"Chicharito","Bay. Leverkusen","Manchester Utd.",10200000
+"78",6.9946126,51.0157534,"Kevin Kampl","Bay. Leverkusen","Bor. Dortmund",9350000
+"79",6.9946126,51.0157534,"Charles ArÃ¡nguiz","Bay. Leverkusen","Internacional",11050000
+"80",6.9946126,51.0157534,"Jonathan Tah","Bay. Leverkusen","Hamburger SV",6380000
+"81",6.9946126,51.0157534,"Admir Mehmedi","Bay. Leverkusen","SC Freiburg",6800000
+"82",6.9946126,51.0157534,"AndrÃ© Ramalho","Bay. Leverkusen","RB Salzburg",0
+"83",6.9946126,51.0157534,"Kyriakos Papadopoulos","Bay. Leverkusen","FC Schalke 04",5530000
+"84",11.5819806,48.1351253,"Douglas Costa","Bayern Munich ","Shakhtar D.",25500000
+"85",11.5819806,48.1351253,"Joshua Kimmich","Bayern Munich ","VfB Stuttgart",7230000
+"86",11.5819806,48.1351253,"Arturo Vidal","Bayern Munich ","Juventus",31450000
+"87",11.3426163,44.494887,"Matteo Brighi","Bologna","Sassuolo",0
+"88",11.3426163,44.494887,"Mattia Destro","Bologna","AS Roma",7230000
+"89",11.3426163,44.494887,"Ibrahima Mbaye","Bologna","Inter",2980000
+"90",11.3426163,44.494887,"Luca Rossettini","Bologna","Cagliari Calcio",2130000
+"91",11.3426163,44.494887,"Erick Pulgar","Bologna","CDUC",1940000
+"92",11.3426163,44.494887,"Anthony Mounier","Bologna","Montpellier",1700000
+"93",11.3426163,44.494887,"Filippo Falco","Bologna","Lecce",1020000
+"94",11.3426163,44.494887,"Marco Crimi","Bologna","Latina Calcio",850000
+"95",11.3426163,44.494887,"Amadou Diawara","Bologna","San Marino C.",510000
+"96",11.3426163,44.494887,"Sergio Floccari","Bologna","Sassuolo",425000
+"97",11.3426163,44.494887,"Emil Krafth","Bologna","Helsingborgs IF",425000
+"98",11.3426163,44.494887,"Franco Brienza","Bologna","AC Cesena",0
+"99",7.3714033,51.4918469,"Gonzalo Castro","Bor. Dortmund","Bay. Leverkusen",9350000
+"100",7.3714033,51.4918469,"Joo-Ho Park","Bor. Dortmund","1.FSV Mainz 05",2550000
+"101",7.3714033,51.4918469,"Julian Weigl","Bor. Dortmund","1860 Munich",2130000
+"102",NA,NA,"Lars Stindl","Bor. M'gladbach","Hannover 96",2550000
+"103",NA,NA,"Nico Schulz","Bor. M'gladbach","Hertha BSC",3400000
+"104",NA,NA,"Nico Elvedi","Bor. M'gladbach","FC ZÃ¼rich",3400000
+"105",NA,NA,"Jonas Hofmann","Bor. M'gladbach","Bor. Dortmund",6800000
+"106",NA,NA,"Thorgan Hazard","Bor. M'gladbach","Chelsea",6800000
+"107",NA,NA,"Josip Drmic","Bor. M'gladbach","Bay. Leverkusen",8500000
+"108",-1.880769,50.719164,"Rhoys Wiggins","Bournemouth","Sheff Wed",221000
+"109",-1.880769,50.719164,"Joshua King","Bournemouth","Blackburn",0
+"110",-1.880769,50.719164,"Sylvain Distin","Bournemouth","Everton",0
+"111",-1.880769,50.719164,"Glenn Murray","Bournemouth","Crystal Palace",4590000
+"112",-1.880769,50.719164,"Lee Tomlin","Bournemouth","Middlesbrough",3660000
+"113",-1.880769,50.719164,"Benik Afobe","Bournemouth","Wolves",11310000
+"114",-1.880769,50.719164,"Tyrone Mings","Bournemouth","Ipswich",9610000
+"115",-1.880769,50.719164,"Max Gradel","Bournemouth","Saint-Ãtienne",8500000
+"116",-1.880769,50.719164,"Lewis Grabban","Bournemouth","Norwich",7950000
+"117",10.8796629,44.7838779,"NicolÃ¡s Spolli","Carpi","Catania",0
+"118",10.8796629,44.7838779,"Cristian Zaccardo","Carpi","AC Milan",0
+"119",10.8796629,44.7838779,"Andrea Lazzari","Carpi","Fiorentina",0
+"120",10.8796629,44.7838779,"Ryan Hiwat","Carpi","PSV U19",0
+"121",10.8796629,44.7838779,"Kamil Wilczek","Carpi","Piast Gliwice",0
+"122",10.8796629,44.7838779,"Raphael Martinho","Carpi","Catania",0
+"123",10.8796629,44.7838779,"Fabio DaprelÃ ","Carpi","US Palermo",0
+"124",-90.6163146,19.7894724,"Iago Aspas","Celta de Vigo","Sevilla FC",4510000
+"125",-90.6163146,19.7894724,"Marcelo DÃ­az","Celta de Vigo","Hamburger SV",1530000
+"126",-90.6163146,19.7894724,"Claudio Beauvue","Celta de Vigo","Olympique Lyon",4250000
+"127",-90.6163146,19.7894724,"Daniel Wass","Celta de Vigo","Ãvian",2550000
+"128",-90.6163146,19.7894724,"Dejan Drazic","Celta de Vigo","OFK Beograd",1020000
+"129",-90.6163146,19.7894724,"John Guidetti","Celta de Vigo","Manchester City",0
+"130",-71.0328284,42.3917638,"Pedro","Chelsea","FC Barcelona",22950000
+"131",-71.0328284,42.3917638,"Michael Hector","Chelsea","Reading",4590000
+"132",-71.0328284,42.3917638,"Matt Miazga","Chelsea","NY Red Bulls",3910000
+"133",-71.0328284,42.3917638,"Kenedy","Chelsea","Fluminense",6800000
+"134",-71.0328284,42.3917638,"Danilo Pantic","Chelsea","Partizan",0
+"135",-71.0328284,42.3917638,"Abdul Rahman Baba","Chelsea","FC Augsburg",1.7e+07
+"136",-71.0328284,42.3917638,"Papy Djilobodji","Chelsea","FC Nantes",2980000
+"137",-71.0328284,42.3917638,"Nathan","Chelsea","AtlÃ©tico-PR",3400000
+"138",10.9466529,45.4575193,"Lucas Castro","Chievo Verona","Catania",2980000
+"139",10.9466529,45.4575193,"Valter Birsa","Chievo Verona","AC Milan",1280000
+"140",10.9466529,45.4575193,"NicolÃ¡s Spolli","Chievo Verona","Carpi",0
+"141",10.9466529,45.4575193,"Giampiero Pinzi","Chievo Verona","Udinese Calcio",0
+"142",10.9466529,45.4575193,"Filippo Di Maio","Chievo Verona","Catania U19",0
+"143",10.9466529,45.4575193,"Nikola Ninkovic","Chievo Verona","Partizan",468000
+"144",10.9466529,45.4575193,"Ervin Zukanovic","Chievo Verona","KAA Gent",850000
+"145",10.9466529,45.4575193,"Simone Pepe","Chievo Verona","Juventus",0
+"146",10.9466529,45.4575193,"Isaac Ntow","Chievo Verona","Brescia",0
+"147",10.9466529,45.4575193,"Marco Calderoni","Chievo Verona","Bari",85000
+"148",10.9466529,45.4575193,"Massimo Gobbi","Chievo Verona","Parma",0
+"149",-80.0032,40.4398,"Yohan Cabaye","Crystal Palace","Paris SG",11820000
+"150",-80.0032,40.4398,"Connor Wickham","Crystal Palace","Sunderland",8500000
+"151",-80.0032,40.4398,"Bakary Sako","Crystal Palace","Wolves",0
+"152",NA,NA,"JonÃ¡s GutiÃ©rrez","Dep. La CoruÃ±a","Newcastle",0
+"153",NA,NA,"Fernando Navarro","Dep. La CoruÃ±a","Sevilla FC",0
+"154",NA,NA,"Pedro Mosquera","Dep. La CoruÃ±a","Elche CF",0
+"155",NA,NA,"Lucas","Dep. La CoruÃ±a","PAOK Saloniki",1280000
+"156",NA,NA,"Cani","Dep. La CoruÃ±a","Villarreal CF",0
+"157",8.6821267,50.1109221,"Szabolcs Huszti","E. Frankfurt","CC Yatai",213000
+"158",8.6821267,50.1109221,"David Abraham","E. Frankfurt","TSG Hoffenheim",1280000
+"159",8.6821267,50.1109221,"Stefan Reinartz","E. Frankfurt","Bay. Leverkusen",0
+"160",8.6821267,50.1109221,"Ãnis Ben-Hatira","E. Frankfurt","Hertha BSC",0
+"161",8.6821267,50.1109221,"Luc Castaignos","E. Frankfurt","FC Twente",2130000
+"162",8.6821267,50.1109221,"Yanni RegÃ¤sel","E. Frankfurt","Hertha BSC",102000
+"163",8.6821267,50.1109221,"Mijat Gacinovic","E. Frankfurt","Vojvodina",1020000
+"164",8.6821267,50.1109221,"Marco FabiÃ¡n","E. Frankfurt","Guadalajara",3150000
+"165",2.641692,39.6293694,"Gerard Moreno","Espanyol","Villarreal CF",1280000
+"166",2.641692,39.6293694,"Ãscar Duarte","Espanyol","Club Brugge",978000
+"167",2.641692,39.6293694,"Lucas VÃ¡zquez","Espanyol","R. M. Castilla",425000
+"168",2.641692,39.6293694,"Mickael Ciani","Espanyol","Sporting CP",0
+"169",2.641692,39.6293694,"Papakouli Diop","Espanyol","Levante UD",0
+"170",-93.702428,37.3425477,"David Henen","Everton","Olympiacos",238000
+"171",-93.702428,37.3425477,"Ramiro Funes Mori","Everton","River Plate",10970000
+"172",-93.702428,37.3425477,"Shani Tarashaj","Everton","Grasshoppers",3400000
+"173",-93.702428,37.3425477,"Tom Cleverley","Everton","Manchester Utd.",0
+"174",-93.702428,37.3425477,"Oumar Niasse","Everton","Loko Moscow",15220000
+"175",-93.702428,37.3425477,"Aaron Lennon","Everton","Spurs",5100000
+"176",-93.702428,37.3425477,"Leandro RodrÃ­guez","Everton","River Plate",595000
+"177",-93.702428,37.3425477,"Gerard Deulofeu","Everton","FC Barcelona",5100000
+"178",NA,NA,"Daniel Opare","FC Augsburg","FC Porto",0
+"179",NA,NA,"Dominik Kohr","FC Augsburg","Bay. Leverkusen",1190000
+"180",NA,NA,"Konstantinos Stafylidis","FC Augsburg","Bay. Leverkusen",2130000
+"181",NA,NA,"Piotr Trochowski","FC Augsburg","Sevilla FC",0
+"182",NA,NA,"Philipp Max","FC Augsburg","Karlsruher SC",3230000
+"183",NA,NA,"Albian Ajeti","FC Augsburg","FC Basel",850000
+"184",NA,NA,"Ja-Cheol Koo","FC Augsburg","1.FSV Mainz 05",4250000
+"185",NA,NA,"Jeffrey Gouweleeuw","FC Augsburg","AZ Alkmaar",2550000
+"186",2.1178229,41.3806915,"Aleix Vidal","FC Barcelona","Sevilla FC",14450000
+"187",2.1178229,41.3806915,"Arda Turan","FC Barcelona","AtlÃ©tico Madrid",28900000
+"188",12.2253049,44.1325193,"Luca Bittante","FC Empoli","Fiorentina",680000
+"189",12.2253049,44.1325193,"Riccardo Saponara","FC Empoli","AC Milan",3400000
+"190",12.2253049,44.1325193,"Kastriot Dermaku","FC Empoli","AS Melfi",0
+"191",12.2253049,44.1325193,"Michele Camporese","FC Empoli","Fiorentina",425000
+"192",12.2253049,44.1325193,"Marco Zambelli","FC Empoli","Brescia",0
+"193",12.2253049,44.1325193,"Rade Krunic","FC Empoli","Borac Cacak",0
+"194",12.2253049,44.1325193,"Andrea Costa","FC Empoli","Parma",0
+"195",11.4257541,48.7665351,"DarÃ­o Lezcano","FC Ingolstadt","FC Luzern",2130000
+"196",11.4257541,48.7665351,"Elias Kachunga","FC Ingolstadt","SC Paderborn",1280000
+"197",11.4257541,48.7665351,"Markus Suttner","FC Ingolstadt","Austria Vienna",595000
+"198",11.4257541,48.7665351,"Maurice Multhaup","FC Ingolstadt","FC Schalke 04",425000
+"199",11.4257541,48.7665351,"Romain BrÃ©gerie","FC Ingolstadt","SV Darmstadt 98",0
+"200",NA,NA,"Pape Paye","FC Lorient","Dijon",0
+"201",NA,NA,"Jimmy Cabot","FC Lorient","Troyes",1530000
+"202",NA,NA,"Benjamin Moukandjo","FC Lorient","Reims",1280000
+"203",NA,NA,"MorykÃ© Fofana","FC Lorient","LillestrÃ¶m SK",340000
+"204",NA,NA,"Waris Majeed","FC Lorient","Trabzonspor",3830000
+"205",NA,NA,"Zargo TourÃ©","FC Lorient","AC Le Havre",1280000
+"206",NA,NA,"Kolbeinn SigthÃ³rsson","FC Nantes","AFC Ajax",2550000
+"207",NA,NA,"Guillaume Gillet","FC Nantes","RSC Anderlecht",1700000
+"208",NA,NA,"Emiliano Sala","FC Nantes","G. Bordeaux",850000
+"209",NA,NA,"Adrien Thomasson","FC Nantes","Ãvian",680000
+"210",NA,NA,"Lorik Cana","FC Nantes","Lazio",170000
+"211",NA,NA,"Wilfried MoimbÃ©","FC Nantes","Stade Brest 29",0
+"212",NA,NA,"Alessandro SchÃ¶pf","FC Schalke 04","1.FC Nuremberg",4250000
+"213",NA,NA,"Matija Nastasic","FC Schalke 04","Manchester City",8080000
+"214",NA,NA,"Franco Di Santo","FC Schalke 04","Werder Bremen",5100000
+"215",NA,NA,"Johannes Geis","FC Schalke 04","1.FSV Mainz 05",10200000
+"216",NA,NA,"JÃºnior CaiÃ§ara","FC Schalke 04","Ludogorets",3830000
+"217",NA,NA,"Sascha Riether","FC Schalke 04","SC Freiburg",0
+"218",10.5355882,42.9636137,"Mario SuÃ¡rez","Fiorentina","AtlÃ©tico Madrid",12750000
+"219",10.5355882,42.9636137,"Nikola Kalinic","Fiorentina","Dnipro",4680000
+"220",10.5355882,42.9636137,"Jaime BÃ¡ez","Fiorentina","Juventud",1960000
+"221",10.5355882,42.9636137,"Joan VerdÃº","Fiorentina","Baniyas SC",0
+"222",10.5355882,42.9636137,"Mauro ZÃ¡rate","Fiorentina","West Ham",1790000
+"223",10.5355882,42.9636137,"AndrÃ©s Schetino","Fiorentina","CA FÃ©nix",2980000
+"224",10.5355882,42.9636137,"Luca Bittante","Fiorentina","Avellino",425000
+"225",10.5355882,42.9636137,"Gilberto","Fiorentina","Botafogo",1700000
+"226",13.3426341,41.6396009,"Oliver Kragl","Frosinone","SV  Ried",340000
+"227",13.3426341,41.6396009,"Aleksandar Tonev","Frosinone","Aston Villa",0
+"228",13.3426341,41.6396009,"Modibo DiakitÃ©","Frosinone","Cagliari Calcio",0
+"229",8.738635,41.919229,"Issiar Dia","G. Ajaccio","Lekhwiya",0
+"230",8.738635,41.919229,"Jacques Zoua","G. Ajaccio","Hamburger SV",0
+"231",8.738635,41.919229,"Alassane TourÃ©","G. Ajaccio","FC Tours",0
+"232",8.738635,41.919229,"Amine Chermiti","G. Ajaccio","FC ZÃ¼rich",0
+"233",8.738635,41.919229,"Damjan Djokovic","G. Ajaccio","Bologna",0
+"234",-0.57918,44.837789,"Mauro Arambarri","G. Bordeaux","Defensor",2550000
+"235",-0.57918,44.837789,"Pablo","G. Bordeaux","Ponte Preta",1700000
+"236",-0.57918,44.837789,"Milan Gajic","G. Bordeaux","OFK Beograd",850000
+"237",-0.57918,44.837789,"Malcom","G. Bordeaux","Corinthians",4250000
+"238",8.946256,44.4056499,"Goran Pandev","Genoa","Galatasaray",0
+"239",8.946256,44.4056499,"Ezequiel MuÃ±oz","Genoa","US Palermo",0
+"240",8.946256,44.4056499,"Manuel Milinkovic","Genoa","Salernitana",0
+"241",8.946256,44.4056499,"Darko Lazovic","Genoa","Red Star",0
+"242",8.946256,44.4056499,"Leonardo Pavoletti","Genoa","Sassuolo",2550000
+"243",8.946256,44.4056499,"Riccardo Fiamozzi","Genoa","Pescara",1280000
+"244",8.946256,44.4056499,"Diego Capel","Genoa","Sporting CP",1110000
+"245",8.946256,44.4056499,"Serge GakpÃ©","Genoa","FC Nantes",0
+"246",8.946256,44.4056499,"Luca Rigoni","Genoa","US Palermo",425000
+"247",8.946256,44.4056499,"Issa Cissokho","Genoa","FC Nantes",425000
+"248",NA,NA,"Henok Goitom","Getafe CF","AIK Solna",0
+"249",NA,NA,"Cala","Getafe CF","Granada CF",0
+"250",NA,NA,"DamiÃ¡n SuÃ¡rez","Getafe CF","Elche CF",0
+"251",-3.0106774,36.7460566,"Rene Krhin","Granada CF","Inter",1110000
+"252",-3.0106774,36.7460566,"David Barral","Granada CF","Al-Dhafra SCC",0
+"253",-3.0106774,36.7460566,"Yrondu Musavu-King","Granada CF","SM Caen",0
+"254",-3.0106774,36.7460566,"Ricardo Costa","Granada CF","PAOK Saloniki",0
+"255",-3.0106774,36.7460566,"Gaspar ÃÃ±iguez","Granada CF","Argentinos",1020000
+"256",-3.0106774,36.7460566,"Isaac Cuenca","Granada CF","Bursaspor",0
+"257",-3.0106774,36.7460566,"Aridane HernÃ¡ndez","Granada CF","CD Eldense",0
+"258",-3.0106774,36.7460566,"David LombÃ¡n","Granada CF","Elche CF",0
+"259",-3.148352,48.561366,"Jimmy Briand","Guingamp","Hannover 96",0
+"260",-3.148352,48.561366,"Nicolas Benezet","Guingamp","Ãvian",1020000
+"261",-3.148352,48.561366,"Nill De Pauw","Guingamp","KSC Lokeren",638000
+"262",-3.148352,48.561366,"Jonathan Martins Pereira","Guingamp","Troyes",0
+"263",16.3378572,57.6027778,"Nabil Bahoui","Hamburger SV","Ahli",0
+"264",16.3378572,57.6027778,"Sven Schipplock","Hamburger SV","TSG Hoffenheim",2130000
+"265",16.3378572,57.6027778,"Michael Gregoritsch","Hamburger SV","VfL Bochum",2550000
+"266",16.3378572,57.6027778,"Batuhan Altintas","Hamburger SV","Bursaspor",340000
+"267",16.3378572,57.6027778,"Gotoku Sakai","Hamburger SV","VfB Stuttgart",595000
+"268",16.3378572,57.6027778,"Aaron Hunt","Hamburger SV","VfL Wolfsburg",2550000
+"269",16.3378572,57.6027778,"Lewis Holtby","Hamburger SV","Spurs",5530000
+"270",16.3378572,57.6027778,"Albin Ekdal","Hamburger SV","Cagliari Calcio",3830000
+"271",-70.8273689,42.118527,"Uffe Bech","Hannover 96","Nordsjaelland",1700000
+"272",-70.8273689,42.118527,"Felix Klaus","Hannover 96","SC Freiburg",2550000
+"273",-70.8273689,42.118527,"Iver Fossum","Hannover 96","StrÃ¸msgodset",1700000
+"274",-70.8273689,42.118527,"MevlÃ¼t Erdinc","Hannover 96","Saint-Ãtienne",2810000
+"275",-70.8273689,42.118527,"Oliver Sorg","Hannover 96","SC Freiburg",2980000
+"276",-70.8273689,42.118527,"Marius Wolf","Hannover 96","1860 Munich",1280000
+"277",-70.8273689,42.118527,"Charlison Benschop","Hannover 96","F. DÃ¼sseldorf",1280000
+"278",-70.8273689,42.118527,"Hotaru Yamaguchi","Hannover 96","Cerezo Osaka",850000
+"279",-70.8273689,42.118527,"Hugo Almeida","Hannover 96","Anzhi",0
+"280",NA,NA,"Leandro Greco","Hellas Verona","Genoa",255000
+"281",NA,NA,"Federico Viviani","Hellas Verona","AS Roma",3400000
+"282",NA,NA,"Michelangelo Albertazzi","Hellas Verona","AC Milan",0
+"283",NA,NA,"Giampaolo Pazzini","Hellas Verona","AC Milan",0
+"284",NA,NA,"Mattia Valoti","Hellas Verona","UC AlbinoLeffe",0
+"285",NA,NA,"Filip Helander","Hellas Verona","MalmÃ¶ FF",850000
+"286",NA,NA,"Eros Pisano","Hellas Verona","US Palermo",850000
+"287",NA,NA,"Luca Siligardi","Hellas Verona","AS Livorno",0
+"288",NA,NA,"Samuel Souprayen","Hellas Verona","Dijon",0
+"289",NA,NA,"VladimÃ­r Darida","Hertha BSC","SC Freiburg",3230000
+"290",NA,NA,"Niklas Stark","Hertha BSC","1.FC Nuremberg",2550000
+"291",NA,NA,"Sinan Kurt","Hertha BSC","Bayern Munich ",425000
+"292",NA,NA,"Mitchell Weiser","Hertha BSC","Bayern Munich ",0
+"293",-89.6412899,20.9544631,"Geoffrey Kondogbia","Inter","Monaco",26350000
+"294",-89.6412899,20.9544631,"Xherdan Shaqiri","Inter","Bayern Munich ",12750000
+"295",-89.6412899,20.9544631,"Jeison Murillo","Inter","Granada CF",6800000
+"296",-89.6412899,20.9544631,"Ivan Perisic","Inter","VfL Wolfsburg",13600000
+"297",-89.6412899,20.9544631,"Felipe Melo","Inter","Galatasaray",3150000
+"298",-89.6412899,20.9544631,"Davide Santon","Inter","Newcastle",3150000
+"299",-100.363932,25.733185,"Mario Mandzukic","Juventus","AtlÃ©tico Madrid",16150000
+"300",-100.363932,25.733185,"Roberto Pereyra","Juventus","Udinese Calcio",11900000
+"301",-100.363932,25.733185,"Simone Zaza","Juventus","Sassuolo",15300000
+"302",-100.363932,25.733185,"Alex Sandro","Juventus","FC Porto",22100000
+"303",-100.363932,25.733185,"Paulo Dybala","Juventus","US Palermo",27200000
+"304",-100.363932,25.733185,"AndrÃ©s Tello","Juventus","Envigado",1190000
+"305",-100.363932,25.733185,"Mame Thiam","Juventus","Virtus Lanciano",1190000
+"306",-100.363932,25.733185,"Hernanes","Juventus","Inter",11050000
+"307",-100.363932,25.733185,"Rolando Mandragora","Juventus","Genoa",5100000
+"308",-100.363932,25.733185,"Sami Khedira","Juventus","Real Madrid",0
+"309",-100.363932,25.733185,"Alberto Cerri","Juventus","Parma",0
+"310",12.989615,41.6552418,"Milan Bisevac","Lazio","Olympique Lyon",0
+"311",12.989615,41.6552418,"Dusan Basta","Lazio","Udinese Calcio",4250000
+"312",12.989615,41.6552418,"Wesley Hoedt","Lazio","AZ Alkmaar",0
+"313",12.989615,41.6552418,"Ronaldo","Lazio","FC Empoli",0
+"314",12.989615,41.6552418,"Ricardo Kishna","Lazio","AFC Ajax",2550000
+"315",12.989615,41.6552418,"Patric","Lazio","FC Barcelona B",0
+"316",12.989615,41.6552418,"Sergej Milinkovic-Savic","Lazio","KRC Genk",7650000
+"317",12.989615,41.6552418,"MaurÃ­cio","Lazio","Sporting CP",2250000
+"318",12.989615,41.6552418,"Riccardo Serpieri","Lazio","Cosenza",0
+"319",-1.1397592,52.6368778,"Shinji Okazaki","Leicester","1.FSV Mainz 05",9350000
+"320",-1.1397592,52.6368778,"N'Golo KantÃ©","Leicester","SM Caen",7650000
+"321",-1.1397592,52.6368778,"Daniel Amartey","Leicester","FC Copenhagen",5610000
+"322",-1.1397592,52.6368778,"GÃ¶khan Inler","Leicester","SSC Napoli",5950000
+"323",-1.1397592,52.6368778,"Robert Huth","Leicester","Stoke City",3570000
+"324",-1.1397592,52.6368778,"Yohan Benalouane","Leicester","Atalanta",5950000
+"325",-1.1397592,52.6368778,"Demarai Gray","Leicester","Birmingham",4340000
+"326",-1.1397592,52.6368778,"Christian Fuchs","Leicester","FC Schalke 04",0
+"327",-0.3887798,39.4961244,"Ãngel Trujillo","Levante UD","UD AlmerÃ­a",850000
+"328",-0.3887798,39.4961244,"Deyverson","Levante UD","Belenenses",1530000
+"329",-0.3887798,39.4961244,"Mauricio Cuero","Levante UD","CD La Equidad",2720000
+"330",-0.3887798,39.4961244,"Verza","Levante UD","UD AlmerÃ­a",0
+"331",-0.3887798,39.4961244,"Joan VerdÃº","Levante UD","Fiorentina",0
+"332",-0.3887798,39.4961244,"Carl Medjani","Levante UD","Trabzonspor",0
+"333",-0.3887798,39.4961244,"Zouhair Feddal","Levante UD","Parma",0
+"334",-2.9915726,53.4083714,"Christian Benteke","Liverpool","Aston Villa",39530000
+"335",-2.9915726,53.4083714,"Roberto Firmino","Liverpool","TSG Hoffenheim",34850000
+"336",-2.9915726,53.4083714,"Nathaniel Clyne","Liverpool","Southampton",15050000
+"337",-2.9915726,53.4083714,"Joe Gomez","Liverpool","Charlton",4170000
+"338",-2.9915726,53.4083714,"James Milner","Liverpool","Manchester City",0
+"339",-2.9915726,53.4083714,"Danny Ings","Liverpool","Burnley FC",7060000
+"340",-2.9915726,53.4083714,"Marko Grujic","Liverpool","Red Star",5950000
+"341",3.057256,50.62925,"Baptiste Guillaume","LOSC Lille","Lens",3400000
+"342",3.057256,50.62925,"Sehrou Guirassy","LOSC Lille","Stade Laval",425000
+"343",3.057256,50.62925,"Renato Civelli","LOSC Lille","Bursaspor",0
+"344",3.057256,50.62925,"Mounir Obbadi","LOSC Lille","Monaco",0
+"345",3.057256,50.62925,"Lenny Nangis","LOSC Lille","SM Caen",850000
+"346",3.057256,50.62925,"Eric BauthÃ©ac","LOSC Lille","OGC Nice",2040000
+"347",3.057256,50.62925,"Ibrahim Amadou","LOSC Lille","AS Nancy",1700000
+"348",3.057256,50.62925,"Junior Tallo","LOSC Lille","AS Roma",850000
+"349",3.057256,50.62925,"Yassine Benzia","LOSC Lille","Olympique Lyon",850000
+"350",NA,NA,"Charles","MÃ¡laga CF","Celta de Vigo",425000
+"351",NA,NA,"FÃ¡bio Espinho","MÃ¡laga CF","Ludogorets",0
+"352",NA,NA,"Nordin Amrabat","MÃ¡laga CF","Galatasaray",2980000
+"353",NA,NA,"Federico Ricca","MÃ¡laga CF","Danubio FC",2130000
+"354",NA,NA,"Chory Castro","MÃ¡laga CF","Real Sociedad",0
+"355",NA,NA,"Adnane Tighadouini","MÃ¡laga CF","NAC Breda",1020000
+"356",-71.4547891,42.9956397,"Patrick Roberts","Manchester City","Fulham FC",12750000
+"357",-71.4547891,42.9956397,"NicolÃ¡s Otamendi","Manchester City","Valencia CF",37910000
+"358",-71.4547891,42.9956397,"Raheem Sterling","Manchester City","Liverpool",53130000
+"359",-71.4547891,42.9956397,"Fabian Delph","Manchester City","Aston Villa",9780000
+"360",-71.4547891,42.9956397,"Enes Ãnal","Manchester City","Bursaspor",2550000
+"361",-71.4547891,42.9956397,"Anthony CÃ¡ceres","Manchester City","Central Coast Mariners",272000
+"362",-71.4547891,42.9956397,"Kevin De Bruyne","Manchester City","VfL Wolfsburg",62900000
+"363",-71.4547891,42.9956397,"RubÃ©n Sobrino","Manchester City","Ponferradina",234000
+"364",-71.4547891,42.9956397,"Luke Brattan","Manchester City","Brisbane Roar",0
+"365",-71.4547891,42.9956397,"Florian Lejeune","Manchester City","Girona FC",255000
+"366",-118.3425748,33.9600196,"Bastian Schweinsteiger","Manchester Utd.","Bayern Munich ",7650000
+"367",-118.3425748,33.9600196,"Morgan Schneiderlin","Manchester Utd.","Southampton",29750000
+"368",-118.3425748,33.9600196,"Matteo Darmian","Manchester Utd.","Torino",15300000
+"369",-118.3425748,33.9600196,"Memphis Depay","Manchester Utd.","PSV Eindhoven",28900000
+"370",-118.3425748,33.9600196,"Anthony Martial","Manchester Utd.","Monaco",42500000
+"371",5.36978,43.296482,"Karim Rekik","Marseille","Manchester City",4250000
+"372",5.36978,43.296482,"Abou Diaby","Marseille","Arsenal",0
+"373",5.36978,43.296482,"Bouna Sarr","Marseille","FC Metz",1700000
+"374",5.36978,43.296482,"Georges-Kevin N'Koudou","Marseille","FC Nantes",1280000
+"375",5.36978,43.296482,"Rolando","Marseille","FC Porto",1280000
+"376",5.36978,43.296482,"Lucas Ocampos","Marseille","Monaco",6380000
+"377",5.36978,43.296482,"AndrÃ© Zambo Anguissa","Marseille","Stade Reims U19",0
+"378",7.4246158,43.7384176,"Gabriel Boschilia","Monaco","SÃ£o Paulo",7700000
+"379",7.4246158,43.7384176,"Adama TraorÃ©","Monaco","LOSC Lille",11900000
+"380",7.4246158,43.7384176,"Rony Lopes","Monaco","Manchester City",10200000
+"381",7.4246158,43.7384176,"Jemerson","Monaco","AtlÃ©tico-MG",9350000
+"382",7.4246158,43.7384176,"Ivan Cavaleiro","Monaco","Benfica",12750000
+"383",7.4246158,43.7384176,"Adama TraorÃ©","Monaco","LOSC Lille",11900000
+"384",7.4246158,43.7384176,"Thomas Lemar","Monaco","SM Caen",3400000
+"385",7.4246158,43.7384176,"Guido Carrillo","Monaco","Estudiantes",7650000
+"386",7.4246158,43.7384176,"Fabinho","Monaco","Rio Ave FC",5100000
+"387",7.4246158,43.7384176,"Allan Saint-Maximin","Monaco","Saint-Ãtienne",4250000
+"388",7.4246158,43.7384176,"Corentin Jean","Monaco","Troyes",3400000
+"389",7.4246158,43.7384176,"FarÃ¨s Bahlouli","Monaco","Olympique Lyon",2980000
+"390",7.4246158,43.7384176,"VÃ¡gner Love","Monaco","Corinthians",1280000
+"391",3.876716,43.610769,"Ryad Boudebouz","Montpellier","SC Bastia",1450000
+"392",3.876716,43.610769,"Casimir Ninga","Montpellier","Mangasport",64000
+"393",3.876716,43.610769,"William RÃ©my","Montpellier","Dijon",0
+"394",-1.61778,54.978252,"Chancel Mbemba","Newcastle","RSC Anderlecht",10200000
+"395",-1.61778,54.978252,"Jonjo Shelvey","Newcastle","Swansea",13600000
+"396",-1.61778,54.978252,"Aleksandar Mitrovic","Newcastle","RSC Anderlecht",15730000
+"397",-1.61778,54.978252,"Ivan Toney","Newcastle","Northampt. Town",604000
+"398",-1.61778,54.978252,"Andros Townsend","Newcastle","Spurs",13350000
+"399",-1.61778,54.978252,"Henri Saivet","Newcastle","G. Bordeaux",5100000
+"400",-1.61778,54.978252,"Florian Thauvin","Newcastle","Marseille",15600000
+"401",-1.61778,54.978252,"Georginio Wijnaldum","Newcastle","PSV Eindhoven",1.7e+07
+"402",1.297355,52.6308859,"Steven Naismith","Norwich","Everton",9350000
+"403",1.297355,52.6308859,"Timm Klose","Norwich","VfL Wolfsburg",9350000
+"404",1.297355,52.6308859,"Robbie Brady","Norwich","Hull City",8420000
+"405",1.297355,52.6308859,"Graham Dorrans","Norwich","West Brom",3490000
+"406",1.297355,52.6308859,"Ivo Pinto","Norwich","Dinamo Zagreb",3150000
+"407",1.297355,52.6308859,"Matt Jarvis","Norwich","West Ham",2890000
+"408",1.297355,52.6308859,"Youssouf Mulumbu","Norwich","West Brom",0
+"409",NA,NA,"MickaÃ«l Le Bihan","OGC Nice","AC Le Havre",1280000
+"410",NA,NA,"Jean MichaÃ«l Seri","OGC Nice","PaÃ§os Ferreira",850000
+"411",NA,NA,"RÃ©mi Walter","OGC Nice","AS Nancy",850000
+"412",NA,NA,"Maxime Le Marchand","OGC Nice","AC Le Havre",510000
+"413",-87.7962098,41.7304326,"Sergi Darder","Olympique Lyon","MÃ¡laga CF",11140000
+"414",-87.7962098,41.7304326,"Mapou Yanga-Mbiwa","Olympique Lyon","AS Roma",7990000
+"415",-87.7962098,41.7304326,"Claudio Beauvue","Olympique Lyon","Guingamp",5100000
+"416",-87.7962098,41.7304326,"Mathieu Valbuena","Olympique Lyon","Dinamo Moscow",5100000
+"417",-87.7962098,41.7304326,"Rafael","Olympique Lyon","Manchester Utd.",2720000
+"418",-87.7962098,41.7304326,"Lucas Tousart","Olympique Lyon","FC Valenciennes",2210000
+"419",-87.7962098,41.7304326,"Olivier Kemen","Olympique Lyon","Newcastle U23",680000
+"420",-87.7962098,41.7304326,"JÃ©rÃ©my Morel","Olympique Lyon","Marseille",0
+"421",2.3350238,48.8533958,"Layvin Kurzawa","Paris SG","Monaco",21250000
+"422",2.3350238,48.8533958,"Serge Aurier","Paris SG","Toulouse",8500000
+"423",2.3350238,48.8533958,"Benjamin Stambouli","Paris SG","Spurs",7310000
+"424",2.3350238,48.8533958,"Gustavo","Paris SG","FC SÃ£o Paulo B",0
+"425",2.3350238,48.8533958,"Ãngel Di MarÃ­a","Paris SG","Manchester Utd.",53550000
+"426",-70.5831446,-33.5191938,"Ousseynou CissÃ©","Rayo Vallecano","Dijon",0
+"427",-70.5831446,-33.5191938,"Piti","Rayo Vallecano","Granada CF",0
+"428",-70.5831446,-33.5191938,"Patrick Ebert","Rayo Vallecano","Spartak Moscow",0
+"429",-70.5831446,-33.5191938,"Razvan Rat","Rayo Vallecano","PAOK Saloniki",0
+"430",-70.5831446,-33.5191938,"JosÃ© Antonio Dorado","Rayo Vallecano","Villarreal CF",0
+"431",-103.4456539,20.7908698,"Juan Vargas","Real Betis","Fiorentina",0
+"432",-103.4456539,20.7908698,"Didier Digard","Real Betis","OGC Nice",0
+"433",-103.4456539,20.7908698,"GermÃ¡n Pezzella","Real Betis","River Plate",1910000
+"434",-103.4456539,20.7908698,"JoaquÃ­n","Real Betis","Fiorentina",1280000
+"435",-103.4456539,20.7908698,"Francisco Portillo","Real Betis","MÃ¡laga CF",850000
+"436",-103.4456539,20.7908698,"Petros","Real Betis","Corinthians",1450000
+"437",-103.4456539,20.7908698,"Cristiano Piccini","Real Betis","Fiorentina",1280000
+"438",-103.4456539,20.7908698,"Heiko Westermann","Real Betis","Hamburger SV",0
+"439",-103.4456539,20.7908698,"Rafael van der Vaart","Real Betis","Hamburger SV",0
+"440",-103.4456539,20.7908698,"Foued Kadir","Real Betis","Marseille",510000
+"441",-103.4456539,20.7908698,"Amro Tarek","Real Betis","El Gouna",255000
+"442",-99.136043,19.2932645,"Danilo","Real Madrid","FC Porto",26780000
+"443",-99.136043,19.2932645,"Mateo Kovacic","Real Madrid","Inter",26350000
+"444",-99.136043,19.2932645,"Marco Asensio","Real Madrid","RCD Mallorca",2980000
+"445",-99.136043,19.2932645,"JesÃºs Vallejo","Real Madrid","Real Zaragoza",4250000
+"446",-99.136043,19.2932645,"Lucas VÃ¡zquez","Real Madrid","Espanyol",850000
+"447",-101.6462224,21.1502441,"Jonathas","Real Sociedad","Elche CF",6120000
+"448",-101.6462224,21.1502441,"David Concha","Real Sociedad","Racing",850000
+"449",-101.6462224,21.1502441,"Asier Illarramendi","Real Sociedad","Real Madrid",12750000
+"450",4.031696,49.258329,"Jaba Kankava","Reims","Dnipro",1280000
+"451",4.031696,49.258329,"Hassane Kamara","Reims","LB ChÃ¢teauroux",0
+"452",4.031696,49.258329,"Hugo Rodriguez","Reims","AC Arles-Avign.",0
+"453",-1.6777926,48.117266,"Giovanni Sio","Rennes","FC Basel",1700000
+"454",-1.6777926,48.117266,"Ludovic Baal","Rennes","Lens",0
+"455",-1.6777926,48.117266,"Yacouba Sylla","Rennes","Aston Villa",1280000
+"456",-1.6777926,48.117266,"Mehdi Zeffane","Rennes","Olympique Lyon",850000
+"457",-1.6777926,48.117266,"Kermit Erasmus","Rennes","Orlando Pirates",544000
+"458",-1.6777926,48.117266,"Pedro Mendes","Rennes","Parma",0
+"459",NA,NA,"Vincent Pajot","Saint-Ãtienne","Rennes",0
+"460",NA,NA,"Robert Beric","Saint-Ãtienne","Rapid Vienna",4680000
+"461",NA,NA,"Ole Selnaes","Saint-Ãtienne","Rosenborg BK",2720000
+"462",NA,NA,"Oussama Tannane","Saint-Ãtienne","Heracles Almelo",2130000
+"463",NA,NA,"KÃ©vin ThÃ©ophile-Catherine","Saint-Ãtienne","Cardiff",1700000
+"464",NA,NA,"Alexander SÃ¶derlund","Saint-Ãtienne","Rosenborg BK",1700000
+"465",NA,NA,"Nolan Roux","Saint-Ãtienne","LOSC Lille",1700000
+"466",NA,NA,"Neal Maupay","Saint-Ãtienne","OGC Nice",510000
+"467",NA,NA,"KÃ©vin Malcuit","Saint-Ãtienne","FC Niort",425000
+"468",-100.7169119,20.0188739,"Ãdgar Barreto","Sampdoria","US Palermo",0
+"469",-100.7169119,20.0188739,"MatÃ­as Silvestre","Sampdoria","Inter",0
+"470",-100.7169119,20.0188739,"Mattia Cassani","Sampdoria","Parma",0
+"471",-100.7169119,20.0188739,"Luis Muriel","Sampdoria","Udinese Calcio",8930000
+"472",-100.7169119,20.0188739,"Fernando","Sampdoria","Shakhtar D.",6800000
+"473",-100.7169119,20.0188739,"Ricardo Ãlvarez","Sampdoria","Sunderland",0
+"474",-100.7169119,20.0188739,"Ervin Zukanovic","Sampdoria","Chievo Verona",2470000
+"475",-100.7169119,20.0188739,"Modibo DiakitÃ©","Sampdoria","Frosinone",0
+"476",-100.7169119,20.0188739,"Oliveira Jefferson","Sampdoria","Vicenza",0
+"477",-100.7169119,20.0188739,"Milan Skriniar","Sampdoria","MSK Zilina",850000
+"478",-100.7169119,20.0188739,"Michele Rocca","Sampdoria","Inter U19",850000
+"479",-100.7169119,20.0188739,"Alfred Duncan","Sampdoria","Inter",2210000
+"480",-100.7169119,20.0188739,"Lucas Torreira","Sampdoria","Pescara",1700000
+"481",-100.7169119,20.0188739,"Niklas Moisander","Sampdoria","AFC Ajax",0
+"482",-100.7169119,20.0188739,"Pedro Pereira","Sampdoria","Benfica Youth",162000
+"483",-100.7169119,20.0188739,"Andrea Coda","Sampdoria","Udinese Calcio",0
+"484",10.7847741,44.54433,"Marcello Trotta","Sassuolo","Avellino",2380000
+"485",10.7847741,44.54433,"Luca Mazzitelli","Sassuolo","AS Roma",2980000
+"486",10.7847741,44.54433,"Cristian Dell'Orco","Sassuolo","Parma",0
+"487",10.7847741,44.54433,"Lorenzo Pellegrini","Sassuolo","Roma U19",1060000
+"488",10.7847741,44.54433,"Stefano Sensi","Sassuolo","AC Cesena",4250000
+"489",10.7847741,44.54433,"GrÃ©goire Defrel","Sassuolo","AC Cesena",5950000
+"490",10.7847741,44.54433,"Domenico Berardi","Sassuolo","Juventus",8500000
+"491",10.7847741,44.54433,"Giovanni Sbrissa","Sassuolo","Vicenza",680000
+"492",-80.8614958,35.0383688,"Yassine Jebbour","SC Bastia","Montpellier",0
+"493",NA,NA,"Romain SaÃ¯ss","SCO Angers","AC Le Havre",0
+"494",NA,NA,"Goran Karanovic","SCO Angers","FC St. Gallen",0
+"495",NA,NA,"Mathias Serin","SCO Angers","SO Romorantin",0
+"496",NA,NA,"Bilel Mohsni","SCO Angers","Rangers",0
+"497",NA,NA,"Slimane Sissoko","SCO Angers","LuÃ§on VF",0
+"498",NA,NA,"Cheikh Ndoye","SCO Angers","US CrÃ©teil",0
+"499",NA,NA,"Yoann Andreu","SCO Angers","G. Ajaccio",0
+"500",NA,NA,"FÃ©rÃ©bory DorÃ©","SCO Angers","Botev Plovdiv",0
+"501",NA,NA,"IsmaÃ«l TraorÃ©","SCO Angers","Stade Brest 29",0
+"502",NA,NA,"GrÃ©gory Bourillon","SCO Angers","Reims",0
+"503",NA,NA,"Billy Ketkeophomphone","SCO Angers","FC Tours",0
+"504",NA,NA,"Pierrick Capelle","SCO Angers","Clermont Foot",0
+"505",NA,NA,"IvÃ¡n Ramis","SD Eibar","Levante UD",0
+"506",NA,NA,"Antonio Luna","SD Eibar","Aston Villa",0
+"507",NA,NA,"Keko","SD Eibar","Albacete",0
+"508",NA,NA,"AdriÃ¡n GonzÃ¡lez","SD Eibar","Elche CF",0
+"509",NA,NA,"Jon Ansotegi","SD Eibar","Real Sociedad",0
+"510",NA,NA,"Takashi Inui","SD Eibar","E. Frankfurt",425000
+"511",NA,NA,"Sergi Enrich","SD Eibar","CD Numancia",0
+"512",NA,NA,"Mauro dos Santos","SD Eibar","UD AlmerÃ­a",0
+"513",NA,NA,"Gonzalo Escalante","SD Eibar","Catania",850000
+"514",NA,NA,"Kike","SD Eibar","Middlesbrough",1700000
+"515",-109.9259886,27.4907255,"Mariano","Sevilla FC","G. Bordeaux",2980000
+"516",-109.9259886,27.4907255,"Sergio Escudero","Sevilla FC","Getafe CF",2550000
+"517",-109.9259886,27.4907255,"GaÃ«l Kakuta","Sevilla FC","Chelsea",5100000
+"518",-109.9259886,27.4907255,"Iago Aspas","Sevilla FC","Liverpool",5100000
+"519",-109.9259886,27.4907255,"Adil Rami","Sevilla FC","AC Milan",2980000
+"520",-109.9259886,27.4907255,"Evgen Konoplyanka","Sevilla FC","Dnipro",0
+"521",-109.9259886,27.4907255,"Steven N'Zonzi","Sevilla FC","Stoke City",8290000
+"522",-109.9259886,27.4907255,"Fernando Llorente","Sevilla FC","Juventus",0
+"523",-109.9259886,27.4907255,"Michael Krohn-Dehli","Sevilla FC","Celta de Vigo",0
+"524",-109.9259886,27.4907255,"Ciro Immobile","Sevilla FC","Bor. Dortmund",9350000
+"525",NA,NA,"Syam Ben Youssef","SM Caen","Astra Giurgiu",0
+"526",NA,NA,"Andy Delort","SM Caen","Wigan",1700000
+"527",NA,NA,"Jeff Louis","SM Caen","Standard LiÃ¨ge",1700000
+"528",NA,NA,"Pape SanÃ©","SM Caen","Bourg-en-Bresse",765000
+"529",NA,NA,"Chaker Alhadhur","SM Caen","FC Nantes",43000
+"530",NA,NA,"Christian Kouakou","SM Caen","FC Tours",425000
+"531",NA,NA,"Vincent Bessat","SM Caen","FC Nantes",0
+"532",NA,NA,"Florian Le Joncour","SM Caen","Concarneau",0
+"533",NA,NA,"Jonathan Delaplace","SM Caen","LOSC Lille",510000
+"534",NA,NA,"Jordan N'Kololo","SM Caen","Clermont Foot",0
+"535",-1.4043509,50.9097004,"Jordy Clasie","Southampton","Feyenoord",10200000
+"536",-1.4043509,50.9097004,"Oriol Romeu","Southampton","Chelsea",5950000
+"537",-1.4043509,50.9097004,"Juanmi","Southampton","MÃ¡laga CF",5950000
+"538",-1.4043509,50.9097004,"Cuco Martina","Southampton","FC Twente",1280000
+"539",-1.4043509,50.9097004,"Virgil van Dijk","Southampton","Celtic",13350000
+"540",-1.4043509,50.9097004,"Charlie Austin","Southampton","QPR",4420000
+"541",-1.4043509,50.9097004,"CÃ©dric Soares","Southampton","Sporting CP",4680000
+"542",-5.6386025,43.5347956,"Ognjen Vranjes","Sporting GijÃ³n","Gaziantepspor",0
+"543",-109.30151,35.1709339,"Kevin Wimmer","Spurs","1. FC KÃ¶ln",5100000
+"544",-109.30151,35.1709339,"Clinton N'Jie","Spurs","Olympique Lyon",11990000
+"545",-109.30151,35.1709339,"Toby Alderweireld","Spurs","AtlÃ©tico Madrid",13600000
+"546",-109.30151,35.1709339,"Heung-Min Son","Spurs","Bay. Leverkusen",25500000
+"547",-109.30151,35.1709339,"Kieran Trippier","Spurs","Burnley FC",4170000
+"548",NA,NA,"Raffaele Maiello","SSC Napoli","Crotone",1280000
+"549",NA,NA,"Jacopo Dezi","SSC Napoli","Crotone",255000
+"550",NA,NA,"Elseid Hysaj","SSC Napoli","FC Empoli",4250000
+"551",NA,NA,"Mirko Valdifiori","SSC Napoli","FC Empoli",4680000
+"552",NA,NA,"Allan","SSC Napoli","Udinese Calcio",9780000
+"553",NA,NA,"Alberto Grassi","SSC Napoli","Atalanta",6800000
+"554",NA,NA,"Vlad Chiriches","SSC Napoli","Spurs",5950000
+"555",NA,NA,"Eddy GnahorÃ©","SSC Napoli","Carrarese",128000
+"556",-2.179404,53.002668,"Ibrahim Afellay","Stoke City","FC Barcelona",0
+"557",-2.179404,53.002668,"Philipp Wollscheid","Stoke City","Bay. Leverkusen",3230000
+"558",-2.179404,53.002668,"Glen Johnson","Stoke City","Liverpool",0
+"559",-2.179404,53.002668,"Xherdan Shaqiri","Stoke City","Inter",14450000
+"560",-2.179404,53.002668,"Giannelli Imbula","Stoke City","FC Porto",20610000
+"561",-2.179404,53.002668,"Joselu","Stoke City","Hannover 96",6800000
+"562",-1.383801,54.906869,"Jeremain Lens","Sunderland","Dynamo Kyiv",9690000
+"563",-1.383801,54.906869,"Wahbi Khazri","Sunderland","G. Bordeaux",10030000
+"564",-1.383801,54.906869,"Fabio Borini","Sunderland","Liverpool",9100000
+"565",-1.383801,54.906869,"Ricardo Ãlvarez","Sunderland","Inter",8930000
+"566",-1.383801,54.906869,"Lamine KonÃ©","Sunderland","FC Lorient",5530000
+"567",-1.383801,54.906869,"YounÃ¨s Kaboul","Sunderland","Spurs",3660000
+"568",-1.383801,54.906869,"Santiago Vergini","Sunderland","Estudiantes",2420000
+"569",-1.383801,54.906869,"Jan Kirchhoff","Sunderland","Bayern Munich ",850000
+"570",-1.383801,54.906869,"SebastiÃ¡n Coates","Sunderland","Liverpool",2380000
+"571",-1.383801,54.906869,"Adam Matthews","Sunderland","Celtic",2380000
+"572",8.927711,50.108607,"Sandro Wagner","SV Darmstadt 98","Hertha BSC",0
+"573",8.927711,50.108607,"Mario Vrancic","SV Darmstadt 98","SC Paderborn",425000
+"574",8.927711,50.108607,"Fabian Holland","SV Darmstadt 98","Hertha BSC",298000
+"575",8.927711,50.108607,"Peter Niemeyer","SV Darmstadt 98","Hertha BSC",0
+"576",8.927711,50.108607,"JÃºnior DÃ­az","SV Darmstadt 98","1.FSV Mainz 05",0
+"577",8.927711,50.108607,"Jan Rosenthal","SV Darmstadt 98","E. Frankfurt",0
+"578",8.927711,50.108607,"Konstantin Rausch","SV Darmstadt 98","VfB Stuttgart",0
+"579",-3.943646,51.62144,"AndrÃ© Ayew","Swansea","Marseille",0
+"580",-3.943646,51.62144,"Alberto Paloschi","Swansea","Chievo Verona",8080000
+"581",-3.943646,51.62144,"Botti Biabi","Swansea","Falkirk FC",179000
+"582",-3.943646,51.62144,"Ãder","Swansea","Braga",5700000
+"583",-3.943646,51.62144,"Franck Tabanou","Swansea","Saint-Ãtienne",4170000
+"584",7.6868565,45.070312,"Andrea Belotti","Torino","US Palermo",7140000
+"585",7.6868565,45.070312,"Danilo Avelar","Torino","Cagliari Calcio",2130000
+"586",7.6868565,45.070312,"Daniele Baselli","Torino","Atalanta",5100000
+"587",7.6868565,45.070312,"Joel Obi","Torino","Inter",1870000
+"588",7.6868565,45.070312,"Davide Zappacosta","Torino","Atalanta",3660000
+"589",7.6868565,45.070312,"Afriyie Acquah","Torino","TSG Hoffenheim",2640000
+"590",1.444209,43.604652,"SomÃ¡lia","Toulouse","FerencvÃ¡ros",2040000
+"591",4.0744009,48.2973451,"Christian Bekamenga","Troyes","Stade Laval",255000
+"592",4.0744009,48.2973451,"Fabien Camus","Troyes","KRC Genk",0
+"593",4.0744009,48.2973451,"Johan Martial","Troyes","Stade Brest 29",0
+"594",4.0744009,48.2973451,"LossÃ©my KarabouÃ©","Troyes","AS Nancy",0
+"595",4.0744009,48.2973451,"Charles TraorÃ©","Troyes","FC Nantes B",0
+"596",NA,NA,"Pavel KaderÃ¡bek","TSG Hoffenheim","Sparta Praha",2980000
+"597",NA,NA,"Jonathan Schmid","TSG Hoffenheim","SC Freiburg",3150000
+"598",NA,NA,"Fabian SchÃ¤r","TSG Hoffenheim","FC Basel",3400000
+"599",NA,NA,"Eduardo Vargas","TSG Hoffenheim","SSC Napoli",5100000
+"600",NA,NA,"Felipe Pires","TSG Hoffenheim","RB Salzburg",850000
+"601",NA,NA,"Mark Uth","TSG Hoffenheim","SC Heerenveen",1870000
+"602",NA,NA,"Joelinton","TSG Hoffenheim","Sport",1870000
+"603",NA,NA,"Antonio Colak","TSG Hoffenheim","1.FC Nuremberg",425000
+"604",NA,NA,"Kevin Kuranyi","TSG Hoffenheim","Dinamo Moscow",0
+"605",-97.7206863,26.2147808,"Javier Garrido","UD Las Palmas","Norwich",0
+"606",-97.7206863,26.2147808,"AntolÃ­n Alcaraz","UD Las Palmas","Everton",0
+"607",-97.7206863,26.2147808,"Ãngel Montoro","UD Las Palmas","UD AlmerÃ­a",0
+"608",-97.7206863,26.2147808,"Alfredo OrtuÃ±o","UD Las Palmas","Granada CF",850000
+"609",-97.7206863,26.2147808,"Jonathan Viera","UD Las Palmas","Standard LiÃ¨ge",765000
+"610",-97.7206863,26.2147808,"Sergio Araujo","UD Las Palmas","Boca Juniors",2130000
+"611",-97.7206863,26.2147808,"Nabil El Zhar","UD Las Palmas","Levante UD",0
+"612",-97.7206863,26.2147808,"Pedro Bigas","UD Las Palmas","RCD Mallorca",0
+"613",13.2056341,46.0408771,"Marquinho","Udinese Calcio","AS Roma",425000
+"614",13.2056341,46.0408771,"Manuel Iturra","Udinese Calcio","Granada CF",0
+"615",13.2056341,46.0408771,"Emil Hallfredsson","Udinese Calcio","Hellas Verona",850000
+"616",13.2056341,46.0408771,"IvÃ¡n Piris","Udinese Calcio","Maldonado",2980000
+"617",13.2056341,46.0408771,"Emanuel InsÃºa","Udinese Calcio","Granada CF",0
+"618",13.2056341,46.0408771,"Adalberto PeÃ±aranda","Udinese Calcio","Dep. La Guaira",655000
+"619",13.2056341,46.0408771,"Felipe","Udinese Calcio","Inter",0
+"620",13.2056341,46.0408771,"Gaspar ÃÃ±iguez","Udinese Calcio","Granada CF",1020000
+"621",13.2056341,46.0408771,"Ryder Matos","Udinese Calcio","Fiorentina",2550000
+"622",13.2056341,46.0408771,"Andrija Balic","Udinese Calcio","Hajduk Split",2550000
+"623",13.2056341,46.0408771,"Samir","Udinese Calcio","Flamengo",3400000
+"624",13.2056341,46.0408771,"Ali Adnan","Udinese Calcio","Rizespor",1870000
+"625",-121.5380243,39.4354432,"Abdelhamid El Kaoutari","US Palermo","Montpellier",1700000
+"626",-121.5380243,39.4354432,"Norbert Balogh","US Palermo","Debreceni VSC",1870000
+"627",-121.5380243,39.4354432,"Aleksandar Trajkovski","US Palermo","Zulte Waregem",765000
+"628",-121.5380243,39.4354432,"Edoardo Goldaniga","US Palermo","Juventus",1700000
+"629",-121.5380243,39.4354432,"Oscar Hiljemark","US Palermo","PSV Eindhoven",2130000
+"630",-121.5380243,39.4354432,"Matheus Cassini","US Palermo","Corinthians",1020000
+"631",-121.5380243,39.4354432,"Ahmad Benali","US Palermo","Brescia",0
+"632",-121.5380243,39.4354432,"Andrea Rispoli","US Palermo","Parma",0
+"633",-121.5380243,39.4354432,"Manuel Arteaga","US Palermo","Zulia FC",680000
+"634",-121.5380243,39.4354432,"Thiago Cionek","US Palermo","Modena FC",298000
+"635",-121.5380243,39.4354432,"Alberto Gilardino","US Palermo","GZ Evergrande",0
+"636",-121.5380243,39.4354432,"Uros Djurdjevic","US Palermo","Vitesse",0
+"637",-121.5380243,39.4354432,"Nicolas Viola","US Palermo","Ternana",0
+"638",-0.5104759,39.0643597,"Aymen Abdennour","Valencia CF","Monaco",18570000
+"639",-0.5104759,39.0643597,"AndrÃ© Gomes","Valencia CF","Benfica",1.7e+07
+"640",-0.5104759,39.0643597,"Ãlvaro Negredo","Valencia CF","Manchester City",23800000
+"641",-0.5104759,39.0643597,"Santi Mina","Valencia CF","Celta de Vigo",8500000
+"642",-0.5104759,39.0643597,"JoÃ£o Cancelo","Valencia CF","Benfica",12750000
+"643",-0.5104759,39.0643597,"Zakaria Bakkali","Valencia CF","PSV U21",0
+"644",-0.5104759,39.0643597,"Aderlan Santos","Valencia CF","Braga",8080000
+"645",NA,NA,"Lukas Rupp","VfB Stuttgart","SC Paderborn",0
+"646",NA,NA,"Philip Heise","VfB Stuttgart","1.FC Heidenheim",638000
+"647",NA,NA,"Kevin GroÃkreutz","VfB Stuttgart","Galatasaray",1850000
+"648",NA,NA,"Joshua Kimmich","VfB Stuttgart","RB Leipzig",1280000
+"649",NA,NA,"Emiliano InsÃºa","VfB Stuttgart","AtlÃ©tico Madrid",0
+"650",NA,NA,"Toni Sunjic","VfB Stuttgart","Kuban Krasnodar",2550000
+"651",NA,NA,"Jan Kliment","VfB Stuttgart","FC Vysocina",850000
+"652",10.7979685,52.4257066,"Julian Draxler","VfL Wolfsburg","FC Schalke 04",28900000
+"653",10.7979685,52.4257066,"Bruno Henrique","VfL Wolfsburg","GoiÃ¡s EC",3830000
+"654",10.7979685,52.4257066,"Max Kruse","VfL Wolfsburg","Bor. M'gladbach",10200000
+"655",10.7979685,52.4257066,"Carlos Ascues","VfL Wolfsburg","FBC Melgar",1280000
+"656",10.7979685,52.4257066,"Francisco RodrÃ­guez","VfL Wolfsburg","FC ZÃ¼rich",1020000
+"657",10.7979685,52.4257066,"Dante","VfL Wolfsburg","Bayern Munich ",3830000
+"658",10.7979685,52.4257066,"Ismail Azzaoui","VfL Wolfsburg","Tottenham U21",850000
+"659",-0.1165001,39.9391986,"CÃ©dric Bakambu","Villarreal CF","Bursaspor",6380000
+"660",-0.1165001,39.9391986,"Samu GarcÃ­a","Villarreal CF","MÃ¡laga CF",6800000
+"661",-0.1165001,39.9391986,"Samu Castillejo","Villarreal CF","MÃ¡laga CF",6800000
+"662",-0.1165001,39.9391986,"Daniele Bonera","Villarreal CF","AC Milan",0
+"663",-0.1165001,39.9391986,"Denis SuÃ¡rez","Villarreal CF","FC Barcelona",3400000
+"664",-0.1165001,39.9391986,"VÃ­ctor Ruiz","Villarreal CF","Valencia CF",2300000
+"665",-0.39032,51.656489,"Adalberto PeÃ±aranda","Watford","Udinese Calcio",9010000
+"666",-0.39032,51.656489,"Abdoulaye DoucourÃ©","Watford","Rennes",9010000
+"667",-0.39032,51.656489,"Ãtienne Capoue","Watford","Spurs",7570000
+"668",-0.39032,51.656489,"JosÃ© Manuel Jurado","Watford","Spartak Moscow",7310000
+"669",-0.39032,51.656489,"Matej Vydra","Watford","Udinese Calcio",7140000
+"670",-0.39032,51.656489,"Nordin Amrabat","Watford","MÃ¡laga CF",7140000
+"671",-0.39032,51.656489,"Obbi Oulare","Watford","Club Brugge",7e+06
+"672",-0.39032,51.656489,"Steven Berghuis","Watford","AZ Alkmaar",5530000
+"673",-0.39032,51.656489,"Mario SuÃ¡rez","Watford","Fiorentina",4510000
+"674",-0.39032,51.656489,"Valon Behrami","Watford","Hamburger SV",2980000
+"675",-0.39032,51.656489,"JosÃ© Holebas","Watford","AS Roma",2130000
+"676",-0.39032,51.656489,"Miguel Britos","Watford","SSC Napoli",0
+"677",-0.39032,51.656489,"Sebastian PrÃ¶dl","Watford","Werder Bremen",0
+"678",-0.39032,51.656489,"Allan Nyom","Watford","Udinese Calcio",0
+"679",-0.39032,51.656489,"AdlÃ¨ne GuÃ©dioura","Watford","Crystal Palace",0
+"680",8.809285,53.0696545,"Milos Veljkovic","Werder Bremen","Spurs",281000
+"681",8.809285,53.0696545,"LÃ¡szlÃ³ Kleinheisler","Werder Bremen","Videoton FC",213000
+"682",8.809285,53.0696545,"Anthony Ujah","Werder Bremen","1. FC KÃ¶ln",3830000
+"683",8.809285,53.0696545,"Aron JÃ³hannsson","Werder Bremen","AZ Alkmaar",3570000
+"684",8.809285,53.0696545,"Sambou YatabarÃ©","Werder Bremen","Olympiacos",2130000
+"685",8.809285,53.0696545,"Ulisses  Garcia","Werder Bremen","Grasshoppers",510000
+"686",-1.995159,52.517664,"JosÃ© SalomÃ³n RondÃ³n","West Brom","Zenit S-Pb",14450000
+"687",-1.995159,52.517664,"Rickie Lambert","West Brom","Liverpool",3570000
+"688",-1.995159,52.517664,"Jonny Evans","West Brom","Manchester Utd.",7060000
+"689",-1.995159,52.517664,"James McClean","West Brom","Wigan",1790000
+"690",-1.995159,52.517664,"James Chester","West Brom","Hull City",9610000
+"691",-1.1139932,51.2641437,"Dimitri Payet","West Ham","Marseille",12750000
+"692",-1.1139932,51.2641437,"Angelo Ogbonna","West Ham","Juventus",9350000
+"693",-1.1139932,51.2641437,"Nikica Jelavic","West Ham","Hull City",3490000
+"694",-1.1139932,51.2641437,"Michail Antonio","West Ham","Nottm Forest",8080000
+"695",-1.1139932,51.2641437,"Pedro Obiang","West Ham","Sampdoria",5100000
+"696",-1.1139932,51.2641437,"Sam Byram","West Ham","Leeds",4080000
+"697",NA,NA,"Dominique Heintz","1. FC KÃ¶ln","1.FC K'lautern",1280000
+"698",-100.363932,25.733185,"Frederik SÃ¶rensen","1. FC KÃ¶ln","Juventus",1360000
+"699",NA,NA,"Anthony Modeste","1. FC KÃ¶ln","TSG Hoffenheim",3830000
+"700",-70.8273689,42.118527,"Leonardo Bittencourt","1. FC KÃ¶ln","Hannover 96",2130000
+"701",NA,NA,"Filip Mladenovic","1. FC KÃ¶ln","BATE Borisov",1280000
+"702",7.3714033,51.4918469,"Milos Jojic","1. FC KÃ¶ln","Bor. Dortmund",2550000
+"703",NA,NA,"Besar Halimi","1.FSV Mainz 05","Stuttg. Kickers",298000
+"704",139.8820686,35.6713127,"Yoshinori Muto","1.FSV Mainz 05","FC Tokyo",2380000
+"705",10.5267696,52.2688736,"Emil Berggreen","1.FSV Mainz 05","E. Braunschweig",2130000
+"706",NA,NA,"Danny Latza","1.FSV Mainz 05","VfL Bochum",0
+"707",NA,NA,"Fabian Frei","1.FSV Mainz 05","FC Basel",3060000
+"708",6.9946126,51.0157534,"Giulio Donati","1.FSV Mainz 05","Bay. Leverkusen",850000
+"709",30.4300917,-24.2606201,"GaÃ«tan Bussmann","1.FSV Mainz 05","FC Metz",850000
+"710",10.1610948,48.6893963,"Florian Niederlechner","1.FSV Mainz 05","1.FC Heidenheim",1700000
+"711",16.3378572,57.6027778,"Maximilian Beister","1.FSV Mainz 05","Hamburger SV",0
+"712",NA,NA,"Karim Onisiwo","1.FSV Mainz 05","SV Mattersburg",0
+"713",8.927711,50.108607,"Leon Balogun","1.FSV Mainz 05","SV Darmstadt 98",0
+"714",35.4611795,38.7648782,"Henrique Sereno","1.FSV Mainz 05","Kayserispor",0
+"715",-109.9259886,27.4907255,"Carlos Bacca","AC Milan","Sevilla FC",25500000
+"716",-58.5214952,-34.6284822,"Alessio Romagnoli","AC Milan","AS Roma",21250000
+"717",-58.5214952,-34.6284822,"Andrea Bertolacci","AC Milan","AS Roma",1.7e+07
+"718",8.946256,44.4056499,"Juraj Kucka","AC Milan","Genoa",2550000
+"719",7.6868565,45.070312,"Simone Verdi","AC Milan","Torino",383000
+"720",34.193604,47.7349473,"Luiz Adriano","AC Milan","Shakhtar D.",6800000
+"721",8.946256,44.4056499,"Luca Antonelli","AC Milan","Genoa",3830000
+"722",9.2744485,45.5845001,"Matteo Pessina","AC Milan","Monza",17000
+"723",14.7906121,40.914388,"Rodrigo Ely","AC Milan","Avellino",0
+"724",10.3279036,44.801485,"JosÃ© Mauri","AC Milan","Parma",0
+"725",NA,NA,"IsmaÃ«l Bennacer","Arsenal","AC Arles-Avign.",255000
+"726",NA,NA,"Mohamed Elneny","Arsenal","FC Basel",10630000
+"727",NA,NA,"Jeff Reine-Adelaide","Arsenal","RC Lens U19",2130000
+"728",-99.1404085,19.2937122,"Leandro Paredes","AS Roma","Boca Juniors",5100000
+"729",-0.2024423,51.9727271,"Ezequiel Ponce","AS Roma","Newell's",3570000
+"730",10.2118019,45.5415526,"Ismail H'Maidat","AS Roma","Brescia",2680000
+"731",14.2160898,42.4617902,"Matteo Politano","AS Roma","Pescara",510000
+"732",-121.8571511,37.2841992,"Nemanja Radonjic","AS Roma","Empoli U19",3400000
+"733",8.946256,44.4056499,"Iago FalquÃ©","AS Roma","Genoa",5950000
+"734",8.946256,44.4056499,"Andrea Bertolacci","AS Roma","Genoa",7230000
+"735",10.9078587,43.9303475,"Nicola Falasco","AS Roma","Pistoiese",170000
+"736",-0.2470864,51.3912756,"Tiago Casasola","AS Roma","Fulham FC",0
+"737",-2.487529,53.748575,"Rudy Gestede","Aston Villa","Blackburn",7230000
+"738",2.1178229,41.3806915,"Adama TraorÃ©","Aston Villa","FC Barcelona",8500000
+"739",-71.4547891,42.9956397,"Scott Sinclair","Aston Villa","Manchester City",2980000
+"740",3.057256,50.62925,"Idrissa Gueye","Aston Villa","LOSC Lille",7650000
+"741",2.1178229,41.3806915,"Adama TraorÃ©","Aston Villa","FC Barcelona",8500000
+"742",-71.4547891,42.9956397,"Micah Richards","Aston Villa","Manchester City",0
+"743",NA,NA,"Jordan Veretout","Aston Villa","FC Nantes",8500000
+"744",-1.995159,52.517664,"Joleon Lescott","Aston Villa","West Brom",1190000
+"745",-58.410285,-34.5981075,"JosÃ© Crespo","Aston Villa","CÃ³rdoba CF",595000
+"746",NA,NA,"Jordan Ayew","Aston Villa","FC Lorient",10200000
+"747",NA,NA,"Jordan Amavi","Aston Villa","OGC Nice",9350000
+"748",10.8796629,44.7838779,"Marco Borriello","Atalanta","Carpi",0
+"749",10.9466529,45.4575193,"Marcos De Paula","Atalanta","Chievo Verona",0
+"750",8.5039272,47.3813654,"Berat Djimsiti","Atalanta","FC ZÃ¼rich",0
+"751",10.7847741,44.54433,"Jasmin Kurtic","Atalanta","Sassuolo",2980000
+"752",5.948749,52.9628225,"Marten de Roon","Atalanta","SC Heerenveen",1110000
+"753",-46.6333094,-23.5505199,"Rafael TolÃ³i","Atalanta","SÃ£o Paulo",2980000
+"754",8.946256,44.4056499,"Mauricio Pinilla","Atalanta","Genoa",1700000
+"755",8.270781,47.1009823,"Remo Freuler","Atalanta","FC Luzern",1280000
+"756",-77.1333278,34.7380626,"Franck KessiÃ©","Atalanta","Stella Club",255000
+"757",6.2230139,50.7654394,"Andrea Petagna","Atalanta","AC Milan",850000
+"758",12.2385741,44.1444936,"Luca Valzania","Atalanta","AC Cesena",765000
+"759",7.4246158,43.7384176,"Gaetano Monachello","Atalanta","Monaco",425000
+"760",NA,NA,"Eneko BÃ³veda","Athletic Bilbao","SD Eibar",0
+"761",-3.7037902,40.4167754,"RaÃºl GarcÃ­a","Athletic Bilbao","AtlÃ©tico Madrid",6800000
+"762",82.9129239,18.7723771,"Javi Eraso","Athletic Bilbao","CD LeganÃ©s",0
+"763",-101.6462224,21.1502441,"Gorka Elustondo","Athletic Bilbao","Real Sociedad",0
+"764",NA,NA,"Bernard Mensah","AtlÃ©tico Madrid","Vit. GuimarÃ£es",5100000
+"765",-90.6163146,19.7894724,"Augusto FernÃ¡ndez","AtlÃ©tico Madrid","Celta de Vigo",3400000
+"766",-76.5602562,3.4492899,"Santos BorrÃ©","AtlÃ©tico Madrid","Deportivo Cali",2340000
+"767",12.3996736,44.2048479,"Jackson MartÃ­nez","AtlÃ©tico Madrid","FC Porto",31540000
+"768",-71.0328284,42.3917638,"Filipe LuÃ­s","AtlÃ©tico Madrid","Chelsea",13600000
+"769",10.5355882,42.9636137,"Stefan Savic","AtlÃ©tico Madrid","Fiorentina",21250000
+"770",-0.1165001,39.9391986,"Luciano Vietto","AtlÃ©tico Madrid","Villarreal CF",1.7e+07
+"771",7.4246158,43.7384176,"Yannick Carrasco","AtlÃ©tico Madrid","Monaco",14670000
+"772",-56.741207,-35.1944557,"MatÃ­as Kranevitter","AtlÃ©tico Madrid","River Plate",6800000
+"773",-118.3425748,33.9600196,"Chicharito","Bay. Leverkusen","Manchester Utd.",10200000
+"774",7.3714033,51.4918469,"Kevin Kampl","Bay. Leverkusen","Bor. Dortmund",9350000
+"775",-89.6557551,20.9354162,"Charles ArÃ¡nguiz","Bay. Leverkusen","Internacional",11050000
+"776",16.3378572,57.6027778,"Jonathan Tah","Bay. Leverkusen","Hamburger SV",6380000
+"777",8.274477,48.084436,"Admir Mehmedi","Bay. Leverkusen","SC Freiburg",6800000
+"778",13.000092,47.815426,"AndrÃ© Ramalho","Bay. Leverkusen","RB Salzburg",0
+"779",NA,NA,"Kyriakos Papadopoulos","Bay. Leverkusen","FC Schalke 04",5530000
+"780",34.193604,47.7349473,"Douglas Costa","Bayern Munich ","Shakhtar D.",25500000
+"781",NA,NA,"Joshua Kimmich","Bayern Munich ","VfB Stuttgart",7230000
+"782",-100.363932,25.733185,"Arturo Vidal","Bayern Munich ","Juventus",31450000
+"783",10.7847741,44.54433,"Matteo Brighi","Bologna","Sassuolo",0
+"784",-58.5214952,-34.6284822,"Mattia Destro","Bologna","AS Roma",7230000
+"785",-89.6412899,20.9544631,"Ibrahima Mbaye","Bologna","Inter",2980000
+"786",9.0901144,39.2132322,"Luca Rossettini","Bologna","Cagliari Calcio",2130000
+"787",NA,NA,"Erick Pulgar","Bologna","CDUC",1940000
+"788",3.876716,43.610769,"Anthony Mounier","Bologna","Montpellier",1700000
+"789",18.1750161,40.3515155,"Filippo Falco","Bologna","Lecce",1020000
+"790",13.0405549,41.5467721,"Marco Crimi","Bologna","Latina Calcio",850000
+"791",-118.1064585,34.121397,"Amadou Diawara","Bologna","San Marino C.",510000
+"792",10.7847741,44.54433,"Sergio Floccari","Bologna","Sassuolo",425000
+"793",NA,NA,"Emil Krafth","Bologna","Helsingborgs IF",425000
+"794",12.2385741,44.1444936,"Franco Brienza","Bologna","AC Cesena",0
+"795",6.9946126,51.0157534,"Gonzalo Castro","Bor. Dortmund","Bay. Leverkusen",9350000
+"796",NA,NA,"Joo-Ho Park","Bor. Dortmund","1.FSV Mainz 05",2550000
+"797",-106.4019378,23.2213193,"Julian Weigl","Bor. Dortmund","1860 Munich",2130000
+"798",-70.8273689,42.118527,"Lars Stindl","Bor. M'gladbach","Hannover 96",2550000
+"799",NA,NA,"Nico Schulz","Bor. M'gladbach","Hertha BSC",3400000
+"800",8.5039272,47.3813654,"Nico Elvedi","Bor. M'gladbach","FC ZÃ¼rich",3400000
+"801",7.3714033,51.4918469,"Jonas Hofmann","Bor. M'gladbach","Bor. Dortmund",6800000
+"802",-71.0328284,42.3917638,"Thorgan Hazard","Bor. M'gladbach","Chelsea",6800000
+"803",6.9946126,51.0157534,"Josip Drmic","Bor. M'gladbach","Bay. Leverkusen",8500000
+"804",-1.5077223,53.4158749,"Rhoys Wiggins","Bournemouth","Sheff Wed",221000
+"805",-2.487529,53.748575,"Joshua King","Bournemouth","Blackburn",0
+"806",-93.702428,37.3425477,"Sylvain Distin","Bournemouth","Everton",0
+"807",-80.0032,40.4398,"Glenn Murray","Bournemouth","Crystal Palace",4590000
+"808",-1.234956,54.574227,"Lee Tomlin","Bournemouth","Middlesbrough",3660000
+"809",1.12304,51.8909056,"Benik Afobe","Bournemouth","Wolves",11310000
+"810",1.14822,52.056736,"Tyrone Mings","Bournemouth","Ipswich",9610000
+"811",NA,NA,"Max Gradel","Bournemouth","Saint-Ãtienne",8500000
+"812",1.297355,52.6308859,"Lewis Grabban","Bournemouth","Norwich",7950000
+"813",15.0830304,37.5078772,"NicolÃ¡s Spolli","Carpi","Catania",0
+"814",6.2230139,50.7654394,"Cristian Zaccardo","Carpi","AC Milan",0
+"815",10.5355882,42.9636137,"Andrea Lazzari","Carpi","Fiorentina",0
+"816",5.4660837,51.4432096,"Ryan Hiwat","Carpi","PSV U19",0
+"817",18.6291607,50.3449367,"Kamil Wilczek","Carpi","Piast Gliwice",0
+"818",15.0830304,37.5078772,"Raphael Martinho","Carpi","Catania",0
+"819",-121.5380243,39.4354432,"Fabio DaprelÃ ","Carpi","US Palermo",0
+"820",-109.9259886,27.4907255,"Iago Aspas","Celta de Vigo","Sevilla FC",4510000
+"821",16.3378572,57.6027778,"Marcelo DÃ­az","Celta de Vigo","Hamburger SV",1530000
+"822",-87.7962098,41.7304326,"Claudio Beauvue","Celta de Vigo","Olympique Lyon",4250000
+"823",NA,NA,"Daniel Wass","Celta de Vigo","Ãvian",2550000
+"824",20.4489216,44.786568,"Dejan Drazic","Celta de Vigo","OFK Beograd",1020000
+"825",-71.4547891,42.9956397,"John Guidetti","Celta de Vigo","Manchester City",0
+"826",2.1178229,41.3806915,"Pedro","Chelsea","FC Barcelona",22950000
+"827",-75.9268747,40.3356483,"Michael Hector","Chelsea","Reading",4590000
+"828",NA,NA,"Matt Miazga","Chelsea","NY Red Bulls",3910000
+"829",-42.0911635,-22.8292768,"Kenedy","Chelsea","Fluminense",6800000
+"830",131.9594688,43.6917713,"Danilo Pantic","Chelsea","Partizan",0
+"831",NA,NA,"Abdul Rahman Baba","Chelsea","FC Augsburg",1.7e+07
+"832",NA,NA,"Papy Djilobodji","Chelsea","FC Nantes",2980000
+"833",NA,NA,"Nathan","Chelsea","AtlÃ©tico-PR",3400000
+"834",15.0830304,37.5078772,"Lucas Castro","Chievo Verona","Catania",2980000
+"835",6.2230139,50.7654394,"Valter Birsa","Chievo Verona","AC Milan",1280000
+"836",10.8796629,44.7838779,"NicolÃ¡s Spolli","Chievo Verona","Carpi",0
+"837",13.2056341,46.0408771,"Giampiero Pinzi","Chievo Verona","Udinese Calcio",0
+"838",-117.8120634,33.603029,"Filippo Di Maio","Chievo Verona","Catania U19",0
+"839",131.9594688,43.6917713,"Nikola Ninkovic","Chievo Verona","Partizan",468000
+"840",NA,NA,"Ervin Zukanovic","Chievo Verona","KAA Gent",850000
+"841",-100.363932,25.733185,"Simone Pepe","Chievo Verona","Juventus",0
+"842",10.2118019,45.5415526,"Isaac Ntow","Chievo Verona","Brescia",0
+"843",16.8718715,41.1171432,"Marco Calderoni","Chievo Verona","Bari",85000
+"844",10.3279036,44.801485,"Massimo Gobbi","Chievo Verona","Parma",0
+"845",2.3350238,48.8533958,"Yohan Cabaye","Crystal Palace","Paris SG",11820000
+"846",-1.383801,54.906869,"Connor Wickham","Crystal Palace","Sunderland",8500000
+"847",1.12304,51.8909056,"Bakary Sako","Crystal Palace","Wolves",0
+"848",-1.61778,54.978252,"JonÃ¡s GutiÃ©rrez","Dep. La CoruÃ±a","Newcastle",0
+"849",-109.9259886,27.4907255,"Fernando Navarro","Dep. La CoruÃ±a","Sevilla FC",0
+"850",-0.6690555,38.2645632,"Pedro Mosquera","Dep. La CoruÃ±a","Elche CF",0
+"851",NA,NA,"Lucas","Dep. La CoruÃ±a","PAOK Saloniki",1280000
+"852",-0.1165001,39.9391986,"Cani","Dep. La CoruÃ±a","Villarreal CF",0
+"853",NA,NA,"Szabolcs Huszti","E. Frankfurt","CC Yatai",213000
+"854",NA,NA,"David Abraham","E. Frankfurt","TSG Hoffenheim",1280000
+"855",6.9946126,51.0157534,"Stefan Reinartz","E. Frankfurt","Bay. Leverkusen",0
+"856",NA,NA,"Ãnis Ben-Hatira","E. Frankfurt","Hertha BSC",0
+"857",NA,NA,"Luc Castaignos","E. Frankfurt","FC Twente",2130000
+"858",NA,NA,"Yanni RegÃ¤sel","E. Frankfurt","Hertha BSC",102000
+"859",19.8319339,45.2608651,"Mijat Gacinovic","E. Frankfurt","Vojvodina",1020000
+"860",-103.3496092,20.6596988,"Marco FabiÃ¡n","E. Frankfurt","Guadalajara",3150000
+"861",-0.1165001,39.9391986,"Gerard Moreno","Espanyol","Villarreal CF",1280000
+"862",NA,NA,"Ãscar Duarte","Espanyol","Club Brugge",978000
+"863",-72.236379,-15.5155512,"Lucas VÃ¡zquez","Espanyol","R. M. Castilla",425000
+"864",-76.9714224,40.2313116,"Mickael Ciani","Espanyol","Sporting CP",0
+"865",-0.3887798,39.4961244,"Papakouli Diop","Espanyol","Levante UD",0
+"866",NA,NA,"David Henen","Everton","Olympiacos",238000
+"867",-56.741207,-35.1944557,"Ramiro Funes Mori","Everton","River Plate",10970000
+"868",-95.4987565,39.5838828,"Shani Tarashaj","Everton","Grasshoppers",3400000
+"869",-118.3425748,33.9600196,"Tom Cleverley","Everton","Manchester Utd.",0
+"870",37.739931,55.800076,"Oumar Niasse","Everton","Loko Moscow",15220000
+"871",-109.30151,35.1709339,"Aaron Lennon","Everton","Spurs",5100000
+"872",-56.741207,-35.1944557,"Leandro RodrÃ­guez","Everton","River Plate",595000
+"873",2.1178229,41.3806915,"Gerard Deulofeu","Everton","FC Barcelona",5100000
+"874",12.3996736,44.2048479,"Daniel Opare","FC Augsburg","FC Porto",0
+"875",6.9946126,51.0157534,"Dominik Kohr","FC Augsburg","Bay. Leverkusen",1190000
+"876",6.9946126,51.0157534,"Konstantinos Stafylidis","FC Augsburg","Bay. Leverkusen",2130000
+"877",-109.9259886,27.4907255,"Piotr Trochowski","FC Augsburg","Sevilla FC",0
+"878",8.4145779,49.0168232,"Philipp Max","FC Augsburg","Karlsruher SC",3230000
+"879",NA,NA,"Albian Ajeti","FC Augsburg","FC Basel",850000
+"880",NA,NA,"Ja-Cheol Koo","FC Augsburg","1.FSV Mainz 05",4250000
+"881",4.7601215,52.62921,"Jeffrey Gouweleeuw","FC Augsburg","AZ Alkmaar",2550000
+"882",-109.9259886,27.4907255,"Aleix Vidal","FC Barcelona","Sevilla FC",14450000
+"883",-3.7037902,40.4167754,"Arda Turan","FC Barcelona","AtlÃ©tico Madrid",28900000
+"884",10.5355882,42.9636137,"Luca Bittante","FC Empoli","Fiorentina",680000
+"885",6.2230139,50.7654394,"Riccardo Saponara","FC Empoli","AC Milan",3400000
+"886",NA,NA,"Kastriot Dermaku","FC Empoli","AS Melfi",0
+"887",10.5355882,42.9636137,"Michele Camporese","FC Empoli","Fiorentina",425000
+"888",10.2118019,45.5415526,"Marco Zambelli","FC Empoli","Brescia",0
+"889",NA,NA,"Rade Krunic","FC Empoli","Borac Cacak",0
+"890",10.3279036,44.801485,"Andrea Costa","FC Empoli","Parma",0
+"891",8.270781,47.1009823,"DarÃ­o Lezcano","FC Ingolstadt","FC Luzern",2130000
+"892",-48.6240564,-26.9996295,"Elias Kachunga","FC Ingolstadt","SC Paderborn",1280000
+"893",16.3738189,48.2081743,"Markus Suttner","FC Ingolstadt","Austria Vienna",595000
+"894",NA,NA,"Maurice Multhaup","FC Ingolstadt","FC Schalke 04",425000
+"895",8.927711,50.108607,"Romain BrÃ©gerie","FC Ingolstadt","SV Darmstadt 98",0
+"896",5.04148,47.322047,"Pape Paye","FC Lorient","Dijon",0
+"897",4.0744009,48.2973451,"Jimmy Cabot","FC Lorient","Troyes",1530000
+"898",4.031696,49.258329,"Benjamin Moukandjo","FC Lorient","Reims",1280000
+"899",NA,NA,"MorykÃ© Fofana","FC Lorient","LillestrÃ¶m SK",340000
+"900",39.8281768,40.9541543,"Waris Majeed","FC Lorient","Trabzonspor",3830000
+"901",NA,NA,"Zargo TourÃ©","FC Lorient","AC Le Havre",1280000
+"902",NA,NA,"Kolbeinn SigthÃ³rsson","FC Nantes","AFC Ajax",2550000
+"903",NA,NA,"Guillaume Gillet","FC Nantes","RSC Anderlecht",1700000
+"904",-0.57918,44.837789,"Emiliano Sala","FC Nantes","G. Bordeaux",850000
+"905",NA,NA,"Adrien Thomasson","FC Nantes","Ãvian",680000
+"906",12.989615,41.6552418,"Lorik Cana","FC Nantes","Lazio",170000
+"907",-4.466827,48.4600408,"Wilfried MoimbÃ©","FC Nantes","Stade Brest 29",0
+"908",11.3486838,49.5679426,"Alessandro SchÃ¶pf","FC Schalke 04","1.FC Nuremberg",4250000
+"909",-71.4547891,42.9956397,"Matija Nastasic","FC Schalke 04","Manchester City",8080000
+"910",8.809285,53.0696545,"Franco Di Santo","FC Schalke 04","Werder Bremen",5100000
+"911",NA,NA,"Johannes Geis","FC Schalke 04","1.FSV Mainz 05",10200000
+"912",27.1378769,43.8149115,"JÃºnior CaiÃ§ara","FC Schalke 04","Ludogorets",3830000
+"913",8.274477,48.084436,"Sascha Riether","FC Schalke 04","SC Freiburg",0
+"914",-3.7037902,40.4167754,"Mario SuÃ¡rez","Fiorentina","AtlÃ©tico Madrid",12750000
+"915",35.046183,48.464717,"Nikola Kalinic","Fiorentina","Dnipro",4680000
+"916",-82.820974,21.6066405,"Jaime BÃ¡ez","Fiorentina","Juventud",1960000
+"917",NA,NA,"Joan VerdÃº","Fiorentina","Baniyas SC",0
+"918",-1.1139932,51.2641437,"Mauro ZÃ¡rate","Fiorentina","West Ham",1790000
+"919",-119.4179324,36.778261,"AndrÃ©s Schetino","Fiorentina","CA FÃ©nix",2980000
+"920",14.7906121,40.914388,"Luca Bittante","Fiorentina","Avellino",425000
+"921",-43.1809269,-22.9511149,"Gilberto","Fiorentina","Botafogo",1700000
+"922",13.0110407,47.8827976,"Oliver Kragl","Frosinone","SV  Ried",340000
+"923",-77.7914471,43.0824364,"Aleksandar Tonev","Frosinone","Aston Villa",0
+"924",9.0901144,39.2132322,"Modibo DiakitÃ©","Frosinone","Cagliari Calcio",0
+"925",51.4690298,25.2757076,"Issiar Dia","G. Ajaccio","Lekhwiya",0
+"926",16.3378572,57.6027778,"Jacques Zoua","G. Ajaccio","Hamburger SV",0
+"927",6.1591743,49.5756795,"Alassane TourÃ©","G. Ajaccio","FC Tours",0
+"928",8.5039272,47.3813654,"Amine Chermiti","G. Ajaccio","FC ZÃ¼rich",0
+"929",11.3426163,44.494887,"Damjan Djokovic","G. Ajaccio","Bologna",0
+"930",-101.2299018,19.7259393,"Mauro Arambarri","G. Bordeaux","Defensor",2550000
+"931",-47.0546529,-22.9184528,"Pablo","G. Bordeaux","Ponte Preta",1700000
+"932",20.4489216,44.786568,"Milan Gajic","G. Bordeaux","OFK Beograd",850000
+"933",-121.7174504,40.5618791,"Malcom","G. Bordeaux","Corinthians",4250000
+"934",29.3190451,40.8236671,"Goran Pandev","Genoa","Galatasaray",0
+"935",-121.5380243,39.4354432,"Ezequiel MuÃ±oz","Genoa","US Palermo",0
+"936",13.512867,38.0829586,"Manuel Milinkovic","Genoa","Salernitana",0
+"937",-107.2650225,32.7997962,"Darko Lazovic","Genoa","Red Star",0
+"938",10.7847741,44.54433,"Leonardo Pavoletti","Genoa","Sassuolo",2550000
+"939",14.2160898,42.4617902,"Riccardo Fiamozzi","Genoa","Pescara",1280000
+"940",-76.9714224,40.2313116,"Diego Capel","Genoa","Sporting CP",1110000
+"941",NA,NA,"Serge GakpÃ©","Genoa","FC Nantes",0
+"942",-121.5380243,39.4354432,"Luca Rigoni","Genoa","US Palermo",425000
+"943",NA,NA,"Issa Cissokho","Genoa","FC Nantes",425000
+"944",NA,NA,"Henok Goitom","Getafe CF","AIK Solna",0
+"945",-3.0106774,36.7460566,"Cala","Getafe CF","Granada CF",0
+"946",-0.6690555,38.2645632,"DamiÃ¡n SuÃ¡rez","Getafe CF","Elche CF",0
+"947",-89.6412899,20.9544631,"Rene Krhin","Granada CF","Inter",1110000
+"948",NA,NA,"David Barral","Granada CF","Al-Dhafra SCC",0
+"949",NA,NA,"Yrondu Musavu-King","Granada CF","SM Caen",0
+"950",NA,NA,"Ricardo Costa","Granada CF","PAOK Saloniki",0
+"951",-63.616672,-38.416097,"Gaspar ÃÃ±iguez","Granada CF","Argentinos",1020000
+"952",NA,NA,"Isaac Cuenca","Granada CF","Bursaspor",0
+"953",NA,NA,"Aridane HernÃ¡ndez","Granada CF","CD Eldense",0
+"954",-0.6690555,38.2645632,"David LombÃ¡n","Granada CF","Elche CF",0
+"955",-70.8273689,42.118527,"Jimmy Briand","Guingamp","Hannover 96",0
+"956",NA,NA,"Nicolas Benezet","Guingamp","Ãvian",1020000
+"957",3.9940663,51.1023413,"Nill De Pauw","Guingamp","KSC Lokeren",638000
+"958",4.0744009,48.2973451,"Jonathan Martins Pereira","Guingamp","Troyes",0
+"959",73.1375421,32.2380686,"Nabil Bahoui","Hamburger SV","Ahli",0
+"960",NA,NA,"Sven Schipplock","Hamburger SV","TSG Hoffenheim",2130000
+"961",NA,NA,"Michael Gregoritsch","Hamburger SV","VfL Bochum",2550000
+"962",NA,NA,"Batuhan Altintas","Hamburger SV","Bursaspor",340000
+"963",NA,NA,"Gotoku Sakai","Hamburger SV","VfB Stuttgart",595000
+"964",10.7979685,52.4257066,"Aaron Hunt","Hamburger SV","VfL Wolfsburg",2550000
+"965",-109.30151,35.1709339,"Lewis Holtby","Hamburger SV","Spurs",5530000
+"966",9.0901144,39.2132322,"Albin Ekdal","Hamburger SV","Cagliari Calcio",3830000
+"967",NA,NA,"Uffe Bech","Hannover 96","Nordsjaelland",1700000
+"968",8.274477,48.084436,"Felix Klaus","Hannover 96","SC Freiburg",2550000
+"969",NA,NA,"Iver Fossum","Hannover 96","StrÃ¸msgodset",1700000
+"970",NA,NA,"MevlÃ¼t Erdinc","Hannover 96","Saint-Ãtienne",2810000
+"971",8.274477,48.084436,"Oliver Sorg","Hannover 96","SC Freiburg",2980000
+"972",-106.4019378,23.2213193,"Marius Wolf","Hannover 96","1860 Munich",1280000
+"973",6.7734556,51.2277411,"Charlison Benschop","Hannover 96","F. DÃ¼sseldorf",1280000
+"974",135.5657049,34.7995141,"Hotaru Yamaguchi","Hannover 96","Cerezo Osaka",850000
+"975",92.521652,34.31963,"Hugo Almeida","Hannover 96","Anzhi",0
+"976",8.946256,44.4056499,"Leandro Greco","Hellas Verona","Genoa",255000
+"977",-58.5214952,-34.6284822,"Federico Viviani","Hellas Verona","AS Roma",3400000
+"978",6.2230139,50.7654394,"Michelangelo Albertazzi","Hellas Verona","AC Milan",0
+"979",6.2230139,50.7654394,"Giampaolo Pazzini","Hellas Verona","AC Milan",0
+"980",NA,NA,"Mattia Valoti","Hellas Verona","UC AlbinoLeffe",0
+"981",NA,NA,"Filip Helander","Hellas Verona","MalmÃ¶ FF",850000
+"982",-121.5380243,39.4354432,"Eros Pisano","Hellas Verona","US Palermo",850000
+"983",10.3105674,43.548473,"Luca Siligardi","Hellas Verona","AS Livorno",0
+"984",5.04148,47.322047,"Samuel Souprayen","Hellas Verona","Dijon",0
+"985",8.274477,48.084436,"VladimÃ­r Darida","Hertha BSC","SC Freiburg",3230000
+"986",11.3486838,49.5679426,"Niklas Stark","Hertha BSC","1.FC Nuremberg",2550000
+"987",11.5819806,48.1351253,"Sinan Kurt","Hertha BSC","Bayern Munich ",425000
+"988",11.5819806,48.1351253,"Mitchell Weiser","Hertha BSC","Bayern Munich ",0
+"989",7.4246158,43.7384176,"Geoffrey Kondogbia","Inter","Monaco",26350000
+"990",11.5819806,48.1351253,"Xherdan Shaqiri","Inter","Bayern Munich ",12750000
+"991",-3.0106774,36.7460566,"Jeison Murillo","Inter","Granada CF",6800000
+"992",10.7979685,52.4257066,"Ivan Perisic","Inter","VfL Wolfsburg",13600000
+"993",29.3190451,40.8236671,"Felipe Melo","Inter","Galatasaray",3150000
+"994",-1.61778,54.978252,"Davide Santon","Inter","Newcastle",3150000
+"995",-3.7037902,40.4167754,"Mario Mandzukic","Juventus","AtlÃ©tico Madrid",16150000
+"996",13.2056341,46.0408771,"Roberto Pereyra","Juventus","Udinese Calcio",11900000
+"997",10.7847741,44.54433,"Simone Zaza","Juventus","Sassuolo",15300000
+"998",12.3996736,44.2048479,"Alex Sandro","Juventus","FC Porto",22100000
+"999",-121.5380243,39.4354432,"Paulo Dybala","Juventus","US Palermo",27200000
+"1000",-75.5873636,6.1696109,"AndrÃ©s Tello","Juventus","Envigado",1190000
+"1001",NA,NA,"Mame Thiam","Juventus","Virtus Lanciano",1190000
+"1002",-89.6412899,20.9544631,"Hernanes","Juventus","Inter",11050000
+"1003",8.946256,44.4056499,"Rolando Mandragora","Juventus","Genoa",5100000
+"1004",-99.136043,19.2932645,"Sami Khedira","Juventus","Real Madrid",0
+"1005",10.3279036,44.801485,"Alberto Cerri","Juventus","Parma",0
+"1006",-87.7962098,41.7304326,"Milan Bisevac","Lazio","Olympique Lyon",0
+"1007",13.2056341,46.0408771,"Dusan Basta","Lazio","Udinese Calcio",4250000
+"1008",4.7601215,52.62921,"Wesley Hoedt","Lazio","AZ Alkmaar",0
+"1009",12.2253049,44.1325193,"Ronaldo","Lazio","FC Empoli",0
+"1010",NA,NA,"Ricardo Kishna","Lazio","AFC Ajax",2550000
+"1011",2.1178229,41.3806915,"Patric","Lazio","FC Barcelona B",0
+"1012",5.5021,50.96613,"Sergej Milinkovic-Savic","Lazio","KRC Genk",7650000
+"1013",-76.9714224,40.2313116,"MaurÃ­cio","Lazio","Sporting CP",2250000
+"1014",16.2537357,39.2982629,"Riccardo Serpieri","Lazio","Cosenza",0
+"1015",NA,NA,"Shinji Okazaki","Leicester","1.FSV Mainz 05",9350000
+"1016",NA,NA,"N'Golo KantÃ©","Leicester","SM Caen",7650000
+"1017",12.1765189,55.4563854,"Daniel Amartey","Leicester","FC Copenhagen",5610000
+"1018",NA,NA,"GÃ¶khan Inler","Leicester","SSC Napoli",5950000
+"1019",-2.179404,53.002668,"Robert Huth","Leicester","Stoke City",3570000
+"1020",-49.7793508,-27.4224135,"Yohan Benalouane","Leicester","Atalanta",5950000
+"1021",-86.80249,33.5206608,"Demarai Gray","Leicester","Birmingham",4340000
+"1022",NA,NA,"Christian Fuchs","Leicester","FC Schalke 04",0
+"1023",NA,NA,"Ãngel Trujillo","Levante UD","UD AlmerÃ­a",850000
+"1024",-38.9624062,-12.2119608,"Deyverson","Levante UD","Belenenses",1530000
+"1025",-97.8630971,22.2391488,"Mauricio Cuero","Levante UD","CD La Equidad",2720000
+"1026",NA,NA,"Verza","Levante UD","UD AlmerÃ­a",0
+"1027",10.5355882,42.9636137,"Joan VerdÃº","Levante UD","Fiorentina",0
+"1028",39.8281768,40.9541543,"Carl Medjani","Levante UD","Trabzonspor",0
+"1029",10.3279036,44.801485,"Zouhair Feddal","Levante UD","Parma",0
+"1030",-77.7914471,43.0824364,"Christian Benteke","Liverpool","Aston Villa",39530000
+"1031",NA,NA,"Roberto Firmino","Liverpool","TSG Hoffenheim",34850000
+"1032",-1.4043509,50.9097004,"Nathaniel Clyne","Liverpool","Southampton",15050000
+"1033",-71.970074,42.13565,"Joe Gomez","Liverpool","Charlton",4170000
+"1034",-71.4547891,42.9956397,"James Milner","Liverpool","Manchester City",0
+"1035",NA,NA,"Danny Ings","Liverpool","Burnley FC",7060000
+"1036",-107.2650225,32.7997962,"Marko Grujic","Liverpool","Red Star",5950000
+"1037",2.83183,50.42893,"Baptiste Guillaume","LOSC Lille","Lens",3400000
+"1038",-0.7627206,48.0766347,"Sehrou Guirassy","LOSC Lille","Stade Laval",425000
+"1039",NA,NA,"Renato Civelli","LOSC Lille","Bursaspor",0
+"1040",7.4246158,43.7384176,"Mounir Obbadi","LOSC Lille","Monaco",0
+"1041",NA,NA,"Lenny Nangis","LOSC Lille","SM Caen",850000
+"1042",NA,NA,"Eric BauthÃ©ac","LOSC Lille","OGC Nice",2040000
+"1043",72.8495366,19.22594,"Ibrahim Amadou","LOSC Lille","AS Nancy",1700000
+"1044",-58.5214952,-34.6284822,"Junior Tallo","LOSC Lille","AS Roma",850000
+"1045",-87.7962098,41.7304326,"Yassine Benzia","LOSC Lille","Olympique Lyon",850000
+"1046",-90.6163146,19.7894724,"Charles","MÃ¡laga CF","Celta de Vigo",425000
+"1047",27.1378769,43.8149115,"FÃ¡bio Espinho","MÃ¡laga CF","Ludogorets",0
+"1048",29.3190451,40.8236671,"Nordin Amrabat","MÃ¡laga CF","Galatasaray",2980000
+"1049",12.4313452,44.0944217,"Federico Ricca","MÃ¡laga CF","Danubio FC",2130000
+"1050",-101.6462224,21.1502441,"Chory Castro","MÃ¡laga CF","Real Sociedad",0
+"1051",4.749854,51.596605,"Adnane Tighadouini","MÃ¡laga CF","NAC Breda",1020000
+"1052",-0.2470864,51.3912756,"Patrick Roberts","Manchester City","Fulham FC",12750000
+"1053",-0.5104759,39.0643597,"NicolÃ¡s Otamendi","Manchester City","Valencia CF",37910000
+"1054",-2.9915726,53.4083714,"Raheem Sterling","Manchester City","Liverpool",53130000
+"1055",-77.7914471,43.0824364,"Fabian Delph","Manchester City","Aston Villa",9780000
+"1056",NA,NA,"Enes Ãnal","Manchester City","Bursaspor",2550000
+"1057",151.3835956,-33.4974759,"Anthony CÃ¡ceres","Manchester City","Central Coast Mariners",272000
+"1058",10.7979685,52.4257066,"Kevin De Bruyne","Manchester City","VfL Wolfsburg",62900000
+"1059",NA,NA,"RubÃ©n Sobrino","Manchester City","Ponferradina",234000
+"1060",NA,NA,"Luke Brattan","Manchester City","Brisbane Roar",0
+"1061",NA,NA,"Florian Lejeune","Manchester City","Girona FC",255000
+"1062",11.5819806,48.1351253,"Bastian Schweinsteiger","Manchester Utd.","Bayern Munich ",7650000
+"1063",-1.4043509,50.9097004,"Morgan Schneiderlin","Manchester Utd.","Southampton",29750000
+"1064",7.6868565,45.070312,"Matteo Darmian","Manchester Utd.","Torino",15300000
+"1065",5.4660837,51.4432096,"Memphis Depay","Manchester Utd.","PSV Eindhoven",28900000
+"1066",7.4246158,43.7384176,"Anthony Martial","Manchester Utd.","Monaco",42500000
+"1067",-71.4547891,42.9956397,"Karim Rekik","Marseille","Manchester City",4250000
+"1068",-98.496595,29.4148437,"Abou Diaby","Marseille","Arsenal",0
+"1069",30.4300917,-24.2606201,"Bouna Sarr","Marseille","FC Metz",1700000
+"1070",NA,NA,"Georges-Kevin N'Koudou","Marseille","FC Nantes",1280000
+"1071",12.3996736,44.2048479,"Rolando","Marseille","FC Porto",1280000
+"1072",7.4246158,43.7384176,"Lucas Ocampos","Marseille","Monaco",6380000
+"1073",3.9143308,49.2509119,"AndrÃ© Zambo Anguissa","Marseille","Stade Reims U19",0
+"1074",-46.6333094,-23.5505199,"Gabriel Boschilia","Monaco","SÃ£o Paulo",7700000
+"1075",3.057256,50.62925,"Adama TraorÃ©","Monaco","LOSC Lille",11900000
+"1076",-71.4547891,42.9956397,"Rony Lopes","Monaco","Manchester City",10200000
+"1077",NA,NA,"Jemerson","Monaco","AtlÃ©tico-MG",9350000
+"1078",-43.2397455,-22.8926246,"Ivan Cavaleiro","Monaco","Benfica",12750000
+"1079",3.057256,50.62925,"Adama TraorÃ©","Monaco","LOSC Lille",11900000
+"1080",NA,NA,"Thomas Lemar","Monaco","SM Caen",3400000
+"1081",-75.116667,-14.666667,"Guido Carrillo","Monaco","Estudiantes",7650000
+"1082",-102.0391492,19.4220294,"Fabinho","Monaco","Rio Ave FC",5100000
+"1083",NA,NA,"Allan Saint-Maximin","Monaco","Saint-Ãtienne",4250000
+"1084",4.0744009,48.2973451,"Corentin Jean","Monaco","Troyes",3400000
+"1085",-87.7962098,41.7304326,"FarÃ¨s Bahlouli","Monaco","Olympique Lyon",2980000
+"1086",-121.7174504,40.5618791,"VÃ¡gner Love","Monaco","Corinthians",1280000
+"1087",-80.8614958,35.0383688,"Ryad Boudebouz","Montpellier","SC Bastia",1450000
+"1088",NA,NA,"Casimir Ninga","Montpellier","Mangasport",64000
+"1089",5.04148,47.322047,"William RÃ©my","Montpellier","Dijon",0
+"1090",NA,NA,"Chancel Mbemba","Newcastle","RSC Anderlecht",10200000
+"1091",-3.943646,51.62144,"Jonjo Shelvey","Newcastle","Swansea",13600000
+"1092",NA,NA,"Aleksandar Mitrovic","Newcastle","RSC Anderlecht",15730000
+"1093",-0.902656,52.240477,"Ivan Toney","Newcastle","Northampt. Town",604000
+"1094",-109.30151,35.1709339,"Andros Townsend","Newcastle","Spurs",13350000
+"1095",-0.57918,44.837789,"Henri Saivet","Newcastle","G. Bordeaux",5100000
+"1096",5.36978,43.296482,"Florian Thauvin","Newcastle","Marseille",15600000
+"1097",5.4660837,51.4432096,"Georginio Wijnaldum","Newcastle","PSV Eindhoven",1.7e+07
+"1098",-93.702428,37.3425477,"Steven Naismith","Norwich","Everton",9350000
+"1099",10.7979685,52.4257066,"Timm Klose","Norwich","VfL Wolfsburg",9350000
+"1100",-70.9078346,42.3020647,"Robbie Brady","Norwich","Hull City",8420000
+"1101",-1.995159,52.517664,"Graham Dorrans","Norwich","West Brom",3490000
+"1102",16.1163926,45.7062291,"Ivo Pinto","Norwich","Dinamo Zagreb",3150000
+"1103",-1.1139932,51.2641437,"Matt Jarvis","Norwich","West Ham",2890000
+"1104",-1.995159,52.517664,"Youssouf Mulumbu","Norwich","West Brom",0
+"1105",NA,NA,"MickaÃ«l Le Bihan","OGC Nice","AC Le Havre",1280000
+"1106",NA,NA,"Jean MichaÃ«l Seri","OGC Nice","PaÃ§os Ferreira",850000
+"1107",72.8495366,19.22594,"RÃ©mi Walter","OGC Nice","AS Nancy",850000
+"1108",NA,NA,"Maxime Le Marchand","OGC Nice","AC Le Havre",510000
+"1109",NA,NA,"Sergi Darder","Olympique Lyon","MÃ¡laga CF",11140000
+"1110",-58.5214952,-34.6284822,"Mapou Yanga-Mbiwa","Olympique Lyon","AS Roma",7990000
+"1111",-3.148352,48.561366,"Claudio Beauvue","Olympique Lyon","Guingamp",5100000
+"1112",37.5595953,55.7891159,"Mathieu Valbuena","Olympique Lyon","Dinamo Moscow",5100000
+"1113",-118.3425748,33.9600196,"Rafael","Olympique Lyon","Manchester Utd.",2720000
+"1114",3.518332,50.357113,"Lucas Tousart","Olympique Lyon","FC Valenciennes",2210000
+"1115",-117.7616851,33.7284386,"Olivier Kemen","Olympique Lyon","Newcastle U23",680000
+"1116",5.36978,43.296482,"JÃ©rÃ©my Morel","Olympique Lyon","Marseille",0
+"1117",7.4246158,43.7384176,"Layvin Kurzawa","Paris SG","Monaco",21250000
+"1118",1.444209,43.604652,"Serge Aurier","Paris SG","Toulouse",8500000
+"1119",-109.30151,35.1709339,"Benjamin Stambouli","Paris SG","Spurs",7310000
+"1120",-48.5495098,-20.5822144,"Gustavo","Paris SG","FC SÃ£o Paulo B",0
+"1121",-118.3425748,33.9600196,"Ãngel Di MarÃ­a","Paris SG","Manchester Utd.",53550000
+"1122",5.04148,47.322047,"Ousseynou CissÃ©","Rayo Vallecano","Dijon",0
+"1123",-3.0106774,36.7460566,"Piti","Rayo Vallecano","Granada CF",0
+"1124",37.436128,55.817478,"Patrick Ebert","Rayo Vallecano","Spartak Moscow",0
+"1125",NA,NA,"Razvan Rat","Rayo Vallecano","PAOK Saloniki",0
+"1126",-0.1165001,39.9391986,"JosÃ© Antonio Dorado","Rayo Vallecano","Villarreal CF",0
+"1127",10.5355882,42.9636137,"Juan Vargas","Real Betis","Fiorentina",0
+"1128",NA,NA,"Didier Digard","Real Betis","OGC Nice",0
+"1129",-56.741207,-35.1944557,"GermÃ¡n Pezzella","Real Betis","River Plate",1910000
+"1130",10.5355882,42.9636137,"JoaquÃ­n","Real Betis","Fiorentina",1280000
+"1131",NA,NA,"Francisco Portillo","Real Betis","MÃ¡laga CF",850000
+"1132",-121.7174504,40.5618791,"Petros","Real Betis","Corinthians",1450000
+"1133",10.5355882,42.9636137,"Cristiano Piccini","Real Betis","Fiorentina",1280000
+"1134",16.3378572,57.6027778,"Heiko Westermann","Real Betis","Hamburger SV",0
+"1135",16.3378572,57.6027778,"Rafael van der Vaart","Real Betis","Hamburger SV",0
+"1136",5.36978,43.296482,"Foued Kadir","Real Betis","Marseille",510000
+"1137",33.6511438,27.402484,"Amro Tarek","Real Betis","El Gouna",255000
+"1138",12.3996736,44.2048479,"Danilo","Real Madrid","FC Porto",26780000
+"1139",-89.6412899,20.9544631,"Mateo Kovacic","Real Madrid","Inter",26350000
+"1140",2.6667109,39.6451791,"Marco Asensio","Real Madrid","RCD Mallorca",2980000
+"1141",-98.2108921,19.0800113,"JesÃºs Vallejo","Real Madrid","Real Zaragoza",4250000
+"1142",2.641692,39.6293694,"Lucas VÃ¡zquez","Real Madrid","Espanyol",850000
+"1143",-0.6690555,38.2645632,"Jonathas","Real Sociedad","Elche CF",6120000
+"1144",-56.4613157,-34.7445711,"David Concha","Real Sociedad","Racing",850000
+"1145",-99.136043,19.2932645,"Asier Illarramendi","Real Sociedad","Real Madrid",12750000
+"1146",35.046183,48.464717,"Jaba Kankava","Reims","Dnipro",1280000
+"1147",NA,NA,"Hassane Kamara","Reims","LB ChÃ¢teauroux",0
+"1148",NA,NA,"Hugo Rodriguez","Reims","AC Arles-Avign.",0
+"1149",NA,NA,"Giovanni Sio","Rennes","FC Basel",1700000
+"1150",2.83183,50.42893,"Ludovic Baal","Rennes","Lens",0
+"1151",-77.7914471,43.0824364,"Yacouba Sylla","Rennes","Aston Villa",1280000
+"1152",-87.7962098,41.7304326,"Mehdi Zeffane","Rennes","Olympique Lyon",850000
+"1153",-81.2929748,28.632366,"Kermit Erasmus","Rennes","Orlando Pirates",544000
+"1154",10.3279036,44.801485,"Pedro Mendes","Rennes","Parma",0
+"1155",-1.6777926,48.117266,"Vincent Pajot","Saint-Ãtienne","Rennes",0
+"1156",-103.5459068,44.0382334,"Robert Beric","Saint-Ãtienne","Rapid Vienna",4680000
+"1157",NA,NA,"Ole Selnaes","Saint-Ãtienne","Rosenborg BK",2720000
+"1158",6.6684919,52.3670267,"Oussama Tannane","Saint-Ãtienne","Heracles Almelo",2130000
+"1159",-3.17909,51.481581,"KÃ©vin ThÃ©ophile-Catherine","Saint-Ãtienne","Cardiff",1700000
+"1160",NA,NA,"Alexander SÃ¶derlund","Saint-Ãtienne","Rosenborg BK",1700000
+"1161",3.057256,50.62925,"Nolan Roux","Saint-Ãtienne","LOSC Lille",1700000
+"1162",NA,NA,"Neal Maupay","Saint-Ãtienne","OGC Nice",510000
+"1163",-0.464777,46.323716,"KÃ©vin Malcuit","Saint-Ãtienne","FC Niort",425000
+"1164",-121.5380243,39.4354432,"Ãdgar Barreto","Sampdoria","US Palermo",0
+"1165",-89.6412899,20.9544631,"MatÃ­as Silvestre","Sampdoria","Inter",0
+"1166",10.3279036,44.801485,"Mattia Cassani","Sampdoria","Parma",0
+"1167",13.2056341,46.0408771,"Luis Muriel","Sampdoria","Udinese Calcio",8930000
+"1168",34.193604,47.7349473,"Fernando","Sampdoria","Shakhtar D.",6800000
+"1169",-1.383801,54.906869,"Ricardo Ãlvarez","Sampdoria","Sunderland",0
+"1170",10.9466529,45.4575193,"Ervin Zukanovic","Sampdoria","Chievo Verona",2470000
+"1171",13.3426341,41.6396009,"Modibo DiakitÃ©","Sampdoria","Frosinone",0
+"1172",11.5354214,45.5454787,"Oliveira Jefferson","Sampdoria","Vicenza",0
+"1173",NA,NA,"Milan Skriniar","Sampdoria","MSK Zilina",850000
+"1174",-122.2609149,47.1891048,"Michele Rocca","Sampdoria","Inter U19",850000
+"1175",-89.6412899,20.9544631,"Alfred Duncan","Sampdoria","Inter",2210000
+"1176",14.2160898,42.4617902,"Lucas Torreira","Sampdoria","Pescara",1700000
+"1177",NA,NA,"Niklas Moisander","Sampdoria","AFC Ajax",0
+"1178",NA,NA,"Pedro Pereira","Sampdoria","Benfica Youth",162000
+"1179",13.2056341,46.0408771,"Andrea Coda","Sampdoria","Udinese Calcio",0
+"1180",14.7906121,40.914388,"Marcello Trotta","Sassuolo","Avellino",2380000
+"1181",-58.5214952,-34.6284822,"Luca Mazzitelli","Sassuolo","AS Roma",2980000
+"1182",10.3279036,44.801485,"Cristian Dell'Orco","Sassuolo","Parma",0
+"1183",-99.1575913,19.4294062,"Lorenzo Pellegrini","Sassuolo","Roma U19",1060000
+"1184",12.2385741,44.1444936,"Stefano Sensi","Sassuolo","AC Cesena",4250000
+"1185",12.2385741,44.1444936,"GrÃ©goire Defrel","Sassuolo","AC Cesena",5950000
+"1186",-100.363932,25.733185,"Domenico Berardi","Sassuolo","Juventus",8500000
+"1187",11.5354214,45.5454787,"Giovanni Sbrissa","Sassuolo","Vicenza",680000
+"1188",3.876716,43.610769,"Yassine Jebbour","SC Bastia","Montpellier",0
+"1189",NA,NA,"Romain SaÃ¯ss","SCO Angers","AC Le Havre",0
+"1190",9.4756096,47.0701893,"Goran Karanovic","SCO Angers","FC St. Gallen",0
+"1191",1.747259,47.358657,"Mathias Serin","SCO Angers","SO Romorantin",0
+"1192",149.6666038,-33.7010876,"Bilel Mohsni","SCO Angers","Rangers",0
+"1193",NA,NA,"Slimane Sissoko","SCO Angers","LuÃ§on VF",0
+"1194",NA,NA,"Cheikh Ndoye","SCO Angers","US CrÃ©teil",0
+"1195",8.738635,41.919229,"Yoann Andreu","SCO Angers","G. Ajaccio",0
+"1196",24.7452011,42.135343,"FÃ©rÃ©bory DorÃ©","SCO Angers","Botev Plovdiv",0
+"1197",-4.466827,48.4600408,"IsmaÃ«l TraorÃ©","SCO Angers","Stade Brest 29",0
+"1198",4.031696,49.258329,"GrÃ©gory Bourillon","SCO Angers","Reims",0
+"1199",6.1591743,49.5756795,"Billy Ketkeophomphone","SCO Angers","FC Tours",0
+"1200",-121.0715463,38.6832563,"Pierrick Capelle","SCO Angers","Clermont Foot",0
+"1201",-0.3887798,39.4961244,"IvÃ¡n Ramis","SD Eibar","Levante UD",0
+"1202",-77.7914471,43.0824364,"Antonio Luna","SD Eibar","Aston Villa",0
+"1203",-1.8585424,38.994349,"Keko","SD Eibar","Albacete",0
+"1204",-0.6690555,38.2645632,"AdriÃ¡n GonzÃ¡lez","SD Eibar","Elche CF",0
+"1205",-101.6462224,21.1502441,"Jon Ansotegi","SD Eibar","Real Sociedad",0
+"1206",8.6821267,50.1109221,"Takashi Inui","SD Eibar","E. Frankfurt",425000
+"1207",NA,NA,"Sergi Enrich","SD Eibar","CD Numancia",0
+"1208",NA,NA,"Mauro dos Santos","SD Eibar","UD AlmerÃ­a",0
+"1209",15.0830304,37.5078772,"Gonzalo Escalante","SD Eibar","Catania",850000
+"1210",-1.234956,54.574227,"Kike","SD Eibar","Middlesbrough",1700000
+"1211",-0.57918,44.837789,"Mariano","Sevilla FC","G. Bordeaux",2980000
+"1212",NA,NA,"Sergio Escudero","Sevilla FC","Getafe CF",2550000
+"1213",-71.0328284,42.3917638,"GaÃ«l Kakuta","Sevilla FC","Chelsea",5100000
+"1214",-2.9915726,53.4083714,"Iago Aspas","Sevilla FC","Liverpool",5100000
+"1215",6.2230139,50.7654394,"Adil Rami","Sevilla FC","AC Milan",2980000
+"1216",35.046183,48.464717,"Evgen Konoplyanka","Sevilla FC","Dnipro",0
+"1217",-2.179404,53.002668,"Steven N'Zonzi","Sevilla FC","Stoke City",8290000
+"1218",-100.363932,25.733185,"Fernando Llorente","Sevilla FC","Juventus",0
+"1219",-90.6163146,19.7894724,"Michael Krohn-Dehli","Sevilla FC","Celta de Vigo",0
+"1220",7.3714033,51.4918469,"Ciro Immobile","Sevilla FC","Bor. Dortmund",9350000
+"1221",NA,NA,"Syam Ben Youssef","SM Caen","Astra Giurgiu",0
+"1222",-2.6325074,53.5450645,"Andy Delort","SM Caen","Wigan",1700000
+"1223",NA,NA,"Jeff Louis","SM Caen","Standard LiÃ¨ge",1700000
+"1224",5.2255007,46.2051675,"Pape SanÃ©","SM Caen","Bourg-en-Bresse",765000
+"1225",NA,NA,"Chaker Alhadhur","SM Caen","FC Nantes",43000
+"1226",6.1591743,49.5756795,"Christian Kouakou","SM Caen","FC Tours",425000
+"1227",NA,NA,"Vincent Bessat","SM Caen","FC Nantes",0
+"1228",-3.920734,47.872834,"Florian Le Joncour","SM Caen","Concarneau",0
+"1229",3.057256,50.62925,"Jonathan Delaplace","SM Caen","LOSC Lille",510000
+"1230",-121.0715463,38.6832563,"Jordan N'Kololo","SM Caen","Clermont Foot",0
+"1231",18.710503,-33.983964,"Jordy Clasie","Southampton","Feyenoord",10200000
+"1232",-71.0328284,42.3917638,"Oriol Romeu","Southampton","Chelsea",5950000
+"1233",NA,NA,"Juanmi","Southampton","MÃ¡laga CF",5950000
+"1234",NA,NA,"Cuco Martina","Southampton","FC Twente",1280000
+"1235",-98.596603,29.5134897,"Virgil van Dijk","Southampton","Celtic",13350000
+"1236",-8.4052158,53.8761086,"Charlie Austin","Southampton","QPR",4420000
+"1237",-76.9714224,40.2313116,"CÃ©dric Soares","Southampton","Sporting CP",4680000
+"1238",NA,NA,"Ognjen Vranjes","Sporting GijÃ³n","Gaziantepspor",0
+"1239",NA,NA,"Kevin Wimmer","Spurs","1. FC KÃ¶ln",5100000
+"1240",-87.7962098,41.7304326,"Clinton N'Jie","Spurs","Olympique Lyon",11990000
+"1241",-3.7037902,40.4167754,"Toby Alderweireld","Spurs","AtlÃ©tico Madrid",13600000
+"1242",6.9946126,51.0157534,"Heung-Min Son","Spurs","Bay. Leverkusen",25500000
+"1243",NA,NA,"Kieran Trippier","Spurs","Burnley FC",4170000
+"1244",17.1271102,39.0807932,"Raffaele Maiello","SSC Napoli","Crotone",1280000
+"1245",17.1271102,39.0807932,"Jacopo Dezi","SSC Napoli","Crotone",255000
+"1246",12.2253049,44.1325193,"Elseid Hysaj","SSC Napoli","FC Empoli",4250000
+"1247",12.2253049,44.1325193,"Mirko Valdifiori","SSC Napoli","FC Empoli",4680000
+"1248",13.2056341,46.0408771,"Allan","SSC Napoli","Udinese Calcio",9780000
+"1249",-49.7793508,-27.4224135,"Alberto Grassi","SSC Napoli","Atalanta",6800000
+"1250",-109.30151,35.1709339,"Vlad Chiriches","SSC Napoli","Spurs",5950000
+"1251",12.0305904,45.2999432,"Eddy GnahorÃ©","SSC Napoli","Carrarese",128000
+"1252",2.1178229,41.3806915,"Ibrahim Afellay","Stoke City","FC Barcelona",0
+"1253",6.9946126,51.0157534,"Philipp Wollscheid","Stoke City","Bay. Leverkusen",3230000
+"1254",-2.9915726,53.4083714,"Glen Johnson","Stoke City","Liverpool",0
+"1255",-89.6412899,20.9544631,"Xherdan Shaqiri","Stoke City","Inter",14450000
+"1256",12.3996736,44.2048479,"Giannelli Imbula","Stoke City","FC Porto",20610000
+"1257",-70.8273689,42.118527,"Joselu","Stoke City","Hannover 96",6800000
+"1258",30.564428,50.32,"Jeremain Lens","Sunderland","Dynamo Kyiv",9690000
+"1259",-0.57918,44.837789,"Wahbi Khazri","Sunderland","G. Bordeaux",10030000
+"1260",-2.9915726,53.4083714,"Fabio Borini","Sunderland","Liverpool",9100000
+"1261",-89.6412899,20.9544631,"Ricardo Ãlvarez","Sunderland","Inter",8930000
+"1262",NA,NA,"Lamine KonÃ©","Sunderland","FC Lorient",5530000
+"1263",-109.30151,35.1709339,"YounÃ¨s Kaboul","Sunderland","Spurs",3660000
+"1264",-75.116667,-14.666667,"Santiago Vergini","Sunderland","Estudiantes",2420000
+"1265",11.5819806,48.1351253,"Jan Kirchhoff","Sunderland","Bayern Munich ",850000
+"1266",-2.9915726,53.4083714,"SebastiÃ¡n Coates","Sunderland","Liverpool",2380000
+"1267",-98.596603,29.5134897,"Adam Matthews","Sunderland","Celtic",2380000
+"1268",NA,NA,"Sandro Wagner","SV Darmstadt 98","Hertha BSC",0
+"1269",-48.6240564,-26.9996295,"Mario Vrancic","SV Darmstadt 98","SC Paderborn",425000
+"1270",NA,NA,"Fabian Holland","SV Darmstadt 98","Hertha BSC",298000
+"1271",NA,NA,"Peter Niemeyer","SV Darmstadt 98","Hertha BSC",0
+"1272",NA,NA,"JÃºnior DÃ­az","SV Darmstadt 98","1.FSV Mainz 05",0
+"1273",8.6821267,50.1109221,"Jan Rosenthal","SV Darmstadt 98","E. Frankfurt",0
+"1274",NA,NA,"Konstantin Rausch","SV Darmstadt 98","VfB Stuttgart",0
+"1275",5.36978,43.296482,"AndrÃ© Ayew","Swansea","Marseille",0
+"1276",10.9466529,45.4575193,"Alberto Paloschi","Swansea","Chievo Verona",8080000
+"1277",NA,NA,"Botti Biabi","Swansea","Falkirk FC",179000
+"1278",-8.426507,41.5454486,"Ãder","Swansea","Braga",5700000
+"1279",NA,NA,"Franck Tabanou","Swansea","Saint-Ãtienne",4170000
+"1280",-121.5380243,39.4354432,"Andrea Belotti","Torino","US Palermo",7140000
+"1281",9.0901144,39.2132322,"Danilo Avelar","Torino","Cagliari Calcio",2130000
+"1282",-49.7793508,-27.4224135,"Daniele Baselli","Torino","Atalanta",5100000
+"1283",-89.6412899,20.9544631,"Joel Obi","Torino","Inter",1870000
+"1284",NA,NA,"Davide Zappacosta","Torino","Atalanta",3660000
+"1285",NA,NA,"Afriyie Acquah","Torino","TSG Hoffenheim",2640000
+"1286",NA,NA,"SomÃ¡lia","Toulouse","FerencvÃ¡ros",2040000
+"1287",NA,NA,"Christian Bekamenga","Troyes","Stade Laval",255000
+"1288",NA,NA,"Fabien Camus","Troyes","KRC Genk",0
+"1289",NA,NA,"Johan Martial","Troyes","Stade Brest 29",0
+"1290",NA,NA,"LossÃ©my KarabouÃ©","Troyes","AS Nancy",0
+"1291",NA,NA,"Charles TraorÃ©","Troyes","FC Nantes B",0
+"1292",NA,NA,"Pavel KaderÃ¡bek","TSG Hoffenheim","Sparta Praha",2980000
+"1293",NA,NA,"Jonathan Schmid","TSG Hoffenheim","SC Freiburg",3150000
+"1294",NA,NA,"Fabian SchÃ¤r","TSG Hoffenheim","FC Basel",3400000
+"1295",NA,NA,"Eduardo Vargas","TSG Hoffenheim","SSC Napoli",5100000
+"1296",NA,NA,"Felipe Pires","TSG Hoffenheim","RB Salzburg",850000
+"1297",NA,NA,"Mark Uth","TSG Hoffenheim","SC Heerenveen",1870000
+"1298",NA,NA,"Joelinton","TSG Hoffenheim","Sport",1870000
+"1299",NA,NA,"Antonio Colak","TSG Hoffenheim","1.FC Nuremberg",425000
+"1300",NA,NA,"Kevin Kuranyi","TSG Hoffenheim","Dinamo Moscow",0
+"1301",NA,NA,"Javier Garrido","UD Las Palmas","Norwich",0
+"1302",NA,NA,"AntolÃ­n Alcaraz","UD Las Palmas","Everton",0
+"1303",NA,NA,"Ãngel Montoro","UD Las Palmas","UD AlmerÃ­a",0
+"1304",NA,NA,"Alfredo OrtuÃ±o","UD Las Palmas","Granada CF",850000
+"1305",NA,NA,"Jonathan Viera","UD Las Palmas","Standard LiÃ¨ge",765000
+"1306",NA,NA,"Sergio Araujo","UD Las Palmas","Boca Juniors",2130000
+"1307",NA,NA,"Nabil El Zhar","UD Las Palmas","Levante UD",0
+"1308",NA,NA,"Pedro Bigas","UD Las Palmas","RCD Mallorca",0
+"1309",NA,NA,"Marquinho","Udinese Calcio","AS Roma",425000
+"1310",NA,NA,"Manuel Iturra","Udinese Calcio","Granada CF",0
+"1311",NA,NA,"Emil Hallfredsson","Udinese Calcio","Hellas Verona",850000
+"1312",NA,NA,"IvÃ¡n Piris","Udinese Calcio","Maldonado",2980000
+"1313",NA,NA,"Emanuel InsÃºa","Udinese Calcio","Granada CF",0
+"1314",NA,NA,"Adalberto PeÃ±aranda","Udinese Calcio","Dep. La Guaira",655000
+"1315",NA,NA,"Felipe","Udinese Calcio","Inter",0
+"1316",NA,NA,"Gaspar ÃÃ±iguez","Udinese Calcio","Granada CF",1020000
+"1317",NA,NA,"Ryder Matos","Udinese Calcio","Fiorentina",2550000
+"1318",NA,NA,"Andrija Balic","Udinese Calcio","Hajduk Split",2550000
+"1319",NA,NA,"Samir","Udinese Calcio","Flamengo",3400000
+"1320",NA,NA,"Ali Adnan","Udinese Calcio","Rizespor",1870000
+"1321",NA,NA,"Abdelhamid El Kaoutari","US Palermo","Montpellier",1700000
+"1322",NA,NA,"Norbert Balogh","US Palermo","Debreceni VSC",1870000
+"1323",NA,NA,"Aleksandar Trajkovski","US Palermo","Zulte Waregem",765000
+"1324",NA,NA,"Edoardo Goldaniga","US Palermo","Juventus",1700000
+"1325",NA,NA,"Oscar Hiljemark","US Palermo","PSV Eindhoven",2130000
+"1326",NA,NA,"Matheus Cassini","US Palermo","Corinthians",1020000
+"1327",NA,NA,"Ahmad Benali","US Palermo","Brescia",0
+"1328",NA,NA,"Andrea Rispoli","US Palermo","Parma",0
+"1329",NA,NA,"Manuel Arteaga","US Palermo","Zulia FC",680000
+"1330",NA,NA,"Thiago Cionek","US Palermo","Modena FC",298000
+"1331",NA,NA,"Alberto Gilardino","US Palermo","GZ Evergrande",0
+"1332",NA,NA,"Uros Djurdjevic","US Palermo","Vitesse",0
+"1333",NA,NA,"Nicolas Viola","US Palermo","Ternana",0
+"1334",NA,NA,"Aymen Abdennour","Valencia CF","Monaco",18570000
+"1335",NA,NA,"AndrÃ© Gomes","Valencia CF","Benfica",1.7e+07
+"1336",NA,NA,"Ãlvaro Negredo","Valencia CF","Manchester City",23800000
+"1337",NA,NA,"Santi Mina","Valencia CF","Celta de Vigo",8500000
+"1338",NA,NA,"JoÃ£o Cancelo","Valencia CF","Benfica",12750000
+"1339",NA,NA,"Zakaria Bakkali","Valencia CF","PSV U21",0
+"1340",NA,NA,"Aderlan Santos","Valencia CF","Braga",8080000
+"1341",NA,NA,"Lukas Rupp","VfB Stuttgart","SC Paderborn",0
+"1342",NA,NA,"Philip Heise","VfB Stuttgart","1.FC Heidenheim",638000
+"1343",NA,NA,"Kevin GroÃkreutz","VfB Stuttgart","Galatasaray",1850000
+"1344",NA,NA,"Joshua Kimmich","VfB Stuttgart","RB Leipzig",1280000
+"1345",NA,NA,"Emiliano InsÃºa","VfB Stuttgart","AtlÃ©tico Madrid",0
+"1346",NA,NA,"Toni Sunjic","VfB Stuttgart","Kuban Krasnodar",2550000
+"1347",NA,NA,"Jan Kliment","VfB Stuttgart","FC Vysocina",850000
+"1348",NA,NA,"Julian Draxler","VfL Wolfsburg","FC Schalke 04",28900000
+"1349",NA,NA,"Bruno Henrique","VfL Wolfsburg","GoiÃ¡s EC",3830000
+"1350",NA,NA,"Max Kruse","VfL Wolfsburg","Bor. M'gladbach",10200000
+"1351",NA,NA,"Carlos Ascues","VfL Wolfsburg","FBC Melgar",1280000
+"1352",NA,NA,"Francisco RodrÃ­guez","VfL Wolfsburg","FC ZÃ¼rich",1020000
+"1353",NA,NA,"Dante","VfL Wolfsburg","Bayern Munich ",3830000
+"1354",NA,NA,"Ismail Azzaoui","VfL Wolfsburg","Tottenham U21",850000
+"1355",NA,NA,"CÃ©dric Bakambu","Villarreal CF","Bursaspor",6380000
+"1356",NA,NA,"Samu GarcÃ­a","Villarreal CF","MÃ¡laga CF",6800000
+"1357",NA,NA,"Samu Castillejo","Villarreal CF","MÃ¡laga CF",6800000
+"1358",NA,NA,"Daniele Bonera","Villarreal CF","AC Milan",0
+"1359",NA,NA,"Denis SuÃ¡rez","Villarreal CF","FC Barcelona",3400000
+"1360",NA,NA,"VÃ­ctor Ruiz","Villarreal CF","Valencia CF",2300000
+"1361",NA,NA,"Adalberto PeÃ±aranda","Watford","Udinese Calcio",9010000
+"1362",NA,NA,"Abdoulaye DoucourÃ©","Watford","Rennes",9010000
+"1363",NA,NA,"Ãtienne Capoue","Watford","Spurs",7570000
+"1364",NA,NA,"JosÃ© Manuel Jurado","Watford","Spartak Moscow",7310000
+"1365",NA,NA,"Matej Vydra","Watford","Udinese Calcio",7140000
+"1366",NA,NA,"Nordin Amrabat","Watford","MÃ¡laga CF",7140000
+"1367",NA,NA,"Obbi Oulare","Watford","Club Brugge",7e+06
+"1368",NA,NA,"Steven Berghuis","Watford","AZ Alkmaar",5530000
+"1369",NA,NA,"Mario SuÃ¡rez","Watford","Fiorentina",4510000
+"1370",NA,NA,"Valon Behrami","Watford","Hamburger SV",2980000
+"1371",NA,NA,"JosÃ© Holebas","Watford","AS Roma",2130000
+"1372",NA,NA,"Miguel Britos","Watford","SSC Napoli",0
+"1373",NA,NA,"Sebastian PrÃ¶dl","Watford","Werder Bremen",0
+"1374",NA,NA,"Allan Nyom","Watford","Udinese Calcio",0
+"1375",NA,NA,"AdlÃ¨ne GuÃ©dioura","Watford","Crystal Palace",0
+"1376",NA,NA,"Milos Veljkovic","Werder Bremen","Spurs",281000
+"1377",NA,NA,"LÃ¡szlÃ³ Kleinheisler","Werder Bremen","Videoton FC",213000
+"1378",NA,NA,"Anthony Ujah","Werder Bremen","1. FC KÃ¶ln",3830000
+"1379",NA,NA,"Aron JÃ³hannsson","Werder Bremen","AZ Alkmaar",3570000
+"1380",NA,NA,"Sambou YatabarÃ©","Werder Bremen","Olympiacos",2130000
+"1381",NA,NA,"Ulisses  Garcia","Werder Bremen","Grasshoppers",510000
+"1382",NA,NA,"JosÃ© SalomÃ³n RondÃ³n","West Brom","Zenit S-Pb",14450000
+"1383",NA,NA,"Rickie Lambert","West Brom","Liverpool",3570000
+"1384",NA,NA,"Jonny Evans","West Brom","Manchester Utd.",7060000
+"1385",NA,NA,"James McClean","West Brom","Wigan",1790000
+"1386",NA,NA,"James Chester","West Brom","Hull City",9610000
+"1387",NA,NA,"Dimitri Payet","West Ham","Marseille",12750000
+"1388",NA,NA,"Angelo Ogbonna","West Ham","Juventus",9350000
+"1389",NA,NA,"Nikica Jelavic","West Ham","Hull City",3490000
+"1390",NA,NA,"Michail Antonio","West Ham","Nottm Forest",8080000
+"1391",NA,NA,"Pedro Obiang","West Ham","Sampdoria",5100000
+"1392",NA,NA,"Sam Byram","West Ham","Leeds",4080000
