@@ -38,30 +38,11 @@ transfer.data$transferage_sq = transfer.data$transferage^2
 
 
 ## creating a vector with selected predictors for transferfee ()
-<<<<<<< HEAD
-predicting.var = c("transfer.fee", "positions", #"nationality", 
-                   "appearances", "total.goals", "total.assists", 
-                   "minutes.pr.goal", "total.minutes.played", "contract.left.month", "transferage",
-                   "league", "Status", "searchresults", "Status")
-=======
 predicting.var = c("transfer.fee", "positions", "appearances", "total.goals", "total.assists", 
-<<<<<<< HEAD
                "total.minutes.played", "contract.left.month","transferage",
                "league", "Status", "searchresults","transferage_sq")
 ## Removing observations where contract lenght is unknown
 transfer.data=filter(transfer.data , is.na(contract.left.month) == FALSE) 
-=======
-               "minutes.pr.goal", "total.minutes.played", "contract.left.month", "transferage",
-<<<<<<< Updated upstream
-               "league", "Status", 
-               #"searchresults",
-               "Status")
-=======
-               "league", "Status")
->>>>>>> Stashed changes
->>>>>>> origin/master
-
->>>>>>> origin/master
 
 
 ##================ 4.1 Dividing into a train and test sample  ================
@@ -122,17 +103,6 @@ summary(Model_2)
 estimate_M2 = predict(Model_2, test_sample)
 
 get.rmse(test_sample$transfer.fee, estimate_M2)
-
-
-
-
-             
-estimate_M2 = predict(Model_2, test_sample)
-estimate_M2
-             
-get.rmse(test_sample$transfer.fee, estimate_M2)
-
-
 
 ##================ 4.5 Lasso model  ================
 ## Creating matrices with all regressors beacuse the glmnet function only works with matrices
@@ -210,12 +180,6 @@ plot(prune.Model_4, uniform=TRUE, branch=0.6, margin=0.05)
 text(prune.Model_4, all=TRUE, use.n=TRUE)
 
 
-
-##================ 4.6   ================>>>>>>> origin/master
-=======
-
-
-## Using cross validation to see whether pruning the tree will increase performance
 
 
 
