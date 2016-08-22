@@ -168,10 +168,12 @@ get.rmse(predict(Model_3, RegressorMatrix_test, s=best.lambda), test_sample$tran
 
 
 ##================ 4.6 Decision tree   ================
+#install.packages("rpart")
+library("rpart")
+Model_4=rpart(formula=transfer.fee~positions+transferage+
+                league+Status+searchresults+contract.left.month+total.goals+appearances, data=train_sample)
 
-
-
-
+printcp(Model_4)
 
 
 ##=====================================================
