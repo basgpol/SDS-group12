@@ -77,7 +77,7 @@ p.stats + geom_point(stat = "identity")
 p.stats = ggplot(df.stats, aes(x = positions , y = transfer.fee))
 p.stats + geom_point(stat = "identity")
 
-#bar chart
+#bar
 
 ####TRANSFER FEE FOR Search Result####
 p.stats = ggplot(df.stats, aes(x = searchresults , y = transfer.fee))

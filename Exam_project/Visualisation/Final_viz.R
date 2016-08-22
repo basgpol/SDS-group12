@@ -69,6 +69,8 @@ df.viz<- filter(df.viz,transfer.fee>0)
 #                                                               ifelse(league=="Serie A", paste(team,"ITALY", sep = " "),
 #                                                                      ifelse(league=="Premier league", paste(team,"UK", sep = " "),
 #                                                                             ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
+write_csv(geocodes,"geocodes.csv")
+read_csv("geocodes.csv")
 
 #geocode team
 geocodes <- geocode(as.character(df.spending.club$team))
@@ -81,7 +83,7 @@ out.of.europe.2<- filter(df.spending.club, lon>20 |lat>60)
 out.full= rbind(out.of.europe.2, out.of.europe)
 
 write_csv(df.spending.club,"df_spending_club_with_geo.csv")
-read_csv(("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
+df.spending.club<-read_csv(("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
 )
 #####with plotly
 m <- list(
@@ -108,7 +110,7 @@ plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
         text=paste("Team = ", df.spending.club$team,"\n", "Total transfer = ", df.spending.club$transfer.fee.total),
         type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers', 
         marker = m) %>%
-  layout(title = 'Football teams in Europe and transfer spending<br>(Hover for airport)', geo = g)
+  layout(title = 'Football teams in Europe and transfer spending', geo = g)
 
 
 ################################################################################################################################################
@@ -205,19 +207,16 @@ p + geom_bar(stat = "identity")+
 ####################################         MAPS WITH TRANSFER PATHS            ############################################################### 
 ####################################                                             ###############################################################
 ################################################################################################################################################
-# 
+
 # #Getting data from df
-# player.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", header=TRUE, stringsAsFactors=TRUE, fileEncoding="latin1") # loading saved version of uncleaned player data
-# transfer.data = player.data 
+# player.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", header=TRUE, stringsAsFactors=TRUE, fileEncoding="UTF8") # loading saved version of uncleaned player data
+# transfer.data = player.data
 # 
 # # transfer.data <- transfer.data[sample(1:nrow(transfer.data), 50,# taking a random 50 sample
 # #                           replace=FALSE),]
 # 
-# completeFun <- function(data, desiredCols) { #function to remove empty/NA
-#   completeVec <- complete.cases(data[, desiredCols])
-#   return(data[completeVec, ])
-# }
-# transfer.data= completeFun(transfer.data,"club.to") #function applied to transfer data to remove unknown origin
+# 
+# transfer.data= completeFun(transfer.data,"club.from") #function applied to transfer data to remove unknown origin
 # 
 # 
 # ###Looping for club coordinate
@@ -226,24 +225,62 @@ p + geom_bar(stat = "identity")+
 # 
 # geocodes.club.from <- geocode(as.character(transfer.data$club.from))
 # transfer.path.destination <- data.frame(transfer.data,geocodes.club.from)
-
+# 
 # transfer.path.destination= data.frame(rep(i, nrow(transfer.data)), transfer.data$V1, transfer.data$lon, transfer.data$lat) #creating a dataset with destination coordinates
-
-#BINDING
-
+# 
+# #BINDING
+# 
 # transfer.path.full= rbind(transfer.path.origin, transfer.path.destination)#binding
-# transfer.path.full<-transfer.path.full %>% 
-#   select(lon,lat,name,club.to,club.from,transfer.fee)#selecting the columns
+# transfer.path.full<-transfer.path.full %>%
+#   select(lon,lat,name,club.to,club.from,transfer.fee, league)#selecting the columns
 # transfer.path.full= arrange(transfer.path.full, desc(index))# organising in descending order
 # write.csv(transfer.path.full, "transfer_path_full.csv")
 
-read_csv("transfer_path_full.csv", encoding = "UTF8", header = TRUE) # must be tweaked so only club.to is in europe
+df.transfer<-read_csv("transfer_path_full.csv") # must be tweaked so only club.to is in europe
 
-transfer.path.full= completeFun(transfer.path.full,"lon")#applying the function to remove NA/unidentified to transfer.path
+#tidying data frame
+colnames(df.transfer)[5] <- "team"#change "club to" to "team"
+
+#TEAM
+
+df.transfer$team = str_replace(df.transfer$team,"[1234567890]","")#removing the unwanted numbers*3 because it only take one out at a time
+df.transfer$team = str_replace(df.transfer$team,"[1234567890]","")
+df.transfer$team = str_replace(df.transfer$team,"[1234567890]","")
+df.transfer$team = str_replace(df.transfer$team,"[1234567890]","")
+df.transfer$team = str_replace(df.transfer$team,"*\\[.*?\\] *","")#removing the unwanted characters between brackets
+df.transfer$team = str_replace(df.transfer$team,"Borussia Mönchengladbach","Mönchengladbach Borussia")
+df.transfer$team = str_replace(df.transfer$team,"FC Augsburg","Augsburg FC")
+df.transfer$team = str_replace(df.transfer$team,"FC Köln","Cologne FC")
+df.transfer$team = str_replace(df.transfer$team,"VfB Stuttgart","Stuttgart VfB")
+df.transfer$team = str_replace(df.transfer$team,"Hellas Verona","Verona FC")
+df.transfer$team = str_replace(df.transfer$team,"BSC","Berlin")
+df.transfer$team = str_replace(df.transfer$team,"Juventus","Juventus Turin")
+df.transfer$team = str_replace(df.transfer$team,"Inter","Inter Milan")
+df.transfer$team = str_replace(df.transfer$team,"US","FC")
+df.transfer$team = str_replace(df.transfer$team,"\\.","")
+df.transfer$team = str_replace(df.transfer$team," *\\(.*?\\) *","") #remove (C) for champions
+
+#class transforming to numeric value or character value
+df.transfer$transfer.fee <- as.numeric(df.transfer$transfer.fee)
+df.transfer$team <- as.character(df.transfer$team)
+
+###ADD COUNTRIES TO TEAM NAMES (in order to find them on gmap)
+
+df.transfer$team <- with(df.transfer, ifelse(league=="Bundesliga", paste(team,"GERMANY", sep = " "),
+                                                       ifelse(league=="Ligue 1", paste(team,"FRANCE", sep = " "),
+                                                              ifelse(league=="Serie A", paste(team,"ITALY", sep = " "),
+                                                                     ifelse(league=="Premier league", paste(team,"UK", sep = " "),
+                                                                            ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
 
 
+df.transfer= completeFun(df.transfer,"lon")#applying the function to remove NA/unidentified to transfer.path
+
+if (df.transfer$team==df.spending.club$team, df.transfer$lon<-df.spending.club$lon,FALSE)
+if (df.transfer$team==df.spending.club$team, str_replace(df.transfer$lat, df.spending.club$lat),FALSE)
+
+?str_replace
 gg<-ggmap(myMap)+#calling map
   geom_path(aes(x = lon, y = lat, group = factor(name)), #putting paths on the map
-            colour="red", data = transfer.path.full, alpha=0.3)
+            colour="red", data = df.transfer, alpha=0.3)
 gg
 
