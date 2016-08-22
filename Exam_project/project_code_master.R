@@ -60,13 +60,18 @@
 ##=========================================================================================
 
 ##========================== 1.1 Loading R-packages =======================================
-
 library("rvest")
 library("stringr")
 library("purrr")
 library("dplyr")
 library("RCurl")
 library("XML")
+library("glmnet")
+library("caret")
+library("plotly")
+library("ggplot2")
+library("plotly")
+
 #
 #
 # ##========================== 1.2 Defining key links =======================================
@@ -661,26 +666,86 @@ transfer.data = subset(transfer.data, select=-c(X.1, X.2,X))
 ##--------------------------------- 4. Prediction Models _---------------------------------
 ##=========================================================================================
 
-## Notes ##
-Possible prediction models
-Average
-OlS    
-Lasso
-Support Vector machine
-Regression Tree
-Random forest
+## Loading the final data set
+transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", 
+                         encoding = "UTF8", header = TRUE)
 
+## Due to the descriptive analysis we create a new variable where age is squared
+transfer.data$transferage_sq = transfer.data$transferage^2
 
+## creating a vector with selected predictors for transferfee
+predicting.var = c("transfer.fee", "positions", "appearances", "total.goals", "total.assists", 
+                   "total.minutes.played", "contract.left.month","transferage",
+                   "league", "Status", "searchresults","transferage_sq")
+
+## Removing observations where contract lenght is unknown
+transfer.data = filter(transfer.data, is.na(contract.left.month) == FALSE) 
 
 
 ##================ 4.1 Cross validation: Dividing into a train and test sample  ================
 
+## Creating a vector with the count of 70 pct. of the sample size  
+train_size = floor(0.70 * nrow(transfer.data)) # creates a vector 
+
+## setting seed to enable reproductivity 
+set.seed(123)
+
+## creating a vector with random numbers (count = tran_size)
+train.indicator = sample(seq_len(nrow(transfer.data)), size = train_size)
+
+## Splitting the data frame into a train (70 pct.) and test sample (30 pct.)
+train_sample = transfer.data[train.indicator,predicting.var] # selecting observations with a train indicator
+test_sample = transfer.data[-train.indicator, predicting.var] # selecting observations without a train indicator
 
 
-##================ 4.2 XXXXX  ================
+##================ 4.2 Create evaluation function  ================
+## Creating a function that calculate the RMSE
+get.rmse = function(real, estimate){
+  return(sqrt(mean((real - estimate)^2)))
+}
 
-##================ 4.3 XXXXX  ================
+##================ 4.3 Baseline model: Simple average from training sample  ================
+estimate_M1 = mean(train_sample$transfer.fee) #calculating estimate from model 1
+get.rmse(test_sample$transfer.fee, estimate_M1) # calculating RMSE from estimate on test sample 
 
-##================ 4.4 XXXXX  ================
+### 4.3.1: Illustrating our prediction model 1
+## Create new data frame for the illustration
+train_sample.1<- train_sample %>% 
+  select(transfer.fee,league) 
+train_sample.1<- train_sample.1%>% 
+  mutate(index=1:258)
 
-player.data = read.csv("transferdata.tidy_withNA.csv", encoding="UTF-8")
+## Creating GGplot for visualisation
+p = ggplot(train_sample.1, aes(x = index , y = transfer.fee))+
+  geom_segment(aes(x= index, xend=index, y=transfer.fee, yend=estimate_M1), color="red") +
+  geom_point(aes(x = index, y = transfer.fee, color = "black"))   +
+  geom_line(aes(x = index, y = estimate_M1), color="green", size =1)+
+  theme(axis.title.x=element_blank(),
+        axis.text.x =element_blank(),
+        axis.ticks= element_line(color=NA),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        text=element_text(family="Goudy Old Style"))
+
+gg <- ggplotly(p)  #using plotly to make it interactive
+gg
+
+##================ 4.4 Ordinary least square model  ================
+Model_2 = lm(transfer.fee ~ ., data = (train_sample)) # generating linear model on training data
+summary(Model_2)
+
+estimate_M2 = predict(Model_2, test_sample) # calculating estimate from model 2
+
+get.rmse(test_sample$transfer.fee, estimate_M2) # calculating RMSE from estimate on test sample 
+
+##================ 4.5 Lasso model  ================
+
+
+##================ 4.6 Decision tree  ================
+
+
+##================ 4.6 Random Forest  ================
+
+
+
