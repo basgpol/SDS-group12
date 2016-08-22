@@ -36,10 +36,8 @@ transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/
 ## creating a vector with selected predictors for transferfee ()
 predicting.var = c("transfer.fee", "positions", #"nationality", 
                    "appearances", "total.goals", "total.assists", 
-               "minutes.pr.goal", "total.minutes.played", "contract.left.month", "transferage",
-               "league", "Status", 
-               #"searchresults",
-               "Status")
+                   "minutes.pr.goal", "total.minutes.played", "contract.left.month", "transferage",
+                   "league", "Status", "searchresults", "Status")
 
 
 

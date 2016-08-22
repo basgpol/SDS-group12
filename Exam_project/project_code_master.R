@@ -563,7 +563,7 @@ player.data.clean.pt3$searchresults=unlist(list.pt.3) #New column reporting numb
 player.data.clean = rbind(player.data.clean.pt1, player.data.clean.pt2, player.data.clean.pt3)
 
 ## saving cleaned player data as csv
-write.table(player.data.clean, file = "player_data_clean.csv",
+write.table(player.data.clean, file = "player_data_clean.search.csv",
             sep = ",", col.names = NA, qmethod = "double", fileEncoding = "UTF-8")
 
 
@@ -584,16 +584,16 @@ names(club.data.cleaning)
 
 ## Renaming clubs in Wikipedia-tabel first
 
-club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barcelona", "Valencia"="Valencia CF", "MÃ¡laga"="MÃ¡laga CF", "Elche[d](R)"="Elche CF", 
-                               "Levante"="Levante UD", "Getafe"="Getafe CF", "Deportivo La CoruÃ±a"="Dep. La CoruÃ±a", "Granada"="Granada CF",
-                               "Eibar"="SD Eibar", "AlmerÃ­a (R)"="UD AlmerÃ­a", "CÃ³rdoba (R)"="CÃ³rdoba CF", "Sevilla"="Sevilla FC",
+club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barcelona", "Valencia"="Valencia CF", "Málaga"="Málaga CF", "Elche[d](R)"="Elche CF", 
+                               "Levante"="Levante UD", "Getafe"="Getafe CF", "Deportivo La Coruña"="Dep. La Coruña", "Granada"="Granada CF",
+                               "Eibar"="SD Eibar", "Almería (R)"="UD Almería", "Córdoba (R)"="Córdoba CF", "Sevilla"="Sevilla FC",
                                "Villarreal" = "Villarreal CF", "Celta Vigo" = "Celta de Vigo","Juventus (C)"="Juventus", "Cargliari (R)"="Cagliari Calcio", "Parma[c](R)"="Parma", "Cesena (R)"="Cesena",
                                "Internazionale"="Inter", "Genoa[b]"="Genoa", "Roma"="AS Roma", "Napoli"="SSC Napoli", "Milan"="AC Milan",
                                "Palermo"="US Palermo", "Chievo"="Chievo Verona", "Empoli"="FC Empoli", "Udinese"="Udinese Calcio",
                                "Cagliari (R)"="Cagliari Calcio","Paris Saint-Germain (C)"="Paris SG", "Evian (R)"="Evian", "Metz (R)"="FC Metz", "Lyon"="Olympique Lyon",
                                "Bordeaux"="G. Bordeaux", "Lille"="LOSC Lille", "Nice"="OGC Nice", "Caen"="SM Caen", "Nantes"="FC Nantes",
                                "Lorient"="FC Lorient", "Bordeaux"="G. Bordeaux", "Lens[b](R)"="RC Lens", "Bastia"="SC Bastia","Bayern Munich (C)"="Bayern Munich ", "SC Freiburg (R)"="SC Freiburg", "SC Paderborn 07 (R)"="SC Paderborn",
-                               "Hamburger SV (O)"="Hamburger SV", "Borussia MÃ¶nchengladbach"="Bor. M'gladbach", "Schalke 04"="FC Schalke 04",
+                               "Hamburger SV (O)"="Hamburger SV", "Borussia Mönchengladbach"="Bor. M'gladbach", "Schalke 04"="FC Schalke 04",
                                "Bayer Leverkusen"="Bay. Leverkusen", "Eintracht Frankfurt"="E. Frankfurt", "Borussia Dortmund"="Bor. Dortmund",
                                "1899 Hoffenheim" = "TSG Hoffenheim", "FSV Mainz 05"="1.FSV Mainz 05","Chelsea (C)"="Chelsea", "Hull City (R)"="Hull City", "Burnley"="Burnley FC", "Queens Park Rangers (R)"="QPR",
                                "West Bromwich Albion"="West Brom", "Tottenham Hotspur"="Spurs","Swansea City"="Swansea", 
@@ -604,7 +604,6 @@ club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barce
 # Selecting the useful clubvariables
 names(club.data.cleaning)
 club.data.clean = subset(club.data.cleaning, select=c(Team, league, Status))
-write.csv(club.data.clean, file("club.data.clean.csv")
 
 ## saving cleaned player data as csv
 write.table(club.data.clean, file = "club_data_clean.csv",
@@ -627,7 +626,7 @@ transferdata.tidy$league[(transferdata.tidy$club.to == "Watford") |
 transferdata.tidy$league[(transferdata.tidy$club.to == "FC Ingolstadt") | 
                          (transferdata.tidy$club.to == "SV Darmstadt 98")] = "Bundesliga"
 transferdata.tidy$league[(transferdata.tidy$club.to == "UD Las Palmas")| 
-                         (transferdata.tidy$club.to == "Sporting GijÃ³n")|
+                         (transferdata.tidy$club.to == "Sporting Gijón")|
                          (transferdata.tidy$club.to == "Real Betis")] = "La Liga"
 transferdata.tidy$league[(transferdata.tidy$club.to == "Bologna")| 
                          (transferdata.tidy$club.to == "Carpi")|
@@ -637,9 +636,9 @@ transferdata.tidy$league[(transferdata.tidy$club.to == "SCO Angers")|
                          (transferdata.tidy$club.to == "G. Ajaccio")] = "Ligue 1"
           
 ## Saving the tidy final data set 
-write.table(transferdata.tidy, file = "transferdata.tidy.csv",
+write.table(transferdata.tidy, file = "transferdata.final.csv",
             sep = ",", col.names = NA, qmethod = "double", fileEncoding = "UTF-8")
-          
+
 ##=========================================================================================
 ##--------------------------------- 3. Visualization---------------------------------------
 ##=========================================================================================
