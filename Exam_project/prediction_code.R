@@ -165,6 +165,7 @@ plot(Model_4,niform=TRUE,
      main="Regression Tree for Transfer fee ")
 text(Model_4,pretty=0,use.n=TRUE, cex=.5)
 
+<<<<<<< HEAD
 
 ##Estimating transfer fee for test data
 Estimate_M4=predict(Model_4,test_sample)
@@ -186,3 +187,59 @@ opt.trees = which(Model_4.seq$dev == min(Model_4.seq$dev)) # Positions of
 min(Model_4.seq$size[opt.trees]) # Size of smallest optimal tree
 
 
+=======
+##================ 4.6 Random Forest  ================
+## Gode link: http://www.listendata.com/2014/11/random-forest-with-r.html
+# install.packages("randomForest")
+library(randomForest)
+set.seed(1)
+
+### More complex attempt
+## First, find the best number of trees
+Model_5a = randomForest(transfer.fee ~ ., data = train_sample, ntree = 200)
+print(Model_5a)
+Model_5b = randomForest(transfer.fee ~ ., data = train_sample, ntree = 300)
+print(Model_5b)
+Model_5c = randomForest(transfer.fee ~ ., data = train_sample, ntree = 500)
+print(Model_5c)
+Model_5d = randomForest(transfer.fee ~ ., data = train_sample, ntree = 750)
+print(Model_5d)
+Model_5e = randomForest(transfer.fee ~ ., data = train_sample, ntree =1000) ## gives the lowest residuals
+print(Model_5e)
+Model_5f = randomForest(transfer.fee ~ ., data = train_sample, ntree =2000)
+print(Model_5f)
+
+## Second, find the number of variables in each split with the lowest OOB-error 
+mtry = tuneRF(train_sample[-1],train_sample$transfer.fee, ntreeTry=1000,
+               stepFactor=1.5,improve=0.01, trace=TRUE, plot=TRUE, na.action=na.roughfix)
+
+best.m <- mtry[mtry[, 2] == min(mtry[, 2]), 1]
+
+print(mtry)
+print(best.m) ##the best mtry is 3
+
+## Run the RF with the best numbers of trees and variables
+set.seed(1)
+Model_5 = randomForest(transfer.fee ~ .,
+                       data = train_sample,
+                       ntree = 1000,
+                       mtry = best.m)
+print(Model_5)
+
+estimate_M5 = predict(Model_5, test_sample) # calculating estimate from model 5
+get.rmse(test_sample$transfer.fee, estimate_M5) # calculating the RMSE on test sample
+
+importance(Model_5) #calculate the importance of the different variables
+
+## the simple way:
+Model_5 = randomForest(transfer.fee ~ ., data = train_sample)
+print(Model_5)
+
+estimate_M5 = predict(Model_6, test_sample) # calculating estimate from model 5
+get.rmse(test_sample$transfer.fee, estimate_M5) # calculating the RMSE on test sample
+
+importance(Model_5)
+
+#plot(test_sample$transfer.fee, estimate_M6)
+#abline(a=0, b=1.0)
+>>>>>>> origin/master

@@ -7,6 +7,7 @@
 ################################################################################################################################################library(plotly)
 
 ##LIBRARIES
+library(plotly)
 library("ggmap")# getting maps and coordinates from google
 library(maptools)# getting maps and coordinates from google
 library(maps)# getting maps and coordinates from google
@@ -14,7 +15,7 @@ library("ggplot2")# plotting the data
 library(dplyr)#tidying dataset
 library(rworldmap)
 library(stringr)#dealing with strings and replacing strings in observations
-
+library(RCurl)
 #creating dataset
 df.viz<- read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", encoding = "UTF8", header = TRUE)
 
@@ -70,19 +71,22 @@ df.viz<- filter(df.viz,transfer.fee>0)
 #                                                                      ifelse(league=="Premier league", paste(team,"UK", sep = " "),
 #                                                                             ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
 # 
-#geocode team
-geocodes <- geocode(as.character(df.spending.club$team))
+# 
+# #geocode team
+# # geocodes <- geocode(as.character(df.spending.club$team))
+# # write_csv(geocodes,"geocodes.csv")
+# read_csv("geocodes.csv")
+# 
+# #new dataframe with geocode
+# df.spending.club <- data.frame(df.spending.club[1:3],geocodes)
+# 
+# out.of.europe<-filter(df.spending.club, lon < -10 |lat < 35)
+# out.of.europe.2<- filter(df.spending.club, lon>20 |lat>60)
+# out.full= rbind(out.of.europe.2, out.of.europe)
+# 
+# write_csv(df.spending.club,"df_spending_club_with_geo.csv")
+df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
 
-#new dataframe with geocode
-df.spending.club <- data.frame(df.spending.club[1:3],geocodes)
-
-out.of.europe<-filter(df.spending.club, lon < -10 |lat < 35)
-out.of.europe.2<- filter(df.spending.club, lon>20 |lat>60)
-out.full= rbind(out.of.europe.2, out.of.europe)
-
-write_csv(df.spending.club,"df_spending_club_with_geo.csv")
-read_csv(("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
-)
 #####with plotly
 m <- list(
   colorbar = list(title = "Total transfer spending"),
@@ -108,7 +112,7 @@ plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
         text=paste("Team = ", df.spending.club$team,"\n", "Total transfer = ", df.spending.club$transfer.fee.total),
         type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers', 
         marker = m) %>%
-  layout(title = 'Football teams in Europe and transfer spending<br>(Hover for airport)', geo = g)
+  layout(title = 'Football teams in Europe and transfer spending', geo = g)
 
 
 ################################################################################################################################################
@@ -121,7 +125,7 @@ p.age = ggplot(df.viz, aes(x = transferage , y = transfer.fee))
 p.age<-p.age + geom_point(stat = "identity")+
           #geom_point(aes(text = paste("Name:",name))+
           geom_smooth(aes(colour = transferage, fill = transferage))+
-          ggtitle("Age repartition of transfers in European leagues????")
+          ggtitle("Age repartition of transfers in European leagues")
 
 p.age
 plotly.p.age<-ggplotly(p.age)
@@ -185,8 +189,8 @@ df.viz.status<-df.viz %>%
   group_by(Status) %>% 
   dplyr::summarise(mean.transfer=mean(transfer.fee))
 
-p = ggplot(df.viz.status, aes(y= mean.transfer, x = Status))
-p + geom_bar(stat = "identity")+
+p.club = ggplot(df.viz.status, aes(y= mean.transfer, x = Status))
+p.club<- p.club + geom_bar(stat = "identity")+
   theme(axis.title.x=element_blank(),
         axis.text.x =element_text(size  = 7,
                                   angle = 45,
@@ -205,42 +209,109 @@ p + geom_bar(stat = "identity")+
 ####################################         MAPS WITH TRANSFER PATHS            ############################################################### 
 ####################################                                             ###############################################################
 ################################################################################################################################################
-# 
+
 # #Getting data from df
-# player.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", header=TRUE, stringsAsFactors=TRUE, fileEncoding="latin1") # loading saved version of uncleaned player data
-# transfer.data = player.data 
+# player.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", header=TRUE, stringsAsFactors=TRUE, fileEncoding="UTF8") # loading saved version of uncleaned player data
+# transfer.data = player.data
 # 
 # # transfer.data <- transfer.data[sample(1:nrow(transfer.data), 50,# taking a random 50 sample
 # #                           replace=FALSE),]
 # 
-# completeFun <- function(data, desiredCols) { #function to remove empty/NA
-#   completeVec <- complete.cases(data[, desiredCols])
-#   return(data[completeVec, ])
-# }
-# transfer.data= completeFun(transfer.data,"club.to") #function applied to transfer data to remove unknown origin
+# transfer.data.geo<-transfer.data %>% 
+#   group_by(club.from) %>% 
+#   dplyr::summarise()
 # 
+# 
+# transfer.data.geo= completeFun(transfer.data.geo,"club.from") #function applied to transfer data to remove unknown origin
 # 
 # ###Looping for club coordinate
-# geocodes.club.to <- geocode(as.character(transfer.data$club.to))
-# transfer.path.origin <- data.frame(transfer.data,geocodes.club.to)
 # 
-# geocodes.club.from <- geocode(as.character(transfer.data$club.from))
-# transfer.path.destination <- data.frame(transfer.data,geocodes.club.from)
-
-# transfer.path.destination= data.frame(rep(i, nrow(transfer.data)), transfer.data$V1, transfer.data$lon, transfer.data$lat) #creating a dataset with destination coordinates
-
-#BINDING
-
-# transfer.path.full= rbind(transfer.path.origin, transfer.path.destination)#binding
-# transfer.path.full<-transfer.path.full %>% 
-#   select(lon,lat,name,club.to,club.from,transfer.fee)#selecting the columns
+# geocodes.club.from <- geocode(as.character(transfer.data.geo$club.from))
+# #transfer.path.origin <- data.frame(transfer.data,geocodes.club.from)
+# 
+# #transfer.path.origin= data.frame(rep(i, nrow(transfer.data)), transfer.data$V1, transfer.data$lon, transfer.data$lat) #creating a dataset with destination coordinates
+# transfer.path.origin= data.frame( player.data.geo$club.from, geocodes.club.from$lon, geocodes.club.from$lat) #creating a dataset with destination coordinates
+# colnames(transfer.path.origin)[1] <- "club.from"#change "club.from"
+# 
+# 
+# ###CODE that takes the geocode from 1st visualisation
+# #transfer path destination
+# colnames(transfer.data)[2] <- "team"#change "club to" to "team"
+# #colnames(transfer.data)[5] <- "club.from"#change "club to" to "team"
+# 
+# #TEAM
+# 
+# transfer.data$team = str_replace(transfer.data$team,"[1234567890]","")#removing the unwanted numbers*3 because it only take one out at a time
+# transfer.data$team = str_replace(transfer.data$team,"[1234567890]","")
+# transfer.data$team = str_replace(transfer.data$team,"[1234567890]","")
+# transfer.data$team = str_replace(transfer.data$team,"[1234567890]","")
+# transfer.data$team = str_replace(transfer.data$team,"*\\[.*?\\] *","")#removing the unwanted characters between brackets
+# transfer.data$team = str_replace(transfer.data$team,"Borussia Mönchengladbach","Mönchengladbach Borussia")
+# transfer.data$team = str_replace(transfer.data$team,"FC Augsburg","Augsburg FC")
+# transfer.data$team = str_replace(transfer.data$team,"FC Köln","Cologne FC")
+# transfer.data$team = str_replace(transfer.data$team,"VfB Stuttgart","Stuttgart VfB")
+# transfer.data$team = str_replace(transfer.data$team,"Hellas Verona","Verona FC")
+# transfer.data$team = str_replace(transfer.data$team,"BSC","Berlin")
+# transfer.data$team = str_replace(transfer.data$team,"Juventus","Juventus Turin")
+# transfer.data$team = str_replace(transfer.data$team,"Inter","Inter Milan")
+# transfer.data$team = str_replace(transfer.data$team,"US","FC")
+# transfer.data$team = str_replace(transfer.data$team,"\\.","")
+# transfer.data$team = str_replace(transfer.data$team," *\\(.*?\\) *","") #remove (C) for champions
+# 
+# #class transforming to numeric value or character value
+# transfer.data$transfer.fee <- as.numeric(transfer.data$transfer.fee)
+# transfer.data$team <- as.character(transfer.data$team)
+# 
+# ###ADD COUNTRIES TO TEAM NAMES (in order to find them on gmap)
+# 
+# transfer.data$team <- with(transfer.data, ifelse(league=="Bundesliga", paste(team,"GERMANY", sep = " "),
+#                                                        ifelse(league=="Ligue 1", paste(team,"FRANCE", sep = " "),
+#                                                               ifelse(league=="Serie A", paste(team,"ITALY", sep = " "),
+#                                                                      ifelse(league=="Premier league", paste(team,"UK", sep = " "),
+#                                                                             ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
+# 
+# 
+# transfer.data= completeFun(transfer.data,"lon")#applying the function to remove NA/unidentified to transfer.path
+# 
+# #transfer path origin
+# 
+# transfer.path1<-dplyr::left_join(transfer.data, transfer.path.origin, by = "club.from")
+# 
+# 
+# #read geocode and adding it to data frame
+# geocodes<- read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/geocodes.csv", encoding = "UTF8", header = TRUE)
+# transfer.data.destination <- data.frame(df.spending.club[1:3],geocodes)
+# 
+# #building destination list
+# transfer.path2<-dplyr::left_join(transfer.data, transfer.data.destination, by = "team")
+# 
+# 
+# 
+# 
+# #BINDING
+# transfer.path1$index<-c(1:nrow(transfer.path1))
+# colnames(transfer.path1)[27] <- "lon"#change "club to" to "team"
+# colnames(transfer.path1)[28] <- "lat"#change "club to" to "team"
+# 
+# transfer.path2$index<-c(1:nrow(transfer.path2))
+# transfer.path2
+# 
+# transfer.path.full<-bind_rows(transfer.path1,transfer.path2)
+# 
+# 
+# transfer.path.full<-transfer.path.full %>%
+#   select(lon,lat,name,team,club.from,transfer.fee, league,index)#selecting the columns
+# 
 # transfer.path.full= arrange(transfer.path.full, desc(index))# organising in descending order
-# write.csv(transfer.path.full, "transfer_path_full.csv")
+#write.csv(transfer.path.full, "transfer_path_full.csv")
 
-read_csv("transfer_path_full.csv", encoding = "UTF8", header = TRUE) # must be tweaked so only club.to is in europe
+transfer.path.full = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transfer_path_full.csv", header=TRUE, stringsAsFactors=TRUE, fileEncoding="UTF8") # loading saved version of uncleaned player data
 
-transfer.path.full= completeFun(transfer.path.full,"lon")#applying the function to remove NA/unidentified to transfer.path
-
+##MAAPING 
+myLocation <- "Zurich"
+myMap <- get_map(location= myLocation,
+                 source="stamen", maptype="watercolor", crop=FALSE,zoom=4)
+ggmap(myMap)
 
 gg<-ggmap(myMap)+#calling map
   geom_path(aes(x = lon, y = lat, group = factor(name)), #putting paths on the map
