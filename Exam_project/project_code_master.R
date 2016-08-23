@@ -580,7 +580,7 @@ club.data.cleaning = club.data
 attach(club.data.cleaning)
 club.data.cleaning$Status[Pos <= 5] = "Top Club"
 club.data.cleaning$Status[Pos <= 15 & Pos > 5] = "Middle Club"
-club.data.cleaning$Status[Pos >= 16] = "Buttom Club"
+club.data.cleaning$Status[Pos >= 16] = "Bottom Club"
 detach(club.data.cleaning)
 
 ## Changing the name of the team name variable
