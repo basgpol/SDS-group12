@@ -87,6 +87,23 @@ All the variables above, we think, are relevant in order to make the best predic
 # Description of Data
 
 
+# Prediction models for transfervalue
 
+## Prediction versus causality
+The main purpose of this rapport is to find the best way of predicting the transfervalue of footballers. We therefore focus on finding the best way to estimate our dependent variable (Y) when we know the value of several different indendent variables (X's) - hereafter called predictors. The issue of prediction stand in contrast to the regular goal in social sciences where we want to estimate the causal effect of one particular independent variable on the dependent variable. The key difference is that we don't care that much about the individual effect of a predictor (effects of causes) but instead focus the interplay between several predictors and how this interplay can help us predict the value of Y most efficient. Due to this scientific purpose we use the predictors as signals of a specific transfervalue and don't care about whether they come before Y in time or whether there is omitted variable bias (?). A good example of the above mentioned is our use of google searches as a predictor for the players transfervalue. The amount of searches are recorded in real time and therefore after the transfer was made. The number of google searches can not be the reason why the club bought the particular player for a given price but  a high number of searches can signal that the players has had a succesful career or was part of a news generating transfer.        
+
+## Evaluating prediction models using RMSE
+To find the best way of predicting a football players transfervalue we will in the following make a comparative analysis of five different models where we compare the prediction accuracy of each model. The models we will use to predict the transfervalues are 1) simple average, 2) ordinary least square (linear model), 3) lasso model, 4) decision tree and 5) random forest.  
+
+We measure the models' prediction accuracy by finding the *out of sample error* (the prediction error when applying the models on a dataset on which the model was not trained). The first step of our comparative analysis is therefore to randomly split our data into a *training sample* and a *test sample*. We choose to put 70 percent of the observations in the training sample because we want a sufficiently large amount of observations to train our models.  
+We evaluate and compare the models by using the root mean squared error (RMSE) which is stated in the equation below. The RMSE gives us a measure for how well the model predict the observations in the test sample. (We use the RMSE instead of the more basic mean square error (MSE) because RMSE reduces the influnce of outliers.) 
+
+$$ RMSE = \sqrt {{\frac{{\sum\limits_{{i = 1}}^n {{{\left( {{y_i} - {{\hat{y}}_i}} \right)}^2}} }}{{n}}}}$$
+
+A basic trade-off to take into account when dealing with prediction is the *bias-variance trade-off*. The reason is that the prediction errors is the sum of errors due to bias and errors due to variance between the training and test sample. When we build our prediction models we do it on the availiable data in the training sample which also include standard noise. If we on the one hand build a model with only a few variables the model will not be able to comprehent the complexity of the real world. Due to this *underfitting* we therefore end up with a biased model whos estimates are quite far from the real world values. If we on the other hand increase the number of variables and thereby the models complexity alot then the models will adjust to much to the training sample. The result of this *overfitting* will be prediction errors due to the variance between the training sample and the real world. The take-away point is therefore that the most accurate models have found a balance between over- and underfitting so that the increase in bias is equivalent to the decrease in variance. The trade-off is illustrated below:
+
+Find graph here: http://scott.fortmann-roe.com/docs/BiasVariance.html 
+
+## Simple Average
 
 
