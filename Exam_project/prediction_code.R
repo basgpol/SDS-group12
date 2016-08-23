@@ -39,8 +39,8 @@ transfer.data$transferage_sq = transfer.data$transferage^2
 
 ## creating a vector with selected predictors for transferfee ()
 predicting.var = c("transfer.fee", "positions", "appearances", "total.goals", "total.assists", 
-               "total.minutes.played", "contract.left.month","transferage",
-               "league", "Status", "searchresults","transferage_sq")
+                   "total.minutes.played", "contract.left.month","transferage",
+                   "league", "Status", "searchresults","transferage_sq")
 ## Removing observations where contract lenght is unknown
 transfer.data=filter(transfer.data , is.na(contract.left.month) == FALSE) 
 
@@ -177,21 +177,21 @@ get.rmse(test_sample$transfer.fee,Estimate_M4)  #6.600
 set.seed(123)
 Model_4=tree(transfer.fee~.,data=train_sample, method="anova")
 prune.tree(Model_4) # Returns best pruned tree with 5 leaves, evaluating
-                    # error on training data
+# error on training data
 prune.tree(Model_4,newdata=test_sample) # Ditto, but evaluates on test.set
 Model_4.seq = prune.tree(Model_4) # Sequence of pruned tree sizes/errors
 plot(Model_4.seq) # Plots size vs. error
 Model_4.seq$dev # Vector of error rates for prunings, in order
 opt.trees = which(Model_4.seq$dev == min(Model_4.seq$dev)) # Positions of
-                                                            # optimal (with respect to error) trees
+# optimal (with respect to error) trees
 min(Model_4.seq$size[opt.trees]) # Size of smallest optimal tree
 
 
 =======
-##================ 4.6 Random Forest  ================
-## Gode link: http://www.listendata.com/2014/11/random-forest-with-r.html
-# install.packages("randomForest")
-library(randomForest)
+  ##================ 4.6 Random Forest  ================
+  ## Gode link: http://www.listendata.com/2014/11/random-forest-with-r.html
+  # install.packages("randomForest")
+  library(randomForest)
 set.seed(1)
 
 ### More complex attempt
@@ -211,7 +211,7 @@ print(Model_5f)
 
 ## Second, find the number of variables in each split with the lowest OOB-error 
 mtry = tuneRF(train_sample[-1],train_sample$transfer.fee, ntreeTry=1000,
-               stepFactor=1.5,improve=0.01, trace=TRUE, plot=TRUE, na.action=na.roughfix)
+              stepFactor=1.5,improve=0.01, trace=TRUE, plot=TRUE, na.action=na.roughfix)
 
 best.m <- mtry[mtry[, 2] == min(mtry[, 2]), 1]
 
@@ -232,14 +232,17 @@ get.rmse(test_sample$transfer.fee, estimate_M5) # calculating the RMSE on test s
 importance(Model_5) #calculate the importance of the different variables
 
 ## the simple way:
-Model_5 = randomForest(transfer.fee ~ ., data = train_sample)
+Model_5 = randomForest(transfer.fee ~ ., data = train_sample, importance = TRUE)
 print(Model_5)
 
-estimate_M5 = predict(Model_6, test_sample) # calculating estimate from model 5
+estimate_M5 = predict(Model_5, test_sample) # calculating estimate from model 5
 get.rmse(test_sample$transfer.fee, estimate_M5) # calculating the RMSE on test sample
 
-importance(Model_5)
+var.list = importance(Model_5, type = 1) #calculate the variables influence
+varImpPlot(Model_5) # plots the variables influence
+var.list
 
 #plot(test_sample$transfer.fee, estimate_M6)
 #abline(a=0, b=1.0)
->>>>>>> origin/master
+
+
