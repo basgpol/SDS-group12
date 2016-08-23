@@ -106,15 +106,9 @@ get.rmse(test_sample$transfer.fee, estimate_M2)
 
 ##================ 4.5 Lasso model  ================
 ## Creating matrices with all regressors beacuse the glmnet function only works with matrices
-RegressorMatrix_train=model.matrix(~ positions+transferage+
-                                    league+
-                                     #searchresults+
-                                   Status, train_sample)
+RegressorMatrix_train=model.matrix(transfer.fee~ ., train_sample)
+RegressorMatrix_test=model.matrix(transfer.fee~.,test_sample)
 
-RegressorMatrix_test=model.matrix(~ positions+transferage+
-                                    league+
-                                    #searchresults+
-                                    Status, test_sample)
 
 
 ## Training Lasso
@@ -154,32 +148,41 @@ best.lambda = performance_Lasso$lambda[performance_Lasso$RMSError == min(perform
 coef(Model_3, s = best.lambda)
 
 ## RMSE for best model
-get.rmse(predict(Model_3, RegressorMatrix_test, s=best.lambda), test_sample$transfer.fee)
+Estimate_M3=predict(Model_3, RegressorMatrix_test, s=best.lambda)
+get.rmse(Estimate_M3, test_sample$transfer.fee)
 
 
 ##================ 4.6 Decision tree   ================
 <<<<<<< Updated upstream
-# install.packages("rpart")
+
+
 library("rpart")
-Model_4=rpart(formula=transfer.fee~positions+transferage+
-                league+Status+contract.left.month+total.goals+appearances, data=train_sample)
-Model_4$cptable
-
-##Finding CP value with lowest xerror
-alpha <-Model_4$cptable[which.min(Model_4$cptable[,"xerror"]),"CP"]
-
-printcp(Model_4)
-summary(Model_4)
-##Pruning the tree
-prune.Model_4 <- prune(Model_4,alpha)
-
-plot(Model_4)
-text(Model_4)
-
-plot(prune.Model_4, uniform=TRUE, branch=0.6, margin=0.05)
-text(prune.Model_4, all=TRUE, use.n=TRUE)
+library("tree")
+set.seed(123)
+Model_4=tree(transfer.fee~.,data=train_sample, method="anova")
+Model_4$frame
+plot(Model_4,niform=TRUE, 
+     main="Regression Tree for Transfer fee ")
+text(Model_4,pretty=0,use.n=TRUE, cex=.5)
 
 
+##Estimating transfer fee for test data
+Estimate_M4=predict(Model_4,test_sample)
+Estimate_M4
+##Calculating RMSE 
+get.rmse(test_sample$transfer.fee,Estimate_M4)  #6.600
 
+## Cross validation to find the optimal number of terminal nodes
+set.seed(123)
+Model_4=tree(transfer.fee~.,data=train_sample, method="anova")
+prune.tree(Model_4) # Returns best pruned tree with 5 leaves, evaluating
+                    # error on training data
+prune.tree(Model_4,newdata=test_sample) # Ditto, but evaluates on test.set
+Model_4.seq = prune.tree(Model_4) # Sequence of pruned tree sizes/errors
+plot(Model_4.seq) # Plots size vs. error
+Model_4.seq$dev # Vector of error rates for prunings, in order
+opt.trees = which(Model_4.seq$dev == min(Model_4.seq$dev)) # Positions of
+                                                            # optimal (with respect to error) trees
+min(Model_4.seq$size[opt.trees]) # Size of smallest optimal tree
 
 
