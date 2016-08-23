@@ -740,7 +740,44 @@ estimate_M2 = predict(Model_2, test_sample) # calculating estimate from model 2
 get.rmse(test_sample$transfer.fee, estimate_M2) # calculating RMSE from estimate on test sample 
 
 ##================ 4.5 Lasso model  ================
+## Creating matrices with all regressors beacuse the glmnet function only works with matrices
+RegressorMatrix_train=model.matrix(transfer.fee~ ., train_sample)
+RegressorMatrix_test=model.matrix(transfer.fee~.,test_sample)
 
+
+
+## Training Lasso
+Model_3 = glmnet(x = RegressorMatrix_train, y = train_sample$transfer.fee)
+Model_3
+
+# Calculating RSME for each lambda
+lambda_values = Model_3$lambda
+
+performance_Lasso = data.frame()
+
+for (lambda in lambda_values){
+  performance_Lasso = rbind(performance_Lasso,
+                            data.frame(lambda = lambda,
+                                       RMSE = get.rmse(predict(Model_3, RegressorMatrix_test, s = lambda),
+                                                       test_sample$transfer.fee)))
+}
+performance_Lasso
+
+##Visualization of RSME as a function of lamda
+ggplot(performance_Lasso, aes(x = lambda, y = RMSE))+
+  geom_point() + 
+  geom_line() + 
+  theme_minimal()
+
+## Identifying lambda with the lowest RMSE
+best.lambda = performance_Lasso$lambda[performance_Lasso$RMSE == min(performance_Lasso$RMSE)]
+
+## Coefficients for best models
+coef(Model_3, s = best.lambda)
+
+## RMSE for best model
+Estimate_M3=predict(Model_3, RegressorMatrix_test, s=best.lambda)
+get.rmse(Estimate_M3, test_sample$transfer.fee)
 
 ##================ 4.6 Decision tree  ================
 set.seed(123)
@@ -757,17 +794,18 @@ Estimate_M4
 ##Calculating RMSE 
 get.rmse(test_sample$transfer.fee,Estimate_M4)  #6.600
 
+
 ## Cross validation to find the optimal number of terminal nodes
-set.seed(123)
-Model_4=tree(transfer.fee~.,data=train_sample, method="anova")
-prune.tree(Model_4)                     # Returns best pruned tree, evaluating error on training data
-prune.tree(Model_4,newdata=test_sample) # The same, but evaluates on test data
-Model_4.seq = prune.tree(Model_4)       # Sequence of pruned tree sizes/errors
-plot(Model_4.seq)                       # Plots size vs. error
-Model_4.seq$dev                         # Vector of error rates for prunings, in order
-opt.trees = which(Model_4.seq$dev == min(Model_4.seq$dev)) # Positions of optimal (with respect to error) trees
-min(Model_4.seq$size[opt.trees])        # Size of smallest optimal tree
-## Optimal tree size is the same as without pruning
+cv.Model_4 = cv.tree(Model_4, FUN = prune.tree)
+plot(cv.Model_4$size, cv.Model_4$dev, type = "b") #Optimal number with cross validation is 7
+best.size=cv.Model_4$size[which.min(cv.Model_4$dev)]
+prune.Model_4=prune.tree(Model_4,best = best.size)
+plot(prune.Model_4);text(prune.Model_4)
+## Calculating estimates with pruned model
+pruned.estimate=predict(prune.Model_4,test_sample)
+get.rmse(pruned.estimate,test_sample$transfer.fee)
+## Higher RMSE with pruned model than the original
+
 
 ##================ 4.6 Random Forest  ================
 
