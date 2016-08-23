@@ -165,18 +165,13 @@ Estimate_M4
 get.rmse(test_sample$transfer.fee,Estimate_M4)  #6.600
 
 ## Cross validation to find the optimal number of terminal nodes
-set.seed(123)
-Model_4=tree(transfer.fee~.,data=train_sample, method="anova")
-prune.tree(Model_4) # Returns best pruned tree with 5 leaves, evaluating
-                    # error on training data
-prune.tree(Model_4,newdata=test_sample) # Ditto, but evaluates on test.set
-Model_4.seq = prune.tree(Model_4) # Sequence of pruned tree sizes/errors
-plot(Model_4.seq) # Plots size vs. error
-Model_4.seq$dev # Vector of error rates for prunings, in order
-opt.trees = which(Model_4.seq$dev == min(Model_4.seq$dev)) # Positions of
-                                                            # optimal (with respect to error) trees
-min(Model_4.seq$size[opt.trees]) # Size of smallest optimal tree
-
+cv.Model_4 = cv.tree(Model_4, FUN = prune.tree)
+plot(cv.Model_4$size, cv.Model_4$dev, type = "b")
+best.size=cv.Model_4$size[which.min(cv.Model_4$dev)]
+prune.Model_4=prune.tree(Model_4,best = best.size)
+plot(prune.Model_4);text(prune.Model_4)
+pruned.estimate=predict(prune.Model_4,test_sample)
+get.rmse(pruned.estimate,test_sample$transfer.fee)
 
 =======
 ##================ 4.6 Random Forest  ================
