@@ -32,67 +32,67 @@ ggmap(myMap)
 #             alpha = .5, color="darkred", size = 3)
 #######################################################
 
-#Getting data from club
-club.data<-read.csv("club_data_unclean.csv",header=TRUE, stringsAsFactors=TRUE, fileEncoding="latin1")
-mydata = club.data
-#mydata <- mydata[sample(1:nrow(mydata), 50,# taking a random 50 sample
-#                        replace=FALSE),]
-
-#tidying data frame
-colnames(mydata)[3] <- "team"#change "team/N/E/V" to "team"
-
-#POINTS
-
-mydata$Pts = str_replace(mydata$Pts,"[fecd]","")#removing the unwanted characters
-mydata$Pts = str_replace(mydata$Pts,"*\\[.*?\\] *","")#removing the unwanted characters between brackets
-
-#TEAM
-
-mydata$team = str_replace(mydata$team,"[1234567890]","")#removing the unwanted numbers*3 because it only take one out at a time
-mydata$team = str_replace(mydata$team,"[1234567890]","")
-mydata$team = str_replace(mydata$team,"[1234567890]","")
-mydata$team = str_replace(mydata$team,"[1234567890]","")
-mydata$team = str_replace(mydata$team,"*\\[.*?\\] *","")#removing the unwanted characters between brackets
-mydata$team = str_replace(mydata$team,"Borussia Mönchengladbach","Mönchengladbach Borussia")
-mydata$team = str_replace(mydata$team,"FC Augsburg","Augsburg FC")
-mydata$team = str_replace(mydata$team,"FC Köln","Cologne FC")
-mydata$team = str_replace(mydata$team,"VfB Stuttgart","Stuttgart VfB")
-mydata$team = str_replace(mydata$team,"Hellas Verona","Verona FC")
-mydata$team = str_replace(mydata$team,"BSC","Berlin")
-mydata$team = str_replace(mydata$team,"Juventus","Juventus Turin")
-mydata$team = str_replace(mydata$team,"\\.","")
-mydata$team = str_replace(mydata$team," *\\(.*?\\) *","") #remove (C) for champions
-
-#class transforming to numeric value or character value
-mydata$Pts <- as.numeric(mydata$Pts)
-mydata$team <- as.character(mydata$team)
-
-###ADD COUNTRIES TO TEAM NAMES (in order to find them on gmap)
-
-mydata$team <- with(mydata, ifelse(league=="Bundesliga", paste(team,"GERMANY", sep = " "),
-                                   ifelse(league=="Ligue 1", paste(team,"FRANCE", sep = " "),
-                                          ifelse(league=="Serie A", paste(team,"ITALY", sep = " "),
-                                                 ifelse(league=="Premier league", paste(team,"UK", sep = " "),
-                                                        ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
-
-
-#Looping for club coordinate
-for (i in 1:nrow(mydata)) {
-  latlon = geocode(mydata[i,3],source=c("google","dsk"))
-  mydata$lon[i] = as.numeric(latlon[1])
-  mydata$lat[i] = as.numeric(latlon[2])
-  
-}
-
-#coordinates should be between lon [-10,20] and lat [35:60]
-out.of.europe<-filter(mydata, lon < -10 |lat < 35)
-out.of.europe.2<- filter(mydata, lon>20 |lat>60)
-out.full= rbind(out.of.europe.2, out.of.europe)
-
-# write(mydata,file="club_for_viz.csv")
-# Creating a cleaner dataset
-clubs.points = data.frame(mydata$Pts, mydata$lon, mydata$lat,mydata$team)
-colnames(clubs.points) = c('Pts','lon','lat','team')#naming the variables
+# #Getting data from club
+# club.data<-read.csv("club_data_unclean.csv",header=TRUE, stringsAsFactors=TRUE, fileEncoding="latin1")
+# mydata = club.data
+# #mydata <- mydata[sample(1:nrow(mydata), 50,# taking a random 50 sample
+# #                        replace=FALSE),]
+# 
+# #tidying data frame
+# colnames(mydata)[3] <- "team"#change "team/N/E/V" to "team"
+# 
+# #POINTS
+# 
+# mydata$Pts = str_replace(mydata$Pts,"[fecd]","")#removing the unwanted characters
+# mydata$Pts = str_replace(mydata$Pts,"*\\[.*?\\] *","")#removing the unwanted characters between brackets
+# 
+# #TEAM
+# 
+# mydata$team = str_replace(mydata$team,"[1234567890]","")#removing the unwanted numbers*3 because it only take one out at a time
+# mydata$team = str_replace(mydata$team,"[1234567890]","")
+# mydata$team = str_replace(mydata$team,"[1234567890]","")
+# mydata$team = str_replace(mydata$team,"[1234567890]","")
+# mydata$team = str_replace(mydata$team,"*\\[.*?\\] *","")#removing the unwanted characters between brackets
+# mydata$team = str_replace(mydata$team,"Borussia Mönchengladbach","Mönchengladbach Borussia")
+# mydata$team = str_replace(mydata$team,"FC Augsburg","Augsburg FC")
+# mydata$team = str_replace(mydata$team,"FC Köln","Cologne FC")
+# mydata$team = str_replace(mydata$team,"VfB Stuttgart","Stuttgart VfB")
+# mydata$team = str_replace(mydata$team,"Hellas Verona","Verona FC")
+# mydata$team = str_replace(mydata$team,"BSC","Berlin")
+# mydata$team = str_replace(mydata$team,"Juventus","Juventus Turin")
+# mydata$team = str_replace(mydata$team,"\\.","")
+# mydata$team = str_replace(mydata$team," *\\(.*?\\) *","") #remove (C) for champions
+# 
+# #class transforming to numeric value or character value
+# mydata$Pts <- as.numeric(mydata$Pts)
+# mydata$team <- as.character(mydata$team)
+# 
+# ###ADD COUNTRIES TO TEAM NAMES (in order to find them on gmap)
+# 
+# mydata$team <- with(mydata, ifelse(league=="Bundesliga", paste(team,"GERMANY", sep = " "),
+#                                    ifelse(league=="Ligue 1", paste(team,"FRANCE", sep = " "),
+#                                           ifelse(league=="Serie A", paste(team,"ITALY", sep = " "),
+#                                                  ifelse(league=="Premier league", paste(team,"UK", sep = " "),
+#                                                         ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
+# 
+# 
+# #Looping for club coordinate
+# for (i in 1:nrow(mydata)) {
+#   latlon = geocode(mydata[i,3],source=c("google","dsk"))
+#   mydata$lon[i] = as.numeric(latlon[1])
+#   mydata$lat[i] = as.numeric(latlon[2])
+#   
+# }
+# 
+# #coordinates should be between lon [-10,20] and lat [35:60]
+# out.of.europe<-filter(mydata, lon < -10 |lat < 35)
+# out.of.europe.2<- filter(mydata, lon>20 |lat>60)
+# out.full= rbind(out.of.europe.2, out.of.europe)
+# 
+# # write(mydata,file="club_for_viz.csv")
+# # Creating a cleaner dataset
+# clubs.points = data.frame(mydata$Pts, mydata$lon, mydata$lat,mydata$team)
+# colnames(clubs.points) = c('Pts','lon','lat','team')#naming the variables
 
 # Getting data on the map
 
@@ -111,12 +111,13 @@ colnames(clubs.points) = c('Pts','lon','lat','team')#naming the variables
 ###new way###
 
 mapclubs <- ggmap(myMap) +
-     geom_point(aes(x = lon, y = lat, size=Pts^2), data =clubs.points,col="red", alpha=0.4)+
+  geom_point(aes(x = lon, y = lat, size=transfer.fee.total), data =df.spending.club,col="red", alpha=0.4)+
   theme(axis.title=element_blank(),
         axis.text=element_blank(),
         axis.ticks= element_line(color=NA),
         axis.line = element_line(color = NA))
 mapclubs
+
 
 #########trying with plotly
 

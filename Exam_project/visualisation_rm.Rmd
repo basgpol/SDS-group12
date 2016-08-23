@@ -36,24 +36,33 @@ gg<-ggmap(myMap)+#calling map
   geom_path(aes(x = lon, y = lat, group = factor(name)), #putting paths on the map
             colour="red", data = transfer.path.full, alpha=0.3)
 
-#######European maps of clubs
+#######EUROPEAN MAP OF CLUBS
 df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
 
-m <- list(
-  colorbar = list(title = "Total transfer spending"),
-  size = 10, opacity = 0.8, symbol = 'circle'
-)
+mapclubs <- ggmap(myMap) +
+     geom_point(aes(x = lon, y = lat, size=transfer.fee.total), data =df.spending.club,col="red", alpha=0.4)+
+  theme(axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks= element_line(color=NA),
+        axis.line = element_line(color = NA))
+mapclubs
+#with plotly
 
-g <- list(
-  scope = 'europe',
-  projection = list(type = 'mercator'),
-  showland = TRUE,
-  landcolor = toRGB("gray95"),
-  subunitcolor = toRGB("gray85"),
-  countrycolor = toRGB("gray85"),
-  countrywidth = 0.5,
-  subunitwidth = 0.5
-)
+# m <- list(
+#   colorbar = list(title = "Total transfer spending"),
+#   size = 10, opacity = 0.8, symbol = 'circle'
+# )
+# 
+# g <- list(
+#   scope = 'europe',
+#   projection = list(type = 'mercator'),
+#   showland = TRUE,
+#   landcolor = toRGB("gray95"),
+#   subunitcolor = toRGB("gray85"),
+#   countrycolor = toRGB("gray85"),
+#   countrywidth = 0.5,
+#   subunitwidth = 0.5
+# )
 
 #######AGE
 
@@ -62,7 +71,7 @@ p.age<-p.age + geom_point(stat = "identity")+
           #geom_point(aes(text = paste("Name:",name))+
           geom_smooth(aes(colour = transferage, fill = transferage))+
           ggtitle("Age repartition of transfers in European leagues")
-plotly.p.age<-ggplotly(p.age)
+#plotly.p.age<-ggplotly(p.age)
 
 #####TIME LEFT
 p.time <- ggplot(data=df.viz, aes(x = contract.left.month , y = transfer.fee)) +
@@ -71,29 +80,40 @@ p.time <- ggplot(data=df.viz, aes(x = contract.left.month , y = transfer.fee)) +
   geom_smooth(aes(colour = contract.left.month, fill = contract.left.month))+
   ggtitle("Time left on contract seems to be positively correlated with transfer fees")
 
-plotly.p.time <- ggplotly(p.time)
-###Average spending per league
+#plotly.p.time <- ggplotly(p.time)
 
+###AVERAGE SPENDING BY LEAGUE
+
+#finding mean for every league
 df.viz.ave<-df.viz %>% 
   group_by(league) %>% 
   dplyr::summarise(
-    mean.transfer=mean(transfer.fee))
-df.viz.ave$mean.transfer<-as.numeric(df.viz.ave$mean.transfer)
-p.spend = ggplot(df.viz.ave, aes( x =league, y=mean.transfer))
+    sum.transfer=sum(transfer.fee))
+
+df.viz.ave<-df.viz.ave %>% 
+  mutate(number.of.clubs = ifelse(league=="Bundesliga",18,20)) %>% 
+  mutate(average.spending=sum.transfer/number.of.clubs)
+#ordering
+df.viz.ave <- transform(df.viz.ave, 
+                        league = reorder(league, average.spending))
+#plotting it
+p.spend = ggplot(df.viz.ave, aes( x =league, y=average.spending, fill=league))
 p.spend<-p.spend + geom_bar(stat="identity")+
   theme(axis.title.x=element_blank(),
-        axis.text.x =element_text(size  = 7,
-                                  angle = 45,
-                                  hjust = 1,
-                                  vjust = 1),
+        axis.text.x =element_blank(),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
         axis.ticks= element_line(color=NA),
-        panel.grid.major = element_blank(),
+        panel.grid.major.x = element_blank(),
+        axis.title.y =element_text(size  = 7,
+                                  angle = 90,
+                                  hjust = -3,
+                                  vjust = 1),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
-        axis.title.y=element_blank(),
         text=element_text(family="Goudy Old Style"))+
-  ggtitle("Premier League Clubs spend far more on average than other leagues' clubs")
-
+  ggtitle("Premier League Clubs spend far more on average than any other leagues' clubs")+
+  scale_fill_manual("National leagues",
+                    values=c( "#BF9692", "#FFAA00", "#3B8686", "#1f3057","#779C00", "#DEE3DC"))
 #####Club status
 df.viz.status<-df.viz %>% 
   group_by(Status) %>% 
@@ -131,23 +151,26 @@ Some examples of visualisations
 ```{r pressure, echo=FALSE}
 ## Including Plots
 
-ggmap(myMap)
 
+mapclubs
 
 gg
-plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
-        #text = team,
-        hoverinfo = "text" ,
-        text=paste("Team = ", df.spending.club$team,"\n", "Total transfer = ", df.spending.club$transfer.fee.total),
-        type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers', 
-        marker = m) %>%
-  layout(title = 'Football teams in Europe and transfer spending', geo = g)
+
+
+
+# plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
+#         #text = team,
+#         hoverinfo = "text" ,
+#         text=paste("Team = ", df.spending.club$team,"\n", "Total transfer = ", df.spending.club$transfer.fee.total),
+#         type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers', 
+#         marker = m) %>%
+#   layout(title = 'Football teams in Europe and transfer spending', geo = g)
 
 p.age
 
-plotly.p.age
+#plotly.p.age
 
-plotly.p.time
+#plotly.p.time
 
 p.spend
 
