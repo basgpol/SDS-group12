@@ -4,7 +4,7 @@ author:
 - Anne Sophie Schytt Lassen
 - Philip Lemaitre
 - Andreas Langholz
-- Dominik Lillemæhlum
+- Dominik Lillem?hlum
 date: "15 December 2015"
 output:
   pdf_document:
@@ -34,8 +34,8 @@ total <- read.table("/Users/dominikzdyblillemaehlum/Dropbox/Kandidat/SDS/SDS_Gro
 total <- distinct(total, id)
 
 
-total$street = str_extract(total$adress, "[A-å].+(?=,)")
-total$city   = str_extract(total$adress, "(,).+[A-å].+")
+total$street = str_extract(total$adress, "[A-?].+(?=,)")
+total$city   = str_extract(total$adress, "(,).+[A-?].+")
 total$postnr = as.numeric(str_extract(total$adress, "[0-9]+"))
 
 total$m <- total$KmCityHall*1000
@@ -254,7 +254,7 @@ The twelve largest principal components is then returned and merged together wit
 # Describing the data
 
 Before continuing with the prediction models, we should take a closer look at the data. 
-Our data set includes 1031 apartment distributed in the 17 postal areas that are defined as located within Copenhagen. In some areas we have quite many observations (202 in Copenhagen SV and 177 in Copenhagen S), but in some areas we have very few (8 observations on Frederiksberg and 13 in Copenhagen K around Østergade). Plotting the rental price against the size of the apartment, it is clear that there is a positive relationship, see figure 7 in the appendix. This is not surprising, but confirms that our dependent variable in all models should be price pr. square meter rather than absolute rental price. 
+Our data set includes 1031 apartment distributed in the 17 postal areas that are defined as located within Copenhagen. In some areas we have quite many observations (202 in Copenhagen SV and 177 in Copenhagen S), but in some areas we have very few (8 observations on Frederiksberg and 13 in Copenhagen K around ?stergade). Plotting the rental price against the size of the apartment, it is clear that there is a positive relationship, see figure 7 in the appendix. This is not surprising, but confirms that our dependent variable in all models should be price pr. square meter rather than absolute rental price. 
 
 When examining the distribution of the rental price pr. $m^2$, see figure 3, it is clear that distribution is right-skewed, meaning that the data set includes some observations with a very high price. Including all observations the average price pr. $m^2$ is 195.9 DKK. If the observations with a $m^2$ price above 500 DKK is excluded (19 observations), the average price falls to 187,1 DKK. 
 
@@ -269,7 +269,7 @@ k + geom_point(alpha = 0.2) + labs(list(x = "Size of apartment (m^2)", y = "Pric
 
 Earlier it was argued that distance to City Square Hall might affect the price. Plotting distance in meters against the price pr. $m^2$, see appendix figure 9, it seems not to be the case. However, this plot also shows that houses and big apartments are priced at a relative constant price pr. square meter, whereas the pricing for smaller apartments and rooms seems to be more volatile. 
 
-Another variable this might affect the price pr. square meter is which neighborhood the apartment is located in. A bar chart of average price in different zip codes is illustrated in figure 6, and we observe great difference. The cheapest neighborhood is København K around Østergade (1100) where the average price is 146.2 DKK, while the most expensive neighborhood is København K around Borgergade (1300) where the average price is 280,9.
+Another variable this might affect the price pr. square meter is which neighborhood the apartment is located in. A bar chart of average price in different zip codes is illustrated in figure 6, and we observe great difference. The cheapest neighborhood is K?benhavn K around ?stergade (1100) where the average price is 146.2 DKK, while the most expensive neighborhood is K?benhavn K around Borgergade (1300) where the average price is 280,9.
 
 <!-- Figure 2 -->
 
@@ -356,7 +356,7 @@ The RMSE from this model is 84,24
 
 <!-- Figure 4 -->
 
-```{r fig.width=7, fig.height=4, fig.pos="placeHere", fig.cap = "Tree", echo=FALSE, message=FALSE, warning=FALSE}
+```{r fig.width=7, fig.height=4, fig.pos="placeHere",  echo=FALSE, message=FALSE, warning=FALSE}
 
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(mapDK, rattle, metricsgraphics, plyr,dplyr, ggplot2, RColorBrewer, 

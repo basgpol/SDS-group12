@@ -115,13 +115,6 @@ RegressorMatrix_test=model.matrix(transfer.fee~.,test_sample)
 Model_3 = glmnet(x = RegressorMatrix_train, y = train_sample$transfer.fee)
 Model_3
 
-##
-# estimate_M3 = predict(Model_3, RegressorMatrix_test)
-# estimate_M3
-
-
-# get.rmse(test_sample$transfer.fee, estimate_M3)
-
 # Calculating RSME for each lambda
 lambda_values = Model_3$lambda
 
@@ -130,19 +123,19 @@ performance_Lasso = data.frame()
 for (lambda in lambda_values){
   performance_Lasso = rbind(performance_Lasso,
                             data.frame(lambda = lambda,
-                                       RMSError = get.rmse(predict(Model_3, RegressorMatrix_test, s = lambda),
+                                       RMSE = get.rmse(predict(Model_3, RegressorMatrix_test, s = lambda),
                                                        test_sample$transfer.fee)))
 }
 performance_Lasso
 
 ##Visualization of RSME as a function of lamda
-ggplot(performance_Lasso, aes(x = lambda, y = RMSError))+
+ggplot(performance_Lasso, aes(x = lambda, y = RMSE))+
   geom_point() + 
   geom_line() + 
   theme_minimal()
 
 ## Identifying lambda with the lowest RMSE
-best.lambda = performance_Lasso$lambda[performance_Lasso$RMSError == min(performance_Lasso$RMSError)]
+best.lambda = performance_Lasso$lambda[performance_Lasso$RMSE == min(performance_Lasso$RMSE)]
 
 ## Coefficients for best models
 coef(Model_3, s = best.lambda)
@@ -153,7 +146,7 @@ get.rmse(Estimate_M3, test_sample$transfer.fee)
 
 
 ##================ 4.6 Decision tree   ================
-<<<<<<< Updated upstream
+
 
 
 library("rpart")
@@ -164,8 +157,6 @@ Model_4$frame
 plot(Model_4,niform=TRUE, 
      main="Regression Tree for Transfer fee ")
 text(Model_4,pretty=0,use.n=TRUE, cex=.5)
-
-<<<<<<< HEAD
 
 ##Estimating transfer fee for test data
 Estimate_M4=predict(Model_4,test_sample)
