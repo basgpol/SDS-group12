@@ -380,20 +380,20 @@ df.viz.ave <- transform(df.viz.ave,
 total.league = ggplot(df.viz.ave, aes( x =league, y=average.spending, fill=league))
 total.league<-total.league + geom_bar(stat="identity",alpha=1)+
   theme(axis.title.x=element_blank(),
-        axis.text.x =element_blank(),
-        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
-        axis.ticks= element_line(color=NA),
-        panel.grid.major.x = element_blank(),
         axis.title.y =element_text(angle = 0,
                                    colour="grey",
                                    vjust = 1,
                                    hjust = 0 ),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
+        axis.ticks= element_line(color=NA),
+        panel.grid.major.x = element_blank(),
         panel.grid.minor = element_blank(),
+        legend.position="none",
         panel.background = element_blank(),
         text=element_text(family="LM Roman 10"))+
   ggtitle("Premier League Clubs spend far more on average than any other leagues' clubs\n")+
   scale_fill_manual("National leagues",
-                    values=c( "#BF9692", "#FFAA00", "#3B8686", "#1f3057","#779C00"))+
+                    values=c( "#F2E7DA", "#E89090","#92A0B0", "#C0CFAE", "#525252", "#DEE3DC"))+
   labs(y="Average transfer spending\nper league in M£")
 
 total.league
@@ -417,19 +417,19 @@ df.viz.player.league <- transform(df.viz.player.league,
 ave.player = ggplot(df.viz.player.league, aes( x =league, y=average.spending.per.player, fill=league))
 ave.player<-ave.player + geom_bar(stat="identity",alpha=1)+
   theme(axis.title.x=element_blank(),
-        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
-        axis.ticks= element_line(color=NA),
-        panel.grid.major.x = element_blank(),
         axis.title.y =element_text(angle = 0,
                                    colour="grey",
                                    vjust = 1),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
+        axis.ticks= element_line(color=NA),
+        panel.grid.major.x = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         legend.position="none",
         text=element_text(family="LM Roman 10"))+
   ggtitle("Premier League Clubs spend far more on average than any other leagues' clubs\n")+
   scale_fill_manual("National leagues",
-                    values=c( "#333745", "#EFF08E", "#DAEDE2", "#77C4D3", "#BA4857", "#DEE3DC"))+
+                    values=c( "#E89090","#F2E7DA","#C0CFAE","#92A0B0",  "#525252", "#DEE3DC"))+
   labs(y="Average transfer price\nper player in M£") 
 ave.player
 

@@ -183,7 +183,7 @@ total.league<-total.league + geom_bar(stat="identity",alpha=1)+
         text=element_text(family="LM Roman 10"))+
   ggtitle("Premier League Clubs spend far more on average than any other leagues' clubs\n")+
   scale_fill_manual("National leagues",
-                    values=c( "#EFF08E", "#333745", "#77C4D3", "#DAEDE2","#BA4857", "#DEE3DC"))+
+                    values=c( "#F2E7DA", "#E89090","#92A0B0", "#C0CFAE", "#525252", "#DEE3DC"))+
   labs(y="Average transfer spending\nper league in M£")
 
 ##########
@@ -215,7 +215,7 @@ ave.player<-ave.player + geom_bar(stat="identity",alpha=1)+
         text=element_text(family="Goudy Old Style"))+
   ggtitle("Premier League Clubs spend far more on average\n than any other leagues' clubs\n")+
   scale_fill_manual(
-                    values=c( "#333745", "#EFF08E","#DAEDE2", "#77C4D3", "#BA4857", "#DEE3DC"))+
+                    values=c( "#E89090","#F2E7DA","#C0CFAE","#92A0B0",  "#525252", "#DEE3DC"))+
   labs(y="Average transfer price\nper player in M£")
 
 
