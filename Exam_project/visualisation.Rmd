@@ -181,7 +181,7 @@ total.league<-total.league + geom_bar(stat="identity",alpha=1)+
         legend.position="none",
         panel.background = element_blank(),
         text=element_text(family="LM Roman 10"))+
-  ggtitle("Premier League Clubs spend far more on average than any other leagues' clubs\n")+
+  ggtitle("Premier League Clubs spend far more on average\n than any other leagues' clubs\n")+
   scale_fill_manual("National leagues",
                     values=c( "#F2E7DA", "#E89090","#92A0B0", "#C0CFAE", "#525252", "#DEE3DC"))+
   labs(y="Average transfer spending\nper league in M£")
