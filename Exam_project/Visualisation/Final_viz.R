@@ -8,6 +8,9 @@
 
 ##LIBRARIES
 library(plotly)
+#install.packages("extrafont")
+#install.packages("Cairo")
+library(extrafont)
 library("ggmap")# getting maps and coordinates from google
 library(maptools)# getting maps and coordinates from google
 library(maps)# getting maps and coordinates from google
@@ -16,6 +19,9 @@ library(dplyr)#tidying dataset
 library(rworldmap)
 library(stringr)#dealing with strings and replacing strings in observations
 library(RCurl)
+font_import()
+font_import(pattern = "/Library/Fonts/lmroman10-bold.ttf")
+
 #creating dataset
 df.viz<- read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", encoding = "UTF8", header = TRUE)
 
@@ -101,18 +107,18 @@ ggmap(myMap)
 df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
 
 #WITH GGPLOT
-mapclubs <- ggmap(myMap) +
+map.clubs <- ggmap(myMap) +
   geom_point(aes(x = lon, y = lat, size=transfer.fee.total), data =df.spending.club,col="red", alpha=0.4)+
   theme(axis.title=element_blank(),
         axis.text=element_blank(),
         axis.ticks= element_line(color=NA),
         axis.line = element_line(color = NA),
-        text=element_text(family="Goudy Old Style"))+
+        text=element_text(family="LM Roman 10"))+
   ggtitle("Total transfer spending for clubs in Europe")+
   labs(size="")+
-  scale_size(breaks = c(5.0e+7,1.0e+8,1.5e+8),labels = c("50M","100M","150M"))
+  scale_size(breaks = c(5.0e+7,1.0e+8,1.5e+8),labels = c("50M£","100M£","150M£"))
 
-mapclubs
+map.clubs
 #####with plotly
 # m <- list(
 #   colorbar = list(title = "Total transfer spending"),
@@ -140,184 +146,6 @@ mapclubs
 #         marker = m) %>%
 #   layout(title = 'Football teams in Europe and transfer spending', geo = g)
 
-
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         TRANSFER FEE BY AGE SCATTER PLOT    ############################################################### 
-####################################                                             ###############################################################
-################################################################################################################################################
-
-p.age = ggplot(df.viz, aes(x = transferage , y = transfer.fee))
-p.age<-p.age + geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste("Name:",name)))+ #to use for ggplot
-          geom_smooth(aes(colour = transferage, fill = transferage))+
-          ggtitle("Age repartition of transfers in European leagues")+
-  labs(y="Transfer price",x="Age") +
-  theme(axis.ticks.y= element_line(color=NA),
-        axis.ticks.x=element_line(colour="#CACACA", size=0.2),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank(),
-        axis.title.y =element_text(angle = 0,
-                                   colour="grey",
-                                   vjust = 1,
-                                   hjust = 0 ),
-        axis.title.x =element_text(angle = 0,
-                                   colour="grey",
-                                   vjust = -1,
-                                   hjust = 1 ),
-        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
-        axis.title.y=element_blank(),
-        text=element_text(family="Goudy Old Style"))
-p.age
-
-plotly.p.age<-ggplotly(p.age)
-plotly.p.age
-
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         TRANSFER FEE BY TIME LEFT PLOT      ############################################################### 
-####################################                                             ###############################################################
-################################################################################################################################################
-
-p.time <- ggplot(data=df.viz, aes(x = contract.left.month , y = transfer.fee)) +
-  geom_point(stat = "identity")+
-  #geom_point(aes(text = paste(name, " to ", club.to)), size = 4) +
-  geom_smooth(aes(colour = contract.left.month, fill = contract.left.month))+
-  ggtitle("Time left on contract seems to be positively correlated with transfer fees")+
-  labs(y="Transfer price",x="Time left on contract in months")+
-  scale_x_continuous(breaks=seq(0,58,12))+
-  theme(axis.ticks.y= element_line(color=NA),
-        axis.ticks.x=element_line(colour="#CACACA", size=0.2),
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank(),
-        axis.title.y =element_text(angle = 0,
-                                   colour="grey",
-                                   vjust = 1,
-                                   hjust = 0 ),
-        axis.title.x =element_text(angle = 0,
-                                   colour="grey",
-                                   vjust = -1,
-                                   hjust = 1 ),
-        panel.grid.major.y = element_line(colour="#CACACA", size=0.2),
-        panel.grid.major.x =element_blank(), #add grid
-        axis.title.y=element_blank(),
-        text=element_text(family="Goudy Old Style"))
-
-p.time
-
-# plotly.p.time <- ggplotly(p.time)
-# plotly.p.time
-
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         AVERAGE SPENDING PER CLUB           ############################################################### 
-####################################                PER LEAGUE                   ###############################################################
-####################################                                             ###############################################################
-################################################################################################################################################
-
-#finding mean for every league
-df.viz.ave<-df.viz %>% 
-  group_by(league) %>% 
-  dplyr::summarise(
-    sum.transfer=sum(transfer.fee))
-
-df.viz.ave<-df.viz.ave %>% 
-  mutate(number.of.clubs = ifelse(league=="Bundesliga",18,20)) %>% 
-  mutate(average.spending=sum.transfer/number.of.clubs)
-#ordering
-df.viz.ave <- transform(df.viz.ave, 
-                        league = reorder(league, average.spending))
-#plotting it
-p = ggplot(df.viz.ave, aes( x =league, y=average.spending, fill=league))
-p<-p + geom_bar(stat="identity")+
-  theme(axis.title.x=element_blank(),
-        axis.text.x =element_blank(),
-        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
-        axis.ticks= element_line(color=NA),
-        panel.grid.major.x = element_blank(),
-        axis.title.y =element_text(angle = 0,
-                                   colour="grey",
-                                   vjust = 1,
-                                   hjust = 0 ),
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank(),
-        text=element_text(family="Goudy Old Style"))+
-  ggtitle("Premier League Clubs spend far more on average than any other leagues' clubs")+
-  scale_fill_manual("National leagues",
-                    values=c( "#BF9692", "#FFAA00", "#3B8686", "#1f3057","#779C00"))+
-  labs(y="Average transfer price\n per player in M£")
-
-p
-
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         AVERAGE SPENDING PER PLAYER         ############################################################### 
-####################################                PER LEAGUE                   ###############################################################
-####################################                                             ###############################################################
-################################################################################################################################################
-
-#finding mean spending per player for different leagues
-df.viz.player.league<-df.viz %>% 
-  group_by(league) %>% 
-  dplyr::summarise(average.spending.per.player=mean(transfer.fee))
-
-#ordering
-df.viz.player.league <- transform(df.viz.player.league, 
-                        league = reorder(league, average.spending.per.player))
-#plotting it
-ave.player = ggplot(df.viz.player.league, aes( x =league, y=average.spending.per.player, fill=league))
-ave.player<-ave.player + geom_bar(stat="identity")+
-  theme(axis.title.x=element_blank(),
-        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
-        axis.ticks= element_line(color=NA),
-        panel.grid.major.x = element_blank(),
-        axis.title.y =element_text(angle = 0,
-                                   colour="grey",
-                                   vjust = 1),
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank(),
-        legend.position="none",
-        text=element_text(family="Goudy Old Style"))+
-  ggtitle("Premier League Clubs spend far more on average than any other leagues' clubs")+
-  scale_fill_manual("National leagues",
-                    values=c( "#BF9692", "#FFAA00", "#3B8686", "#1f3057","#779C00", "#DEE3DC"))+
-  labs(y="Average transfer price\nper player in M£") 
-ave.player
-
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         AVERAGE SPENDING PER PLAYERS        ############################################################### 
-####################################                 PER CLUB STATUS             ###############################################################
-####################################                                             ###############################################################
-################################################################################################################################################
-
-df.viz.status<-df.viz %>% 
-  group_by(Status) %>% 
-  dplyr::summarise(mean.transfer=mean(transfer.fee))
-
-#Ordering
-df.viz.status <- transform(df.viz.status, 
-                                  Status = reorder(Status, mean.transfer))
-
-#Plotting
-
-p.club = ggplot(df.viz.status, aes(y= mean.transfer, x = Status, fill=Status))
-p.club<- p.club + geom_bar(stat = "identity")+
-  theme(axis.title.x=element_blank(),
-        axis.text.x =element_text(size  = 7),
-        axis.ticks= element_line(color=NA),
-        panel.grid.major.x = element_blank(),
-        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank(),
-        legend.text=element_blank(),
-        axis.title.y=element_blank(),
-        legend.title=element_blank(),
-        legend.position="none",
-        text=element_text(family="Goudy Old Style"))+
-  ggtitle("Top Club spend far more on average than other leagues' clubs")+
-  scale_fill_manual(values=c( "#CFF09E", "#A8DBA8", "#79BD9A", "#3B8686"))
-p.club
 
 ################################################################################################################################################
 ####################################                                             ###############################################################          
@@ -424,9 +252,9 @@ transfer.path.full = read.csv("https://raw.githubusercontent.com/basgpol/SDS-gro
 
 ##MAAPING 
 
-gg<-ggmap(myMap)+#calling map
+path.map<-ggmap(myMap)+#calling map
   geom_path(aes(x = lon, y = lat, group = factor(name)), #putting paths on the map
-            colour="red", data = transfer.path.full, alpha=0.3)+
+            colour="red", data = transfer.path.full, alpha=0.4)+
   theme(axis.title.x=element_blank(),
         axis.ticks= element_line(color=NA),
         axis.text= element_blank(),
@@ -435,8 +263,211 @@ gg<-ggmap(myMap)+#calling map
         panel.background = element_blank(),
         panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
         axis.title.y=element_blank(),
-        text=element_text(family="Goudy Old Style"))+
+        text=element_text(family="LM Roman 10"))+
   ggtitle("Transfer for season 2014/2015")
 
-gg
+path.map
 
+
+###BOTH MAPS SUPERPOSED
+full.map<-ggmap(myMap)+#calling map
+  geom_path(aes(x = lon, y = lat, group = factor(name)), #putting paths on the map
+            colour="orange", data = transfer.path.full, alpha=0.4)+
+  geom_point(aes(x = lon, y = lat, size=transfer.fee.total), data =df.spending.club,col="red", alpha=0.4)+
+  theme(axis.title.x=element_blank(),
+        axis.ticks= element_line(color=NA),
+        axis.text= element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
+        axis.title.y=element_blank(),
+        text=element_text(family="LM Roman 10"))+
+  ggtitle("Transfer for season 2014/2015")+
+  labs(size="Transfer spending\n per club")+
+  scale_size(breaks = c(5.0e+7,1.0e+8,1.5e+8),labels = c("50M£","100M£","150M£"))
+
+
+full.map
+
+################################################################################################################################################
+####################################                                             ###############################################################          
+####################################         TRANSFER FEE BY AGE SCATTER PLOT    ############################################################### 
+####################################                                             ###############################################################
+################################################################################################################################################
+
+p.age = ggplot(df.viz, aes(x = transferage , y = transfer.fee))
+p.age<-p.age + geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste("Name:",name)))+ #to use for ggplot
+          geom_smooth(aes(colour = transferage, fill = transferage))+
+          ggtitle("Age repartition of transfers in European leagues")+
+  labs(y="Transfer price\nin £",x="Age") +
+  theme(axis.ticks.y= element_line(color=NA),
+        axis.ticks.x=element_line(colour="#CACACA", size=0.2),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title.y =element_text(angle = 0,
+                                   colour="grey",
+                                   vjust = 1,
+                                   hjust = 0 ),
+        axis.title.x =element_text(angle = 0,
+                                   colour="grey",
+                                   vjust = -1,
+                                   hjust = 1 ),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
+        axis.title.y=element_blank(),
+        text=element_text(family="LM Roman 10"))
+p.age
+
+#plotly.p.age<-ggplotly(p.age)
+#plotly.p.age
+
+################################################################################################################################################
+####################################                                             ###############################################################          
+####################################         TRANSFER FEE BY TIME LEFT PLOT      ############################################################### 
+####################################                                             ###############################################################
+################################################################################################################################################
+
+p.time <- ggplot(data=df.viz, aes(x = contract.left.month , y = transfer.fee)) +
+  geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste("Name:",name)))+
+  #geom_point(aes(text = paste(name, " to ", club.to)), size = 4) +
+  geom_smooth(aes(colour = contract.left.month, fill = contract.left.month))+
+  ggtitle("Time left on contract seems to be positively correlated with transfer fees")+
+  labs(y="Transfer price\nin £",x="Time left on contract\nin months")+
+  scale_x_continuous(breaks=seq(0,58,12))+
+  theme(axis.ticks.y= element_line(color=NA),
+        axis.ticks.x=element_line(colour="#CACACA", size=0.2),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title.y =element_text(angle = 0,
+                                   colour="grey",
+                                   vjust = 1,
+                                   hjust = 0 ),
+        axis.title.x =element_text(angle = 0,
+                                   colour="grey",
+                                   vjust = -1,
+                                   hjust = 1 ),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2),
+        panel.grid.major.x =element_blank(), #add grid
+        axis.title.y=element_blank(),
+        text=element_text(family="LM Roman 10"))
+
+p.time
+
+# plotly.p.time <- ggplotly(p.time)
+# plotly.p.time
+
+################################################################################################################################################
+####################################                                             ###############################################################          
+####################################         AVERAGE SPENDING PER CLUB           ############################################################### 
+####################################                PER LEAGUE                   ###############################################################
+####################################                                             ###############################################################
+################################################################################################################################################
+
+#finding mean for every league
+df.viz.ave<-df.viz %>% 
+  group_by(league) %>% 
+  dplyr::summarise(
+    sum.transfer=sum(transfer.fee))
+
+df.viz.ave<-df.viz.ave %>% 
+  mutate(number.of.clubs = ifelse(league=="Bundesliga",18,20)) %>% 
+  mutate(average.spending=sum.transfer/number.of.clubs)
+#ordering
+df.viz.ave <- transform(df.viz.ave, 
+                        league = reorder(league, average.spending))
+#plotting it
+total.league = ggplot(df.viz.ave, aes( x =league, y=average.spending, fill=league))
+total.league<-total.league + geom_bar(stat="identity",alpha=1)+
+  theme(axis.title.x=element_blank(),
+        axis.text.x =element_blank(),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
+        axis.ticks= element_line(color=NA),
+        panel.grid.major.x = element_blank(),
+        axis.title.y =element_text(angle = 0,
+                                   colour="grey",
+                                   vjust = 1,
+                                   hjust = 0 ),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        text=element_text(family="LM Roman 10"))+
+  ggtitle("Premier League Clubs spend far more on average than any other leagues' clubs\n")+
+  scale_fill_manual("National leagues",
+                    values=c( "#BF9692", "#FFAA00", "#3B8686", "#1f3057","#779C00"))+
+  labs(y="Average transfer spending\nper league in M£")
+
+total.league
+
+################################################################################################################################################
+####################################                                             ###############################################################          
+####################################         AVERAGE SPENDING PER PLAYER         ############################################################### 
+####################################                PER LEAGUE                   ###############################################################
+####################################                                             ###############################################################
+################################################################################################################################################
+
+#finding mean spending per player for different leagues
+df.viz.player.league<-df.viz %>% 
+  group_by(league) %>% 
+  dplyr::summarise(average.spending.per.player=mean(transfer.fee))
+
+#ordering
+df.viz.player.league <- transform(df.viz.player.league, 
+                        league = reorder(league, average.spending.per.player))
+#plotting it
+ave.player = ggplot(df.viz.player.league, aes( x =league, y=average.spending.per.player, fill=league))
+ave.player<-ave.player + geom_bar(stat="identity",alpha=1)+
+  theme(axis.title.x=element_blank(),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
+        axis.ticks= element_line(color=NA),
+        panel.grid.major.x = element_blank(),
+        axis.title.y =element_text(angle = 0,
+                                   colour="grey",
+                                   vjust = 1),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        legend.position="none",
+        text=element_text(family="LM Roman 10"))+
+  ggtitle("Premier League Clubs spend far more on average than any other leagues' clubs\n")+
+  scale_fill_manual("National leagues",
+                    values=c( "#333745", "#EFF08E", "#DAEDE2", "#77C4D3", "#BA4857", "#DEE3DC"))+
+  labs(y="Average transfer price\nper player in M£") 
+ave.player
+
+################################################################################################################################################
+####################################                                             ###############################################################          
+####################################         AVERAGE SPENDING PER PLAYERS        ############################################################### 
+####################################                 PER CLUB STATUS             ###############################################################
+####################################                                             ###############################################################
+################################################################################################################################################
+
+df.viz.status<-df.viz %>% 
+  group_by(Status) %>% 
+  dplyr::summarise(mean.transfer=mean(transfer.fee))
+
+#Ordering
+df.viz.status <- transform(df.viz.status, 
+                                  Status = reorder(Status, mean.transfer))
+
+#Plotting
+
+p.club = ggplot(df.viz.status, aes(y= mean.transfer, x = Status, fill=Status))
+p.club<- p.club + geom_bar(stat = "identity")+
+  theme(axis.title.x=element_blank(),
+        axis.text.x =element_text(size  = 9),
+        axis.title.y =element_text(angle = 0,
+                                   colour="grey",
+                                   vjust = 1),
+        axis.ticks= element_line(color=NA),
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        legend.text=element_blank(),
+        legend.title=element_blank(),
+        legend.position="none",
+        text=element_text(family="LM Roman 10"))+
+  ggtitle("Top Club spend far more on average than other leagues' clubs\n")+
+  scale_fill_manual(values=c( "#CFF09E", "#A8DBA8", "#79BD9A", "#3B8686"))+
+  labs(y="Average transfer price\nper player in M£") 
+
+p.club
