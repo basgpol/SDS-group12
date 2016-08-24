@@ -1,8 +1,13 @@
 ---
 title: "Putting a price tag on football players"
-author: "Bjørn Skeel-Gjørling, Chritian Lund Sørensen, Giullaume Slizewicz & Amer Skaljic"
+author: "Bj?rn Skeel-Gj?rling, Chritian Lund S?rensen, Giullaume Slizewicz & Amer Skaljic"
 date: "26 August 2016"
-output: pdf_document
+output: 
+  pdf_document:
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 7
+    number_sections: yes
 linestretch: 1.5
 ---
 
@@ -128,7 +133,7 @@ $$ RMSE = \sqrt {{\frac{{\sum\limits_{{i = 1}}^n {{{\left( {{y_i} - {{\hat{y}}_i
 
 A basic trade-off to take into account when dealing with prediction is the *bias-variance trade-off*. The reason is that the prediction errors is the sum of errors due to bias and errors due to variance between the training and test sample. When we build our prediction models we do it on the availiable data in the training sample which also include standard noise. If we on the one hand build a model with only a few variables the model will not be able to comprehent the complexity of the real world. Due to this *underfitting* we therefore end up with a biased model whos estimates are quite far from the real world values. If we on the other hand increase the number of variables and thereby the models complexity alot then the models will adjust to much to the training sample. The result of this *overfitting* will be prediction errors due to the variance between the training sample and the real world. The take-away point is therefore that the most accurate models have found a balance between over- and underfitting so that the increase in bias is equivalent to the decrease in variance. The trade-off is illustrated below:
 
-![Image is from Roe 2016)](\Users\BjørnAugust\OneDrive\Dokumenter\Studie\Social data science\R-scripts\biasvariance.png)
+![Image is from Roe 2016)](Exam_project/biasvariance.png)
 
 Find graph here: http://scott.fortmann-roe.com/docs/BiasVariance.html 
 
