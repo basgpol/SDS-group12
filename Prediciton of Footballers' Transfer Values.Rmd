@@ -200,6 +200,75 @@ p
 ## Ordinary least square
 As the second prediction model we use the linear regression model - ordinary least square (OLS). OLS works by minimizing the *sum of squared residuals* (SSR) and is thereby also minimizing the bias. Unfortunately, the goal of minimizing the in-sample errors lead to a risk of overfitting and thereby increase the errors due to variance. Therefore, OLS is often not the best prediction methods. On the other hand OLS is very good method when inference is the goal because the model significance can be tested. When we apply our OLS model on the test sample we receive a RMSE of 6.34.
 
+## The Lasso model
+One way to deal with the overfitting/complexity problem described earlier is the Lasso model. The Lasso model punishes comlpexity by including a loss function in the OLS minimazation problem:  
+$$ \operatorname*{minimize}_{\beta_j}: \sum_{i=1}^n (y_i-\beta_0-\sum_{i=1}^p\beta_jx_{ij}^2)+\lambda\sum_{j=1}^p|\beta_j| $$
+From the equation above we see a clear trade-off between minimizing the SSR and the penalty term. The penalty is given by the sum of the absolute $\beta$ coefficients. For a given $\lambda$ the model returns a corner solution of the most significant variables. The $\lambda$ parameter weighs the penalty for model complexity, the larger $\lambda$, the heavier penalty and thereby exclusion of more variables. The Lasso is performing so-called *variable selection*. 
+The optimal size of $\lambda$ is decided by running the regression on our training data for different values of $\lambda$. For each of the estimated models we estimate the transfer fee for our test data. We then calculate the RMSE for all the models and find the $\lambda$ which minimizes the RMSE in our test data.
+The model with the optimal $\lambda$ has a RMSE of 6.34. Overfitting doesn't seem to be an issue for our OLS estimate since the weighting of the penalty term is very low ($\alpha=0.0009$) and the Lasso gives a higher out of sample error.
+
+
+## Regression Trees
+Decision trees is machine learning method which can be applied on both categorical and continuous variables. When used for predicting continuous outcomes it is called *regression trees*. The decision tree is grown by using our training data in the following way: First the predictor space (set of all the possible values for our explanatory variables) is divided into $J$ different regions. For all observations in one region the prediction is given by the mean of the observed dependent variable. The regions are constructed in a way that minimizes the SSR:
+$$ \sum_{j=1}^J\sum_{i \in R_j}(y_i-\hat{y}_{R_m})^2$$
+
+It is computationally infeasible to consider all possible partition of the feature spaces into $J$ boxes why an a approach called *recursive binary splitting* is used (*An Introduction to Statistical Learning*). In our case the first split is searchresults>50300 which means that this division of the observations provides the greatest reduction of the SSR of all possible first splits across all predictors and all values.  
+There is a risk that this procedure will lead to overfitting. To avoid this we can use a procedure called pruning. To prune the tree we use the following equation:
+$$ \sum_{m=1}^{|T|}\sum_{x_i \in R_j}(y_i-\hat{y}_{R_j})^2+\alpha|T|  $$
+$|T|$ is the number of terminal nodes in the subtree $T$, $R_m$ is the subspace of the region M, and $y_{R_m}$ is the predicted response associated with $R_m$. When pruning the tree we obtain a sequence of the best subtrees as a function of $\alpha$. We are then using K-fold cross-validation (that is we are dividing the training data into K folds) to choose the right $\alpha$ value.
+A new tree is grown on all but the *k*th fold of the training data, this is done for each value of $\alpha$. All the grown trees are evaluated by calculating the MSE on the *k*th fold. The $\alpha$ value with the lowest average MSE across the folds are choosen. The subtree from the original tree corresponding to the found $\alpha$ is the best when pruning.
+As with the Lasso model overfitting wasn't an issue and the original tree produced a lower RMSE than the pruned. The RMSE was 6.60.
+  
+```{r fig.width=7, fig.height=7, fig.pos="placeHere",fig.cap="Decision Tree",echo=FALSE, message=FALSE, warning=FALSE}
+library("tree")
+library(caret)
+library(plotly)
+library(ggplot2)
+library(glmnet)
+library(dplyr)
+library(plotly)
+## Loading the final data set
+transfer.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", encoding = "UTF8", header = TRUE)
+## Creating a new variable which is age squared
+transfer.data$transferage_sq = transfer.data$transferage^2
+
+
+## creating a vector with selected predictors for transferfee ()
+predicting.var = c("transfer.fee", "positions", "appearances", "total.goals", "total.assists", 
+               "total.minutes.played", "contract.left.month","transferage",
+               "league", "Status", "searchresults","transferage_sq")
+## Removing observations where contract lenght is unknown
+transfer.data=filter(transfer.data , is.na(contract.left.month) == FALSE) 
+
+
+##================ 4.1 Dividing into a train and test sample  ================
+
+## Creating a vector with the count of 70 pct. of the sample size  
+train_size = floor(0.70 * nrow(transfer.data)) # creates a vector 
+
+## setting seed to enable reproductivity 
+set.seed(123)
+
+## creating a vector with random numbers (count = tran_size)
+train.indicator = sample(seq_len(nrow(transfer.data)), size = train_size)
+
+## Splitting the data frame into a train (70 pct.) and test sample (30 pct.)
+train_sample = transfer.data[train.indicator,predicting.var] # selecting observations with a train indicator
+test_sample = transfer.data[-train.indicator, predicting.var] # selecting observations without a train indicator
+
+
+
+Model_4=tree(transfer.fee~.,data=train_sample, method="anova")
+
+plot(Model_4,niform=TRUE, 
+     main="Regression Tree for Transfer fee ")
+text(Model_4,pretty=0,use.n=TRUE, cex=.5)
+
+```
+
+
+The figure illustrates the regression tree made to predict the transfer fee. The first node assign observations with less than 50300 search results to the left branch. The next node of the left branch assign players with less than 31.885 month of the contract left to the left branch and so on. In our model the tree segments the players into 11 leaves and predicts a predicts a transfer fee for each of these subgroups. The variables at the top of the tree is the most important one and the lenght of a branch shows the relative importance of the split. Hence, in our model search results is the most important predictor of a players transfer fee.
+
 ## Random Forest
 As described above the decision tree has issues with overfitting which create errors due to variance. The issues can be reduced by another prediction method called *random forest* (RF). The RF is a socalled ensemple model which means that the model consist of several smaller decision trees (in this case regression trees). RF has great simalarities with the concept of *bagging* or *bottstrap aggregating* (Breiman, 1996) where the core idea is to reduce the error due to variance from one model by  building several models and use their average prediction. Random forest prediction can by divided into 4 steps:  
 1) First, each regression tree is construced my randomly draw and replace (called bootstrap sampling) 63.2 percent of the observations in the training sample. This is in our rapport done 500 (?) times so we in the end have a forest of 500 different trees with random selected observations from the traning sample.    
