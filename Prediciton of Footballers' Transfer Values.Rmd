@@ -48,44 +48,64 @@ At last, before merging, we selected the variables that we found interesting and
 ## The Final Dataset
 
 The clean and merged data set contains the following descibtive variables of the transfered players:
+\begin{table}[]
+\centering
+\caption{Personal Player Variables}
+\label{my-label}
+\begin{tabular}{l|l}
+\hline
+Variables    & Description                           \\ \hline
+name         & Name of player                        \\
+nationality  & Nationality of player                 \\
+birth\_place & Birth place of player                 \\
+birth.date   & The date at which the player was born \\
+transferage  & Age of player when transfer occurred  \\ \hline
+\end{tabular}
+\end{table}
 
-Variable Name | Describtion
-------------- | -------------
-name          | Name of player
-nationality   | Nationality of player
-birth_place   | Birth place of player
-birth.date    | The date at which the player was born
-transferage   | Age of player when transfer occured
 
 The clean and merged data set contains the following statistial variables of players:
-
-Variable Name         | Describtion
---------------------- | -------------
-positions             | Position on field of player
-total.goals           | Total amount of goals scored by player
-penaltygoals          | Total amount of penalty goals scored by player
-total.assists         | Total amount of assists made by player
-substitutions_in      | Total amount of matches where player gets substituted into the match
-substitutions_out     | Total amount of matches where player gets substituted out of the match
-total.minutes.played  | Total amount of minutes played by player
-minutes.pr.goal       | Amount of minutes played per goal scored by player
-yellowcards           | Total amount of yellow cards the player got
-secondyellow          | Total amount of second yellow cards the player got
-redcards              | Total amount of red cards the player got
-contract.left.month   | How many month left of the transfered players' contract when transfer occurs
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{l|l}
+\hline
+Variable Name        & Description                                                                  \\ \hline
+positions            & Position on field of player                                                  \\
+total.goals          & Total amount of goals scored by player                                       \\
+penaltygoals         & Total amount of penalty goals scored by player                               \\
+total.assists        & Total amount of assists made by player                                       \\
+substitutions\_in    & Total amount of matches where player gets substituted in        \\
+substitutions\_out   & Total amount of matches where player gets substituted out       \\
+total.minutes.played & Total amount of minutes played by player                                     \\
+minutes.pr.goal      & Amount of minutes played per goal scored by player                           \\
+yellow cards         & Total amount of yellow cards the player got                                  \\
+secondyellow         & Total amount of second yellow cards the player got                           \\
+redcards             & Total amount of red cards the player got                                     \\
+contract.left.month  & Months left of the transfered players' contract at transfer \\ \hline
+\end{tabular}
+\end{table}
 
 All the statistics above are from the season before the transfer happend, which means the season 2014/2015.
 
 The clean and merged data set contains the following descibtive variables of clubs and transfers:
 
-Variable name | Describtion
-------------- | -------------
-club.to       | Which club player is transfered to
-club.from     | Which club player is transfered from
-league        | The league at which the buying club is playing
-status        | Status of the buying club, which is divided in "Top Club", "Middle Club" and "Bottom Club"
-transfer.date | Which date the transfer happened
-transfer.fee  | The transfer fee in million of pounds
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{l|l}
+\hline
+Variable name & Description                               \\ \hline
+club.to       & Which club player is transferred to       \\
+club.from     & Which club player is transferred from     \\
+league        & The league that buying club is playing in \\
+Status        & Status of the buying club                 \\
+transfer.data & Date of transfer                          \\
+transfer.fee  & The transfer fee measured in million £    \\ \hline
+\end{tabular}
+\end{table}
 
 
 All the variables above, we think, are relevant in order to make the best prediction possible of a players transfer value. 
@@ -299,9 +319,40 @@ var.list = importance(Model_5, type = 1) #calculate the variables influence
 varImpPlot(Model_5) # plots the variables influence
 
 ```
-```{r, include= TRUE}
-var.list
-```
+
+\begin{table}[]
+\centering
+\caption{Variable importance}
+\label{my-label}
+\begin{tabular}{ll}
+\hline
+Variables           & \%IncMSE \\ \hline
+posistions          & 0.35     \\
+appearances         & 8.00     \\
+total.goals         & 5.44     \\
+total.assists       & 2.67     \\
+contract.left.month & 6.32     \\
+transferage         & 4.26     \\
+league              & 2.52     \\
+Status              & 5.67     \\
+searchresults       & 16.21    \\
+transferage\_sq     & 4.79     \\ \hline
+\end{tabular}
+\end{table}
 
 # Conclusion
 (Write conclusion)
+\begin{table}[]
+\centering
+\caption{Summary RMSE}
+\label{my-label}
+\begin{tabular}{ll}
+\hline
+Model           & RMSE \\ \hline
+Average         & 9.06 \\
+OLS             & 6.34 \\
+Lasso           & 6.34 \\
+Regression Tree & 6.60 \\
+Random Forest   & 6.26 \\ \hline
+\end{tabular}
+\end{table}
