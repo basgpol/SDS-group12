@@ -199,7 +199,7 @@ p = ggplot(train_sample.1, aes(x = index , y = transfer.fee))+
         panel.background = element_blank())
 ```
 
-```{r pressure, echo=FALSE}
+```{r fig.width=7, fig.height=7, fig.pos="placeHere",fig.cap="Prediction errors",echo=FALSE, message=FALSE, warning=FALSE}
 p
 ```
 
