@@ -1,6 +1,6 @@
 ---
 title: "Putting a price tag on football players"
-author: "Bj?rn Skeel-Gj?rling, Chritian Lund S?rensen, Giullaume Slizewicz & Amer Skaljic"
+author: "Bjørn Skeel-Gjørling, Chritian Lund Sørensen, Giullaume Slizewicz & Amer Skaljic"
 date: "26 August 2016"
 output: 
   pdf_document:
