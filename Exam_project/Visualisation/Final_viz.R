@@ -37,6 +37,7 @@ myLocation <- "Zurich"
 myMap <- get_map(location= myLocation,
                  source="stamen", maptype="watercolor", crop=FALSE,zoom=4)
 ggmap(myMap)
+
 #B&W
 myLocation <- "Zurich"
 myMap <- get_map(location= myLocation,
