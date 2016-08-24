@@ -27,9 +27,9 @@ The purpose of this papers is to predict the transfervalue of football players i
 
 # Data Gathering
 
-We have to gather data in order to do our analysis. We gathered the relevant data from the websites Transfermarkt.co.uk and Wikipedia.org. Transfermarkt.co.uk contains information on football transfers, player information and  performance statistics. We expect all this information highly relevant in order to predict the transfer value of a player. We used Wikipedia.org in order to find data about the final table ranking for the five leagues in the season before the transfers (season 14/15).
-To extract the relevant data we build three web scrapers. One for Transfermarkt, another for Google.com and a third for Wikipedia.org. The scraper for Transfermarkt.co.uk both collected all transfer information from the transfer windows "Summer 15" and "Winter 16" in the five leagues and the individual performance statistics from each transfered player. We then used the Google-scraper to gahter information on the number of google hits when searching for the name of each transfered player followed by the word "footballer". Information on transfer, performance statistics and google hits were hereafter merged into one dataframe consisting of player data.  
-The scraper for Wikipedia ran through the different webpages with the table ranking for the season 14/15 in the five leagues. The table rankings were hereafter merged into one dataframe containing club data.
+We have to gather data in order to do our analysis. We gathered the relevant data from the websites Transfermarkt.co.uk and Wikipedia.org. Transfermarkt.co.uk contains information on football transfers, player information and  performance statistics. We expect all this information to be highly relevant in order to predict the transfer value of a player. We used Wikipedia.org in order to find data about the final table ranking for the five leagues in the season before the transfers (season 14/15).
+To extract the relevant data we build three web scrapers. One for Transfermarkt, another for Google.com and a third for Wikipedia.org. The scraper for Transfermarkt.co.uk both collected all transfer information from the transfer windows "Summer 15" and "Winter 16" in the five leagues and the individual performance statistics from each transfered player. We then used the Google-scraper to gahter information on the number of google hits when searching for the name of each transfered player followed by the word "footballer". Information on transfer, performance statistics and google hits were hereafter merged into one data frame consisting of player data.  
+The scraper for Wikipedia ran through the different webpages with the table ranking for the season 14/15 in the five leagues. The table rankings were hereafter merged into one data frame containing club data.
 The two different datasets were at first cleaned and then merged into one big dataset containing only the variables we find relevant in predicting the transfer values of the players.
 We do not find any ethical issues scrapping the data from Google and Wikipedia because all the information is publicly available and not private in any way. On the other hand it can be argued that the performance and transfer data is the core of Transfermarkt's business model and they therefore has the right to privacy. We would therefore link to stress that we only use the data for scientific purpose and not a commercial purpose.
 
@@ -84,12 +84,6 @@ searchresults  & \begin{tabular}[c]{@{}l@{}}Number of search results when you go
 \end{tabular}
 \end{table}
  
-
-
-The clean and merged data set contains the following descibtive variables of clubs and transfers:
-
-
-
 
 All the variables above, we think, are relevant in order to make the best prediction possible of a players transfer value. 
 
