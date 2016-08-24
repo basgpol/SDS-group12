@@ -296,3 +296,5 @@ varImpPlot(Model_5) # plots the variables influence
 var.list
 ```
 
+# Conclusion
+(Write conclusion)
