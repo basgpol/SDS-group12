@@ -1,0 +1,28 @@
+---
+output: pdf_document
+---
+Age/Transfers Graph
+
+In this graph we see that most of the observations actually are in between 0 and 20 million pounds accross all ages. But in the age spectre from 22-28 we see that there are more expensive transfers made. We for example see that the most expensive transfer is for a player that it just below 25 years old, and we also see that in the age spectre emphasized above we see that there are most transfers in the 20-40 million pounds layer. Not surprisingly the number of expensive transfers decreases as the age increases. We can also see that there is only 1 transfer in the 20-40 million pounds layer as the age is 30 and none of these transfers for players 30+ years old. We see the same for young players. Transfers between 20-40 million pounds at first occur as the players gets about 22 years old. The graph also shows that there are a couple younger players that are more expensive than most of the young players, but these players must be very big talents and therefore are something special.
+
+Time left on contract/Transfer fees
+
+In this graph there is a clear correlation between the time left on a players contract and the transfer fee payed. The longer time there is left of the contract at the time of the transfer, the more expensive the player will be. 
+When the period left of the contract is below 20 months, then the transfer fee does not exceed 30 million pounds. But if we look at when the period left of the contract is above 20 months we see that the transfer fees increases to above 30 million pounds - some transfer fees even increases to above 40 million pounds, especially when the contract is above 40 months. 
+We actually also see that the transfer fees again decreases as the period of the contract left is above 50 months.
+At last the graph shows that the number of transfers decreases when the period of the contract is above 50 months. This is because the transfer fee demanded by the club selling is to high, and therefore the transfer won't be completed.
+
+Spending across national leagues
+
+The chart shows the spending on transfers in the 5 major leagues in Europe. We see that the spendings on average are lowest in the French Ligue 1, while the German Bundesliga, the Spanish La Liga and the Italian Serie A all have bigger spendings on average than Ligue 1. We also see that the English Premier League dominates the chart with the highest amount of money spent on average. It exceeds the second most spending league, Serie A, by a bit less than three times as much, spending as much as 60 BILLION POUNDS?!?
+We imagine that the reason for this among others is the TV-rights agreement in Premier League, which is more lucrativ than in the other 4 leagues.
+
+Spending by clubs across national leagues
+
+Here we somehow see the same picture as in the former graph. Premier League clubs are spending most money on transfers on average compared to the clubs in the other leagues. But we see that the Spanish teams actually is closer to spending as much as the Premier League clubs compared to the former graph which showed that the difference between the two leagues is huge. This can be explained by the top teams in Spain: Real Madrid, FC Barcelona and Atlético Madrid. Those three clubs, especially the two first, spends a lot of money on transfers and tempts to have several transfer records.
+
+Status of clubs/spending on transfers
+
+Accross the five leagues we see that the top clubs are spending near double as much money on transfers compared to the middle clubs in the leagues. If we for example take a look at the Spanish top clubs Real Madrid and FC Barcelona, they are spending a lot of money every transfer window. Real Madrid even at the time of these transfers had the most expensive and second-most expensive player on their roster. This graph confirms that it is the case that the top clubs are spending most money. This is also correlated with their success. The more successful the club is in sport, the more money it earns and therefore has more money to spend on transfers.
+We also see that the promoted clubs actually are spending a bit more money than the bottom clubs. This is perhaps expected because they come with the intention to improve their roster in order to be able to establish themselves in the major league.
+Some of the bottom clubs are relegated, which means that they loose money and therefore do not have as much to spend. They perhaps also think that their roster is good enough to compare in the second best league and therefore has no big need for spending on transfers.
