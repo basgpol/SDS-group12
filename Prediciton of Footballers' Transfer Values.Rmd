@@ -10,7 +10,7 @@ output:
     number_sections: yes
 fontsize: 12pt
 linestretch: 1.5
-geometry: margin=3cm
+geometry: margin=2.5cm
 
 ---
 
@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 # Introduction
 
-The purpose of this papers is to predict the transfervalue of football players in the five major european leagues.[^1] We use a variety of methods from the field of data science to gather, descripe and lastly predict footballers' transfer value. The paper is structured in three sections: Data gathering, data description using different visualizations and prediction modelling.[^2] In the first section we briefly describe how we scraped the data from different webpages, what type of data emerged and what ethical challenges we should consider. In the second section the dataset is described using vizualization in order to get an overview of the data and the variables which seems to affect the transfer values. In the final setion, we use statistical learning models to predict the transfer values of footballers. The emphasis will be on testing different models and comparing their predictive power on a test set. The paper concludes that the random forest model is slightly better at predicting the footballers' transfer value in our test sample compared to rest of the presented models in the paper.   
+The purpose of this papers is to predict the transfervalue of football players in the five major European leagues.[^1] We use a variety of methods from the field of data science to gather, descripe and lastly predict footballers' transfer value. The paper is structured in three sections: Data gathering, data description using different visualizations and prediction modelling.[^2] In the first section we briefly describe how we scraped the data from different webpages, what type of data emerged and what ethical challenges we should consider. In the second section the dataset is described using vizualization in order to get an overview of the data and the variables which seems to affect the transfer values. In the final setion, we use statistical learning models to predict the transfer values of footballers. The emphasis will be on testing different models and comparing their predictive power on a test set. The paper concludes that the random forest model is slightly better at predicting the footballers' transfer value in our test sample compared to rest of the presented models in the paper.   
 
 [^1]: Premier League (England), Bundesliga (Germany), La Liga (Spain), Serie A (Italy) and Ligue 1 (France).
 [^2]: All calculations, graphics and writing was conducted using the programming language [R](https://www.r-project.org/) and the IDE [RStudio](https://www.rstudio.com/). 
