@@ -344,7 +344,7 @@ library("plotly")
 player.data.cleaning = read.csv("player_data_unclean.csv", encoding = "Latin1") # loading saved version of uncleaned player data
 
 ## 2.1.1: Cleaning transfer fee variable
-player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"£","")
+player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"?","")
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"\\.","") #removing the dots
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"m","0000") #removing the m 
 player.data.cleaning$transfer.fee = str_replace(player.data.cleaning$transfer.fee,"k","000") #removing the k
@@ -589,16 +589,16 @@ names(club.data.cleaning)
 
 ## Renaming clubs in Wikipedia-tabel first
 
-club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barcelona", "Valencia"="Valencia CF", "Málaga"="Málaga CF", "Elche[d](R)"="Elche CF", 
-                               "Levante"="Levante UD", "Getafe"="Getafe CF", "Deportivo La Coruña"="Dep. La Coruña", "Granada"="Granada CF",
-                               "Eibar"="SD Eibar", "Almería (R)"="UD Almería", "Córdoba (R)"="Córdoba CF", "Sevilla"="Sevilla FC",
+club.data.cleaning$Team=recode(club.data.cleaning$Team,"Barcelona (C)"="FC Barcelona", "Valencia"="Valencia CF", "M?laga"="M?laga CF", "Elche[d](R)"="Elche CF", 
+                               "Levante"="Levante UD", "Getafe"="Getafe CF", "Deportivo La Coru?a"="Dep. La Coru?a", "Granada"="Granada CF",
+                               "Eibar"="SD Eibar", "Almer?a (R)"="UD Almer?a", "C?rdoba (R)"="C?rdoba CF", "Sevilla"="Sevilla FC",
                                "Villarreal" = "Villarreal CF", "Celta Vigo" = "Celta de Vigo","Juventus (C)"="Juventus", "Cargliari (R)"="Cagliari Calcio", "Parma[c](R)"="Parma", "Cesena (R)"="Cesena",
                                "Internazionale"="Inter", "Genoa[b]"="Genoa", "Roma"="AS Roma", "Napoli"="SSC Napoli", "Milan"="AC Milan",
                                "Palermo"="US Palermo", "Chievo"="Chievo Verona", "Empoli"="FC Empoli", "Udinese"="Udinese Calcio",
                                "Cagliari (R)"="Cagliari Calcio","Paris Saint-Germain (C)"="Paris SG", "Evian (R)"="Evian", "Metz (R)"="FC Metz", "Lyon"="Olympique Lyon",
                                "Bordeaux"="G. Bordeaux", "Lille"="LOSC Lille", "Nice"="OGC Nice", "Caen"="SM Caen", "Nantes"="FC Nantes",
                                "Lorient"="FC Lorient", "Bordeaux"="G. Bordeaux", "Lens[b](R)"="RC Lens", "Bastia"="SC Bastia","Bayern Munich (C)"="Bayern Munich ", "SC Freiburg (R)"="SC Freiburg", "SC Paderborn 07 (R)"="SC Paderborn",
-                               "Hamburger SV (O)"="Hamburger SV", "Borussia Mönchengladbach"="Bor. M'gladbach", "Schalke 04"="FC Schalke 04",
+                               "Hamburger SV (O)"="Hamburger SV", "Borussia M?nchengladbach"="Bor. M'gladbach", "Schalke 04"="FC Schalke 04",
                                "Bayer Leverkusen"="Bay. Leverkusen", "Eintracht Frankfurt"="E. Frankfurt", "Borussia Dortmund"="Bor. Dortmund",
                                "1899 Hoffenheim" = "TSG Hoffenheim", "FSV Mainz 05"="1.FSV Mainz 05","Chelsea (C)"="Chelsea", "Hull City (R)"="Hull City", "Burnley"="Burnley FC", "Queens Park Rangers (R)"="QPR",
                                "West Bromwich Albion"="West Brom", "Tottenham Hotspur"="Spurs","Swansea City"="Swansea", 
@@ -631,7 +631,7 @@ transferdata.tidy$league[(transferdata.tidy$club.to == "Watford") |
 transferdata.tidy$league[(transferdata.tidy$club.to == "FC Ingolstadt") | 
                          (transferdata.tidy$club.to == "SV Darmstadt 98")] = "Bundesliga"
 transferdata.tidy$league[(transferdata.tidy$club.to == "UD Las Palmas")| 
-                         (transferdata.tidy$club.to == "Sporting Gijón")|
+                         (transferdata.tidy$club.to == "Sporting Gij?n")|
                          (transferdata.tidy$club.to == "Real Betis")] = "La Liga"
 transferdata.tidy$league[(transferdata.tidy$club.to == "Bologna")| 
                          (transferdata.tidy$club.to == "Carpi")|
@@ -740,9 +740,71 @@ estimate_M2 = predict(Model_2, test_sample) # calculating estimate from model 2
 get.rmse(test_sample$transfer.fee, estimate_M2) # calculating RMSE from estimate on test sample 
 
 ##================ 4.5 Lasso model  ================
+## Creating matrices with all regressors beacuse the glmnet function only works with matrices
+RegressorMatrix_train=model.matrix(transfer.fee~ ., train_sample)
+RegressorMatrix_test=model.matrix(transfer.fee~.,test_sample)
 
+
+
+## Training Lasso
+Model_3 = glmnet(x = RegressorMatrix_train, y = train_sample$transfer.fee)
+Model_3
+
+# Calculating RSME for each lambda
+lambda_values = Model_3$lambda
+
+performance_Lasso = data.frame()
+
+for (lambda in lambda_values){
+  performance_Lasso = rbind(performance_Lasso,
+                            data.frame(lambda = lambda,
+                                       RMSE = get.rmse(predict(Model_3, RegressorMatrix_test, s = lambda),
+                                                       test_sample$transfer.fee)))
+}
+performance_Lasso
+
+##Visualization of RSME as a function of lamda
+ggplot(performance_Lasso, aes(x = lambda, y = RMSE))+
+  geom_point() + 
+  geom_line() + 
+  theme_minimal()
+
+## Identifying lambda with the lowest RMSE
+best.lambda = performance_Lasso$lambda[performance_Lasso$RMSE == min(performance_Lasso$RMSE)]
+
+## Coefficients for best models
+coef(Model_3, s = best.lambda)
+
+## RMSE for best model
+Estimate_M3=predict(Model_3, RegressorMatrix_test, s=best.lambda)
+get.rmse(Estimate_M3, test_sample$transfer.fee)
 
 ##================ 4.6 Decision tree  ================
+set.seed(123)
+Model_4=tree(transfer.fee~.,data=train_sample, method="anova")
+Model_4$frame
+plot(Model_4,niform=TRUE, 
+     main="Regression Tree for Transfer fee ")
+text(Model_4,pretty=0,use.n=TRUE, cex=.5)
+
+
+##Estimating transfer fee for test data
+Estimate_M4=predict(Model_4,test_sample)
+Estimate_M4
+##Calculating RMSE 
+get.rmse(test_sample$transfer.fee,Estimate_M4)  #6.600
+
+
+## Cross validation to find the optimal number of terminal nodes
+cv.Model_4 = cv.tree(Model_4, FUN = prune.tree)
+plot(cv.Model_4$size, cv.Model_4$dev, type = "b") #Optimal number with cross validation is 7
+best.size=cv.Model_4$size[which.min(cv.Model_4$dev)]
+prune.Model_4=prune.tree(Model_4,best = best.size)
+plot(prune.Model_4);text(prune.Model_4)
+## Calculating estimates with pruned model
+pruned.estimate=predict(prune.Model_4,test_sample)
+get.rmse(pruned.estimate,test_sample$transfer.fee)
+## Higher RMSE with pruned model than the original
 
 
 ##================ 4.6 Random Forest  ================
