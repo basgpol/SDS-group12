@@ -362,7 +362,8 @@ All the variables above, we think, are relevant in order to make the best predic
 
 # Data visualisation
 
-The objective of this section is to highlights possible correlation, clear outliers, important variable via the use of data visualisation processes. The creation of maps, scatter plots and bar charts enabled us to have a better understanding of our dataset and convey its most important characteristic in an engaging and simple way. Besides, after experimenting different scatterplots, we were able to have a better grasp of the relationship between transfer fees and other variables such as age, position, appearance, total goals and time left on contract. In order to transform our data set into graphs and maps we used different digital tools: GGplot for scatterplots and bar chart, Google maps API for maps, and plotly for interactive visualisation. The dataset used in this visualisations was cleaned by filtering all observations with a transfer fee equal to zero, this resulted in clearer representations.
+The objective of this section is to highlights possible correlation, clear outliers, important variable via the use of data visualisation processes. The creation of maps, scatter plots and bar charts enabled us to have a better understanding of our dataset and convey its most important characteristic in an engaging and simple way. Besides, after experimenting different scatterplots, we were able to have a grasp of the relationship between transfer fees and other variables such as age, position, appearance, total goals and time left on contract.  
+In order to transform our data set into graphs and maps we used different digital tools: GGplot for scatterplots and bar chart, Google maps API for maps, and plotly for interactive visualisation. The dataset used in this visualisations was cleaned by filtering all observations with a transfer fee equal to zero, this resulted in clearer representations.
 
 ## A European market dominated by the UK.
 
@@ -394,7 +395,7 @@ Our second visualisation focused on transfer path of each player. This highlight
 
 ##A foreseeable repartition of player ages around 25
 
-The scatterplot graph of the relationship between Age and transfer fee presents a convex average curve with a flat top around 25. Perhaps forseeably, most players are traded while in their prime, so between 20 and 27 years old. It could be interpreted that the the promises of a rising stars are more sought that the celebrity of a long time player. This graph blatlantly shows that transfer above 40 millions are the exception.
+The scatterplot graph of the relationship between Age and transfer fee presents a convex average curve with a flat top around 25. Perhaps forseeably, most players are traded while in their prime, between 20 and 27 years old. It could be interpreted that the the promises of a rising stars are more sought after than the celebrity of an older player. On top of that, this graph shows that transfer above 40 millions are the exception.
 
 &nbsp;
 
@@ -407,9 +408,7 @@ p.age
   
 ## Time left on contract/Transfer fees
 
-In this graph there seems to be a correlation between the time left on a players contract and the transfer fee payed. The longer time there is left of the contract at the time of the transfer, the more expensive the player will be.  
-
-When the period left of the contract is below 20 months, then the transfer fee does not exceed 30 million pounds. But if we look at when the period left of the contract is above 20 months we see that the transfer fees increases to above 30 million pounds - some transfer fees even increases to above 40 million pounds, especially when the contract is above 40 months. 
+This graph seems to highlight a correlation between the time left on a player's contract and his transfer fee. The longer time there is left of the contract at the time of the transfer, the more expensive the player will be. When the period is below 20 months, then the transfer fee does not exceed 30 million pounds. When above 20 months, we see that the transfer fees can reach 30 million pounds - some transfer fees even reach 40 million pounds, especially when the contract is above 40 months. 
 We actually also see that the transfer fees again decreases as the period of the contract left is above 50 months.
 At last the graph shows that the number of transfers decreases when the period of the contract is above 50 months. This is because the transfer fee demanded by the club selling is to high, and therefore the transfer won't be completed.  
 
