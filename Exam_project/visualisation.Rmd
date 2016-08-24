@@ -28,11 +28,9 @@ df.viz<- read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/
 df.viz<- filter(df.viz,transfer.fee>0)
 
 ##GETTING STARTING MAP
-#Watercolor
 myLocation <- "Zurich"
 myMap <- get_map(location= myLocation,
-                 source="stamen", maptype="watercolor", crop=FALSE,zoom=4)
-
+                 source="stamen",maptype="toner", crop=FALSE,zoom=4)
 ##########
 ##########  MAP CLUB 
 ##########
