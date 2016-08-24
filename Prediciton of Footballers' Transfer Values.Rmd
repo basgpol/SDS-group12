@@ -8,7 +8,9 @@ output:
     fig_height: 6
     fig_width: 7
     number_sections: yes
+fontsize: 12pt
 linestretch: 1.5
+
 ---
 
 ```{r setup, include=FALSE}
