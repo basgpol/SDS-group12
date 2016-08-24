@@ -27,7 +27,7 @@ The purpose of this papers is to predict the transfervalue of football players i
 
 # Data Gathering
 
-We have to gather data in order to do our analysis. We gathered the relevant data from the websites Transfermarkt.co.uk and Wikipedia.org. Transfermarkt.co.uk contains information on football transfers, player information and  performance statistics. We expect all this information to be highly relevant in order to predict the transfer value of a player. We used Wikipedia.org in order to find data about the final table ranking for the five leagues in the season before the transfers (season 14/15).
+We have to gather data in order to do our analysis. We gathered the relevant data from the websites Transfermarkt.co.uk, Google.com and Wikipedia.org. Transfermarkt.co.uk contains information on football transfers, player information and  performance statistics. We expect all this information to be highly relevant in order to predict the transfer value of a player. We used Wikipedia.org in order to find data about the final table ranking for the five leagues in the season before the transfers (season 14/15).
 To extract the relevant data we build three web scrapers. One for Transfermarkt, another for Google.com and a third for Wikipedia.org. The scraper for Transfermarkt.co.uk both collected all transfer information from the transfer windows "Summer 15" and "Winter 16" in the five leagues and the individual performance statistics from each transfered player. We then used the Google-scraper to gahter information on the number of google hits when searching for the name of each transfered player followed by the word "footballer". Information on transfer, performance statistics and google hits were hereafter merged into one data frame consisting of player data.  
 The scraper for Wikipedia ran through the different webpages with the table ranking for the season 14/15 in the five leagues. The table rankings were hereafter merged into one data frame containing club data.
 The two different datasets were at first cleaned and then merged into one big dataset containing only the variables we find relevant in predicting the transfer values of the players.
@@ -49,7 +49,7 @@ For the club dataset we started by grouping the different clubs in 4 categories:
 ### The Final Dataset
 After the cleaning process we merged the player data set and the club data set into one single data set. The final and tidy dataset contrains 696 observations and 25 variables. A list of the each variable with a short description is avaiable in the appendix. As stated, the final data set contains alot of variables. We will therefore in the following section use different visualizations to select the variables that seems most suited for predicting a football players' transfer values.
 
-The clean and merged data set contains the following descibtive variables of the transfered players:
+
 \begin{table}[]
 \centering
 \caption{Variables in the data set}
@@ -86,10 +86,8 @@ searchresults  & \begin{tabular}[c]{@{}l@{}}Number of search results when you go
 \end{table}
  
 
-All the variables above, we think, are relevant in order to make the best prediction possible of a players transfer value. 
 
 # Description of Data
-
 
 
 ##Age/Transfers Graph
@@ -134,7 +132,7 @@ $$ RMSE = \sqrt {{\frac{{\sum\limits_{{i = 1}}^n {{{\left( {{y_i} - {{\hat{y}}_i
 
 The *bias-variance trade-off* is important to keep in mind when dealing with prediction. The reason is that the prediction errors are the sum of errors due to bias and errors due to variance between the training and test sample. When we build our prediction models we do it on the availiable data in the training sample which also include standard noise. If we on the one hand build a model with only a few variables the model will not be able to comprehent the complexity of the real world. Due to this *underfitting* we therefore end up with a biased model who's estimates are quite far from the real world values. If we on the other hand increase the number of variables and thereby the model's complexity alot then the model will adjust to much to the training sample. The result of this *overfitting* will be prediction errors due to the variance between the training sample and the real world. The take-away point is therefore that the most accurate models have found a balance between over- and underfitting so that the increase in bias is equivalent to the decrease in variance. The trade-off is illustrated below:
 
-![Image is from Roe 2016](Exam_project/biasvariance.png)
+![Image is downloaded from Fortmann-Roe (2016)](Exam_project/biasvariance.png)
 
 Find graph here: http://scott.fortmann-roe.com/docs/BiasVariance.html 
 
@@ -279,7 +277,7 @@ As described above the decision tree has issues with overfitting which create er
 1) First, each regression tree is constructed by randomly draw and replace (called bootstrap sampling) 63.2 percent of the observations in the training sample. This is in our rapport done 500 (?) times so we in the end have a forest of 500 different trees with random selected observations from the traning sample.    
 2) In the next step each tree randomly select *m* number of the predictor variables in the data set. For regression trees likes these m is equal to the total number of all predictors divided by 3. All 500 trees use the same number of variables. The purpose of randomly choose predictors is to prevent very important variables from overshadowing the effect of weaker variables. This often happens because the underlying algorithm search for the split with the largest decrease in the loss function.  
 3) Thirdly, each tree calculate the out of bag error rate using the remaning 36.8 percent of the data.  
-4) In the last step the average prediction are calculated out of all predictions from each individual tree.
+4)In the last step the average prediction are calculated out of all predictions from each individual tree.
 
 In theory, RF does not need a seperate test sample to examine the validity of the results. The validity is measured internally by the out of bag error rate. In this rapport we have used a seperate test sample. The reason is that we wanted to calculate the RMSE so we can compare the RF model's predictive power to the previous prediction models.  
 The RMSE of the RF on the test sample is 6.26.
@@ -319,7 +317,12 @@ transferage\_sq     & 4.79     \\ \hline
 \end{table}
 
 # Conclusion
-(Write conclusion)
+In this paper we try to predict the transfer value of football players. To answer the posed question we first created several webscraping functions to collect a dataset containing information about transfers made in the season 15/16 in the five major european leagues, the players performance statistics in the season prior to the transfer and information about the buying club's latest results. We scraped the data from Transfermarkt.co.uk, Google.com and Wikipedia.org. After the data gathering and cleaning we ended up with a tidy data set of 696 observations and 25 variables.  
+To select the best predictors out of all 25 variables in the data set we used several visualizations to search for correlation patterns. Furthermore, we used the Google Maps API to visualize our data sample. We hereafter selected 11 predictors which all seemed to have an influence on the players' transfervalue.  
+In the third and last section we build five different predictions models using a training sample. The models we build was a simple average, OLS, lasso, decision tree and random forest. The accuracy of each prediction model was evaluated by calculating the RMSE on the test sample. The result of the comparative analysis shows that a simple average is not suprisingly the worst estimate of individual players transfer value. The four remaining prediction models are much closer to each other with a RMSE of around 6.5 although the machine learning method random forest showed the lowest out of sample error rate (RMSE of 6.26).  
+If we take the average transfer value of 5.6 million £ into consideration then is a RMSE of 6.5 very high (the same unit as the transfer value variable). This indicate that our prediction models are far from well specified.
+
+
 \begin{table}[]
 \centering
 \caption{Summary RMSE}
@@ -334,3 +337,15 @@ Regression Tree & 6.60 \\
 Random Forest   & 6.26 \\ \hline
 \end{tabular}
 \end{table}
+
+\newpage
+# Litterature
+
+**Fortmann-Roe, Scott. 2016.** "Understanding the Bias-Variance Tradeoff". Located at: http://scott.fortmann-roe.com/docs/BiasVariance.html.
+
+**Friedman, Jerome, Trevor Hastie, and Robert Tibshirani. 2001.** "Introduction to statistical learning". Vol. 1. Springer, Berlin: Springer series in statistics. Located at: http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Fourth%20Printing.pdf
+
+\newpage
+# Appendix
+
+[inser stuff to appendix]
