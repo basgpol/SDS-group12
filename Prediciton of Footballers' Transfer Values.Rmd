@@ -38,7 +38,8 @@ Figure 1 below illustrated the data gathering process.
 ![Data gathering process](Exam_project/Data gathering process.jpeg)
 
 ## Data Cleaning
-We had to clean both the data frame with player data and the data frame club before merging them into one final data set.  
+We had to clean both the data frame with player data and the data frame club before merging them into one final data set.
+
 ### Cleaning The Player Dataset
 For the player data we first turn all the unavailable data into NA instead of different signs. Furthermore, we clean the transfer date, end date of contract and birth date and turned them into the correct date-format in R. The reason for during this was to be able to calculate the precise age (in years) and contract period left (in months) at the day of transfer. We afterwards removed all keepers, duplicated observations and observations for which the transfer fee is unknown. The reason for removing the keepers is that our scraped performance data is mostly offensive statistics, which obviously don't descripe the performance of goalkeepers and thereby affect their transfer value. At last we divided the players into three different categories: Defender, Midfield and Attacker. The reason for doing this categorization is to have are more simple position variable with fewer categorizes. The simplification enable more intuitive visualizations and predictions.  
 
@@ -95,7 +96,7 @@ All the variables above, we think, are relevant in order to make the best predic
 
 In this graph we see that most of the observations actually are in between 0 and 20 million pounds accross all ages. But in the age spectre from 22-28 we see that there are more expensive transfers made. We for example see that the most expensive transfer is for a player that it just below 25 years old, and we also see that in the age spectre emphasized above we see that there are most transfers in the 20-40 million pounds layer. Not surprisingly the number of expensive transfers decreases as the age increases. We can also see that there is only 1 transfer in the 20-40 million pounds layer as the age is 30 and none of these transfers for players 30+ years old. We see the same for young players. Transfers between 20-40 million pounds at first occur as the players gets about 22 years old. The graph also shows that there are a couple younger players that are more expensive than most of the young players, but these players must be very big talents and therefore are something special.
 
-## Time left on contract/Transfer fees
+## Time left on contract/Transfer fees 
 
 In this graph there is a clear correlation between the time left on a players contract and the transfer fee payed. The longer time there is left of the contract at the time of the transfer, the more expensive the player will be. 
 When the period left of the contract is below 20 months, then the transfer fee does not exceed 30 million pounds. But if we look at when the period left of the contract is above 20 months we see that the transfer fees increases to above 30 million pounds - some transfer fees even increases to above 40 million pounds, especially when the contract is above 40 months. 
