@@ -10,47 +10,48 @@ output:
     number_sections: yes
 fontsize: 12pt
 linestretch: 1.5
+geometry: margin=3cm
 
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 # Introduction
 
-The purpose of this papers is to predict the transfervalue of football players in the five major european leagues. We use a variety of methods from the field of data science to gather, descripe and lastly predict footballers' transfer value. The paper is structured in three sections: Data gathering, data description using different visualizations and prediction modelling.[^1] In the first section we briefly describe how we scraped the data from diferent webpages, what type of data emerged and what ethical challenges we should consider. In the second section the dataset is described using vizualization in order to get an overview of the data and the variables which seems to affect the transfer values. In the final setion, we use statistical learning models to predict the transfer values of footballers. The emphasis will be on testing different models and comparing their predictive power on a test set.
+The purpose of this papers is to predict the transfervalue of football players in the five major european leagues.[^1] We use a variety of methods from the field of data science to gather, descripe and lastly predict footballers' transfer value. The paper is structured in three sections: Data gathering, data description using different visualizations and prediction modelling.[^2] In the first section we briefly describe how we scraped the data from different webpages, what type of data emerged and what ethical challenges we should consider. In the second section the dataset is described using vizualization in order to get an overview of the data and the variables which seems to affect the transfer values. In the final setion, we use statistical learning models to predict the transfer values of footballers. The emphasis will be on testing different models and comparing their predictive power on a test set. The paper concludes that the random forest model is slightly better at predicting the footballers' transfer value in our test sample compared to rest of the presented models in the paper.   
 
-[^1]: All calculations, graphics and writing was conducted using the programming language [R](https://www.r-project.org/) and the IDE [RStudio](https://www.rstudio.com/). 
+[^1]: Premier League (England), Bundesliga (Germany), La Liga (Spain), Serie A (Italy) and Ligue 1 (France).
+[^2]: All calculations, graphics and writing was conducted using the programming language [R](https://www.r-project.org/) and the IDE [RStudio](https://www.rstudio.com/). 
+
 
 # Data Gathering
 
-In order to do the analysis, we have to gather data. We gathered the relevant data from the website Transfermarkt.co.uk and Wikipedia.org. Transfermarkt.co.uk contains information on football transfers, player's information and statistics. We find all this kind of information highly relevant in order to predict the transfer value of a player.
-We used Wikipedia.org in order to find data about the table rangings in the five leagues, which also was available on Transfermarkt.co.uk but we could not succeed in scraping it from the webpage.
-The data was extracted by two web scrapers, one for Transfermarkt.co.uk and the other for Wikipedia.org. The two scrapers was biuld with the purpose of scraping the relevant data on both webpages. The scraper for Transfermarkt.co.uk ran through all transfers in the transfer windows "Summer 15" and "Winter 16" in the five biggest European leagues: Premier League, Bundesliga, La Liga, Serie A and Ligue 1. It also ran through the transfered players' data. This means that we had two dataframes from Transfermarkt.co.uk at first, which then was merged into one dataframe consisting of players' data.
-The scraper for Wikipedia.org ran through the different webpages with the ranging tables of the five leagues. At first we had 5 different dataframes, which we merged into one dataframe.
+We have to gather data in order to do our analysis. We gathered the relevant data from the websites Transfermarkt.co.uk and Wikipedia.org. Transfermarkt.co.uk contains information on football transfers, player information and  performance statistics. We expect all this information highly relevant in order to predict the transfer value of a player. We used Wikipedia.org in order to find data about the final table ranking for the five leagues in the season before the transfers (season 14/15).
+To extract the relevant data we build three web scrapers. One for Transfermarkt, another for Google.com and a third for Wikipedia.org. The scraper for Transfermarkt.co.uk both collected all transfer information from the transfer windows "Summer 15" and "Winter 16" in the five leagues and the individual performance statistics from each transfered player. We then used the Google-scraper to gahter information on the number of google hits when searching for the name of each transfered player followed by the word "footballer". Information on transfer, performance statistics and google hits were hereafter merged into one dataframe consisting of player data.  
+The scraper for Wikipedia ran through the different webpages with the table ranking for the season 14/15 in the five leagues. The table rankings were hereafter merged into one dataframe containing club data.
 The two different datasets were at first cleaned and then merged into one big dataset containing only the variables we find relevant in predicting the transfer values of the players.
-We do not consider any ethical issues scrapping this data, because all the information is publicly available and not private in any way.
+We do not find any ethical issues scrapping the data from Google and Wikipedia because all the information is publicly available and not private in any way. On the other hand it can be argued that the performance and transfer data is the core of Transfermarkt's business model and they therefore has the right to privacy. We would therefore link to stress that we only use the data for scientific purpose and not a commercial purpose.
+
+Figure 1 below illustrated the data gathering process.
+
+![Data gathering process](Exam_project/Data gathering process.jpeg)
 
 ## Data Cleaning
-
+We had to clean both the data frame with player data and the data frame club before merging them into one final data set.  
 ### Cleaning The Player Dataset
-As written earlier before merging the different dataframes into one final, we had to clean both the dataframe with the player data and the dataframe with the club data. Cleaning the player data, we first had to make all unavailable data into NA in stead of different signs. We also had to clean the transfer date and put it into the right format, which we also did with the variable containing remaining time under contract. Some of the data scraped from Transfermarkt.co.uk had some mistakes, which we had to fix by putting them to be equal to NA.
-We calculated the age of each player at the transferdate by first cleaning the birth date of the players and afterwards calculating the transferage in R by our selves.
-At last we divided the players into three different categories: Defender, Midfield and Attacker because we found it more appropriate in order to do our analysis. If we did not divide the players into these categories, we would have a dataset with a lot of different type of players, which could be categorized as we did. This categorization means that it is possible to do a reasonable vizualizaton considering that we "only" have 12 pages to write our project.
-We removed all duplicated observations, observations where transfer.fee was NA and the keepers. The reason for removing the keepers was because we scraped data on mostly offensive statistics, which obviously does not have an affect on the keepers' transfer values. Also the number of variables concerning the keepers' was different compared to the other three types of players, which meant that the observations did not fit into the right column for the keepers.
+For the player data we first turn all the unavailable data into NA instead of different signs. Furthermore, we clean the transfer date, end date of contract and birth date and turned them into the correct date-format in R. The reason for during this was to be able to calculate the precise age (in years) and contract period left (in months) at the day of transfer. We afterwards removed all keepers, duplicated observations and observations for which the transfer fee is unknown. The reason for removing the keepers is that our scraped performance data is mostly offensive statistics, which obviously don't descripe the performance of goalkeepers and thereby affect their transfer value. At last we divided the players into three different categories: Defender, Midfield and Attacker. The reason for doing this categorization is to have are more simple position variable with fewer categorizes. The simplification enable more intuitive visualizations and predictions.  
 
 ### Cleaning The Club Dataset
+For the club dataset we started by grouping the different clubs in 4 categories: Top Club (the five highest ranking clubs in the season 14/15), Middle Club (the following ten clubs ranking from six to sixteen), Bottom Club (the remaining clubs in the league that season) and Promoted Club (clubs that entered the league in season 15/16). Afterwards we renamed the clubs so they matched the player dataset, which enabled us to merge the player data set and the club data set using leftjoin. Lastly, we selected the variables that we find most interesting for the later prediction (club name, club status, league) and removed all other variables in our final cleaned club dataset.
 
-Cleaning the club dataset we started with grouping the different clubs in 3 categories: Top Club, Middle Club and Bottom Club. Afterwards we renamed the clubs, so they matched the player datasetm which meant that we could merge the player dataset and the club dataset by using leftjoin.
-At last, before merging, we selected the variables that we found interesting and removed all other variables in our final cleaned club dataset.
-
-## The Final Dataset
+### The Final Dataset
+After the cleaning process we merged the player data set and the club data set into one single data set. The final and tidy dataset contrains 696 observations and 25 variables. A list of the each variable with a short description is avaiable in the appendix. As stated, the final data set contains alot of variables. We will therefore in the following section use different visualizations to select the variables that seems most suited for predicting a football players' transfer values.
 
 The clean and merged data set contains the following descibtive variables of the transfered players:
 \begin{table}[]
 \centering
-\caption{Personal Player Variables}
+\caption{Variables in the data set}
 \label{my-label}
 \begin{tabular}{l|l}
 \hline
@@ -59,19 +60,7 @@ name         & Name of player                        \\
 nationality  & Nationality of player                 \\
 birth\_place & Birth place of player                 \\
 birth.date   & The date at which the player was born \\
-transferage  & Age of player when transfer occurred  \\ \hline
-\end{tabular}
-\end{table}
-
-
-The clean and merged data set contains the following statistial variables of players:
-\begin{table}[]
-\centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{l|l}
-\hline
-Variable Name        & Description                                                                  \\ \hline
+transferage  & Age of player when transfer occurred  \\ 
 positions            & Position on field of player                                                  \\
 total.goals          & Total amount of goals scored by player                                       \\
 penaltygoals         & Total amount of penalty goals scored by player                               \\
@@ -83,29 +72,23 @@ minutes.pr.goal      & Amount of minutes played per goal scored by player       
 yellow cards         & Total amount of yellow cards the player got                                  \\
 secondyellow         & Total amount of second yellow cards the player got                           \\
 redcards             & Total amount of red cards the player got                                     \\
-contract.left.month  & Months left of the transfered players' contract at transfer \\ \hline
-\end{tabular}
-\end{table}
-
-All the statistics above are from the season before the transfer happend, which means the season 2014/2015.
-
-The clean and merged data set contains the following descibtive variables of clubs and transfers:
-
-\begin{table}[]
-\centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{l|l}
-\hline
-Variable name & Description                               \\ \hline
+contract.left.month  & Months left of the transfered players' contract at transfer \\
 club.to       & Which club player is transferred to       \\
 club.from     & Which club player is transferred from     \\
 league        & The league that buying club is playing in \\
 Status        & Status of the buying club                 \\
 transfer.data & Date of transfer                          \\
-transfer.fee  & The transfer fee measured in million £    \\ \hline
+transfer.fee  & The transfer fee measured in million £    \\
+searchresults  & \begin{tabular}[c]{@{}l@{}}Number of search results when you google the\\ player name and 'footballer'\end{tabular}\\
+\hline
 \end{tabular}
 \end{table}
+ 
+
+
+The clean and merged data set contains the following descibtive variables of clubs and transfers:
+
+
 
 
 All the variables above, we think, are relevant in order to make the best prediction possible of a players transfer value. 
@@ -155,7 +138,7 @@ $$ RMSE = \sqrt {{\frac{{\sum\limits_{{i = 1}}^n {{{\left( {{y_i} - {{\hat{y}}_i
 
 A basic trade-off to take into account when dealing with prediction is the *bias-variance trade-off*. The reason is that the prediction errors is the sum of errors due to bias and errors due to variance between the training and test sample. When we build our prediction models we do it on the availiable data in the training sample which also include standard noise. If we on the one hand build a model with only a few variables the model will not be able to comprehent the complexity of the real world. Due to this *underfitting* we therefore end up with a biased model whos estimates are quite far from the real world values. If we on the other hand increase the number of variables and thereby the models complexity alot then the models will adjust to much to the training sample. The result of this *overfitting* will be prediction errors due to the variance between the training sample and the real world. The take-away point is therefore that the most accurate models have found a balance between over- and underfitting so that the increase in bias is equivalent to the decrease in variance. The trade-off is illustrated below:
 
-![Image is from Roe 2016)](Exam_project/biasvariance.png)
+![Image is from Roe 2016](Exam_project/biasvariance.png)
 
 Find graph here: http://scott.fortmann-roe.com/docs/BiasVariance.html 
 
