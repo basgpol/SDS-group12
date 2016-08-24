@@ -300,18 +300,18 @@ p.age = ggplot(df.viz, aes(x = transferage , y = transfer.fee))
 p.age<-p.age + geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste("Name:",name)))+ #to use for ggplot
           geom_smooth(aes(colour = transferage, fill = transferage))+
           ggtitle("Age repartition of transfers in European leagues")+
-  labs(y="Transfer price\nin £",x="Age") +
+  labs(y="Transfer price\nin M£",x="Age") +
   theme(axis.ticks.y= element_line(color=NA),
         axis.ticks.x=element_line(colour="#CACACA", size=0.2),
         panel.grid.major.x = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         axis.title.y =element_text(angle = 0,
-                                   colour="grey",
+                                   colour="#525252",
                                    vjust = 1,
                                    hjust = 0 ),
         axis.title.x =element_text(angle = 0,
-                                   colour="grey",
+                                   colour="#525252",
                                    vjust = -1,
                                    hjust = 1 ),
         panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
@@ -333,18 +333,18 @@ p.time <- ggplot(data=df.viz, aes(x = contract.left.month , y = transfer.fee)) +
   #geom_point(aes(text = paste(name, " to ", club.to)), size = 4) +
   geom_smooth(aes(colour = contract.left.month, fill = contract.left.month))+
   ggtitle("Time left on contract seems to be positively correlated with transfer fees")+
-  labs(y="Transfer price\nin £",x="Time left on contract\nin months")+
+  labs(y="Transfer price\nin M£",x="Time left on contract\nin months")+
   scale_x_continuous(breaks=seq(0,58,12))+
   theme(axis.ticks.y= element_line(color=NA),
         axis.ticks.x=element_line(colour="#CACACA", size=0.2),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         axis.title.y =element_text(angle = 0,
-                                   colour="grey",
+                                   colour="#525252",
                                    vjust = 1,
                                    hjust = 0 ),
         axis.title.x =element_text(angle = 0,
-                                   colour="grey",
+                                   colour="#525252",
                                    vjust = -1,
                                    hjust = 1 ),
         panel.grid.major.y = element_line(colour="#CACACA", size=0.2),
@@ -381,7 +381,7 @@ total.league = ggplot(df.viz.ave, aes( x =league, y=average.spending, fill=leagu
 total.league<-total.league + geom_bar(stat="identity",alpha=1)+
   theme(axis.title.x=element_blank(),
         axis.title.y =element_text(angle = 0,
-                                   colour="grey",
+                                   colour="#525252",
                                    vjust = 1,
                                    hjust = 0 ),
         panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
@@ -418,7 +418,7 @@ ave.player = ggplot(df.viz.player.league, aes( x =league, y=average.spending.per
 ave.player<-ave.player + geom_bar(stat="identity",alpha=1)+
   theme(axis.title.x=element_blank(),
         axis.title.y =element_text(angle = 0,
-                                   colour="grey",
+                                   colour="#525252",
                                    vjust = 1),
         panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
         axis.ticks= element_line(color=NA),
@@ -455,7 +455,7 @@ p.club<- p.club + geom_bar(stat = "identity")+
   theme(axis.title.x=element_blank(),
         axis.text.x =element_text(size  = 9),
         axis.title.y =element_text(angle = 0,
-                                   colour="grey",
+                                   colour="#525252",
                                    vjust = 1),
         axis.ticks= element_line(color=NA),
         panel.grid.major.x = element_blank(),
@@ -466,7 +466,7 @@ p.club<- p.club + geom_bar(stat = "identity")+
         legend.title=element_blank(),
         legend.position="none",
         text=element_text(family="LM Roman 10"))+
-  ggtitle("Top Club spend far more on average than other leagues' clubs\n")+
+  ggtitle("Top Club spend far more\non average than other leagues' clubs\n")+
   scale_fill_manual(values=c( "#CFF09E", "#A8DBA8", "#79BD9A", "#3B8686"))+
   labs(y="Average transfer price\nper player in M£") 
 
