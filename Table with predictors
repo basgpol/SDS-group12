@@ -1,0 +1,19 @@
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{l}
+Predictors          \\
+positions           \\
+appearances         \\
+total.goals         \\
+total.assists       \\
+total.minuts.played \\
+contract.left.month \\
+transferage         \\
+league              \\
+Status              \\
+searchresults       \\
+transferage\_sq    
+\end{tabular}
+\end{table}
