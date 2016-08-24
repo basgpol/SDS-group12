@@ -1,10 +1,8 @@
-########################################################################################
-################################### Test Project #######################################
-########################################################################################
+############################################################################################
+####################################### SDS Project ########################################
+######################### Putting a price tag on football players ##########################
+############################################################################################
 
-
-#############################################################################################
-## CODE
 
 ##=========================================================================================
 ##------------------------- Table of contents ---------------------------------------------
@@ -16,11 +14,13 @@
 #   1.4 Bulding functions (link collection and scraping)
 #   1.5 Applying functions to generate links
 #   1.6 Applying functions to scrape the performance and transfer stats
-#   1.7 Importing table rangig for the major leauges in season 14/15
+#   1.7 Importing table ranking for the major leauges in season 14/15
 #   1.8 Mergig data frames
 # 2. Cleaning
 #   2.1 Cleaning player data and creating useful predictors
-#   2.2 Cleaning club data and creating useful predictors
+#   2.2 Adding a variable with the number of google hits on the player
+#   2.3 Cleaning club data and creating useful predictors
+#   2.4 Merging player and club data into one tidy data frame
 # 3. Vizualization 
     # 3.1 Club map with transfer spending
     # 3.2 Club map with transfer paths 
@@ -30,7 +30,7 @@
     # 3.6 Average spending per player per league 
     # 3.7 Average spending per player per club status
 # 4. Prediction Models
-#   4.1 Dividing into a tran and test sample
+#   4.1 Dividing into a train and test sample
 #   4.2 Create evaluation function
 #   4.3 Baseline Model: Simple average from training sample
 #   4.4 Ordinary least square model
@@ -55,10 +55,9 @@ library("plotly")
 library("ggplot2")
 library("plotly")
 
-#
-#
 # ##========================== 1.2 Defining key links =======================================
-# 
+# Remove # for several lines by the shortcut ctrl/command + shift + c
+#
 # ## Links from transfermarkt.co.uk to overviews of transfers in season 14/15 in  the five major football leagues  
 # base.link = "http://www.transfermarkt.co.uk/"
 # pl.tranfers.link = "http://www.transfermarkt.co.uk/premier-league/transfers/wettbewerb/GB1/plus/?saison_id=2015&s_w=&leihe=0&intern=0"
@@ -267,7 +266,7 @@ library("plotly")
 #   map_df(scrape_transferstats)
 #   
 # 
-# ##============ 1.7 Importing table rangig for the major leauges in season 14/15 ==============
+# ##============ 1.7 Importing table ranking for the major leauges in season 14/15 ==============
 # 
 # pl.table14 = pl.table14.link %>%
 #   read_html() %>% 
@@ -438,7 +437,6 @@ player.data.cleaning$transferage = as.Date(as.character(player.data.cleaning$tra
 
 player.data.cleaning$transferage = player.data.cleaning$transferage / 365.25 #rescaling from days to years
 
-
 ### 2.1.7: Creating variable that group players in defenders, midfielders and attackers 
 #player.data.cleaning$positions = str_replace(player.data.cleaning$positions," Defender","Defender")
 player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Right-Back","Defender")
@@ -454,7 +452,6 @@ player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Rig
 player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Left Wing","Attacker")
 player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Centre Forward","Attacker")
 player.data.cleaning$positions = str_replace(player.data.cleaning$positions,"Secondary Striker","Attacker")
-
 
 ### 2.1.8: General cleaning 
 ## Setting "-" equal to 0 for the performance variables
@@ -555,7 +552,7 @@ write.table(player.data.clean, file = "player_data_clean.search.csv",
             sep = ",", col.names = NA, qmethod = "double", fileEncoding = "UTF-8")
 
 
-##================ 2.2 Cleaning club data and creating useful predictors ================
+##================ 2.3 Cleaning club data and creating useful predictors ================
 club.data = read.csv("club_data_unclean.csv", encoding="latin1") # loading saved version of uncleaned club data
 club.data.cleaning = club.data
 
@@ -1088,7 +1085,7 @@ predicting.var = c("transfer.fee", "positions", "appearances", "total.goals", "t
 transfer.data = filter(transfer.data, is.na(contract.left.month) == FALSE) 
 
 
-##================ 4.1 Cross validation: Dividing into a train and test sample  ================
+##================ 4.1 Dividing into a train and test sample  ================
 
 ## Creating a vector with the count of 70 pct. of the sample size  
 train_size = floor(0.70 * nrow(transfer.data)) # creates a vector 
@@ -1267,6 +1264,4 @@ var.list = importance(Model_5, type = 1) #calculate the variables influence
 varImpPlot(Model_5) # plots the variables influence
 var.list
 
-#plot(test_sample$transfer.fee, estimate_M6)
-#abline(a=0, b=1.0)
 
