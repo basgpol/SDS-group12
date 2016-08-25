@@ -136,8 +136,7 @@ p.age<-p.age + geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste
         panel.grid.major.x = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
-        axis.title.y =element_text(angle = 0,
-                                   colour="#525252",
+        axis.title.y =element_text(colour="#525252",
                                    vjust = 1,
                                    hjust = 0 ),
         axis.title.x =element_text(angle = 0,
@@ -162,14 +161,9 @@ p.time <- ggplot(data=df.viz, aes(x = contract.left.month , y = transfer.fee)) +
         axis.ticks.x=element_line(colour="#CACACA", size=0.2),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
-        axis.title.y =element_text(angle = 0,
-                                   colour="#525252",
+        axis.title.y =element_text(colour="#525252",
                                    vjust = 1,
                                    hjust = 0 ),
-        axis.title.x =element_text(angle = 0,
-                                   colour="#525252",
-                                   vjust = -1,
-                                   hjust = 1 ),
         panel.grid.major.y = element_line(colour="#CACACA", size=0.2),
         panel.grid.major.x =element_blank(), #add grid
         axis.title.y=element_blank(),
@@ -272,8 +266,7 @@ p.club<- p.club + geom_bar(stat = "identity", position="dodge")+
         legend.title=element_blank(),
         legend.position="none",
         text=element_text(family="Goudy Old Style"))+
-  scale_fill_manual(values=c( "#CFF09E", "#A8DBA8", "#79BD9A", "#3B8686"))+
-  labs(y="Average transfer price\nper player in M£") 
+  scale_fill_manual(values=c( "#CFF09E", "#A8DBA8", "#79BD9A", "#3B8686"))
 
 ```
 # Introduction
@@ -344,35 +337,31 @@ The scatterplot graph of the relationship between Age and transfer fee shows a c
 
 &nbsp;
 
-```{r, echo=FALSE, message = FALSE}
-
+```{r two_plots_same_size_side_by_side_2, fig.width=3.5, fig.height=4}
 
 p.age
-
-```
-  
-## Time left on contract/Transfer fees
-
-This graph highlights a correlation between the time left on a player's contract and his transfer fee. The more time there is on the contract, the higher a price for a player will be. When the period is less than 20 months, the transfer fees do not exceed 30 million pounds. When more than 20 months, the transfer fees can go up to 30 million pounds - some transfer fees even reach 40 million pounds, when the time left on the contract exceeds 40 months. 
-
-&nbsp;
-
-```{r , echo=FALSE, message = FALSE}
-
-
 p.time
 
 ```
+
+&nbsp;
+
+  
+## Time left on contract/Transfer fees
+
+This graph highlights a correlation between the time left on a player's contract and his transfer fee. The more time there is on the contract, the higher a price for a player will be. When the period is less than 20 months, the transfer fees do not exceed 30 million pounds. When more than 20 months, the transfer fees can go up to 30 million pounds - some transfer fees even reach 40 million pounds, when the time left on the contract exceeds 40 months.   
   
 ## The Premier League spends almost three time as much as the Serie A on new players
 
 &nbsp;
+
 ```{r two_plots_same_size_side_by_side, fig.width=3.5, fig.height=4}
+
 ave.player
 p.club
+
 ```
 
-  
 &nbsp;
 
 This chart shows the spending on transfers in the 5 major leagues in Europe. Average spending are the lowest in the French Ligue 1.The German Bundesliga, the Spanish La Liga and the Italian Serie A all have higher spendings on average than Ligue 1. We also see that the English Premier League dominates the chart with the highest amount of money spent on average. It amounts up to almost free time the average club budget for the second league in terms of spending, the Serie A.
@@ -381,32 +370,13 @@ One of the reason of the Premier League hegemony might be its popularity all ove
 
 ## British clubs spend more money per players
 
-&nbsp;
-
-```{r, echo=FALSE, message = FALSE}
-
-ave.player
-
-```
-
-&nbsp;
     
 This graph is not as clear cut as the last one. Premier League is still far ahead other clubs, but Spanish teams actually are closer to spending as much as the Premier League for players. This can be explained by the behavior of the top teams in Spain: Real Madrid, FC Barcelona and Atlético Madrid. Those three clubs spend a lot of money on transfers and try to secure record deals to boost their audience and gain more media coverage. However, this behavior is not followed by other clubs in the league, which may choose not to buy any player, resulting in less player tranfers in total as compared to the premier league. 
 
 ## Top Clubs drive the market
   
-The following graph shows that the more successful the club is, the more money it can afford to spend on transfers. One interesting feature of this graph however is that the promoted clubs are spending a bit more money on transfer than the bottom clubs. This can be explained by their intention to improve their roster in order to be able to compete in the major league. On the other hand, some of the bottom clubs are relegated, which means that they loose money and therefore cannot afford to spend as much. On top of that, they will compete in the second best league and therefore have a smaller need for transfers.
+The following graph shows that the more successful the club is, the more money it can afford to spend on transfers. One interesting feature of this graph however is that the promoted clubs are spending a bit more money on transfer than the bottom clubs. This can be explained by their intention to improve their roster in order to be able to compete in the major league. On the other hand, some of the bottom clubs are relegated, which means that they loose money and therefore cannot afford to spend as much. On top of that, they will compete in the second best league and therefore have a smaller need for transfers.  
 
-&nbsp;
-
-```{r, echo=FALSE, message = FALSE}
-
-
-p.club
-```
- 
-&nbsp;
- 
 
 # Prediction models for transfer value
 
