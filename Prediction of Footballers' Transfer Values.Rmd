@@ -277,7 +277,6 @@ The purpose of this paper is to predict the transfer value of football players i
 [^1]: Premier League (England), Bundesliga (Germany), La Liga (Spain), Serie A (Italy) and Ligue 1 (France).
 [^2]: All calculations, graphics and writing was conducted using the programming language [R](https://www.r-project.org/) and [RStudio](https://www.rstudio.com/). 
 
-
 # Data Gathering
 
 Our data scraping process relied heavily on the websites Transfermarkt.co.uk, and to a lesser extent on Google.com and Wikipedia.org. Transfermarkt.co.uk contains information on football transfers, player background and performance statistics. We expect most of this information to be relevant for predicting the transfer value of a player. We used Wikipedia.org to find data about the final table ranking for the five leagues in the season before the transfers (season 14/15).
@@ -285,6 +284,7 @@ To extract the relevant data we built three web scrapers. One for Transfermarkt,
 The scraper for Wikipedia ran through the different webpages with the table ranking for the season 14/15 in the five leagues. The table rankings were then merged into one data frame containing the clubs' data.
 The two different datasets were first cleaned and then merged into one combined dataset containing only the variables thought to be relevant in predicting transfer values.  
 Our conviction is that there is no substantial ethical issues in scraping the data from Google and Wikipedia. This information is publicly available and scraping it does not endanger the firms' business viability. On the other hand, it can be argued that the performance and transfer data is the core of Transfermarkt's business model and they therefore have the right to privacy. In that regard, we would like to stress that we only use the data for scientific purposes and not for commercial purposes. An illustration of the data gathering process is provided below.  
+
 ![Illustration of the data gathering process](Exam_project/Data gathering process.jpeg)
 
 ## Data Cleaning
@@ -299,20 +299,14 @@ For the club dataset we started by grouping the different clubs in 4 categories:
 ### The Final Dataset
 The final and tidy dataset contains 369 observations and 25 variables. All the variables are listed with a short description in the appendix. As stated, the final data set contains a lot of variables. We will therefore in the following section describe how we used different visualisations to explore and select the different variables that seemed the most suited for predicting transfer values.
 
-
 # Data Visualisation
-
 The objective of this section is to highlight possible correlations and important variables via the use of data visualisation. The creation of maps, scatter plots and bar charts enabled us to have a better understanding of our dataset and convey its most important characteristic. After experimenting different scatterplots, we were able to have a better grasp of the relationship between transfer fees and other variables such as age, position, appearance, total goals and time left on contract. Due to space limitations we only include visualisations and detailed descriptions for a handfull of the predictors used in the later models.[^3] 
-In order to transform our dataset into graphs and maps we used different digital tools: GGplot for scatterplots and bar charts, Google maps API for maps, and plotly for interactive visualisation[^4]. The dataset used for these visualisations was cleaned by removing all observations with a transfer fee equal to zero.
+In order to transform our dataset into graphs and maps we used different digital tools: GGplot for scatterplots and bar charts and Google maps API for maps. The dataset used for these visualisations was cleaned by removing all observations with a transfer fee equal to zero.
 
 [^3]:More visualisation are available in the Appendix/R code.
-[^4]:For interactive visulisation, follow this link
 
 ## A European Market Dominated by the UK.
-
 Figure 2 below is a mapping of all the clubs buying players. The size of the dots correspond to the amount of money spent on transfers. The map allows us to check the validity of our sample by comparing it to the most well known clubs. Unsurprisingly, the Premier League appears to have more clubs with a higher spending, furthermore, the most reknown clubs such as Real Madrid, Barcelona and PSG clearly appear on the map.
-
-&nbsp;
 
 ```{r, echo=FALSE, message = FALSE, fig.pos="H", fig.width=4, fig.height=4, fig.cap="The European transfer market"}
 
@@ -320,11 +314,10 @@ Figure 2 below is a mapping of all the clubs buying players. The size of the dot
 map.clubs
 
 ```
-Our second visualisation (figure 3[^5]) illustrates the transfer path of each transfered player in the dataset. This highlights the fact that the market for football players is a European market, or even a global one and that country borders do not seem to play a major role in transfering players. As you can see on the map, most of the players are traded between countries and not within them.
 
-[^5]:For simplification reasons, transfers from outside Europe are not represented here.
+Our second visualisation (figure 3)[^4] illustrates the transfer path of each transfered player in the dataset. This highlights the fact that the market for football players is a European market, or even a global one and that country borders do not seem to play a major role in transfering players. As you can see on the map, most of the players are traded between countries and not within them.
 
-&nbsp;
+[^4]:For simplification reasons, transfers from outside Europe are not represented here.
 
 ```{r, echo=FALSE, message = FALSE, fig.width=3.5, fig.height=3.5, fig.cap="Maps of transfer paths"}
 
@@ -332,22 +325,11 @@ Our second visualisation (figure 3[^5]) illustrates the transfer path of each tr
 path.map
 ```
 
-&nbsp;
-
-
 ## Age and Contract Length Seem to Influence Transfer Value  
-
 The following two scatterplots (figure 4) indicate that age and period left on contract correlate with a player's transfer value. The scatterplot to the left shows the relationship between age and transfer value. The observations indicate a bell-shaped relationship with a flat top around 25 years. Perhaps forseeably, players in their prime (between 20 and 27 years old) are traded for higher prices. One interpretation might be that the promises of a rising star are more sought after than the celebrity of an older player. Due to bell-shaped relationsship we include age squared as a predictor in the later models.  
 The scatterplot to the right highlights a correlation between the time left of a player's contract and his transfer value. As you could expect, the more time left on a contract, the higher the price. When the period is less than 20 months, the transfer fees do not exceed 30 million pounds in our sample. When more than 20 months, the transfer fees goes up to 30 million pounds in our sample. Some transfer fees even reach 40 million pounds, when the time left on the contract exceeds 40 months.
 
-&nbsp;
-
-```{r two_plots_same_size_side_by_side_2, fig.width=3.5, fig.height=3.5, fig.cap="Scatter plots"}
-
-p.age
-p.time
-
-```
+![Scatter plots](Exam_project/scatter_plots.jpeg)
 
 ## League and Status of the Buying Club Seem to Affect the Transfer Value
 
@@ -355,20 +337,8 @@ The following two bar charts (figure 5) show two relationships. The left graph s
 The first graph clearly shows, that clubs from the Premier League spend much more money on each player compared to the clubs from the other leagues. The league of the buying club could therefore be a good indicator of a players transfer value. A reason for this pattern could be Premier League's popularity all over the world, resulting in higher TV rights income, bigger sales of fan merchandise and a higher attendance during british matches. Both being able to buy expensive players and the ambition to remain at the center of international football push british clubs into buying more expensive players (also shown on the map in figure 2).  
 The second graph shows that the more successful a club is, the more money it can afford to spend on transfers. One interesting feature of this graph is that the promoted clubs are spending more money on transfers than bottom clubs. This can be explained by their intention to improve their roster in order to be able to compete in the major league. The graph therefore indicates that the ranking of the buying club in the league in the previous season can be used as a signal for the transfer value of a player.  
 
-&nbsp;
-
-
-```{r two_plots_same_size_side_by_side, fig.width=3.5, fig.height=4, fig.cap="Bar Charts"}
-
-ave.player
-p.club
-
-```
-  
-&nbsp;
-
+![Bar Charts](Exam_project/bar_charts.jpeg)
 In the appendix we also have a bar chart of the average spending on transfers per club in the different leagues. The  visualisations support the inclusion of the mentionned variables in the prediction models.   
- 
 
 # Prediction Models for Transfer Value
 
@@ -514,9 +484,9 @@ Regression Tree & 6.60 \\
 Random Forest   & 6.26 \\ \hline
 \end{tabular}
 \end{table}  
+i
 
-
-\newpage
+\pagebreak
 
 # Litterature
 
@@ -526,7 +496,7 @@ Random Forest   & 6.26 \\ \hline
 
 \newpage
 # Appendix
-
+\newpage
 
 \begin{table}[]
 \centering
@@ -568,7 +538,7 @@ searchresults  & \begin{tabular}[c]{@{}l@{}}Number of search results when you go
 \caption{Predictors}
 \label{my-label}
 \begin{tabular}{l}
-Predictors          \\
+\hline
 positions           \\
 appearances         \\
 total.goals         \\
@@ -579,7 +549,7 @@ transferage         \\
 league              \\
 Status              \\
 searchresults       \\
-transferage\_sq    
+transferage\_sq     \\ \hline
 \end{tabular}
 \end{table}
 
@@ -614,4 +584,6 @@ searchresults       & 16.21    \\
 transferage\_sq     & 4.79     \\ \hline
 \end{tabular}
 \end{table}
+
+
 

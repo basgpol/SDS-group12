@@ -320,20 +320,19 @@ Figure 2 below is a mapping of all the clubs buying players. The size of the dot
 map.clubs
 
 ```
+
 Our second visualisation (figure 3[^5]) illustrates the transfer path of each transfered player in the dataset. This highlights the fact that the market for football players is a European market, or even a global one and that country borders do not seem to play a major role in transfering players. As you can see on the map, most of the players are traded between countries and not within them.
 
 [^5]:For simplification reasons, transfers from outside Europe are not represented here.
 
 &nbsp;
 
+
 ```{r, echo=FALSE, message = FALSE, fig.width=3.5, fig.height=3.5, fig.cap="Maps of transfer paths"}
 
 
 path.map
 ```
-
-&nbsp;
-
 
 ## Age and Contract Length Seem to Influence Transfer Value  
 
