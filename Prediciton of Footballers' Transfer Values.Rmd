@@ -1,6 +1,6 @@
 ---
-title: "Putting a price tag on football players"
-author: "Bjørn Skeel-Gjørling, Chritian Lund Sørensen, Giullaume Slizewicz & Amer Skaljic"
+title: "Putting a Price Tag on Football Players"
+author: "Bjørn Skeel-Gjørling, Chritian Lund Sørensen,/nGuillaume Slizewicz & Amer Skaljic"
 date: "26 August 2016"
 output: 
   pdf_document:
@@ -136,11 +136,10 @@ p.age<-p.age + geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste
         panel.grid.major.x = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
+        axis.title.x =element_text(angle = 0,
+                                   colour="#525252"),
         axis.title.y =element_text(colour="#525252",
                                    vjust=0.5),
-        axis.title.x =element_text(angle = 0,
-                                   colour="#525252",
-                                   vjust=-1),
         panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
         axis.title.y=element_blank(),
         text=element_text(family="Goudy Old Style"))
@@ -153,7 +152,7 @@ p.time <- ggplot(data=df.viz, aes(x = contract.left.month , y = transfer.fee)) +
   geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste("Name:",name)))+
   #geom_point(aes(text = paste(name, " to ", club.to)), size = 4) +
   geom_smooth(aes(colour = contract.left.month, fill = contract.left.month))+
-  labs(y="Transfer price\nin M£",x="Time left on contract in months")+
+  labs(y="Transfer price\nin M£",x="Time left on contract\nin months")+
   scale_x_continuous(breaks=seq(0,58,12))+
   theme(axis.ticks.y= element_line(color=NA),
         axis.ticks.x=element_line(colour="#CACACA", size=0.2),
@@ -217,7 +216,7 @@ df.viz.player.league <- transform(df.viz.player.league,
                         league = reorder(league, average.spending.per.player))
 #plotting it
 ave.player = ggplot(df.viz.player.league, aes( x =league, y=average.spending.per.player, fill=league))
-ave.player<-ave.player + geom_bar(stat="identity",alpha=1,position="dodge")+
+ave.player<-ave.player + geom_bar(stat="identity",alpha=1, position="dodge")+
   theme(axis.title.x=element_blank(),
         axis.text.x =element_text(size  = 9),
         panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
@@ -265,27 +264,28 @@ p.club<- p.club + geom_bar(stat = "identity", position="dodge")+
         legend.title=element_blank(),
         legend.position="none",
         text=element_text(family="Goudy Old Style"))+
-  scale_fill_manual(values=c( "#CFF09E", "#A8DBA8", "#79BD9A", "#3B8686"))
+  scale_fill_manual(values=c( "#CFF09E", "#A8DBA8", "#79BD9A", "#3B8686"))+
+  labs(y="")
 
 ```
 # Introduction
 
-The purpose of this paper is to predict the transfer value of football players in the five major European leagues.[^1] We use a variety of methods from the field of data science to gather, study and lastly predict footballers' transfer value. The paper is structured in three sections.[^2] In the first section we briefly present our data scraping processes, our sources, the nature of our data and the ethical challenges we considered. In the second section the dataset is described using visualisations in order to get an overview of the different observations and variables which seems to affect the transfer values. In the final section, we use different prediction approaches including statistical learning models to predict the transfer values of footballers. The emphasis will be on testing different models and comparing their predictive power on a test set. The paper concludes that the random forest model is slightly better at predicting the footballers' transfer value in our test sample compared to rest of the presented models in the paper.  
+The purpose of this paper is to predict the transfer value of football players in the five major European leagues.[^1] We use a variety of methods from the field of data science to gather, study and lastly predict footballers' transfer value. The paper is structured in three sections.[^2] In the first section we briefly present our data scraping processes, our sources, the nature of our data and the ethical challenges we considered. In the second section the dataset is described using visualisations in order to get an overview of the different observations and variables which seem to affect the transfer values. In the final section, we use different prediction approaches including statistical learning models to predict the transfer values of footballers. The emphasis will be on testing different models and comparing their predictive power on a test set. The paper concludes that the random forest model is slightly better at predicting the footballers' transfer value compared to the rest of the presented models in the paper.  
 
 [^1]: Premier League (England), Bundesliga (Germany), La Liga (Spain), Serie A (Italy) and Ligue 1 (France).
-[^2]: All calculations, graphics and writing was conducted using the programming language [R](https://www.r-project.org/) and the IDE [RStudio](https://www.rstudio.com/). 
+[^2]: All calculations, graphics and writing was conducted using the programming language [R](https://www.r-project.org/) and [RStudio](https://www.rstudio.com/). 
 
 
 # Data Gathering
 
-Our data scrapping process relied heavily on the websites Transfermarkt.co.uk, and to a lesser extent on Google.com and Wikipedia.org. Transfermarkt.co.uk contains information on football transfers, player information and performance statistics. We expect most of this information to be relevant in order to predict the transfer value of a player. We used Wikipedia.org to find data about the final table ranking for the five leagues in the season before the transfers (season 14/15).
-To extract the relevant data we build three web scrapers. One for Transfermarkt, another for Google.com and a third for Wikipedia.org. The scraper for Transfermarkt.co.uk both collected all transfer information from the transfer windows "Summer 15" and "Winter 16" in the five leagues and the individual performance statistics from each transferred player. We then used the Google-scraper to gather information on the number of google hits when searching for the name of each transferred player followed by the word "footballer". We use google hits as a proxy for a players popularity and because the variable probably correlates attributes which are not measured in the performance statistics. Information on transfer, performance statistics and google hits were then merged into one data frame consisting of player data.
+Our data scraping process relied heavily on the websites Transfermarkt.co.uk, and to a lesser extent on Google.com and Wikipedia.org. Transfermarkt.co.uk contains information on football transfers, player background and performance statistics. We expect most of this information to be relevant for predicting the transfer value of a player. We used Wikipedia.org to find data about the final table ranking for the five leagues in the season before the transfers (season 14/15).
+To extract the relevant data we built three web scrapers. One for Transfermarkt, another for Google and a third for Wikipedia. The scraper for Transfermarkt both collected all transfer information from the transfer windows "Summer 15" and "Winter 16" in the five leagues and the individual performance statistics from each transferred player. We then used the Google-scraper to gather information on the number of google hits when searching for the name of each transferred player followed by the word "footballer". We use google hits as a proxy for a players popularity and because the variable probably correlates attributes which are not measured in the performance statistics. Information on transfer, performance statistics and google hits were then merged into one data frame consisting of player data.
 The scraper for Wikipedia ran through the different webpages with the table ranking for the season 14/15 in the five leagues. The table rankings were then merged into one data frame containing the club data.
 The two different datasets were at first cleaned and then merged into one big dataset containing only the variables thought to be relevant in predicting transfer values.  
 We do not find substantial ethical issues scraping the data from Google and Wikipedia because the information is publicly available and not private in any way. On the other hand, it can be argued that the performance and transfer data is the core of Transfermarkt's business model and they therefore has the right to privacy. We would therefore like to stress that we only use the data for scientific purpose and not a commercial purpose. An illustration of the data gathering process is provided in the appendix.
 
 ## Data Cleaning
-In order to do proper visualizations and predictions we have to clean the raw data. Our experience was that Transfermarkt was inconsistent in the way of handling statistics which made the cleaning process challenging.
+In order to do proper visualisations and predictions we have to clean the raw data. Our experience was that Transfermarkt was inconsistent in the way of handling statistics which made the cleaning process challenging.
 
 ### Cleaning The Player Dataset
 For the player data we first turn all the unavailable data into NA instead of different signs. Furthermore, we turned the transfer date, end date of contract and birth date into a correct date-format in R. The main reason for this process was to be able to calculate the precise age (in years) and contract period left (in months) at the day of transfer. We afterwards removed all keepers, duplicated observations and observations for which the transfer fee is unknown. The reason for removing the keepers is that our scraped performance data is mostly offensive statistics, which obviously don't describe the performance of goalkeepers and thereby affect their transfer value. At last we simplified the position variable so it only contains three categories: Defender, Midfielder and Attacker. 
@@ -294,12 +294,12 @@ For the player data we first turn all the unavailable data into NA instead of di
 For the club dataset we started by grouping the different clubs in 4 categories: Top Club (the five highest ranking clubs in the season 14/15), Middle Club (the following ten clubs, ranking from six to fifteen), Bottom Club (the remaining clubs in the league that season) and Promoted Club (clubs that entered the league in season 15/16). Afterwards we renamed the clubs so that they matched the player dataset, which enabled us to merge the player data set and the club data. Lastly, we selected the club variables that we found the most interesting for the later prediction (club name, club status, league) and removed all other variables.
 
 ### The Final Dataset
-The final and tidy dataset contains 369 observations and 25 variables. A list of each of the variable with a short description is available in the appendix. As stated, the final data set contains a lot of variables. We will therefore in the following section describe how we used different visualizations to explore and select the different variables that seemed the most suited for predicting a football player's transfer value.
+The final and tidy dataset contains 369 observations and 25 variables. A list of each of the variable with a short description is available in the appendix. As stated, the final data set contains a lot of variables. We will therefore in the following section describe how we used different visualisations to explore and select the different variables that seemed the most suited for predicting a football player's transfer value.
 
 
 # Data visualisation
 
-The objective of this section is to highlight possible correlations, clear outliers, important variables via the use of data visualisation processes. The creation of maps, scatter plots and bar charts enabled us to have a better understanding of our dataset and convey its most important characteristic in an engaging and simple way. After experimenting different scatterplots, we were able to have a better grasp of the relationship between transfer fees and other variables such as age, position, appearance, total goals and time left on contract. Due to space limitations we only include visualizations and detailed descriptions for a handfull of the predictors used in the later models.   
+The objective of this section is to highlight possible correlations, clear outliers, important variables via the use of data visualisation processes. The creation of maps, scatter plots and bar charts enabled us to have a better understanding of our dataset and convey its most important characteristic in an engaging and simple way. After experimenting different scatterplots, we were able to have a better grasp of the relationship between transfer fees and other variables such as age, position, appearance, total goals and time left on contract. Due to space limitations we only include visualisations and detailed descriptions for a handfull of the predictors used in the later models.   
 In order to transform our dataset into graphs and maps we used different digital tools: GGplot for scatterplots and bar chart, Google maps API for maps, and plotly for interactive visualisation. The dataset used in this visualisations was cleaned by filtering all observations with a transfer fee equal to zero, this resulted in clearer representations.
 
 ## A European market dominated by the UK.
@@ -307,7 +307,7 @@ Thes first visual (figure X) below is a mapping of all the clubs buying players 
 
 &nbsp;
 
-```{r, echo=FALSE, message = FALSE, fig.pos="H"}
+```{r, echo=FALSE, message = FALSE, fig.pos="H", fig.width=3.5, fig.height=3.5, fig.cap="Maps of main European Clubs"}
 
 
 map.clubs
@@ -320,7 +320,7 @@ Our second visualisation focus on the transfer path of each transfered player in
 
 &nbsp;
 
-```{r, echo=FALSE, message = FALSE}
+```{r, echo=FALSE, message = FALSE, fig.width=4.5, fig.height=4.5, fig.cap="Maps of transfer paths"}
 
 
 path.map
@@ -336,7 +336,7 @@ The scatterplot to the right highlights a correlation between the time left of a
 
 &nbsp;
 
-```{r two_plots_same_size_side_by_side_2, fig.width=3.5, fig.height=4}
+```{r two_plots_same_size_side_by_side_2, fig.width=4, fig.height=4, fig.cap="Scatter plots"}
 
 p.age
 p.time
@@ -360,7 +360,7 @@ p.club
   
 &nbsp;
 
-In the appendix we also have a bar chart of the average spending on transfers per club in the different leagues. The printed visualizations in the papers are supporting that we include this variables in the upcomming prediction models. Graphs for most of the reamning predicting variables are avaiable in the R code.   
+In the appendix we also have a bar chart of the average spending on transfers per club in the different leagues. The printed visualisations in the papers are supporting that we include this variables in the upcomming prediction models. Graphs for most of the reamning predicting variables are avaiable in the R code.   
  
 
 # Prediction models for transfer value
@@ -501,7 +501,7 @@ Random Forest   & 6.26 \\ \hline
 
 # Conclusion
 In this paper we try to predict the transfer value of football players. To answer the initial question, we first created several web scraping functions to collect a dataset containing information about transfers made in the season 15/16 in the five major European leagues, the players performance statistics in the season prior to the transfer and information about the buying club's latest results. We scraped the data from Transfermarkt, Google and Wikipedia. After the data gathering and cleaning we ended up with a tidy data set of 369 observations and 25 variables.  
-To select the best predictors out of all 25 variables in the data set we used several visualizations to search for correlation patterns. Furthermore, we used the Google Maps API to visualize our data sample. We then selected 11 predictors which all seemed to have an influence on the players' transfer value.  
+To select the best predictors out of all 25 variables in the data set we used several visualisations to search for correlation patterns. Furthermore, we used the Google Maps API to visualize our data sample. We then selected 11 predictors which all seemed to have an influence on the players' transfer value.  
 In the third and last section we built five different predictions models using a training sample. The models were a simple average, OLS, lasso, decision tree and random forest. The accuracy of each prediction model was evaluated by calculating the RMSE on the test sample. The result of the comparative analysis shows that the OLS, Lasso, regression tree and random forest have quite similar prediction accuracy. The random forest model was the best performing model in predicting the transfer value of football players.
 If we take the average transfer value of 5.6 million into consideration, then is a RMSE of 6.5 very high (the same unit as the transfer value variable). This raises the question of whether we are missing variables that could help differentiate the players and their performance better (most likely). Otherwise the market for football players seems highly irrational due to the fact that players with similar attributes end up with very different price tags. 
 \newpage
