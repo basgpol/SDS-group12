@@ -1,6 +1,8 @@
 ---
 title: "Putting a Price Tag on Football Players"
-author: "Bjørn Skeel-Gjørling, Chritian Lund Sørensen,  Guillaume Slizewicz & Amer Skaljic"
+author: 
+- Bjørn Skeel-Gjørling, Chritian Lund Sørensen, 
+- Guillaume Slizewicz & Amer Skaljic  
 date: "26 August 2016"
 output: 
   pdf_document:
@@ -282,12 +284,11 @@ Our data scraping process relied heavily on the websites Transfermarkt.co.uk, an
 To extract the relevant data we built three web scrapers. One for Transfermarkt, another for Google and a third for Wikipedia. The scraper for Transfermarkt both collected all transfer information from the transfer windows "Summer 15" and "Winter 16" in the five leagues and the individual performance statistics of each transferred player. We then used the Google-scraper to gather information on the number of google hits when searching for the name of each transferred player followed by the word "footballer". Google hits serves as a proxy for a player's popularity, in addition, it is likely to correlate with attributes that are not measured in the performance statistics. Information on transfer, performance statistics and google hits were then merged into one data frame consisting of players' data.
 The scraper for Wikipedia ran through the different webpages with the table ranking for the season 14/15 in the five leagues. The table rankings were then merged into one data frame containing the clubs' data.
 The two different datasets were first cleaned and then merged into one combined dataset containing only the variables thought to be relevant in predicting transfer values.  
-Our conviction is that there is no substantial ethical issues in scraping the data from Google and Wikipedia. This information is publicly available and scraping it does not endanger the firms' business viability. On the other hand, it can be argued that the performance and transfer data is the core of Transfermarkt's business model and they therefore have the right to privacy. In that regard, we would like to stress that we only use the data for scientific purposes and not for commercial purposes. An illustration of the data gathering process is provided below.
-
+Our conviction is that there is no substantial ethical issues in scraping the data from Google and Wikipedia. This information is publicly available and scraping it does not endanger the firms' business viability. On the other hand, it can be argued that the performance and transfer data is the core of Transfermarkt's business model and they therefore have the right to privacy. In that regard, we would like to stress that we only use the data for scientific purposes and not for commercial purposes. An illustration of the data gathering process is provided below.  
 ![Illustration of the data gathering process](Exam_project/Data gathering process.jpeg)
 
 ## Data Cleaning
-In order to do visualisations and predictions we had to clean the raw data. Our experience was that Transfermarkt was inconsistent in their way of handling statistics which made the cleaning process challenging.
+In order to do visualisations and predictions we had to clean the raw data. Our experience was that Transfermarkt was inconsistent in their way of handling statistics which made the cleaning process challenging.  
 
 ### Cleaning The Player Dataset
 For the players' data we first turned all unavailable data into *NA*. Furthermore, we turned the transfer date, end date of contract and birth date into the correct date-format used by R. The main reason for this process was to be able to calculate the precise age (in years) and contract period left (in months) at the day of transfer. Afterwards, we removed all keepers, duplicated observations and observations for which the transfer fee is unknown. The reason for removing the keepers is that our scraped performance data is mostly offensive statistics, which obviously do not describe the performance of goalkeepers and thereby affect their transfer value. At last we simplified the position variable so it only contains three categories: Defender, Midfielder and Attacker. 
@@ -344,7 +345,7 @@ The scatterplot to the right highlights a correlation between the time left of a
 
 &nbsp;
 
-```{r two_plots_same_size_side_by_side_2, fig.width=3.5, fig.height=3.5}
+```{r two_plots_same_size_side_by_side_2, fig.width=3.5, fig.height=3.5, fig.cap="Scatter plots"}
 
 p.age
 p.time
@@ -360,7 +361,7 @@ The second graph shows that the more successful a club is, the more money it can
 &nbsp;
 
 
-```{r two_plots_same_size_side_by_side, fig.width=3.5, fig.height=4}
+```{r two_plots_same_size_side_by_side, fig.width=3.5, fig.height=4, fig.cap="Bar Charts"}
 
 ave.player
 p.club
