@@ -1,6 +1,6 @@
 ---
 title: "Putting a Price Tag on Football Players"
-author: "Bjørn Skeel-Gjørling, Chritian Lund Sørensen,/nGuillaume Slizewicz & Amer Skaljic"
+author: "Bjørn Skeel-Gjørling, Chritian Lund Sørensen,  Guillaume Slizewicz & Amer Skaljic"
 date: "26 August 2016"
 output: 
   pdf_document:
@@ -284,7 +284,7 @@ The scraper for Wikipedia ran through the different webpages with the table rank
 The two different datasets were first cleaned and then merged into one combined dataset containing only the variables thought to be relevant in predicting transfer values.  
 Our conviction is that there is no substantial ethical issues in scraping the data from Google and Wikipedia. This information is publicly available and scraping it does not endanger the firms' business viability. On the other hand, it can be argued that the performance and transfer data is the core of Transfermarkt's business model and they therefore have the right to privacy. In that regard, we would like to stress that we only use the data for scientific purposes and not for commercial purposes. An illustration of the data gathering process is provided below.
 
-IMAGE
+![Illustration of the data gathering process](Exam_project/Data gathering process.jpeg)
 
 ## Data Cleaning
 In order to do visualisations and predictions we had to clean the raw data. Our experience was that Transfermarkt was inconsistent in their way of handling statistics which made the cleaning process challenging.
@@ -344,7 +344,7 @@ The scatterplot to the right highlights a correlation between the time left of a
 
 &nbsp;
 
-```{r two_plots_same_size_side_by_side_2, fig.width=4, fig.height=4, fig.cap="Scatter plots"}
+```{r two_plots_same_size_side_by_side_2, fig.width=3.5, fig.height=3.5}
 
 p.age
 p.time
@@ -494,6 +494,14 @@ varImpPlot(Model_5) # plots the variables influence
 
 ```
 
+
+
+# Conclusion
+In this paper we try to predict the transfer value of football players. To answer the initial question, we first created several web scraping functions to collect a dataset containing information about transfers made in the season 15/16 in the five major European leagues, the players performance statistics in the season prior to the transfer and information about the buying club's latest results. We scraped the data from Transfermarkt, Google and Wikipedia. After the data gathering and cleaning we ended up with a tidy data set of 369 observations and 25 variables.  
+To select the best predictors out of all 25 variables we used several visualisations to search for correlation patterns. Furthermore, we used the Google Maps API to visualize our data sample. We then selected 11 predictors which all seemed to be linked to the players' transfer value.  
+In the third and last section we built five different prediction models using a training sample. The accuracy of each prediction model was evaluated by calculating the RMSE on a test sample. The result of the comparative analysis shows that the OLS, Lasso, regression tree and random forest have quite similar prediction accuracy. The random forest model was the best performing model in predicting the transfer value of football players.
+If we take the average transfer value of 5.6M into consideration, then a RMSE of 6.5M is very high. This raises the question of whether we are missing variables that could help us differentiate the players and their performances. Otherwise this means that the market for football players is highly irrational due to the fact that players with similar attributes end up with very different price tags. 
+  
 \begin{table}[]
 \centering
 \caption{Summary RMSE}
@@ -507,13 +515,8 @@ Lasso           & 6.34 \\
 Regression Tree & 6.60 \\
 Random Forest   & 6.26 \\ \hline
 \end{tabular}
-\end{table}
+\end{table}  
 
-# Conclusion
-In this paper we try to predict the transfer value of football players. To answer the initial question, we first created several web scraping functions to collect a dataset containing information about transfers made in the season 15/16 in the five major European leagues, the players performance statistics in the season prior to the transfer and information about the buying club's latest results. We scraped the data from Transfermarkt, Google and Wikipedia. After the data gathering and cleaning we ended up with a tidy data set of 369 observations and 25 variables.  
-To select the best predictors out of all 25 variables we used several visualisations to search for correlation patterns. Furthermore, we used the Google Maps API to visualize our data sample. We then selected 11 predictors which all seemed to be linked to the players' transfer value.  
-In the third and last section we built five different prediction models using a training sample. The accuracy of each prediction model was evaluated by calculating the RMSE on a test sample. The result of the comparative analysis shows that the OLS, Lasso, regression tree and random forest have quite similar prediction accuracy. The random forest model was the best performing model in predicting the transfer value of football players.
-If we take the average transfer value of 5.6M into consideration, then a RMSE of 6.5M is very high. This raises the question of whether we are missing variables that could help us differentiate the players and their performances. Otherwise this means that the market for football players is highly irrational due to the fact that players with similar attributes end up with very different price tags. 
 
 \newpage
 
@@ -526,7 +529,6 @@ If we take the average transfer value of 5.6M into consideration, then a RMSE of
 \newpage
 # Appendix
 
-![Illustration of the data gathering process](Exam_project/Data gathering process.jpeg)
 
 \begin{table}[]
 \centering
@@ -586,6 +588,14 @@ transferage\_sq
 ![Image is downloaded from Fortmann-Roe (2016)](Exam_project/biasvariance.png)
 
 Find graph here: http://scott.fortmann-roe.com/docs/BiasVariance.html 
+
+```{r, echo=FALSE, message = FALSE, fig.cap="Average Club Spending Between Leagues"}
+
+total.league
+
+
+```
+
 
 \begin{table}[]
 \centering
