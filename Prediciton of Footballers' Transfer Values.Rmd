@@ -137,12 +137,10 @@ p.age<-p.age + geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         axis.title.y =element_text(colour="#525252",
-                                   vjust = 1,
-                                   hjust = 0 ),
+                                   vjust=0.5),
         axis.title.x =element_text(angle = 0,
                                    colour="#525252",
-                                   vjust = -1,
-                                   hjust = 1 ),
+                                   vjust=-1),
         panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
         axis.title.y=element_blank(),
         text=element_text(family="Goudy Old Style"))
@@ -155,15 +153,16 @@ p.time <- ggplot(data=df.viz, aes(x = contract.left.month , y = transfer.fee)) +
   geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste("Name:",name)))+
   #geom_point(aes(text = paste(name, " to ", club.to)), size = 4) +
   geom_smooth(aes(colour = contract.left.month, fill = contract.left.month))+
-  labs(y="Transfer price\nin M£",x="Time left on contract\nin months")+
+  labs(y="Transfer price\nin M£",x="Time left on contract in months")+
   scale_x_continuous(breaks=seq(0,58,12))+
   theme(axis.ticks.y= element_line(color=NA),
         axis.ticks.x=element_line(colour="#CACACA", size=0.2),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
+        axis.title.x =element_text(angle = 0,
+                                   colour="#525252"),
         axis.title.y =element_text(colour="#525252",
-                                   vjust = 1,
-                                   hjust = 0 ),
+                                   vjust=0.5),
         panel.grid.major.y = element_line(colour="#CACACA", size=0.2),
         panel.grid.major.x =element_blank(), #add grid
         axis.title.y=element_blank(),
@@ -300,10 +299,11 @@ The final and tidy dataset contains 369 observations and 25 variables. A list of
 
 # Data visualisation
 
-The objective of this section is to highlight possible correlations, clear outliers, important variables via the use of data visualisation processes. The creation of maps, scatter plots and bar charts enabled us to have a better understanding of our dataset and convey its most important characteristic in an engaging and simple way. After experimenting different scatterplots, we were able to have a better grasp of the relationship between transfer fees and other variables such as age, position, appearance, total goals and time left on contract.  
+The objective of this section is to highlight possible correlations, clear outliers, important variables via the use of data visualisation processes. The creation of maps, scatter plots and bar charts enabled us to have a better understanding of our dataset and convey its most important characteristic in an engaging and simple way. After experimenting different scatterplots, we were able to have a better grasp of the relationship between transfer fees and other variables such as age, position, appearance, total goals and time left on contract. Due to space limitations we only include visualizations and detailed descriptions for a handfull of the predictors used in the later models.   
 In order to transform our dataset into graphs and maps we used different digital tools: GGplot for scatterplots and bar chart, Google maps API for maps, and plotly for interactive visualisation. The dataset used in this visualisations was cleaned by filtering all observations with a transfer fee equal to zero, this resulted in clearer representations.
 
 ## A European market dominated by the UK.
+Thes first visual (figure X) below is a mapping of all the clubs buying players with the size of the plots corresponding the amount the their transfer spending. The map allows us to check the validity of our sample, by comparing it to the most well known clubs on the football market. Unsurprisingly, the Premier League appeared to have on average more clubs with a higher spending, and the most reknown clubs such as PSG, Real Madrid or Barcelona clearly appeared on the map.
 
 &nbsp;
 
@@ -316,7 +316,7 @@ map.clubs
 
 &nbsp;
 
-This first visual is a mapping of all the clubs buying players with the size of the plots corresponding with their transfer spendings. Making this map allowed us to check the validity of our sample, by comparing it to the most well known clubs and gave us a better overview of the big players in the market. Unsurprisingly, the premier league appeared to have on average more clubs with a higher spending, and the most reknown clubs such as PSG, Real Madrid or Barcelona clearly appeared on the map.
+Our second visualisation focus on the transfer path of each transfered player in the dataset. This highlights the fact that the market for football players is a European market, or even a global one and that barriers between countries don't seem to play a big role in transfering players. As you can see on the map, most of the players are traded between countries and not within them.
 
 &nbsp;
 
@@ -328,12 +328,11 @@ path.map
 
 &nbsp;
 
-Our second visualisation focused on the transfer path of each player. This highlighted the fact that the market for football players is a European market, or even a global one and that barriers between countries don't seem to play a big role in transfering players. As you can see on the map, most of the players are traded between countries and not within them.
 
+## Age and contract length seem to have influence on transfer value  
 
-##A foreseeable repartition of player ages around 25
-
-The scatterplot graph of the relationship between Age and transfer fee shows a convex average curve with a flat top around 25. Perhaps forseeably, most players are traded while in their prime, between 20 and 27 years old. One interpretation might be the the promises of a rising stars are more sought after than the celebrity of an older player. This graph also shows that transfer above 40 millions are the exception.
+The following two scatterplots (figure X) indicate that age and period left on contract correlates with a player's transfervalue. The scatterplot to the left shows the relationship between age and transfer value. The observations indicate a bell-shaped relationship with a flat top around 25 years. Perhaps forseeably, most players are traded while in their prime, between 20 and 27 years old. One interpretation might be that the promises of a rising star are more sought after than the celebrity of an older player. Due to bell-shaped relationsship we include age squared as a predictor in the later models.  
+The scatterplot to the right highlights a correlation between the time left of a player's contract and his transfer value. As you could expect, the more time left on a contract, the higher a price for a player will be. When the period is less than 20 months, the transfer fees do not exceed 30 million pounds. When more than 20 months, the transfer fees can go up to 30 million pounds. Some transfer fees even reach 40 million pounds, when the time left on the contract exceeds 40 months.
 
 &nbsp;
 
@@ -344,16 +343,13 @@ p.time
 
 ```
 
-&nbsp;
-
-  
-## Time left on contract/Transfer fees
-
-This graph highlights a correlation between the time left on a player's contract and his transfer fee. The more time there is on the contract, the higher a price for a player will be. When the period is less than 20 months, the transfer fees do not exceed 30 million pounds. When more than 20 months, the transfer fees can go up to 30 million pounds - some transfer fees even reach 40 million pounds, when the time left on the contract exceeds 40 months.   
-  
-## The Premier League spends almost three time as much as the Serie A on new players
+## League and status of the buying club seem to affect the transfer value
+The following two bar charts (figure X) show the relationship between the transfer value and club status of the buyer (left) and transfer value and league of the buying club (right) respectively.
+The graph to the left clearly shows, that clubs from the Premier League spend much more money on each player compared the clubs in all the other leagues. The league of the buying club could therefore be a good indicator of a players transfervalue. A reason for this pattern could be Premier League's popularity all over the world, resulting in higher TV licensing rights, bigger sales of fan merchandise and a higher attendance during british match. Both being able to buy expensive players and the ambition to remain at the center of international football push british clubs into buying more expensive players (also shown on the map in figure X).  
+The graph to the right shows that the more successful a club is, the more money it can afford to spend on transfers. One interesting feature of this graph however is that the promoted clubs are spending a bit more money on transfer than the bottom clubs. This can be explained by their intention to improve their roster in order to be able to compete in the major league. This graph therefore indicates that the ranking of the buying club in the league last season can be used as a signal for the transfer value of a player.  
 
 &nbsp;
+
 
 ```{r two_plots_same_size_side_by_side, fig.width=3.5, fig.height=4}
 
@@ -361,22 +357,11 @@ ave.player
 p.club
 
 ```
-
+  
 &nbsp;
 
-This chart shows the spending on transfers in the 5 major leagues in Europe. Average spending are the lowest in the French Ligue 1.The German Bundesliga, the Spanish La Liga and the Italian Serie A all have higher spendings on average than Ligue 1. We also see that the English Premier League dominates the chart with the highest amount of money spent on average. It amounts up to almost free time the average club budget for the second league in terms of spending, the Serie A.
-
-One of the reason of the Premier League hegemony might be its popularity all over the world, resulting in higher TV licensing rights, bigger sales of fan merchandise and a higher attendance during british match. Both being able to buy expensive players and the ambition to remain at the center of international football push british clubs into buying more, and at a higher price( as shown below). It is difficult to say if this loops does not feed itself, and if clubs and agents ask for more money from an english club for the same player.(!It would be nice to include club budgets as a variable to know more on this phenomenon)  
-
-## British clubs spend more money per players
-
-    
-This graph is not as clear cut as the last one. Premier League is still far ahead other clubs, but Spanish teams actually are closer to spending as much as the Premier League for players. This can be explained by the behavior of the top teams in Spain: Real Madrid, FC Barcelona and Atlético Madrid. Those three clubs spend a lot of money on transfers and try to secure record deals to boost their audience and gain more media coverage. However, this behavior is not followed by other clubs in the league, which may choose not to buy any player, resulting in less player tranfers in total as compared to the premier league. 
-
-## Top Clubs drive the market
-  
-The following graph shows that the more successful the club is, the more money it can afford to spend on transfers. One interesting feature of this graph however is that the promoted clubs are spending a bit more money on transfer than the bottom clubs. This can be explained by their intention to improve their roster in order to be able to compete in the major league. On the other hand, some of the bottom clubs are relegated, which means that they loose money and therefore cannot afford to spend as much. On top of that, they will compete in the second best league and therefore have a smaller need for transfers.  
-
+In the appendix we also have a bar chart of the average spending on transfers per club in the different leagues. The printed visualizations in the papers are supporting that we include this variables in the upcomming prediction models. Graphs for most of the reamning predicting variables are avaiable in the R code.   
+ 
 
 # Prediction models for transfer value
 
