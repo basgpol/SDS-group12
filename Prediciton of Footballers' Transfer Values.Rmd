@@ -498,6 +498,11 @@ train.indicator = sample(seq_len(nrow(transfer.data)), size = train_size)
 train_sample = transfer.data[train.indicator,predicting.var] # selecting observations with a train indicator
 test_sample = transfer.data[-train.indicator, predicting.var] # selecting observations without a train indicator
 
+##================ 4.2 Create evaluation function  ================
+## Creating a function that calculate the RMSE
+get.rmse = function(real, estimate){
+  return(sqrt(mean((real - estimate)^2)))
+}
 
 
 Model_4=tree(transfer.fee~.,data=train_sample, method="anova")
