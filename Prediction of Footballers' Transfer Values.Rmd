@@ -4,7 +4,7 @@ author:
 - Bjørn Skeel-Gjørling, Chritian Lund Sørensen, 
 - Guillaume Slizewicz & Amer Skaljic  
 - Group 12
-- Number of Character
+- 28756 Characters
 date: "26 August 2016"
 output: 
   pdf_document:
@@ -328,7 +328,7 @@ path.map
 ```
 
 ## Age and Contract Length Seem to Influence Transfer Value  
-The following two scatterplots (figure 4) indicate that age and period left on contract correlate with a player's transfer value. The scatterplot to the left shows the relationship between age and transfer value. The observations indicate a bell-shaped relationship with a flat top around 25 years. Perhaps forseeably, players in their prime (between 20 and 27 years old) are traded for higher prices. One interpretation might be that the promises of a rising star are more sought after than the celebrity of an older player. Due to bell-shaped relationsship we include age squared as a predictor in the later models.  
+The following two scatterplots (figure 4) indicate that age and period left on contract correlate with a player's transfer value. The scatterplot to the left shows the relationship between age and transfer value. The observations indicate a bell-shaped relationship with a flat top around 25 years. Perhaps forseeably, players in their prime (between 20 and 27 years old) are traded for higher prices. One interpretation might be that the promises of a rising star are more sought after than the celebrity of an older player. Due to bell-shaped relationship we include age squared as a predictor in the later models.  
 The scatterplot to the right highlights a correlation between the time left of a player's contract and his transfer value. As you could expect, the more time left on a contract, the higher the price. When the period is less than 20 months, the transfer fees do not exceed 30 million pounds in our sample. When more than 20 months, the transfer fees goes up to 30 million pounds in our sample. Some transfer fees even reach 40 million pounds, when the time left on the contract exceeds 40 months.
 
 ![Scatter plots](Exam_project/scatter_plots.jpeg)
