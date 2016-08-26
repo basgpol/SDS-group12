@@ -443,10 +443,10 @@ Figure 5 below illustrates the regression tree made to predict the transfer valu
 
 ## Random Forest
 As described, the decision tree often has issues with overfitting which creates errors due to variance. The issues can be reduced by another prediction method called *random forest* (RF). The RF is a so-called ensemble model which means that the model consists of several smaller decision trees (in this case regression trees). RF has great similarities with the concept of *bagging* or *bootstrap aggregating* (Breiman, 1996) where the core idea is to reduce the error due to variance from one model by building several models and use their average prediction. A RF prediction can be divided into 4 steps:  
-1) First, each regression tree is constructed by randomly drawing and replacing 63.2 percent of the observations in the training sample (this is called bootstrap sampling). In our project, this is done 500 times so we end up with a forest of 500 different trees with random selected observations from the training sample.    
-2) In the next step each tree randomly select *m* number of the predictor variables in the data set. For regression trees like these, m is equal to the total number of all predictors divided by 3. All 500 trees use the same number of variables. The purpose of randomly choosing predictors is to prevent very important variables from overshadowing the effect of weaker variables. This often happens because the underlying algorithm searches for the split with the largest decrease in the loss function.  
-3) Thirdly, we calculate the out-of-bag error rate for each tree using the remaining 36.8 percent of the data.  
-4) In the last step the average prediction is calculated out of all predictions from each individual tree.
+1. First, each regression tree is constructed by randomly drawing and replacing 63.2 percent of the observations in the training sample (this is called bootstrap sampling). In our project, this is done 500 times so we end up with a forest of 500 different trees with random selected observations from the training sample.    
+2. In the next step each tree randomly select *m* number of the predictor variables in the data set. For regression trees like these, m is equal to the total number of all predictors divided by 3. All 500 trees use the same number of variables. The purpose of randomly choosing predictors is to prevent very important variables from overshadowing the effect of weaker variables. This often happens because the underlying algorithm searches for the split with the largest decrease in the loss function.  
+3. Thirdly, we calculate the out-of-bag error rate for each tree using the remaining 36.8 percent of the data.  
+4. In the last step the average prediction is calculated out of all predictions from each individual tree.
 
 In theory, RF does not need a separate test sample to examine the validity of the results. The validity is measured internally by the out-of-bag error rate. In this project, we have used a separate test sample. The reason is that we wanted to calculate the RMSE so we can compare the RF model's predictive power to the previous prediction models. The RMSE of the RF on the test sample is 6.26.
 
@@ -488,9 +488,8 @@ Regression Tree & 6.60 \\
 Random Forest   & 6.26 \\ \hline
 \end{tabular}
 \end{table}  
-i
 
-\pagebreak
+\newpage
 
 # Litterature
 
@@ -500,9 +499,8 @@ i
 
 \newpage
 # Appendix
-  
 
-\begin{table}[]
+\begin{table}[!ht]
 \centering
 \caption{Variables in the data set}
 \label{my-label}
@@ -537,7 +535,17 @@ searchresults  & \begin{tabular}[c]{@{}l@{}}Number of search results when you go
 \end{tabular}
 \end{table}
 
-\begin{table}[]
+\newpage
+
+```{r, echo=FALSE, message = FALSE,fig.width=3.5, fig.height=3.5,fig.pos="!H", fig.cap="Average Club Spending Between Leagues"}
+
+total.league
+
+
+```
+
+
+\begin{table}[!ht]
 \centering
 \caption{Predictors}
 \label{my-label}
@@ -559,17 +567,7 @@ transferage\_sq     \\ \hline
 
 ![Image is downloaded from Fortmann-Roe (2016)](Exam_project/biasvariance.png)
 
-Find graph here: http://scott.fortmann-roe.com/docs/BiasVariance.html 
-
-```{r, echo=FALSE, message = FALSE, fig.cap="Average Club Spending Between Leagues"}
-
-total.league
-
-
-```
-
-
-\begin{table}[]
+\begin{table}[!ht]
 \centering
 \caption{Variable importance}
 \label{my-label}
