@@ -121,33 +121,33 @@ map.clubs <- ggmap(myMap) +
 
 map.clubs
 #####with plotly
-# m <- list(
-#   colorbar = list(title = "Total transfer spending"),
-#   size = 10, opacity = 0.8, symbol = 'circle'
-# )
-# 
-# # geo styling
-# g <- list(
-#   scope = 'europe',
-#   projection = list(type = 'mercator'),
-#   showland = TRUE,
-#   landcolor = toRGB("gray95"),
-#   subunitcolor = toRGB("gray85"),
-#   countrycolor = toRGB("gray85"),
-#   countrywidth = 0.5,
-#   subunitwidth = 0.5
-# )
-# g
-# 
-# plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
-#         #text = team,
-#         hoverinfo = "text" ,
-#         text=paste("Team = ", df.spending.club$team,"\n", "Total transfer = ", df.spending.club$transfer.fee.total),
-#         type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers', 
-#         marker = m) %>%
-#   layout(title = 'Football teams in Europe and transfer spending', geo = g)
+m <- list(
+  colorbar = list(title = "Total transfer spending"),
+  size = 10, opacity = 0.8, symbol = 'circle'
+)
 
+# geo styling
+g <- list(
+  scope = 'europe',
+  projection = list(type = 'mercator'),
+  showland = TRUE,
+  landcolor = toRGB("gray95"),
+  subunitcolor = toRGB("gray85"),
+  countrycolor = toRGB("gray85"),
+  countrywidth = 0.5,
+  subunitwidth = 0.5
+)
+g
 
+plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
+        #text = team,
+        hoverinfo = "text" ,
+        text=paste("Team = ", df.spending.club$team, "Total transfer = ","\n", df.spending.club$transfer.fee.total),
+        type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers',
+        marker = m) %>%
+  layout(title = 'Football teams in Europe and transfer spending', geo = g)
+
+g
 ################################################################################################################################################
 ####################################                                             ###############################################################          
 ####################################         MAPS WITH TRANSFER PATHS            ############################################################### 
