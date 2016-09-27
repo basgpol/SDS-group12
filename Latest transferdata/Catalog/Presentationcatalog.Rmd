@@ -138,13 +138,13 @@ p.club<- p.club + geom_bar(stat = "identity")+
 ```
 
 ## Introduktion
-Dette katalog præsenterer en række forskellige datadrevede visualiseringer af sommerens transferhandler. Data bygger på alle køb af spillere i de fem største europæiske ligaer (Premier League, La Liga, 1. Bundesliga, Serie A og Ligue 1) i det seneste transfervindue (sommer 2016). Data er hentet fra Transfermarkt.co.uk. Nedenstående data og visualiseringer må kun anvendes efter aftale med Bjørn August Skeel-Gjørling (basg@outlook.com) og Guillaume Slizewicz (guillaume.slizewicz@gmail.com). Derudover kan det samlede datasæt for de seneste tre transfervinduer udleveres efter aftale. Kataloget er struktureret således, at hver visualisering har en tilhørende overskrift og kort beskrivelse. Graferne har titler/akser på engelsk og transferværdierne er opgjort i millioner £. Oversættelse af graferne fra engelsk til dansk samt fra pund til danske kroner kan foretages efter aftale.  
+Dette katalog præsenterer en række forskellige datadrevede visualiseringer af sommerens transferhandler. Data bygger på alle køb af spillere i de fem største europæiske ligaer (Premier League, La Liga, 1. Bundesliga, Serie A og Ligue 1) i det seneste transfervindue (sommer 2016). Data er hentet fra Transfermarkt.co.uk. Nedenstående data og visualiseringer må kun anvendes efter aftale med Bjørn August Skeel-Gjørling (basg@outlook.com) og Guillaume Slizewicz (guillaume.slizewicz@gmail.com). Derudover kan det samlede datasæt for de seneste tre transfervinduer udleveres efter aftale. Kataloget er struktureret således, at hver visualisering har en tilhørende overskrift og kort beskrivelse. Graferne har titler/akser på engelsk og transferværdierne er opgjort i millioner £. Oversættelse af graferne fra engelsk til dansk samt fra engelske pund til danske kroner kan foretages efter aftale.  
 \n
 \n
   
 ## Premier League dominerer transfermarkedet
 
-Nedenstående graf viser tydeligt Premier League klubbernes økonomiske overlegenhed. PL-klubberne brugte i gennemsnit 58 mio. pund svarende til ca. 500 mio. kroner på spillere i sommeren 2016. Noget efter andenpladsen kommer Serie A-klubberne med et transferforbrug på gennemsnitligt 30 mio. pund, hvilket svarer til ca. 260 mio. kr. På sidste pladsen finder vi de franske klubber i Ligue 1 med "sølle" 8 mio. pund i gennemsnit svarende til ca. 70 mio. kroner. 
+Nedenstående graf viser tydeligt Premier League klubbernes økonomiske overlegenhed. PL-klubberne brugte i gennemsnit 58 mio. pund svarende til ca. 500 mio. kroner på spillere i sommeren 2016. På andenpladsen kommer Serie A-klubberne med et transferforbrug på gennemsnitligt 30 mio. pund, hvilket svarer til ca. 260 mio. kr. På sidste pladsen finder vi de franske klubber i Ligue 1 med "sølle" 8 mio. pund i gennemsnit svarende til ca. 70 mio. kroner. 
 
 ```{r, echo=FALSE}
 
@@ -156,8 +156,8 @@ total.league
 
 ## Topklubberne køber sig til fremtidig succes
 
-Nedenstående graf, hvor topklubberne bruger langt flere penge på nye fodboldsspillere end de øvrige kluber. Topklubberne brugte i gennemsnit 14 mio. pund per spiller i sommeren 2016, hvilket svarer til ca. 120 mio. kr. Til sammenligning brugte oprykkerne kun 3 mio. pund pr. spiller, hvilket svarer til ca. 26 mio. kr.  
-Note: Topklubber betyder, at klubben endte blandt de fem bedste i ligaen året før. Mellemklub angiver, at klubben endte blandt de efterfølgende 10 klubber. Bundklub de resterende klubber i ligaen fratrukket nedrykkere. Oprykker antyder, at klubben lige er rykket op i den pågældende liga.  
+Nedenstående graf viser, at topklubberne bruger langt flere penge på nye fodboldsspillere end de øvrige kluber. Topklubberne brugte i gennemsnit 14 mio. pund per spiller i sommeren 2016, hvilket svarer til ca. 120 mio. kr. Til sammenligning brugte oprykkerne kun 3 mio. pund per spiller, hvilket svarer til ca. 26 mio. kr.  
+Note: Topklubber betyder, at klubben endte blandt de fem bedste i ligaen året før. Mellemklub angiver, at klubben endte på mellem 6. og 16. pladsen i ligaen året før. De resterende klubber i ligaen fratrukket nedrykkere betegnes bundklubber. Oprykker kategoriserer klubber, der lige er rykket op i den pågældende liga.  
 
 ```{r, echo=FALSE}
 
@@ -169,7 +169,7 @@ p.club
   
 ## Klubbernes transferforbrug vist på et europakort
 
-Nedenstående visualisering viser klubbernes samlede forbrug på spillere i sommeren 2016 vist på et Europakort. Grafen viser, at særligt de engelske klubber har et stort transferbudget. Vi ser også klubber med et stort transferforbrug i de øvrige 4 ligaer, men her er det primært gældende for den pågældende ligas største klubber. Grafen er interaktiv, således at du kan zoome ind på de enkelte klubber og se det specifikke og samlede transferbeløb for den pågældende klub. 
+Nedenstående visualisering viser klubbernes samlede forbrug på spillere i sommeren 2016 vist på et europakort. Grafen viser, at særligt de engelske klubber har et stort transferbudget. Vi ser også klubber med et stort transferforbrug i de øvrige 4 ligaer, men her er det primært den pågældende ligas største klubber. Grafen er interaktiv, således at du kan zoome ind på de enkelte klubber og se det samlede transferbeløb for den pågældende klub. 
 
 ```{r, echo=FALSE}
 
@@ -182,7 +182,7 @@ p2
 
 ## Usædvanligt høje priser for Pogba og Higuain
 
-Nedenstående visualisering viser alle handlinger transfervinduet sommer 2016 i de fem store europæiske ligaer. Grafen viser, at Paul Pogba og Gonzalo Higuain blev handlet for udsædvanligt høje priser hhv. 89.25 mio. £ og 76.5 mio. £. Grafen viser desuden, at fodboldspillere har det højeste prisskilt, når de er omkring 25 år.  Grafen er interaktiv, hvilket gør, at du kan køre musen over hvert specifik handel og få information omkring spillerens navn, alder, transferpris og købende klub.   
+Grafen nedenfor viser, at Paul Pogba og Gonzalo Higuain blev handlet for udsædvanligt høje priser hhv. 89.25 mio. £ og 76.5 mio. £ (svarende til hhv. 770 og 660 mio. kr.). Grafen viser desuden, at fodboldspillere har det højeste prisskilt, hvis de er omkring 25 år.  Grafen er interaktiv, hvilket gør, at du kan køre musen over hver specifik handel og få information omkring spillerens navn, alder, transferpris og den købende klub.   
 
 ```{r pressure, echo=FALSE}
 f <- list(
