@@ -1,0 +1,78 @@
+---
+title: "Transfervinduet sommer 2016"
+author: "Bjørn August Skeel-Gjørling & Guillaume Slizewicz"
+date: "27 sep 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+##LIBRARIES
+library(plotly)
+#install.packages("extrafont")
+#install.packages("Cairo")
+library(extrafont)
+library("ggmap")# getting maps and coordinates from google
+library(maptools)# getting maps and coordinates from google
+library(maps)# getting maps and coordinates from google
+library("ggplot2")# plotting the data
+library(dplyr)#tidying dataset
+library(rworldmap)
+library(stringr)#dealing with strings and replacing strings in observations
+library(RCurl)
+
+
+#creating dataset
+df.viz<- read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Latest%20transferdata/transferdata16.final.csv", encoding = "UTF8", header = TRUE)
+
+####remove player with transfer fee= 0 et contract time left=0
+df.viz<- filter(df.viz,transfer.fee>0)
+```
+
+## Introduktion
+Dette dokument skal fungere som præsentationskatalog over en række forskellige datadrevede visualiseringer af sommerens transferhandler. Data bygger på alle køb af spillere i de fem største europæiske ligaer (Premier League, La Liga, 1. Bundesliga, Serie A og Ligue 1) i det seneste transfervindue (sommer 2016). Data er hentet fra Transfermarkt.co.uk. Nedenstående data og visualisering må kun anvendes efter aftale med Bjørn August Skeel-Gjørling (basg@outlook.com) og Guillaume Slizewicz (guillaume.slizewicz@gmail.com).  
+
+
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Usædvanligt høje priser for Pogba og Higuain
+
+Nedenstående visualisering viser alle handlinger transfervinduet sommer 2016 i de fem store europæiske ligaer. Grafen viser at Paul Pogba og Gonzalo Higuain blev handlet for udsædvanligt høje priser hhv. 89.25 mio. £ og 76.5 mio. £. Grafen viser desuden, at fodboldspillere har det højeste prisskilt når de er omkring 25 år.  Grafen er interaktiv, hvilket gør at du kan køre musen over hver specifik handel og få information omkring spillerens navn, alder, transferpris og købende klub. køber for den specikke  
+
+```{r pressure, echo=FALSE}
+f <- list(
+  family = "Goudy Old Style, serif",
+  size = 16,
+  color = "#525252"
+)
+x <- list(
+  title = "Age",
+  titlefont = f
+)
+y <- list(
+  title ="Transfer fee in M£", 
+  titlefont = f
+)
+
+m = list(
+  l = 50,
+  r = 50,
+  b = 100,
+  t = 100,
+  pad = 4
+)
+
+p <- df.viz %>% 
+  plot_ly(x = transferage, y = transfer.fee, mode = "markers",color = league , marker = list(size = 15), opacity=0.6,
+          hoverinfo = "text",
+          text = paste("", name, "<br>", round(df.viz$transferage, digits = 1), "years old","<br>", df.viz$transfer.fee, "M£", "<br>", df.viz$club.to)) %>% 
+  layout(title ="Transfer price per age", xaxis = x, yaxis = y, font = f, margin=m)
+p
+```
+
+
