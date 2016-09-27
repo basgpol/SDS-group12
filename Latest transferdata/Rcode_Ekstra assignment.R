@@ -772,7 +772,7 @@ test16_sample = transfer.data[predicting.var]
 test16_sample$positions = factor(test16_sample$positions)
 
 ##================ 4.1 Model 1: Simple average from training sample  ================
-get.rmse(test16_sample$transfer.fee, estimate_M1) # calculating RMSE from estimate on test sample 
+result_m1_16 = get.rmse(test16_sample$transfer.fee, estimate_M1) # calculating RMSE from estimate on test sample 
 ## RMSE = 10.5
 
 
@@ -804,7 +804,7 @@ Model_2 = lm(transfer.fee ~ ., data = (train_sample)) # generating linear model 
 summary(Model_2)
 estimate_M2 = predict(Model_2, test16_sample, na.rm=TRUE) # calculating estimate from model 2
 estimate_M2 = na.omit(estimate_M2) #udelader enkelt NA-observation
-get.rmse(test16_sample$transfer.fee[1:315], estimate_M2) # calculating RMSE from estimate on test sample 
+result_m2_16 = get.rmse(test16_sample$transfer.fee[1:315], estimate_M2) # calculating RMSE from estimate on test sample 
 ## RMSE = 7,9
 
 ##================ 4.5 Lasso model  ================
@@ -849,7 +849,7 @@ coef(Model_3, s = best.lambda)
 
 ## RMSE for best model
 Estimate_M3=predict(Model_3, RegressorMatrix_test, s=best.lambda)
-get.rmse(test16_sample$transfer.fee[1:315], Estimate_M3)
+result_m3_16 = get.rmse(test16_sample$transfer.fee[1:315], Estimate_M3)
 ## RMSE = 7.9
 
 ##================ 4.6 Decision tree  ================
@@ -876,7 +876,7 @@ prune.Model_4=prune.tree(Model_4,best = best.size)
 plot(prune.Model_4);text(prune.Model_4)
 ## Calculating estimates with pruned model
 pruned.estimate=predict(prune.Model_4,test16_sample)
-get.rmse(pruned.estimate,test16_sample$transfer.fee)
+result_m4_16 = get.rmse(pruned.estimate,test16_sample$transfer.fee)
 ## Lower RMSE with pruned model: 9.1
 
 
@@ -889,11 +889,34 @@ print(Model_5)
 
 estimate_M5 = predict(Model_5, test16_sample) # calculating estimate from model 5
 estimate_M5 = na.omit(estimate_M5) #udelader enkelt NA-observation
-get.rmse(test16_sample$transfer.fee[1:315], estimate_M5) # calculating the RMSE on test sample = 8.1
+result_m5_16 = get.rmse(test16_sample$transfer.fee[1:315], estimate_M5) # calculating the RMSE on test sample = 8.1
 
 var.list = importance(Model_5, type = 1) #calculate the variables influence
 varImpPlot(Model_5) # plots the variables influence
 var.list
+
+##================ 4.8 Normalizing RMSE  ================
+## Finding max and min values for transfer fee 
+max16 = max(test16_sample$transfer.fee)
+min16 = min(test16_sample$transfer.fee)
+
+max15 = max(test_sample_old$transfer.fee)
+min15 = min(test_sample_old$transfer.fee)
+
+## finding normalised RMSE for new data
+nrmse_m1 = result_m1_16/(max16-min16)
+nrmse_m2 = result_m2_16/(max16-min16)
+nrmse_m3 = result_m3_16/(max16-min16)
+nrmse_m4 = result_m4_16/(max16-min16)
+nrmse_m5 = result_m5_16/(max16-min16)
+
+## finding normalised RMSE for previous data
+nrmse_m1_15 = 9.06/(max15-min15)
+nrmse_m2_15 = 6.34/(max15-min15)
+nrmse_m3_15 = 6.34/(max15-min15)
+nrmse_m4_15 = 6.60/(max15-min15)
+nrmse_m5_15 = 6.26/(max15-min15)
+
 
 ####### KAN SLETTES HERFRA
 # ##================ Merging new and former data sets=======
