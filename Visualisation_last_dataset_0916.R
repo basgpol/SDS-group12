@@ -82,15 +82,15 @@ df.spending.club$team <- as.character(df.spending.club$team)
 
 ###ADD COUNTRIES TO TEAM NAMES (in order to find them on gmap)
 
-df.spending.club$team <- with(df.spending.club, ifelse(league=="Bundesliga", paste(team,"GERMANY", sep = " "),
-                                                       ifelse(league=="Ligue 1", paste(team,"FRANCE", sep = " "),
-                                                              ifelse(league=="Serie A", paste(team,"ITALY", sep = " "),
+df.spending.club$team <- with(df.spending.club, ifelse(league=="Bundesliga", paste(team,"Germany", sep = " "),
+                                                       ifelse(league=="Ligue 1", paste(team,"France", sep = " "),
+                                                              ifelse(league=="Serie A", paste(team,"Italy", sep = " "),
                                                                      ifelse(league=="Premier league", paste(team,"UK", sep = " "),
-                                                                            ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
+                                                                            ifelse(league=="La Liga", paste(team,"Spain", sep = " "),""))))))
 
 
 #geocode team
-geocodes <- geocode(as.character(df.spending.club$team))
+# geocodes <- geocode(as.character(df.spending.club$team))
 #write.csv(geocodes,"geocodes.csv")
 #read_csv("geocodes.csv")
 
@@ -104,8 +104,10 @@ df.spending.club[35,5] = 51.558816
 df.spending.club[35,6] = 7.063850
 df.spending.club[55,c(5,6)]= c(43.683284, 7.197926)
 df.spending.club[19,c(5,6)]= c(42.230694, -8.720006)
+df.spending.club[84,c(5,6)]= c(28.100462, -15.456771)
 df.spending.club$lat = str_replace(df.spending.club$lat,"40.37573","40.38000")
 df.spending.club$lat = as.numeric(df.spending.club$lat)
+
 write.csv(df.spending.club,"df_spending_club_with_geo.csv")
 
 #GETTING DATA
@@ -130,7 +132,7 @@ map.clubs
 ####with plotly
 m <- list(
   colorbar = list(title = "Total transfer spending"),
-  size = 10, opacity = 0.8, symbol = 'circle'
+  size = log(df.spending.club$transfer.fee.total)*6 , opacity = 0.8, symbol = 'circle'
 )
 
 # geo styling
@@ -146,13 +148,26 @@ g <- list(
 )
 g
 
-plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
+p<- plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total, size = transfer.fee.total,opacity=0.7,
         #text = team,
         hoverinfo = "text" ,
-        text=paste("Team = ", df.spending.club$team,"\n", "Total transfer = ", df.spending.club$transfer.fee.total),
+        text=paste("", df.spending.club$team, "<br>", df.spending.club$transfer.fee.total,"M£"),
         type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers',
         marker = m) %>%
   layout(title = 'Football teams in Europe and transfer spending', geo = g)
+p
+
+p2<- plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total, marker=list(size =18), opacity=0.5,
+            #text = team,
+            hoverinfo = "text" ,
+            text=paste("", df.spending.club$team, "<br>", df.spending.club$transfer.fee.total,"M£"),
+            type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers',
+            marker = m) %>%
+  layout(title = 'Football teams in Europe and transfer spending', geo = g)
+p2
+Sys.setenv("plotly_username"="Guillaume_slize")
+Sys.setenv("plotly_api_key"="ini5kjkwyl")
+plotly_POST(p, sharing = 'private', filename = "r-docs/magic")
 
 #================ 3.2 CLUB MAP WITH TRANSFER PATHS ================
 
@@ -295,31 +310,68 @@ full.map
 
 #================ 3.3 TRANSFER FEE BY AGE SCATTER PLOT ================
 
-p.age = ggplot(df.viz, aes(x = transferage , y = transfer.fee))
-p.age<-p.age + geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste("Name:",name)))+ #to use for ggplot
-  geom_smooth(aes(colour = transferage, fill = transferage))+
-  ggtitle("Age repartition of transfers in European leagues")+
-  labs(y="Transfer price\nin M£",x="Age") +
-  theme(axis.ticks.y= element_line(color=NA),
-        axis.ticks.x=element_line(colour="#CACACA", size=0.2),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank(),
-        axis.title.y =element_text(angle = 0,
-                                   colour="#525252",
-                                   vjust = 1,
-                                   hjust = 0 ),
-        axis.title.x =element_text(angle = 0,
-                                   colour="#525252",
-                                   vjust = -1,
-                                   hjust = 1 ),
-        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
-        axis.title.y=element_blank(),
-        text=element_text(family="LM Roman 10"))
-p.age
+# p.age = ggplot(df.viz, aes(x = transferage , y = transfer.fee))
+# p.age<-p.age + geom_point(stat = "identity",alpha=0.4,aes(text = paste("",name)))+ #to use for ggplot
+#   geom_smooth(aes(colour = transferage, fill = transferage))+
+#   ggtitle("Age repartition of transfers in European leagues")+
+#   labs(y="Transfer price\nin M£",x="Age") +
+#   theme(axis.ticks.y= element_line(color=NA),
+#         axis.ticks.x=element_line(colour="#CACACA", size=0.2),
+#         panel.grid.major.x = element_blank(),
+#         panel.grid.minor = element_blank(),
+#         panel.background = element_blank(),
+#         axis.title.y =element_text(angle = 0,
+#                                    colour="#525252",
+#                                    vjust = 1,
+#                                    hjust = 0 ),
+#         axis.title.x =element_text(angle = 0,
+#                                    colour="#525252",
+#                                    vjust = -1,
+#                                    hjust = 1 ),
+#         panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
+#         axis.title.y=element_blank(),
+#         text=element_text(family="Goudy Old Style"))
+# p.age
 
-plotly.p.age<-ggplotly(p.age)
-plotly.p.age
+# #plotly.p.age<-ggplotly(p.age)
+# plotly.p.age<-ggplotly(
+#   p.age, x = ~transferage, y = ~transfer.fee.total,
+#   hoverinfo = "text",
+#   text = paste("", name, "<br> Age=", transferage,"<br> Transfer price=", transfer.fee.total),
+#   text = ~paste("", name),
+#   color = ~df.viz$league
+# )
+# plotly.p.age
+
+f <- list(
+  family = "Goudy Old Style, serif",
+  size = 16,
+  color = "#525252"
+)
+x <- list(
+  title = "Age",
+  titlefont = f
+)
+y <- list(
+  title ="Transfer fee in M£", 
+  titlefont = f
+)
+
+m = list(
+  l = 50,
+  r = 50,
+  b = 100,
+  t = 100,
+  pad = 4
+)
+
+p <- df.viz %>% 
+  plot_ly(x = transferage, y = transfer.fee, mode = "markers",color = league , marker = list(size = 15), opacity=0.6,
+          hoverinfo = "text",
+          text = paste("", name, "<br>", round(df.viz$transferage, digits = 1), "years old","<br>", df.viz$transfer.fee, "M£", "<br>", df.viz$club.to)) %>% 
+  layout(title ="Transfer price per age", xaxis = x, yaxis = y, font = f, margin=m)
+p
+
 
 #================ 3.4 TRANSFER FEE BY TIME LEFT ON CONTRACT SCATTER PLOT ================
 
@@ -388,6 +440,8 @@ total.league<-total.league + geom_bar(stat="identity",alpha=1)+
 
 total.league
 
+total.league2<-plot_ly(total.league)
+total.league2
 #================ 3.6 AVERAGE SPENDING PER PLAYER PER LEAGUE  ================
 
 
