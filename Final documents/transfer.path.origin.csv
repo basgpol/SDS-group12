@@ -1,0 +1,1127 @@
+"","X","team","name","transfer.date","club.from","transfer.fee","positions","nationality","birth_place","appearances","total.goals","total.assists","substitutions_in","substitutions_out","yellowcards","secondyellow","redcards","penaltygoals","minutes.pr.goal","total.minutes.played","contract.left.month","birth.date","transferage","searchresults","league","Status","lon","lat"
+"1",1," Cologne FC RheinEnergieStadion Germany","Marco Höger","2016/7/1","FC Schalke 04",1.11,"
+                                Midfield                            ","Germany","Köln",6,0,0,3,3,2,0,0,0,NA,219,11.958932238193,"1989/9/16",26.7898699520876,3740,"Bundesliga","Middle Club",NA,NA
+"2",2," Cologne FC RheinEnergieStadion Germany","Artjoms Rudnevs","2016/7/1","Hamburger SV",0,"
+                                Attacker                            ","Latvia","Daugavpils",16,5,2,5,5,1,0,0,0,210,1050,NA,"1988/1/13",28.4654346338125,2330,"Bundesliga","Middle Club",16.3378572,57.6027778
+"3",3," Cologne FC RheinEnergieStadion Germany","Konstantin Rausch","2016/7/1","SV Darmstadt 98",0,"
+                                Midfield                            ","Germany","Kozhevnikovo, Tomsk ...",33,3,6,5,5,7,0,0,0,744,2231,NA,"1990/3/15",26.2970568104038,18900,"Bundesliga","Middle Club",8.927711,50.108607
+"4",4," Cologne FC RheinEnergieStadion Germany","Sehrou Guirassy","2016/7/20","LOSC Lille",3.23,"
+                                Attacker                            ","France","Arles",25,9,2,6,6,3,0,0,0,193,1738,35.3182751540041,"1996/3/12",20.3559206023272,5280,"Bundesliga","Middle Club",3.057256,50.62925
+"5",5,"FSV Mainz  Germany","Levin Öztunali","2016/8/25","Bay. Leverkusen",4.25,"
+                                Midfield                            ","Germany","Hamburg",29,1,5,10,10,2,0,0,0,1665,1665,22.1437371663244,"1996/3/15",20.4462696783025,2160,"Bundesliga","Middle Club",6.9946126,51.0157534
+"6",6,"FSV Mainz  Germany","Jean-Philippe Gbamin","2016/7/13","Lens",4.25,"
+                                Midfield                            ","France","San-Pédro",26,1,1,1,1,3,0,0,0,2236,2236,35.5482546201232,"1995/9/25",20.7994524298426,494,"Bundesliga","Middle Club",2.83183,50.42893
+"7",7,"FSV Mainz  Germany","Christian Clemens","2016/7/1","FC Schalke 04",1.7,"
+                                Attacker                            ","Germany","Köln",29,6,5,8,8,1,0,0,0,300,1799,11.958932238193,"1991/8/4",24.9089664613279,4460,"Bundesliga","Middle Club",NA,NA
+"8",8,"FSV Mainz  Germany","Jhon Córdoba","2016/7/1","Granada CF",5.53,"
+                                Attacker                            ","Colombia","Istmina",22,5,2,8,8,2,0,0,0,278,1388,35.9425051334702,"1993/5/11",23.1403148528405,5760,"Bundesliga","Middle Club",-3.0106774,36.7460566
+"9",9,"FSV Mainz  Germany","José Rodríguez","2016/7/1","Galatasaray",1.82,"
+                                Midfield                            ","Spain","Villajoyosa",23,0,2,9,9,4,0,0,0,NA,1283,35.9425051334702,"1994/12/16",21.5414099931554,193000,"Bundesliga","Middle Club",29.3190451,40.8236671
+"10",10,"FSV Mainz  Germany","Gerrit Holtmann","2016/7/1","E. Braunschweig",2.55,"
+                                Attacker                            ","Germany","Bremen",34,7,5,10,10,2,0,0,0,307,2147,35.9425051334702,"1995/3/25",21.2703627652293,924,"Bundesliga","Middle Club",10.5267696,52.2688736
+"11",11,"AC Milan Italy","José Sosa","2016/8/17","Besiktas",6.38,"
+                                Midfield                            ","Argentina","Carcarañá",41,9,14,1,1,4,0,0,0,361,3247,22.4065708418891,"1985/6/19",31.1622176591376,23200,"Serie A","Middle Club",29.0285355,41.068616
+"12",12,"AC Milan Italy","Gianluca Lapadula","2016/7/1","Pescara",7.65,"
+                                Attacker                            ","Italy","Torino",46,30,12,0,0,10,0,0,0,135,4042,35.9425051334702,"1990/2/7",26.3956194387406,5790,"Serie A","Middle Club",14.2160898,42.4617902
+"13",13,"AC Milan Italy","Gustavo Gómez","2016/8/5","CA Lanús",7.23,"
+                                Defender                            ","Paraguay","Misiones",20,1,2,0,0,5,0,0,0,1759,1759,34.7926078028747,"1993/6/6",23.1649555099247,2760,"Serie A","Middle Club",-58.3840143,-34.6493828
+"14",14,"AC Milan Italy","Leonel Vangioni","2016/7/1","River Plate",0,"
+                                Defender                            ","Argentina","Villa Constitución",19,0,1,1,1,4,0,1,0,NA,1509,NA,"1987/5/5",29.1581108829569,1820,"Serie A","Middle Club",-56.741207,-35.1944557
+"15",15,"Alavés Spain","Christian Santos","2016/7/12","NEC Nijmegen",0,"
+                                Attacker                            ","Venezuela","Puerto Ordaz",33,18,2,1,1,8,0,0,5,162,2917,NA,"1988/3/24",28.3011635865845,1540,"La Liga","Promoted",NA,NA
+"16",16,"Alavés Spain","Nenad Krsticic","2016/7/25","Sampdoria",0,"
+                                Midfield                            ","Serbia","Belgrad",12,0,1,4,4,6,0,0,0,NA,678,11.170431211499,"1990/7/3",26.0616016427105,1170,"La Liga","Promoted",-100.7169119,20.0188739
+"17",17,"Alavés Spain","Ibai Gómez","2016/7/30","Athletic Bilbao",0,"
+                                Attacker                            ","Spain","Bilbao",9,0,1,5,5,3,0,0,0,NA,339,11.006160164271,"1989/11/11",26.715947980835,5290,"La Liga","Promoted",-2.7530628,43.298455
+"18",18,"Alavés Spain","Edgar Méndez","2016/7/16","Granada CF",0,"
+                                Attacker                            ","Spain","Arafo",18,1,0,9,9,5,0,0,0,948,948,35.4496919917864,"1991/4/30",25.2128678986995,10900,"La Liga","Promoted",-3.0106774,36.7460566
+"19",19,"Alavés Spain","Zouhair Feddal","2016/7/16","Levante UD",0,"
+                                Defender                            ","Morocco","Tétouan",29,1,1,0,0,9,1,0,0,2610,2610,23.4579055441478,"1989/1/1",27.5373032169747,2510,"La Liga","Promoted",-0.3887798,39.4961244
+"20",20,"Alavés Spain","Daniel Torres","2016/7/19","Indep. Medellín",2.7,"
+                                Midfield                            ","Colombia","Caquezá",5,1,0,0,0,1,0,0,0,450,450,NA,"1989/11/15",26.6748802190281,3710,"La Liga","Promoted",-75.6251732,6.2487306
+"21",21,"Alavés Spain","Aleksandar Katai","2016/8/31","Red Star",1.7,"
+                                Attacker                            ","Serbia","Vrbas",36,23,10,1,1,9,0,0,0,127,2926,9.95482546201232,"1991/2/6",25.5660506502396,4420,"La Liga","Promoted",-107.2650225,32.7997962
+"22",22,"Alavés Spain","Alexis","2016/7/29","Besiktas",0.34,"
+                                Defender                            ","Spain","Málaga",28,2,0,1,1,10,0,0,0,1232,2464,23.0308008213552,"1985/8/4",30.984257357974,658000,"La Liga","Promoted",29.0285355,41.068616
+"23",23,"Arsenal UK","Rob Holding","2016/7/22","Bolton",2.55,"
+                                Defender                            ","England","Tameside",30,1,1,0,0,3,0,1,0,2598,2598,NA,"1995/9/20",20.8377823408624,26500,"Premier league","Top Club",-2.4282192,53.5768647
+"24",24,"Arsenal UK","Granit Xhaka","2016/7/1","Bor. M'gladbach",38.25,"
+                                Midfield                            ","Switzerland","Basel",36,3,2,0,0,7,2,1,1,1028,3085,35.9425051334702,"1992/9/27",23.7590691307324,97800,"Premier league","Top Club",NA,NA
+"25",25,"Arsenal UK","Shkodran Mustafi","2016/8/30","Valencia CF",34.85,"
+                                Defender                            ","Germany","Bad Hersfeld",44,2,2,0,0,19,0,1,0,1948,3896,33.9712525667351,"1992/4/17",24.3696098562628,253000,"Premier league","Top Club",-0.5104759,39.0643597
+"26",26,"Arsenal UK","Lucas Pérez","2016/8/30","Dep. La Coruña",17,"
+                                Attacker                            ","Spain","A Coruña",39,19,11,2,2,6,0,0,1,176,3341,NA,"1988/9/10",27.9698836413415,77500,"Premier league","Top Club",-8.4329001,43.3588448
+"27",27,"Arsenal UK","Takuma Asano","2016/7/18","Sanf. Hiroshima",3.4,"
+                                Attacker                            ","Japan","Komono, Mie",23,9,5,10,10,1,0,0,1,153,1373,NA,"1994/11/10",21.6865160848734,14700,"Premier league","Top Club",-101.6370568,21.1273026
+"28",28,"AS Nancy France","Alou Diarra","2016/9/1","Charlton",0,"
+                                Midfield                            ","France","Villepinte",33,0,0,1,1,10,0,1,0,NA,2734,9.92197125256673,"1981/7/15",35.1321013004791,53100,"Ligue 1","Promoted",-71.970074,42.13565
+"29",29,"AS Nancy France","Anthony Koura","2016/7/5","Olympique Nîmes",0,"
+                                Attacker                            ","France","Le Mans",29,9,0,7,7,1,0,0,0,215,1934,NA,"1993/5/6",23.1649555099247,884,"Ligue 1","Promoted",4.360054,43.836699
+"30",30,"AS Nancy France","Issiar Dia","2016/8/31","Al-Kharitiyat",0,"
+                                Attacker                            ","Senegal","Sèvres",13,0,0,6,6,0,0,0,0,NA,535,NA,"1987/6/8",29.2320328542094,2630,"Ligue 1","Promoted",51.4211111,25.3963889
+"31",31,"AS Roma Italy","Abdullahi Nura","2016/7/1","Spezia Calcio",2.13,"
+                                Defender                            ","Nigeria","Kaduna",18,3,3,1,1,2,0,0,0,479,1436,NA,"1997/8/17",18.8720054757016,1600,"Serie A","Top Club",9.7994789,44.0727813
+"32",32,"AS Roma Italy","Moustapha Seck","2016/7/1","Lazio",0,"
+                                Defender                            ","Senegal","Dakar",2,0,0,0,0,0,0,0,0,NA,180,NA,"1996/2/23",20.35318275154,844,"Serie A","Top Club",12.989615,41.6552418
+"33",33,"AS Roma Italy","Diego Perotti","2016/7/1","Genoa",7.65,"
+                                Attacker                            ","Argentina","Moreno",34,4,9,4,4,3,0,2,1,635,2539,23.9507186858316,"1988/7/26",27.9315537303217,37700,"Serie A","Top Club",8.946256,44.4056499
+"34",34,"AS Roma Italy","Ervin Zukanovic","2016/7/1","Sampdoria",2.38,"
+                                Defender                            ","Bosnia-Herzegovina","Sarajevo",29,3,1,5,5,8,1,1,0,729,2188,35.9425051334702,"1987/2/11",29.3853524982888,2000,"Serie A","Top Club",-100.7169119,20.0188739
+"35",35,"AS Roma Italy","Mohamed Salah","2016/7/1","Chelsea",12.75,"
+                                Attacker                            ","Egypt","Basyoun, El Gharbia",42,15,9,3,3,1,1,0,0,227,3402,35.9425051334702,"1992/6/15",24.0438056125941,60900,"Serie A","Top Club",-71.0328284,42.3917638
+"36",36,"AS Roma Italy","Stephan El Shaarawy","2016/7/1","AC Milan",11.05,"
+                                Attacker                            ","Italy","Savona",42,11,3,14,14,2,0,0,0,222,2447,23.9507186858316,"1992/10/27",23.6769336071184,43200,"Serie A","Top Club",6.2230139,50.7654394
+"37",37,"AS Roma Italy","Antonio Rüdiger","2016/7/1","VfB Stuttgart",7.65,"
+                                Defender                            ","Germany","Berlin",37,2,0,1,1,5,0,0,0,1647,3294,11.958932238193,"1993/3/3",23.3292265571526,12800,"Serie A","Top Club",NA,NA
+"38",38,"AS Roma Italy","Norbert Gyömber","2016/7/1","Catania",1.28,"
+                                Defender                            ","Slovakia","Revuca",7,0,0,6,6,2,0,0,0,NA,183,11.958932238193,"1992/7/3",23.9945242984257,2520,"Serie A","Top Club",15.0830304,37.5078772
+"39",39,"AS Roma Italy","Umar Sadiq","2016/7/1","Spezia Calcio",2.13,"
+                                Attacker                            ","Nigeria","Kaduna",25,21,8,4,4,3,0,1,0,82,1728,NA,"1997/2/2",19.4086242299795,7470,"Serie A","Top Club",9.7994789,44.0727813
+"40",40,"AS Roma Italy","Gerson","2016/7/1","Fluminense",14.11,"
+                                Midfield                            ","Brazil","Rio de Janeiro",2,0,0,2,2,0,0,0,0,NA,72,41.9876796714579,"1997/5/20",19.1156741957563,32000,"Serie A","Top Club",-42.0911635,-22.8292768
+"41",41,"AS Roma Italy","Edin Dzeko","2016/7/1","Manchester City",9.35,"
+                                Attacker                            ","Bosnia-Herzegovina","Sarajevo",39,10,6,12,12,4,0,1,2,256,2555,23.9507186858316,"1986/3/17",30.2915811088296,90400,"Serie A","Top Club",-71.4547891,42.9956397
+"42",42,"Atalanta Italy","Abdoulay Konko","2016/8/19","Lazio",0,"
+                                Defender                            ","France","Marseille",29,0,2,1,1,5,0,0,0,NA,2435,NA,"1984/3/9",32.4462696783025,6180,"Serie A","Middle Club",12.989615,41.6552418
+"43",43,"Atalanta Italy","Bryan Cabezas","2016/8/8","Independiente",1.36,"
+                                Attacker                            ","Ecuador","Quevedo",33,4,3,1,1,6,0,0,0,619,2476,NA,"1997/3/20",19.3867214236824,1790,"Serie A","Middle Club",-109.6332428,26.9164761
+"44",44,"Atalanta Italy","Alberto Paloschi","2016/7/1","Swansea",5.1,"
+                                Attacker                            ","Italy","Chiari",32,10,1,5,5,3,0,0,1,246,2461,35.9425051334702,"1990/1/4",26.4887063655031,12700,"Serie A","Middle Club",-3.943646,51.62144
+"45",45,"Atlético Madrid Spain","Diogo Jota","2016/7/6","Paços Ferreira",6.12,"
+                                Attacker                            ","Portugal","Massarelos",35,14,10,1,1,7,0,1,0,216,3028,47.8028747433265,"1996/12/4",19.5865845311431,4820,"La Liga","Top Club",-8.2211022,42.1299821
+"46",46,"Atlético Madrid Spain","Nico Gaitán","2016/7/1","Benfica",21.25,"
+                                Attacker                            ","Argentina","San Martín",37,11,20,1,1,4,1,0,0,280,3085,35.9425051334702,"1988/2/23",28.35318275154,9100,"La Liga","Top Club",-43.2397455,-22.8926246
+"47",47,"Atlético Madrid Spain","Sime Vrsaljko","2016/7/5","Sassuolo",13.6,"
+                                Defender                            ","Croatia","Rijeka",36,0,4,0,0,8,1,0,0,NA,3151,35.8110882956879,"1992/1/10",24.4845995893224,9020,"La Liga","Top Club",10.7847741,44.54433
+"48",48,"Atlético Madrid Spain","Fernando Torres","2016/7/4","AC Milan",0,"
+                                Attacker                            ","Spain","Fuenlabrada (Madrid)",44,12,5,19,19,6,1,0,0,211,2530,NA,"1984/3/20",32.290212183436,428000,"La Liga","Top Club",6.2230139,50.7654394
+"49",49,"Atlético Madrid Spain","Kévin Gameiro","2016/7/30","Sevilla FC",27.2,"
+                                Attacker                            ","France","Senlis",52,29,7,14,14,5,0,0,7,123,3571,NA,"1987/5/9",29.2265571526352,453000,"La Liga","Top Club",-109.9259886,27.4907255
+"50",50,"Bay Leverkusen Germany","Jonas Meffert","2016/7/1","Karlsruher SC",0.51,"
+                                Midfield                            ","Germany","Köln",25,1,4,2,2,3,0,0,0,2019,2019,11.958932238193,"1994/9/4",21.82340862423,302,"Bundesliga","Top Club",8.4145779,49.0168232
+"51",51,"Bay Leverkusen Germany","Kevin Volland","2016/7/1","TSG Hoffenheim",17,"
+                                Attacker                            ","Germany","Marktoberdorf",34,8,10,2,2,9,0,0,2,353,2821,35.9425051334702,"1992/7/30",23.9206023271732,13300,"Bundesliga","Top Club",NA,NA
+"52",52,"Bay Leverkusen Germany","Julian Baumgartlinger","2016/7/1","1.FSV Mainz 05",3.4,"
+                                Midfield                            ","Austria","Salzburg",33,2,1,1,1,7,0,0,0,1449,2897,35.9425051334702,"1988/1/2",28.4955509924709,3140,"Bundesliga","Top Club",NA,NA
+"53",53,"Bay Leverkusen Germany","Danny da Costa","2016/7/1","FC Ingolstadt",0.425,"
+                                Defender                            ","Germany","Neuss",23,0,4,3,3,4,0,0,0,NA,1792,11.958932238193,"1993/7/13",22.9678302532512,3070,"Bundesliga","Top Club",11.4257541,48.7665351
+"54",54,"Bay Leverkusen Germany","Sam Schreck","2016/7/1","St. Pauli U17",0,"
+                                Midfield                            ",NA,NA,23,9,6,0,0,5,0,0,1,199,1789,NA,"1999/1/29",17.4209445585216,457,"Bundesliga","Top Club",9.4541656,52.9609358
+"55",55,"Bay Leverkusen Germany","Aleksandar Dragovic","2016/8/23","Dynamo Kyiv",15.3,"
+                                Defender                            ","Austria","Wien",30,1,1,0,0,4,1,0,0,2649,2649,22.2094455852156,"1991/3/6",25.4674880219028,9460,"Bundesliga","Top Club",30.564428,50.32
+"56",56,"Bayern Munich  Germany","Renato Sanches","2016/7/1","Benfica",29.75,"
+                                Midfield                            ","Portugal","Lissabon",47,6,1,4,4,12,1,0,2,621,3728,59.958932238193,"1997/8/18",18.8692676249144,116000,"Bundesliga","Top Club",-43.2397455,-22.8926246
+"57",57,"Bayern Munich  Germany","Mats Hummels","2016/7/1","Bor. Dortmund",29.75,"
+                                Defender                            ","Germany","Bergisch Gladbach",50,3,4,1,1,5,0,0,0,1403,4210,11.958932238193,"1988/12/16",27.5400410677618,157000,"Bundesliga","Top Club",7.3714033,51.4918469
+"58",58,"Bologna Italy","Blerim Dzemaili","2016/8/17","Galatasaray",1.11,"
+                                Midfield                            ","Switzerland","Tetovo",27,3,2,5,5,6,1,0,0,595,1786,10.4147843942505,"1986/4/12",30.3490759753593,11700,"Serie A","Middle Club",29.3190451,40.8236671
+"59",59,"Bologna Italy","Deian Boldor","2016/7/1","Virtus Lanciano",0.425,"
+                                Defender                            ","Romania","Timisoara",5,0,0,1,1,2,0,0,0,NA,393,23.9507186858316,"1995/2/3",21.4072553045859,153,"Serie A","Middle Club",NA,NA
+"60",60,"Bologna Italy","Lorenzo Crisetig","2016/8/30","Inter",2.3,"
+                                Midfield                            ","Italy","Cividale del Friuli",6,0,0,1,1,1,0,0,0,NA,443,33.9712525667351,"1993/1/20",23.6084873374401,1800,"Serie A","Middle Club",-89.6412899,20.9544631
+"61",61,"Bologna Italy","Andrea Vassallo","2016/7/7","Milan U19",0,"
+                                    30.06.2018                                ","Italy","Milano",13,9,0,2,2,0,0,0,0,107,967,NA,"1997/9/30",18.7679671457906,288,"Serie A","Middle Club",-98.527249,29.6133955
+"62",62,"Bologna Italy","Vasilis Torosidis","2016/8/31","AS Roma",0,"
+                                Defender                            ","Greece","Xanthi",15,1,0,8,8,3,0,0,0,727,727,9.95482546201232,"1985/6/10",31.2251882272416,9440,"Serie A","Middle Club",-58.5214952,-34.6284822
+"63",63,"Bologna Italy","Ladislav Krejcí","2016/7/7","Sparta Praha",3.23,"
+                                Attacker                            ","Czech Republic","Prag",42,8,9,4,4,4,1,0,0,446,3565,11.7618069815195,"1992/7/5",24.0054757015743,4650,"Serie A","Middle Club",NA,NA
+"64",64,"Bologna Italy","Lorenzo Musto","2016/7/4","Torres",0,"
+                                Attacker                            ","Italy","Roma",36,19,3,6,6,8,0,0,4,130,2471,NA,"1996/1/22",20.4490075290897,52,"Serie A","Middle Club",-49.723909,-29.3344108
+"65",65,"Bologna Italy","Godfred Donsah","2016/7/1","Cagliari Calcio",4.25,"
+                                Midfield                            ","Ghana","Accra",20,2,2,2,2,2,0,0,0,679,1357,47.9671457905544,"1996/6/7",20.0657084188912,9590,"Serie A","Middle Club",9.0901144,39.2132322
+"66",66,"Bologna Italy","Federico Di Francesco","2016/7/1","Virtus Lanciano",1.19,"
+                                Attacker                            ","Italy","Pisa",38,8,5,4,4,4,1,1,0,360,2877,23.9507186858316,"1994/6/14",22.0479123887748,589,"Serie A","Middle Club",NA,NA
+"67",67,"Bologna Italy","Luca Rizzo","2016/7/1","Sampdoria",5.1,"
+                                Midfield                            ","Italy","Genova",25,0,3,6,6,2,1,0,0,NA,1560,35.9425051334702,"1992/4/24",24.186173853525,436,"Serie A","Middle Club",-100.7169119,20.0188739
+"68",68,"Bologna Italy","Ádám Nagy","2016/7/14","Ferencváros",1.28,"
+                                Midfield                            ","Hungary","Budapest",29,0,2,3,3,3,0,0,0,NA,2334,23.523613963039,"1995/6/17",21.0759753593429,1910,"Serie A","Middle Club",19.0819885,47.4683766
+"69",69,"Bologna Italy","Simone Verdi","2016/7/11","AC Milan",1.28,"
+                                Midfield                            ","Italy","Broni",21,4,1,12,12,3,0,0,2,219,874,NA,"1992/7/12",23.9972621492129,11700,"Serie A","Middle Club",6.2230139,50.7654394
+"70",70,"Bor Dortmund Germany","Marc Bartra","2016/7/1","FC Barcelona",6.8,"
+                                Defender                            ","Spain","Sant Jaume dels ...",24,2,1,14,14,1,0,0,0,598,1196,23.9507186858316,"1991/1/15",25.4592744695414,164000,"Bundesliga","Top Club",2.1178229,41.3806915
+"71",71,"Bor Dortmund Germany","Mario Götze","2016/7/21","Bayern Munich ",18.7,"
+                                Midfield                            ","Germany","Memmingen",21,6,4,7,7,1,0,0,0,203,1219,11.3018480492813,"1992/6/3",24.1314168377823,238000,"Bundesliga","Top Club",11.5819806,48.1351253
+"72",72,"Bor Dortmund Germany","André Schürrle","2016/7/22","VfL Wolfsburg",25.5,"
+                                Attacker                            ","Germany","Ludwigshafen",41,12,7,14,14,6,0,0,0,213,2558,35.2525667351129,"1990/11/6",25.7084188911704,36900,"Bundesliga","Top Club",10.7979685,52.4257066
+"73",73,"Bor Dortmund Germany","Emre Mor","2016/7/1","Nordsjaelland",5.95,"
+                                Attacker                            ","Turkey","Brönshöj",13,2,2,1,1,1,1,0,0,487,973,35.9425051334702,"1997/7/24",18.9377138945927,22700,"Bundesliga","Top Club",NA,NA
+"74",74,"Bor Dortmund Germany","Raphaël Guerreiro","2016/7/1","FC Lorient",10.2,"
+                                Defender                            ","Portugal","Le Blanc-Mesnil",41,3,2,9,9,3,0,0,0,1015,3044,11.958932238193,"1993/12/22",22.5242984257358,18700,"Bundesliga","Top Club",NA,NA
+"75",75,"Bor Dortmund Germany","Ousmane Dembélé","2016/7/1","Rennes",12.75,"
+                                Attacker                            ","France","Vernon",29,12,5,6,6,1,0,0,1,176,2111,23.9507186858316,"1997/5/15",19.129363449692,26400,"Bundesliga","Top Club",-1.6777926,48.117266
+"76",76,"Bor Dortmund Germany","Sebastian Rode","2016/7/1","Bayern Munich ",10.2,"
+                                Midfield                            ","Germany","Seeheim-Jugenheim",17,1,2,13,13,1,0,0,0,493,493,23.9507186858316,"1990/10/11",25.7221081451061,45800,"Bundesliga","Top Club",11.5819806,48.1351253
+"77",77,"Bor Dortmund Germany","Mikel Merino","2016/7/1","CA Osasuna",3.19,"
+                                Midfield                            ","Spain","Pamplona",38,7,1,2,2,13,0,1,0,465,3257,23.9507186858316,"1996/6/22",20.0246406570842,9390,"Bundesliga","Top Club",-86.8746827,21.1251616
+"78",78,"Bor M'gladbach Germany","Mamadou Doucouré","2016/7/1","Paris SG B",0,"
+                                Defender                            ","France","Dakar",7,1,1,0,0,2,0,0,0,630,630,NA,"1998/5/21",18.113620807666,13600,"Bundesliga","Top Club",2.3350238,48.8533958
+"79",79,"Bor M'gladbach Germany","Tobias Strobl","2016/7/1","TSG Hoffenheim",0,"
+                                Midfield                            ","Germany","München",27,0,1,4,4,5,0,0,0,NA,2166,NA,"1990/5/12",26.1382614647502,3060,"Bundesliga","Top Club",NA,NA
+"80",80,"Bor M'gladbach Germany","Lászlo Bénes","2016/7/1","MSK Zilina",1.7,"
+                                Midfield                            ","Slovakia","Dunajská Streda",34,2,5,7,7,6,0,0,0,1208,2416,29.9958932238193,"1997/9/9",18.8090349075975,1310,"Bundesliga","Top Club",NA,NA
+"81",81,"Bor M'gladbach Germany","Jannik Vestergaard","2016/7/1","Werder Bremen",10.63,"
+                                Defender                            ","Denmark","Kopenhagen",38,3,0,0,0,2,0,0,0,1150,3450,23.9507186858316,"1992/8/3",23.9096509240246,5510,"Bundesliga","Top Club",8.809285,53.0696545
+"82",82,"Bor M'gladbach Germany","Christoph Kramer","2016/7/1","Bay. Leverkusen",12.75,"
+                                Midfield                            ","Germany","Solingen",44,0,3,2,2,5,0,0,0,NA,3599,35.9425051334702,"1991/2/19",25.3634496919918,18000,"Bundesliga","Top Club",6.9946126,51.0157534
+"83",83,"Bournemouth UK","Lys Mousset","2016/7/1","AC Le Havre",5.53,"
+                                Attacker                            ","France","Montivilliers",29,14,3,12,12,0,0,0,3,114,1601,35.9425051334702,"1996/2/8",20.394250513347,1700,"Premier league","Bottom Club",NA,NA
+"84",84,"Bournemouth UK","Emerson Hyndman","2016/7/1","Fulham FC",0,"
+                                Midfield                            ","United States","Dallas, Texas",26,1,0,8,8,1,0,0,0,1610,1610,NA,"1996/4/7",20.2327173169062,3260,"Premier league","Bottom Club",-0.2470864,51.3912756
+"85",85,"Bournemouth UK","Jordon Ibe","2016/7/14","Liverpool",15.3,"
+                                Attacker                            ","England","London",43,4,4,21,21,1,0,0,0,561,2245,47.5400410677618,"1995/12/8",20.5995893223819,34900,"Premier league","Bottom Club",-2.9915726,53.4083714
+"86",86,"Bournemouth UK","Marc Wilson","2016/8/15","Stoke City",1.96,"
+                                Defender                            ","Ireland","Aghagallon",11,1,0,4,4,2,0,0,0,899,899,22.4722792607803,"1987/8/17",28.9965776865161,34200,"Premier league","Bottom Club",-2.179404,53.002668
+"87",87,"Bournemouth UK","Lewis Cook","2016/7/8","Leeds",5.95,"
+                                Midfield                            ","England","York",47,2,3,3,3,10,0,1,0,1939,3877,11.7289527720739,"1997/2/3",19.4250513347023,7370,"Premier league","Bottom Club",-1.5490774,53.8007554
+"88",88,"Bournemouth UK","Brad Smith","2016/7/27","Liverpool",3.06,"
+                                Defender                            ","Australia","Penrith",14,1,2,2,2,1,1,0,0,1066,1066,35.088295687885,"1994/4/9",22.299794661191,28000,"Premier league","Bottom Club",-2.9915726,53.4083714
+"89",89,"Burnley Football Club UK","Jeff Hendrick","2016/8/31","Derby",10.03,"
+                                Midfield                            ","Ireland","Dublin",36,2,3,12,12,6,0,0,0,1154,2307,21.9466119096509,"1992/1/31",24.5831622176591,29800,"Premier league","Promoted",-1.4746186,52.9225301
+"90",90,"Burnley Football Club UK","Steven Defour","2016/8/16","RSC Anderlecht",7.31,"
+                                Midfield                            ","Belgium","Mechelen",42,3,10,1,1,15,0,0,1,1205,3616,34.4312114989733,"1988/4/15",28.3367556468172,23900,"Premier league","Promoted",NA,NA
+"91",91,"Burnley Football Club UK","Johann Berg Gudmundsson","2016/7/19","Charlton",2.55,"
+                                Attacker                            ","Iceland","Reykjavík",42,6,13,3,3,5,0,0,0,569,3416,35.3511293634497,"1990/10/27",25.7275838466804,7380,"Premier league","Promoted",-71.970074,42.13565
+"92",92,"CA Osasuna Spain","Fran Mérida","2016/7/21","SD Huesca",0.425,"
+                                Midfield                            ","Spain","Barcelona",39,9,4,4,4,15,1,0,3,339,3047,35.2854209445585,"1990/3/4",26.3819301848049,4250,"La Liga","Promoted",NA,NA
+"93",93,"CA Osasuna Spain","Javi Álamo","2016/8/31","Girona FC",0,"
+                                Attacker                            ","Spain","Gáldar",29,0,6,11,11,8,1,0,0,NA,1721,9.95482546201232,"1988/8/18",28.0355920602327,616,"La Liga","Promoted",NA,NA
+"94",94,"CA Osasuna Spain","Juan Rafael Fuentes","2016/8/11","Espanyol",0,"
+                                Defender                            ","Spain","Córdoba",10,0,0,1,1,2,0,0,0,NA,758,10.611909650924,"1990/1/5",26.5982203969884,122,"La Liga","Promoted",2.641692,39.6293694
+"95",95,"CA Osasuna Spain","Fausto","2016/7/1","AD Alcorcón",0,"
+                                Midfield                            ","Spain","Talavera la Real",24,0,1,6,6,14,0,0,0,NA,1499,NA,"1990/1/8",26.4777549623546,38700,"La Liga","Promoted",NA,NA
+"96",96,"CA Osasuna Spain","Sergio León","2016/8/24","Elche CF",1.45,"
+                                Attacker                            ","Spain","La Palma del Río",42,23,3,1,1,5,0,0,5,154,3544,10.1848049281314,"1989/1/6",27.6303901437372,6190,"La Liga","Promoted",-0.6690555,38.2645632
+"97",97,"CA Osasuna Spain","Goran Causic","2016/7/13","Eskisehirspor",0,"
+                                Midfield                            ","Serbia","Belgrad",26,0,1,4,4,4,1,0,0,NA,1918,11.564681724846,"1992/5/5",24.1889117043121,1040,"La Liga","Promoted",NA,NA
+"98",98,"CA Osasuna Spain","Jaime Romero","2016/7/4","Udinese Calcio",0,"
+                                Attacker                            ","Spain","Albacete",9,1,1,4,4,0,0,0,1,497,497,NA,"1990/7/31",25.927446954141,2520,"La Liga","Promoted",13.2056341,46.0408771
+"99",99,"CA Osasuna Spain","Carlos Clerc","2016/8/19","Espanyol",0,"
+                                Defender                            ","Spain","Badalona",45,1,3,4,4,2,0,0,0,3572,3572,NA,"1992/2/21",24.4928131416838,741,"La Liga","Promoted",2.641692,39.6293694
+"100",100,"Cagliari Calcio Italy","Artur Ionita","2016/7/1","Hellas Verona",3.83,"
+                                Midfield                            ","Moldova","Chisinau",32,4,2,4,4,2,0,0,0,618,2470,11.958932238193,"1990/8/17",25.8726899383984,6510,"Serie A","Promoted",NA,NA
+"101",101,"Cagliari Calcio Italy","Bruno Alves","2016/7/1","Fenerbahce",0,"
+                                Defender                            ","Portugal","Póvoa de Varzim",41,1,1,0,0,12,0,0,0,3690,3690,NA,"1981/11/27",34.5927446954141,25900,"Serie A","Promoted",24.4447587,36.7252955
+"102",102,"Cagliari Calcio Italy","Marko Pajac","2016/7/2","NK Celje ",0.34,"
+                                Midfield                            ","Croatia","Zagreb",15,3,0,3,3,6,1,0,0,353,1059,NA,"1993/5/11",23.1430527036277,161,"Serie A","Promoted",NA,NA
+"103",103,"Cagliari Calcio Italy","Simone Padoin","2016/7/4","Juventus",0.51,"
+                                Midfield                            ","Italy","Gemona del Friuli",14,1,0,8,8,2,0,0,0,589,589,NA,"1984/3/18",32.2956878850103,5690,"Serie A","Promoted",-100.363932,25.733185
+"104",104,"Cagliari Calcio Italy","Marco Borriello","2016/8/3","Atalanta",0,"
+                                Attacker                            ","Italy","Napoli",29,9,4,11,11,4,0,1,2,192,1727,NA,"1982/6/18",34.1273100616016,21700,"Serie A","Promoted",-49.7793508,-27.4224135
+"105",105,"Cagliari Calcio Italy","Mauricio Isla","2016/8/10","Juventus",3.4,"
+                                Midfield                            ","Chile","Buin",39,2,2,4,4,2,0,0,0,1563,3125,10.6447638603696,"1988/6/12",28.1615331964408,19800,"Serie A","Promoted",-100.363932,25.733185
+"106",106,"CD Leganés Spain","Mamadou Koné","2016/8/25","Racing",1.02,"
+                                Attacker                            ","Cote d'Ivoire","Bingerville",35,6,3,11,11,2,0,0,0,351,2104,NA,"1991/12/25",24.6680355920602,51000,"La Liga","Promoted",-56.4613157,-34.7445711
+"107",107,"CD Leganés Spain","Gabriel","2016/7/1","Juventus",0.85,"
+                                Midfield                            ","Brazil","Resende",40,8,4,2,2,5,0,0,0,400,3199,NA,"1993/9/18",22.7843942505133,494000,"La Liga","Promoted",-100.363932,25.733185
+"108",108,"CD Leganés Spain","Gabriel","2016/7/1","Juventus",0.85,"
+                                Attacker                            ","Brazil","São Bernardo do ...",10,5,0,0,0,3,0,0,0,173,867,NA,"1996/8/30",19.8357289527721,494000,"La Liga","Promoted",-100.363932,25.733185
+"109",109,"CD Leganés Spain","Diego Rico","2016/8/17","Real Zaragoza",0.85,"
+                                Defender                            ","Spain","Burgos",40,1,3,1,1,10,0,0,0,3524,3524,NA,"1993/2/23",23.4798083504449,649,"La Liga","Promoted",-98.2108921,19.0800113
+"110",110,"CD Leganés Spain","Carl Medjani","2016/7/25","Levante UD",0,"
+                                Defender                            ","Algeria","Lyon",26,2,0,4,4,3,0,0,0,1049,2097,NA,"1985/5/15",31.1950718685832,37000,"La Liga","Promoted",-0.3887798,39.4961244
+"111",111,"CD Leganés Spain","Unai Bustinza","2016/7/18","Athletic Bilbao",0,"
+                                Defender                            ","Spain","Bilbao",17,0,0,5,5,4,1,0,0,NA,1133,23.3921971252567,"1992/2/2",24.4572210814511,1380,"La Liga","Promoted",-2.7530628,43.298455
+"112",112,"CD Leganés Spain","Miguel Ángel Guerrero","2016/7/1","Sporting Gijón",0,"
+                                Attacker                            ","Spain","Toledo",25,2,1,11,11,2,0,0,0,608,1215,NA,"1990/7/12",25.9712525667351,425,"La Liga","Promoted",-5.6386025,43.5347956
+"113",113,"Sede Real Club Celta de Vigo Spain","Pione Sisto","2016/7/31","FC Midtjylland",5.1,"
+                                Attacker                            ","Denmark","Kampala",42,8,4,11,11,2,0,0,0,329,2629,NA,"1995/2/4",21.4866529774127,4340,"La Liga","Middle Club",NA,NA
+"114",114,"Sede Real Club Celta de Vigo Spain","José Naranjo","2016/7/1","Gimnàstic",0.85,"
+                                Attacker                            ","Spain","Rociana del Condado",38,16,5,8,8,9,0,0,1,170,2713,23.9507186858316,"1994/7/28",21.927446954141,1130,"La Liga","Middle Club",-0.5222117,38.404561
+"115",115,"Sede Real Club Celta de Vigo Spain","Facundo Roncaglia","2016/7/12","Fiorentina",0,"
+                                Defender                            ","Argentina","Chajarí",33,1,0,4,4,10,0,1,0,2642,2642,NA,"1987/2/10",29.4182067077344,5330,"La Liga","Middle Club",10.5355882,42.9636137
+"116",116,"Chelsea UK","Michy Batshuayi","2016/7/3","Marseille",33.15,"
+                                Attacker                            ","Belgium","Brussel",50,23,10,5,5,8,0,0,2,180,4150,47.9014373716632,"1993/10/2",22.7515400410678,69700,"Premier league","Middle Club",5.36978,43.296482
+"117",117,"Chelsea UK","Marcos Alonso","2016/8/31","Fiorentina",19.55,"
+                                Defender                            ","Spain","Madrid",39,3,4,7,7,9,0,0,0,980,2939,57.9548254620123,"1990/12/28",25.6755646817248,26800,"Premier league","Middle Club",10.5355882,42.9636137
+"118",118,"Chelsea UK","N'Golo Kanté","2016/7/16","Leicester",30.43,"
+                                Midfield                            ","France","Paris",40,1,4,5,5,3,0,0,0,3193,3193,35.4496919917864,"1991/3/29",25.3004791238877,195000,"Premier league","Middle Club",-1.1397592,52.6368778
+"119",119,"Chelsea UK","David Luiz","2016/8/31","Paris SG",32.73,"
+                                Defender                            ","Brazil","Diadema",40,3,3,5,5,12,0,0,0,1069,3208,21.9466119096509,"1987/4/22",29.3607118412047,556000,"Premier league","Middle Club",2.3350238,48.8533958
+"120",120,"Chievo Verona Italy","Fabrizio Danese","2016/7/25","Nuorese",0,"
+                                Defender                            ","Italy","Roma",30,1,1,0,0,3,2,0,0,2481,2481,NA,"1995/6/26",21.0814510609172,22,"Serie A","Middle Club",9.3264377,40.3202421
+"121",121,"Chievo Verona Italy","Samuel Bastien","2016/8/25","RSC Anderlecht",1.11,"
+                                Midfield                            ","Belgium","Meux",31,2,1,10,10,1,0,0,0,918,1836,NA,"1996/9/26",19.9123887748118,1570,"Serie A","Middle Club",NA,NA
+"122",122,"Chievo Verona Italy","Fabio Daprelà","2016/7/1","Carpi",0,"
+                                Defender                            ","Switzerland","Zürich",9,0,0,7,7,3,0,0,0,NA,314,NA,"1991/2/19",25.3634496919918,1500,"Serie A","Middle Club",10.8796629,44.7838779
+"123",123,"Chievo Verona Italy","Federico Alonzi","2016/7/6","Nuorese",0,"
+                                Attacker                            ","Italy","Frascati",28,10,1,3,3,5,0,1,0,200,2003,NA,"1996/10/15",19.7234770704997,20,"Serie A","Middle Club",9.3264377,40.3202421
+"124",124,"Chievo Verona Italy","Paul-José Mpoku","2016/7/1","Standard Liège",3.4,"
+                                Attacker                            ","Congo DR","Kinshasa",20,0,0,14,14,3,0,0,0,NA,752,NA,"1992/4/19",24.1998631074606,1210,"Serie A","Middle Club",5.545162,50.610246
+"125",125,"Chievo Verona Italy","Antonio Cinelli","2016/7/19","Cagliari Calcio",0,"
+                                Midfield                            ","Italy","Roma",34,2,5,3,3,5,0,0,0,1385,2769,NA,"1989/12/8",26.611909650924,465,"Serie A","Middle Club",9.0901144,39.2132322
+"126",126,"Chievo Verona Italy","Luca Baldassin","2016/7/1","Padova",0,"
+                                Midfield                            ","Italy","Vittorio Veneto",27,1,1,5,5,10,1,0,0,1979,1979,NA,"1994/5/28",22.0944558521561,1160,"Serie A","Middle Club",11.8767611,45.4064349
+"127",127,"Chievo Verona Italy","Sergio Cruz","2016/7/1","Lumezzane",0,"
+                                Attacker                            ","Brazil","Rio de Janeiro",28,5,0,5,5,5,0,1,0,401,2007,NA,"1988/8/22",27.8576317590691,8930,"Serie A","Middle Club",10.2654082,45.6474809
+"128",128,"Crotone Italy","Ante Budimir","2016/7/1","FC St. Pauli",0.85,"
+                                Attacker                            ","Croatia","Zenica",41,17,4,5,5,6,0,0,3,195,3322,23.9507186858316,"1991/7/22",24.9445585215606,3660,"Serie A","Promoted",NA,NA
+"129",129,"Crotone Italy","Noë Dussenne","2016/8/25","Mouscron",0.808,"
+                                Defender                            ",NA,NA,37,6,0,1,1,9,1,0,0,540,3238,NA,"1992/4/7",24.3832991101985,407,"Serie A","Promoted",3.2192907,50.7459126
+"130",130,"Crotone Italy","Marcus Rohdén","2016/8/3","IF Elfsborg",0.425,"
+                                Midfield                            ",NA,NA,25,6,4,0,0,5,1,0,2,373,2237,NA,"1991/5/11",25.2320328542094,846,"Serie A","Promoted",NA,NA
+"131",131,"Crotone Italy","Andrea Mazzarani","2016/7/8","Modena FC",0,"
+                                Midfield                            ","Italy","Roma",16,4,1,6,6,0,0,0,2,202,807,NA,"1989/11/6",26.6694045174538,5460,"Serie A","Promoted",12.4034644,44.0961527
+"132",132,"Crotone Italy","Leonardo Capezzi","2016/7/1","Fiorentina",0.68,"
+                                Midfield                            ","Italy","Figline Valdarno",32,2,2,5,5,8,1,0,0,1238,2476,NA,"1995/3/29",21.2594113620808,18300,"Serie A","Promoted",10.5355882,42.9636137
+"133",133,"Crotone Italy","Simy","2016/7/21","Portimonense",0.723,"
+                                Attacker                            ","Nigeria","Lagos",46,20,5,9,9,3,0,1,0,170,3397,23.2936344969199,"1992/5/7",24.2053388090349,5280,"Serie A","Promoted",NA,NA
+"134",134,"Crotone Italy","Andrea Nalini","2016/7/1","Salernitana",0,"
+                                Attacker                            ","Italy","Isola della Scala",11,0,1,3,3,1,0,0,0,NA,677,NA,"1990/6/20",26.031485284052,535,"Serie A","Promoted",13.512867,38.0829586
+"135",135,"Crotone Italy","Nicolò Fazzi","2016/7/1","Fiorentina",0.043,"
+                                Midfield                            ","Italy","Barga",14,0,0,3,3,5,0,0,0,NA,940,11.958932238193,"1995/3/2",21.3333333333333,174,"Serie A","Promoted",10.5355882,42.9636137
+"136",136,"Crotone Italy","Andrea Scicchitano","2016/8/26","Racing Roma",0,"
+                                Midfield                            ","Italy","Cirò Marina",14,0,0,3,3,2,0,0,0,NA,951,NA,"1992/4/26",24.3340177960301,131,"Serie A","Promoted",-76.2248645,41.9957845
+"137",137,"Crotone Italy","Mario Sampirisi","2016/7/16","Vicenza",0,"
+                                Defender                            ","Italy","Caltagirone",41,0,2,0,0,8,0,2,0,NA,3635,NA,"1992/10/31",23.7070499657769,13900,"Serie A","Promoted",11.5354214,45.5454787
+"138",138,"Crotone Italy","Aleksandar Tonev","2016/7/15","Frosinone",0,"
+                                Attacker                            ","Bulgaria","Elin Pelin",22,0,1,11,11,2,0,0,0,NA,1081,NA,"1990/2/3",26.444900752909,25900,"Serie A","Promoted",13.3426341,41.6396009
+"139",139,"Crotone Italy","Federico Ceccherini","2016/7/6","AS Livorno",0.765,"
+                                Defender                            ","Italy","Livorno",34,2,0,0,0,13,0,0,0,1503,3006,NA,"1992/5/11",24.1533196440794,745,"Serie A","Promoted",10.3105674,43.548473
+"140",140,"Crystal Palace UK","Jonathan Benteke","2016/9/1","Zulte Waregem",0.085,"
+                                Attacker                            ",NA,NA,17,0,1,16,16,0,0,0,0,NA,257,NA,"1995/4/28",21.347022587269,2510,"Premier league","Middle Club",3.4231317,50.8869521
+"141",141,"Crystal Palace UK","James Tomkins","2016/7/5","West Ham",9.95,"
+                                Defender                            ","England","Basildon",34,4,0,2,2,3,0,1,0,662,2648,NA,"1989/3/29",27.2689938398357,18400,"Premier league","Middle Club",-1.1139932,51.2641437
+"142",142,"Crystal Palace UK","Christian Benteke","2016/8/20","Liverpool",26.52,"
+                                Attacker                            ","Belgium","Kinshasa",42,10,6,22,22,3,0,0,1,220,2202,NA,"1990/12/3",25.7138945927447,136000,"Premier league","Middle Club",-2.9915726,53.4083714
+"143",143,"Crystal Palace UK","Andros Townsend","2016/7/1","Newcastle",13.26,"
+                                Attacker                            ","England","Walthamstow",27,7,6,5,5,0,0,0,2,285,1992,NA,"1991/7/16",24.9609856262834,54500,"Premier league","Middle Club",-1.61778,54.978252
+"144",144,"Dep La Coruña Spain","Juanfran","2016/7/1","Watford",0,"
+                                Defender                            ","Spain","Madrid",34,1,2,5,5,4,0,0,0,2591,2591,NA,"1988/9/11",27.8028747433265,39300,"La Liga","Middle Club",-0.39032,51.656489
+"145",145,"Dep La Coruña Spain","Bruno Gama","2016/7/1","Dnipro",0,"
+                                Attacker                            ","Portugal","Vila Verde",35,4,5,19,19,2,0,0,0,449,1795,NA,"1987/11/15",28.6269678302532,4380,"La Liga","Middle Club",35.046183,48.464717
+"146",146,"Dep La Coruña Spain","Juanfran","2016/7/1","Watford",0,"
+                                Attacker                            ","Spain","Villanueva del Río ...",36,15,0,7,7,3,1,1,0,164,2458,NA,"1992/2/13",24.3805612594114,39300,"La Liga","Middle Club",-0.39032,51.656489
+"147",147,"Dep La Coruña Spain","Borja Valle","2016/7/1","Real Oviedo",0,"
+                                Attacker                            ","Spain","Ponferrada",30,6,4,7,7,4,0,0,0,327,1961,NA,"1992/7/9",23.9780971937029,907,"La Liga","Middle Club",-103.4025959,20.7593298
+"148",148,"Dep La Coruña Spain","Raúl Albentosa","2016/7/9","Derby",0.68,"
+                                Defender                            ","Spain","Alzira",31,2,0,2,2,12,0,0,0,1367,2733,NA,"1988/9/7",27.8357289527721,1470,"La Liga","Middle Club",-1.4746186,52.9225301
+"149",149,"Dep La Coruña Spain","Emre Colak","2016/7/1","Galatasaray",0,"
+                                Midfield                            ","Turkey","Istanbul",30,3,3,8,8,2,0,1,1,627,1880,NA,"1991/5/20",25.1170431211499,14900,"La Liga","Middle Club",29.3190451,40.8236671
+"150",150,"Dep La Coruña Spain","Florin Andone","2016/7/22","Córdoba CF",3.4,"
+                                Attacker                            ","Romania","Joldesti",36,21,7,0,0,10,0,0,1,153,3223,NA,"1993/4/11",23.2799452429843,8960,"La Liga","Middle Club",-58.410285,-34.5981075
+"151",151,"Dep La Coruña Spain","Fayçal Fajr","2016/7/1","Elche CF",0,"
+                                Midfield                            ","Morocco","Rouen",41,5,5,9,9,3,0,0,0,592,2962,NA,"1988/8/1",27.9151266255989,3650,"La Liga","Middle Club",-0.6690555,38.2645632
+"152",152,"Dijon France","Ádám Lang","2016/8/31","Videoton FC",0.85,"
+                                Defender                            ","Hungary","Veszprém",24,0,0,1,1,0,1,0,0,NA,2058,21.9466119096509,"1993/1/17",23.6194387405886,1170,"Ligue 1","Promoted",NA,NA
+"153",153,"Dijon France","Arnold Bouka Moutou","2016/7/1","SCO Angers",0.34,"
+                                Defender                            ","Congo","Reims",25,2,0,11,11,4,0,0,0,713,1426,11.958932238193,"1988/11/28",27.5893223819302,451,"Ligue 1","Promoted",NA,NA
+"154",154,"Dijon France","Mehdi Abeid","2016/8/31","Panathinaikos",0.213,"
+                                Midfield                            ","Algeria","Montreuil",34,4,0,8,8,9,0,1,0,561,2243,21.9466119096509,"1992/8/6",24.0684462696783,3970,"Ligue 1","Promoted",NA,NA
+"155",155,"Dijon France","Yunis Abdelhamid","2016/7/1","FC Valenciennes",0,"
+                                Defender                            ","Morocco","Montpellier",37,2,0,0,0,3,2,0,0,1615,3230,NA,"1987/9/28",28.7583846680356,828,"Ligue 1","Promoted",3.518332,50.357113
+"156",156,"Dijon France","Valentin Rosier","2016/7/1","Rodez AF",0,"
+                                Defender                            ",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"1996/8/19",19.8658453114305,1260,"Ligue 1","Promoted",NA,NA
+"157",157,"Dijon France","Vincent Rüfli","2016/8/4","FC Sion",0,"
+                                Defender                            ","Switzerland","Carouge",37,0,4,7,7,9,0,0,0,NA,2856,NA,"1988/1/22",28.5338809034908,516,"Ligue 1","Promoted",-6.5030396,53.3655799
+"158",158,"Dijon France","Guillaume Sarrabayrouse","2016/7/1","US Colomiers",0,"
+                                Midfield                            ",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"1997/6/14",19.047227926078,406,"Ligue 1","Promoted",1.336579,43.612189
+"159",159,"Dijon France","Florent Balmont","2016/7/8","LOSC Lille",0,"
+                                Midfield                            ","France","Sainte-Foy-lès-Lyon",31,0,1,3,3,7,0,0,0,NA,2183,11.7289527720739,"1980/2/2",36.4298425735797,48900,"Ligue 1","Promoted",3.057256,50.62925
+"160",160,"E Frankfurt Germany","Branimir Hrgota","2016/7/1","Bor. M'gladbach",0,"
+                                Attacker                            ","Sweden","Zenica",10,2,0,10,10,0,0,0,0,50,99,NA,"1993/1/12",23.4661190965092,2160,"Bundesliga","Bottom Club",NA,NA
+"161",161,"E Frankfurt Germany","Omar Mascarell","2016/7/6","Real Madrid",0.85,"
+                                Midfield                            ","Spain","Santa Cruz de ...",28,0,1,7,7,6,0,0,0,NA,1882,11.7946611909651,"1993/2/2",23.4223134839151,3320,"Bundesliga","Bottom Club",-99.136043,19.2932645
+"162",162,"E Frankfurt Germany","Taleb Tawatha","2016/7/5","Maccabi Haifa",1.02,"
+                                Defender                            ","Israel","Dschisr az-Zarqa",27,0,3,0,0,3,0,1,0,NA,2289,35.8110882956879,"1992/6/21",24.0383299110199,1360,"Bundesliga","Bottom Club",35.07644,32.82672
+"163",163,"E Frankfurt Germany","Danny Blum","2016/7/1","1.FC Nuremberg",0,"
+                                Attacker                            ","Germany","Frankenthal",34,5,8,19,19,7,0,0,0,301,1506,11.958932238193,"1991/1/7",25.4811772758385,2930,"Bundesliga","Bottom Club",11.3486838,49.5679426
+"164",164,"Espanyol Spain","Álvaro Vázquez","2016/8/31","Getafe CF",1.7,"
+                                Attacker                            ","Spain","Badalona",35,6,4,10,10,6,0,0,1,347,2079,NA,"1991/4/27",25.347022587269,4270,"La Liga","Middle Club",NA,NA
+"165",165,"Espanyol Spain","Javi Fuego","2016/8/13","Valencia CF",0.85,"
+                                Midfield                            ","Spain","Pola de Siero",38,0,1,6,6,13,1,0,0,NA,2872,10.5462012320329,"1984/1/4",32.6078028747433,44400,"La Liga","Middle Club",-0.5104759,39.0643597
+"166",166,"Espanyol Spain","Leo Baptistão","2016/7/9","Atlético Madrid",2.98,"
+                                Attacker                            ","Brazil","Santos",34,6,2,17,17,2,0,0,0,287,1720,23.6878850102669,"1992/8/26",23.8685831622177,3940,"La Liga","Middle Club",-3.7423397,40.3757325
+"167",167,"Espanyol Spain","Martín Demichelis","2016/8/10","Manchester City",0,"
+                                Defender                            ","Argentina","Justiniano Posse",31,1,0,14,14,5,0,0,0,1761,1761,NA,"1980/12/20",35.6386036960986,34900,"La Liga","Middle Club",-71.4547891,42.9956397
+"168",168,"Espanyol Spain","José Manuel Jurado","2016/7/5","Watford",1.02,"
+                                Attacker                            ","Spain","Sanlúcar de ...",31,0,3,1,1,4,0,0,0,NA,2273,NA,"1986/6/29",30.0177960301164,6860,"La Liga","Middle Club",-0.39032,51.656489
+"169",169,"Espanyol Spain","David López","2016/8/26","SSC Napoli",3.4,"
+                                Midfield                            ","Spain","Barcelona",35,1,2,19,19,5,0,0,0,1545,1545,34.1026694045175,"1989/10/9",26.880219028063,13700,"La Liga","Middle Club",NA,NA
+"170",170,"Espanyol Spain","José Antonio Reyes","2016/7/1","Sevilla FC",0,"
+                                Attacker                            ","Spain","Utrera (Sevilla)",34,4,3,11,11,7,0,0,0,475,1898,11.958932238193,"1983/9/1",32.8323066392882,21600,"La Liga","Middle Club",-109.9259886,27.4907255
+"171",171,"Everton UK","Idrissa Gueye","2016/8/2","Aston Villa",7.23,"
+                                Midfield                            ","Senegal","Dakar",38,1,1,1,1,10,0,0,0,3299,3299,34.8911704312115,"1989/9/26",26.8501026694045,59600,"Premier league","Middle Club",-77.7914471,43.0824364
+"172",172,"Everton UK","Yannick Bolasie","2016/8/15","Crystal Palace",24.57,"
+                                Attacker                            ","Congo DR","Lyon",31,6,6,4,4,4,0,0,0,411,2464,34.4640657084189,"1989/5/24",27.2279260780287,61800,"Premier league","Middle Club",-80.0032,40.4398
+"173",173,"Everton UK","Dominic Calvert-Lewin","2016/8/31","Sheffield Utd.",1.53,"
+                                Attacker                            ",NA,NA,35,8,1,21,21,4,0,0,0,198,1586,21.9466119096509,"1997/3/16",19.460643394935,2270,"Premier league","Middle Club",-99.4595271,27.5197721
+"174",174,"Everton UK","Ashley Williams","2016/8/10","Swansea",11.9,"
+                                Defender                            ","Wales","Wolverhampton",36,2,1,0,0,8,0,0,0,1620,3240,22.6365503080082,"1984/8/23",31.9644079397673,53600,"Premier league","Middle Club",-3.943646,51.62144
+"175",175,"Augsburg FC Germany","Alfred Finnbogason","2016/7/1","Real Sociedad",3.4,"
+                                Attacker                            ","Iceland","Reykjavík",27,9,4,9,9,4,0,0,2,186,1674,NA,"1989/2/1",27.4113620807666,12200,"Bundesliga","Middle Club",-101.6462224,21.1502441
+"176",176,"Augsburg FC Germany","Georg Teigl","2016/7/1","RB Leipzig",0,"
+                                Defender                            ","Austria","Wien",15,2,0,4,4,1,0,0,0,525,1049,NA,"1991/2/9",25.3908281998631,1140,"Bundesliga","Middle Club",12.3515611,51.3461081
+"177",177,"Augsburg FC Germany","Marvin Friedrich","2016/7/1","FC Schalke 04",0.85,"
+                                Defender                            ","Germany","Kassel",18,1,0,3,3,1,0,0,0,1363,1363,23.9507186858316,"1995/12/13",20.5503080082136,369,"Bundesliga","Middle Club",NA,NA
+"178",178,"Augsburg FC Germany","Jonathan Schmid","2016/8/26","TSG Hoffenheim",4.42,"
+                                Attacker                            ","France","Straßburg",24,4,0,7,7,1,0,0,0,386,1543,NA,"1990/6/22",26.1793292265572,18800,"Bundesliga","Middle Club",NA,NA
+"179",179,"Augsburg FC Germany","Gojko Kacar","2016/7/19","Hamburger SV",0,"
+                                Midfield                            ","Serbia","Novi Sad",19,1,0,7,7,3,0,0,0,1117,1117,NA,"1987/1/26",29.4784394250513,4980,"Bundesliga","Middle Club",16.3378572,57.6027778
+"180",180,"Augsburg FC Germany","Takashi Usami","2016/7/1","Gamba Osaka",1.28,"
+                                Attacker                            ","Japan","Nagaokakyo, Kyoto",23,6,7,2,2,0,0,0,0,312,1870,NA,"1992/5/6",24.1533196440794,10700,"Bundesliga","Middle Club",NA,NA
+"181",181,"Augsburg FC Germany","Martin Hinteregger","2016/8/31","RB Salzburg",5.95,"
+                                Defender                            ","Austria","Feldkirchen",23,1,2,4,4,3,0,0,1,1858,1858,33.9383983572895,"1992/9/7",23.9808350444901,24000,"Bundesliga","Middle Club",13.000092,47.815426
+"182",182,"FC Barcelona Spain","André Gomes","2016/7/21","Valencia CF",29.75,"
+                                Midfield                            ","Portugal","Vila Nova de Gaia",41,4,7,7,7,14,0,0,0,761,3044,47.3100616016427,"1993/7/30",22.9760438056126,268000,"La Liga","Top Club",-0.5104759,39.0643597
+"183",183,"FC Barcelona Spain","Lucas Digne","2016/7/13","Paris SG",14.03,"
+                                Defender                            ","France","Meaux",42,3,5,2,2,4,0,0,0,1206,3619,23.5564681724846,"1993/7/20",22.9815195071869,124000,"La Liga","Top Club",2.3350238,48.8533958
+"184",184,"FC Barcelona Spain","Denis Suárez","2016/7/4","Villarreal CF",2.76,"
+                                Midfield                            ","Spain","Salceda de Caselas",48,5,13,12,12,4,0,0,0,674,3372,35.8439425051335,"1994/1/6",22.4914442162902,590000,"La Liga","Top Club",-0.1165001,39.9391986
+"185",185,"FC Barcelona Spain","Samuel Umtiti","2016/7/12","Olympique Lyon",21.25,"
+                                Defender                            ","France","Yaoundé",38,1,0,0,0,9,0,0,0,3378,3378,35.5811088295688,"1993/11/14",22.6584531143053,41200,"La Liga","Top Club",-87.7962098,41.7304326
+"186",186,"FC Barcelona Spain","Paco Alcácer","2016/8/30","Valencia CF",25.5,"
+                                Attacker                            ","Spain","Torrent",46,15,8,15,15,3,0,0,2,206,3087,NA,"1993/8/30",23.0006844626968,248000,"La Liga","Top Club",-0.5104759,39.0643597
+"187",187,"FC Empoli Italy","Matheus Pereira","2016/7/1","Corinthians",1.7,"
+                                Midfield                            ","Brazil","São Paulo",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"1998/2/25",18.3463381245722,8410,"Serie A","Middle Club",-121.7174504,40.5618791
+"188",188,"FC Empoli Italy","Alberto Gilardino","2016/7/7","US Palermo",0,"
+                                Attacker                            ","Italy","Biella",34,11,2,8,8,4,0,0,0,218,2396,23.7535934291581,"1982/7/5",34.0068446269678,23700,"Serie A","Middle Club",-121.5380243,39.4354432
+"189",189,"FC Empoli Italy","Manuel Pasqual","2016/7/1","Fiorentina",0,"
+                                Defender                            ","Italy","San Donà di Piave",21,0,2,6,6,5,0,0,0,NA,1265,NA,"1982/3/13",34.3025325119781,2900,"Serie A","Middle Club",10.5355882,42.9636137
+"190",190,"FC Empoli Italy","Marcel Büchel","2016/7/1","Juventus",1.02,"
+                                Midfield                            ","Liechtenstein","Feldkirch",28,2,1,10,10,10,0,0,0,790,1580,NA,"1991/3/18",25.2895277207392,10300,"Serie A","Middle Club",-100.363932,25.733185
+"191",191,"FC Empoli Italy","Frédéric Veseli","2016/8/16","FC Lugano",0,"
+                                Defender                            ","Albania","Renens",38,0,0,1,1,7,0,0,0,NA,3343,NA,"1992/11/20",23.7371663244353,2140,"Serie A","Middle Club",NA,NA
+"192",192,"FC Ingolstadt Germany","Nico Rinderknecht","2016/7/1","Frankfurt U19",0,"
+                                Midfield                            ","Germany","Gießen",25,4,4,1,1,9,0,0,1,520,2078,NA,"1997/10/11",18.7214236824093,204,"Bundesliga","Middle Club",-102.4527227,33.6209429
+"193",193,"FC Ingolstadt Germany","Kerem Bülbül","2016/7/1","Hertha BSC II",0,"
+                                Midfield                            ","Germany","Berlin",6,0,0,3,3,0,0,0,0,NA,266,NA,"1995/1/12",21.4674880219028,185,"Bundesliga","Middle Club",NA,NA
+"194",194,"FC Ingolstadt Germany","Sonny Kittel","2016/7/3","E. Frankfurt",0,"
+                                Midfield                            ","Germany","Gießen",8,0,0,7,7,0,0,0,0,NA,272,NA,"1993/1/6",23.4880219028063,735,"Bundesliga","Middle Club",8.6821267,50.1109221
+"195",195,"FC Ingolstadt Germany","Marcel Tisserand","2016/8/31","Monaco",2.55,"
+                                Defender                            ","Congo DR","Meaux",36,1,0,1,1,5,1,0,0,3144,3144,33.9383983572895,"1993/1/10",23.6386036960986,2690,"Bundesliga","Middle Club",7.4246158,43.7384176
+"196",196,"FC Ingolstadt Germany","Robert Leipertz","2016/7/3","FC Schalke 04",1.28,"
+                                Attacker                            ","Germany","Jülich",38,12,10,4,4,5,0,0,0,246,2953,11.8932238193018,"1993/2/1",23.4168377823409,620,"Bundesliga","Middle Club",NA,NA
+"197",197,"FC Ingolstadt Germany","Hauke Wahl","2016/7/1","SC Paderborn",0,"
+                                Defender                            ","Germany","Hamburg",34,2,0,1,1,0,0,0,0,1495,2990,23.9507186858316,"1994/4/15",22.2121834360027,734,"Bundesliga","Middle Club",-48.6240564,-26.9996295
+"198",198,"FC Ingolstadt Germany","Florent Hadergjonaj","2016/8/8","BSC Young Boys",1.7,"
+                                Defender                            ","Switzerland","Langnau",37,0,4,4,4,14,0,0,0,NA,2996,10.7104722792608,"1994/7/31",22.0232717316906,262,"Bundesliga","Middle Club",NA,NA
+"199",199,"Lorient FC France","Faïz Selemani","2016/7/1","FC Niort",0.765,"
+                                Defender                            ","France","Marseille",33,4,4,0,0,4,0,0,0,717,2866,NA,"1993/11/17",22.6201232032854,222,"Ligue 1","Middle Club",-0.464777,46.323716
+"200",200,"Lorient FC France","Cafú","2016/7/1","Vit. Guimarães",1.7,"
+                                Midfield                            ","Portugal","Guimarães",37,3,2,1,1,6,0,0,0,1060,3180,NA,"1993/2/26",23.3429158110883,7220,"Ligue 1","Middle Club",-35.2946633,-8.1091303
+"201",201,"Lorient FC France","Lindsay Rose","2016/7/1","Olympique Lyon",1.28,"
+                                Defender                            ","France","Rennes",13,0,0,0,0,1,0,0,0,NA,1170,NA,"1992/2/8",24.394250513347,988,"Ligue 1","Middle Club",-87.7962098,41.7304326
+"202",202,"FC Metz France","Yann Jouffre","2016/7/1","FC Lorient",0,"
+                                Attacker                            ","France","Montélimar",30,2,5,7,7,3,0,0,0,991,1981,NA,"1984/7/23",31.9397672826831,1220,"Ligue 1","Promoted",NA,NA
+"203",203,"FC Metz France","Milan Bisevac","2016/8/24","Lazio",0,"
+                                Defender                            ","Serbia","Kosovska Mitrovica",23,1,0,0,0,1,0,0,0,1905,1905,10.1848049281314,"1983/8/31",32.9828884325804,4660,"Ligue 1","Promoted",12.989615,41.6552418
+"204",204,"FC Metz France","Opa Nguette","2016/7/1","FC Valenciennes",0,"
+                                Attacker                            ","France","Mantes-la-Jolie",14,1,1,6,6,2,0,0,0,752,752,NA,"1994/7/8",21.9822039698836,2190,"Ligue 1","Promoted",3.518332,50.357113
+"205",205,"FC Metz France","Franck Signorino","2016/7/1","Reims",0,"
+                                Defender                            ","France","Nogent-sur-Marne",29,0,2,0,0,5,0,0,0,NA,2561,NA,"1981/9/19",34.7816563997262,970,"Ligue 1","Promoted",4.031696,49.258329
+"206",206,"FC Metz France","Benoît Assou-Ekotto","2016/8/16","Saint-Étienne",0,"
+                                Defender                            ","Cameroon","Arras",28,0,0,1,1,2,0,0,0,NA,2394,NA,"1984/3/24",32.3969883641342,160000,"Ligue 1","Promoted",4.3871779,45.439695
+"207",207,"FC Nantes France","Diego Carlos","2016/7/1","Estoril",1.7,"
+                                Defender                            ","Brazil","Barra Bonita (SP)",33,2,0,0,0,7,3,0,0,1462,2924,NA,"1993/3/15",23.296372347707,24200,"Ligue 1","Middle Club",-9.3936558,38.7133152
+"208",208,"FC Nantes France","Mariusz Stepinski","2016/8/29","Ruch Chorzow",1.7,"
+                                Attacker                            ","Poland","Sieradz",36,15,3,4,4,5,0,0,1,186,2788,22.0123203285421,"1995/5/12",21.3004791238877,1280,"Ligue 1","Middle Club",18.943618,50.2836215
+"209",209,"FC Nantes France","Lucas Lima","2016/7/1","Arouca",0.935,"
+                                Defender                            ","Brazil","Estação (RS)",35,4,6,0,0,8,0,0,0,788,3150,NA,"1991/10/10",24.72553045859,163000,"Ligue 1","Middle Club",-8.245099,40.9321489
+"210",210,"FC Nantes France","Nicolaj Thomsen","2016/7/1","Aalborg BK",0.51,"
+                                Attacker                            ","Denmark","Skagen",39,10,11,0,0,0,0,0,1,348,3482,6.01232032854209,"1993/5/8",23.1485284052019,2380,"Ligue 1","Middle Club",NA,NA
+"211",211,"FC Nantes France","Alexander Kacaniklic","2016/7/1","Fulham FC",0,"
+                                Attacker                            ","Sweden","Helsingborg",27,4,0,13,13,1,0,0,0,344,1374,NA,"1991/8/13",24.8843258042437,2180,"Ligue 1","Middle Club",-0.2470864,51.3912756
+"212",212,"Schalke 04 FC   Germany","Benjamin Stambouli","2016/8/26","Paris SG",7.23,"
+                                Midfield                            ","France","Marseille",39,0,0,12,12,4,0,0,0,NA,2314,46.1273100616016,"1990/8/13",26.0369609856263,6920,"Bundesliga","Top Club",2.3350238,48.8533958
+"213",213,"Schalke 04 FC   Germany","Coke","2016/8/3","Sevilla FC",3.4,"
+                                Defender                            ","Spain","Madrid",42,5,3,3,3,10,0,1,0,689,3446,NA,"1987/4/26",29.2731006160164,268000,"Bundesliga","Top Club",-109.9259886,27.4907255
+"214",214,"Schalke 04 FC   Germany","Robert Leipertz","2016/7/1","1.FC Heidenheim",0.255,"
+                                Attacker                            ","Germany","Jülich",38,12,10,4,4,5,0,0,0,246,2953,11.958932238193,"1993/2/1",23.4113620807666,620,"Bundesliga","Top Club",10.1610948,48.6893963
+"215",215,"Schalke 04 FC   Germany","Breel Embolo","2016/7/1","FC Basel",19.13,"
+                                Attacker                            ","Switzerland","Yaoundé",40,13,9,3,3,6,1,0,1,250,3252,35.9425051334702,"1997/2/14",19.3757700205339,15800,"Bundesliga","Top Club",NA,NA
+"216",216,"Schalke 04 FC   Germany","Naldo","2016/7/1","VfL Wolfsburg",0,"
+                                Defender                            ","Brazil","Londrina",40,2,1,0,0,7,0,0,0,1793,3586,NA,"1982/9/10",33.8069815195072,338000,"Bundesliga","Top Club",10.7979685,52.4257066
+"217",217,"Fiorentina Italy","Kevin Diks","2016/7/6","Vitesse",2.38,"
+                                Defender                            ","Netherlands","Apeldoorn",35,2,4,1,1,5,0,0,0,1519,3037,23.7864476386037,"1996/10/6",19.7481177275838,499,"Serie A","Top Club",137.7577072,34.7298543
+"218",218,"Fiorentina Italy","Hrvoje Milic","2016/8/16","Hajduk Split",0.85,"
+                                Defender                            ","Croatia","Osijek",35,1,5,0,0,7,0,0,0,3051,3051,22.4394250513347,"1989/5/10",27.2689938398357,702,"Serie A","Top Club",NA,NA
+"219",219,"Fiorentina Italy","Davide Astori","2016/7/1","Cagliari Calcio",2.98,"
+                                Defender                            ","Italy","San Giovanni Bianco",42,0,0,1,1,6,0,0,0,NA,3689,11.958932238193,"1987/1/7",29.4811772758385,9430,"Serie A","Top Club",9.0901144,39.2132322
+"220",220,"Fiorentina Italy","Ianis Hagi","2016/7/10","FC Viitorul",1.7,"
+                                Attacker                            ","Romania","Istanbul",32,3,2,4,4,5,0,0,0,629,1888,NA,"1998/10/22",17.7166324435318,1580,"Serie A","Top Club",26.7703412,44.6087232
+"221",221,"G Bordeaux France","Jérémy Ménez","2016/8/1","AC Milan",0,"
+                                Attacker                            ","France","Longjumeau",12,4,0,9,9,1,0,0,1,96,383,10.9404517453799,"1987/5/7",29.2375085557837,380000,"Ligue 1","Middle Club",6.2230139,50.7654394
+"222",222,"G Bordeaux France","François Kamano","2016/7/27","SC Bastia",2.13,"
+                                Attacker                            ","Guinea","Conakry",24,4,0,6,6,2,0,2,0,373,1493,NA,"1996/5/1",20.2381930184805,1270,"Ligue 1","Middle Club",-80.8614958,35.0383688
+"223",223,"G Bordeaux France","Jérémy Toulalan","2016/7/1","Monaco",0,"
+                                Midfield                            ","France","Nantes",36,0,2,1,1,8,0,0,0,NA,3099,11.958932238193,"1983/9/10",32.807665982204,128000,"Ligue 1","Middle Club",7.4246158,43.7384176
+"224",224,"G Bordeaux France","Igor Lewczuk","2016/8/31","Legia Warszawa",0.85,"
+                                Defender                            ","Poland","Bialystok",44,2,3,1,1,5,1,0,0,1945,3889,9.95482546201232,"1985/5/30",31.2553045859001,3550,"Ligue 1","Middle Club",21.04523,52.22095
+"225",225,"Genoa Italy","Lucas Orbán","2016/8/31","Valencia CF",0,"
+                                Defender                            ","Argentina","Buenos Aires",15,0,0,1,1,7,0,1,0,NA,1244,33.9383983572895,"1989/2/3",27.5728952772074,2290,"Serie A","Middle Club",-0.5104759,39.0643597
+"226",226,"Genoa Italy","Cristian Ansaldi","2016/7/29","Zenit S-Pb",3.4,"
+                                Defender                            ","Argentina","Rosario",26,0,5,2,2,4,0,0,0,NA,2133,NA,"1986/9/20",29.8562628336756,11700,"Serie A","Middle Club",75.8253215,30.9258866
+"227",227,"Genoa Italy","Santiago Gentiletti","2016/7/18","Lazio",0.425,"
+                                Defender                            ","Argentina","Godeken",27,0,0,4,4,10,0,0,0,NA,2215,NA,"1985/1/9",31.5208761122519,3340,"Serie A","Middle Club",12.989615,41.6552418
+"228",228,"Genoa Italy","Diego Laxalt","2016/7/30","Inter",3.4,"
+                                Midfield                            ","Uruguay","Montevideo",36,3,4,0,0,3,0,0,0,1064,3193,22.9979466119097,"1993/2/7",23.4743326488706,23500,"Serie A","Middle Club",-89.6412899,20.9544631
+"229",229,"Genoa Italy","Giovanni Simeone","2016/8/18","River Plate",2.55,"
+                                Attacker                            ","Argentina","Madrid",16,5,0,2,2,0,0,0,0,256,1281,NA,"1995/7/5",21.1225188227242,5670,"Serie A","Middle Club",-56.741207,-35.1944557
+"230",230,"Genoa Italy","Davide Biraschi","2016/8/31","Avellino",1.36,"
+                                Defender                            ","Italy","Roma",34,0,1,0,0,7,1,0,0,NA,2906,21.9466119096509,"1994/7/2",22.1656399726215,287,"Serie A","Middle Club",14.7906121,40.914388
+"231",231,"Genoa Italy","Miguel Veloso","2016/7/30","Dynamo Kyiv",0,"
+                                Midfield                            ","Portugal","Coimbra",30,3,6,3,3,7,0,0,0,761,2282,NA,"1986/5/11",30.2203969883641,30700,"Serie A","Middle Club",30.564428,50.32
+"232",232,"Genoa Italy","Bartosz Wolski","2016/8/30","Latina U19",0,"
+                                Midfield                            ","Poland","Aleksandrów ...",26,1,7,1,1,3,0,0,0,2195,2195,NA,"1997/5/12",19.3018480492813,119,"Serie A","Middle Club",-117.8194417,33.6817096
+"233",233,"Genoa Italy","Nikola Ninkovic","2016/7/1","Chievo Verona",0.468,"
+                                Midfield                            ","Serbia"," Bogatic",24,3,6,13,13,4,0,0,0,385,1156,NA,"1994/12/19",21.533196440794,3630,"Serie A","Middle Club",10.9466529,45.4575193
+"234",234,"Granada CF Spain","Omer Atzili","2016/8/26","B. Jerusalem",0.638,"
+                                Attacker                            ","Israel","Holon",33,8,4,3,3,7,0,0,2,340,2720,NA,"1993/7/27",23.0828199863107,878,"La Liga","Bottom Club",35.21371,31.768319
+"235",235,"Granada CF Spain","Tito","2016/7/1","Rayo Vallecano",0,"
+                                Defender                            ","Spain","Madrid",32,1,3,2,2,5,1,1,0,2610,2610,NA,"1985/7/11",30.9733059548255,143000,"La Liga","Bottom Club",-70.5831446,-33.5191938
+"236",236,"Granada CF Spain","Matthieu Saunier","2016/8/4","Troyes",0,"
+                                Defender                            ","France","Hyères",30,0,0,0,0,4,0,0,0,NA,2628,NA,"1990/2/7",26.4887063655031,12900,"La Liga","Bottom Club",4.0744009,48.2973451
+"237",237,"Granada CF Spain","José Angulo","2016/8/10","Independiente",3.42,"
+                                Attacker                            ","Ecuador","San Lorenzo",31,10,3,5,5,3,0,0,0,233,2325,NA,"1995/2/3",21.5167693360712,9110,"La Liga","Bottom Club",-109.6332428,26.9164761
+"238",238,"Granada CF Spain","Mehdi Carcela-González","2016/8/31","Benfica",3.4,"
+                                Attacker                            ","Morocco","Liège",29,3,7,18,18,2,0,0,0,437,1311,33.9383983572895,"1989/7/1",27.1676933607118,1760,"La Liga","Bottom Club",-43.2397455,-22.8926246
+"239",239,"Guingamp France","Alexandre Mendy","2016/7/1","OGC Nice",0,"
+                                Attacker                            ","France","Toulon",21,6,0,15,15,0,0,0,0,108,648,NA,"1994/3/20",22.2833675564682,1900,"Ligue 1","Bottom Club",NA,NA
+"240",240,"Hamburger SV Germany","Douglas Santos","2016/8/31","Atlético-MG",6.38,"
+                                Defender                            ","Brazil","João Pessoa",19,0,1,0,0,1,0,0,0,NA,1710,27.9917864476386,"1994/3/22",22.444900752909,4670,"Bundesliga","Middle Club",-43.8915588,-19.8680952
+"241",241,"Hamburger SV Germany","Filip Kostic","2016/7/25","VfB Stuttgart",11.9,"
+                                Attacker                            ","Serbia","Kragujevac",33,5,8,0,0,5,0,0,1,580,2899,35.1540041067762,"1992/11/1",23.7289527720739,5020,"Bundesliga","Middle Club",NA,NA
+"242",242,"Hamburger SV Germany","Bobby Wood","2016/7/1","Union Berlin",2.98,"
+                                Attacker                            ","United States","Honolulu, Hawaii",32,17,3,1,1,5,0,0,2,153,2595,23.9507186858316,"1992/11/15",23.6249144421629,101000,"Bundesliga","Middle Club",-83.816546,39.396189
+"243",243,"Hamburger SV Germany","Luca Waldschmidt","2016/7/1","E. Frankfurt",1.11,"
+                                Attacker                            ","Germany","Siegen",14,1,1,14,14,0,0,0,0,298,298,11.958932238193,"1996/5/19",20.1177275838467,355,"Bundesliga","Middle Club",8.6821267,50.1109221
+"244",244,"Hamburger SV Germany","Arianit Ferati","2016/7/1","VfB Stuttgart",0.723,"
+                                Midfield                            ","Germany","Stuttgart",21,3,3,7,7,3,0,0,0,465,1394,47.9671457905544,"1997/9/7",18.8145106091718,405,"Bundesliga","Middle Club",NA,NA
+"245",245,"Hamburger SV Germany","Alen Halilovic","2016/7/21","FC Barcelona",4.25,"
+                                Midfield                            ","Croatia","Dubrovnik",37,5,5,13,13,6,0,0,1,478,2390,35.2854209445585,"1996/6/18",20.0903490759754,22700,"Bundesliga","Middle Club",2.1178229,41.3806915
+"246",246,"Hertha Berlin Germany","Ondrej Duda","2016/7/20","Legia Warszawa",3.57,"
+                                Midfield                            ","Slovakia","Snina",43,5,9,12,12,11,0,0,1,582,2909,35.3182751540041,"1994/12/5",21.6235455167693,16100,"Bundesliga","Middle Club",21.04523,52.22095
+"247",247,"Hertha Berlin Germany","Alexander Esswein","2016/8/26","FC Augsburg",2.13,"
+                                Attacker                            ","Germany","Worms",38,4,3,10,10,4,0,0,0,595,2381,NA,"1990/3/25",26.4229979466119,5080,"Bundesliga","Middle Club",NA,NA
+"248",248,"Hertha Berlin Germany","Vedad Ibisevic","2016/7/1","VfB Stuttgart",0,"
+                                Attacker                            ","Bosnia-Herzegovina","Vlasenica",30,12,5,1,1,5,0,1,0,207,2487,11.958932238193,"1984/8/6",31.9014373716632,10800,"Bundesliga","Middle Club",NA,NA
+"249",249,"Hull City UK","James Weir","2016/8/31","Man Utd U23",0.17,"
+                                    30.06.2019                                ","England","Preston",20,6,6,1,1,0,0,0,0,275,1650,NA,"1995/8/4",21.0759753593429,5860,"Premier league","Promoted",-118.4120366,33.9597525
+"250",250,"Hull City UK","Ryan Mason","2016/8/30","Spurs",13.09,"
+                                Midfield                            ","England","London",29,2,0,15,15,3,0,0,0,656,1311,NA,"1991/6/13",25.2156057494867,19700,"Premier league","Promoted",-109.30151,35.1709339
+"251",251,"Hull City UK","Markus Henriksen","2017/1/1","AZ Alkmaar",4.51,"
+                                Midfield                            ","Norway","Trondheim",41,19,9,0,0,5,0,0,1,188,3566,5.91375770020534,"1992/7/25",24.4380561259411,3330,"Premier league","Promoted",4.7601215,52.62921
+"252",252,"Hull City UK","Will Keane","2016/8/30","Manchester Utd.",1.02,"
+                                Attacker                            ","England","Manchester",32,12,2,10,10,3,0,0,3,164,1970,NA,"1993/1/11",23.6331279945243,24500,"Premier league","Promoted",-118.3425748,33.9600196
+"253",253,"Inter Milan Italy","Antonio Candreva","2016/8/3","Lazio",18.7,"
+                                Attacker                            ","Italy","Roma",44,12,5,6,6,4,0,0,6,262,3141,34.8583162217659,"1987/2/28",29.429158110883,29600,"Serie A","Top Club",12.989615,41.6552418
+"254",254,"Inter Milan Italy","Gianluca Caprari","2016/7/8","Pescara",3.83,"
+                                Attacker                            ","Italy","Roma",43,13,13,5,5,7,1,0,1,246,3197,NA,"1993/7/30",22.9404517453799,1820,"Serie A","Top Club",14.2160898,42.4617902
+"255",255,"Inter Milan Italy","Marcelo Brozovic","2016/7/1","Dinamo Zagreb",4.25,"
+                                Midfield                            ","Croatia","Zagreb",35,7,5,8,8,8,0,0,1,375,2623,35.4496919917864,"1992/11/16",23.6221765913758,60600,"Serie A","Top Club",16.1163926,45.7062291
+"256",256,"Inter Milan Italy","Gabriel","2016/8/30","Santos FC",25.08,"
+                                Midfield                            ","Brazil","Resende",40,8,4,2,2,5,0,0,0,400,3199,61.0102669404517,"1993/9/18",22.9486652977413,479000,"Serie A","Top Club",121.0129285,14.4528924
+"257",257,"Inter Milan Italy","Stevan Jovetic","2017/1/2","Manchester City",12.33,"
+                                Attacker                            ","Montenegro","Titograd",28,7,4,8,8,4,0,0,1,245,1715,17.8726899383984,"1989/11/2",27.1676933607118,41600,"Serie A","Top Club",-71.4547891,42.9956397
+"258",258,"Inter Milan Italy","João Mário","2016/8/28","Sporting CP",34,"
+                                Midfield                            ","Portugal","Porto",45,7,12,5,5,3,0,1,0,510,3568,46.0616016427105,"1993/1/19",23.605749486653,126000,"Serie A","Top Club",-76.9714224,40.2313116
+"259",259,"Inter Milan Italy","Caner Erkin","2016/7/1","Fenerbahce",0,"
+                                Defender                            ","Turkey","Balikesir",27,1,8,6,6,9,0,0,0,2038,2038,NA,"1988/10/4",27.7399041752224,10400,"Serie A","Top Club",24.4447587,36.7252955
+"260",260,"Inter Milan Italy","Éver Banega","2016/7/6","Sevilla FC",0,"
+                                Midfield                            ","Argentina","Rosario",45,9,5,6,6,13,1,1,3,375,3377,NA,"1988/6/29",28.0191649555099,6860,"Serie A","Top Club",-109.9259886,27.4907255
+"261",261,"Inter Milan Italy","Dodô","2016/7/1","AS Roma",6.63,"
+                                Defender                            ","Brazil","Campinas",21,0,1,2,2,4,0,0,0,NA,1654,11.958932238193,"1992/2/6",24.3997262149213,4920,"Serie A","Top Club",-58.5214952,-34.6284822
+"262",262,"Inter Milan Italy","Cristian Ansaldi","2016/7/30","Genoa",5.1,"
+                                Defender                            ","Argentina","Rosario",26,0,5,2,2,4,0,0,0,NA,2133,NA,"1986/9/20",29.8590006844627,11700,"Serie A","Top Club",8.946256,44.4056499
+"263",263,"Inter Milan Italy","Rey Manaj","2016/7/1","Cremonese",0.425,"
+                                Attacker                            ","Albania","Lushnjë",13,7,0,5,5,4,1,0,1,109,765,NA,"1997/2/24",19.3483915126626,1240,"Serie A","Top Club",-116.8728141,32.5103649
+"264",264,"Inter Milan Italy","Gabriel","2016/8/30","Santos FC",25.08,"
+                                Attacker                            ","Brazil","São Bernardo do ...",10,5,0,0,0,3,0,0,0,173,867,61.0102669404517,"1996/8/30",20,479000,"Serie A","Top Club",121.0129285,14.4528924
+"265",265,"Juventus Turin Italy","Simone Ganz","2016/7/1","Como",0,"
+                                Attacker                            ","Italy","Genova",35,16,3,3,3,3,0,0,3,175,2795,NA,"1993/9/21",22.776180698152,481,"Serie A","Top Club",9.0851765,45.8080597
+"266",266,"Juventus Turin Italy","Mario Lemina","2016/7/1","Marseille",8.08,"
+                                Midfield                            ","Gabon","Libreville",17,2,0,5,5,6,0,0,0,618,1235,23.9507186858316,"1993/9/1",22.8309377138946,8360,"Serie A","Top Club",5.36978,43.296482
+"267",267,"Juventus Turin Italy","Miralem Pjanic","2016/7/1","AS Roma",27.2,"
+                                Midfield                            ","Bosnia-Herzegovina","Tuzla",41,12,13,3,3,10,1,0,2,279,3343,23.9507186858316,"1990/4/2",26.2477754962355,43900,"Serie A","Top Club",-58.5214952,-34.6284822
+"268",268,"Juventus Turin Italy","Dani Alves","2016/7/1","FC Barcelona",0,"
+                                Defender                            ","Brazil","Juazeiro",48,1,8,5,5,13,0,0,0,3824,3824,11.958932238193,"1983/5/6",33.1553730321697,319000,"Serie A","Top Club",2.1178229,41.3806915
+"269",269,"Juventus Turin Italy","Marko Pjaca","2016/7/21","Dinamo Zagreb",19.55,"
+                                Attacker                            ","Croatia","Zagreb",42,12,6,9,9,1,0,0,1,244,2923,34.7926078028747,"1995/5/6",21.2101300479124,12300,"Serie A","Top Club",16.1163926,45.7062291
+"270",270,"Juventus Turin Italy","Gonzalo Higuaín","2016/7/26","SSC Napoli",76.5,"
+                                Attacker                            ","Argentina","Brest",42,38,3,4,4,2,1,0,3,87,3287,23.129363449692,"1987/12/10",28.6269678302532,231000,"Serie A","Top Club",NA,NA
+"271",271,"Lazio Italy","Jordan Lukaku","2016/7/22","KV Oostende",4.25,"
+                                Defender                            ","Belgium","Antwerpen",34,3,7,0,0,2,0,0,0,981,2943,11.2689938398357,"1994/7/25",21.9931553730322,7100,"Serie A","Middle Club",2.928656,51.21543
+"272",272,"Lazio Italy","Luis Alberto","2016/8/31","Liverpool",4.25,"
+                                Midfield                            ","Spain","San José del Valle",31,6,8,5,5,3,0,0,0,371,2227,21.9466119096509,"1992/9/28",23.9233401779603,42000,"Serie A","Middle Club",-2.9915726,53.4083714
+"273",273,"Lazio Italy","Bastos","2016/8/17","Rostov",5.53,"
+                                Defender                            ","Angola","Luanda",26,3,0,0,0,2,0,0,0,780,2340,10.4147843942505,"1991/11/23",24.7337440109514,62500,"Serie A","Middle Club",39.701505,47.2357137
+"274",274,"Lazio Italy","Moritz Leitner","2016/8/12","Bor. Dortmund",1.7,"
+                                Midfield                            ","Germany","München",21,3,6,11,11,2,0,1,0,362,1087,10.5790554414784,"1992/12/8",23.6769336071184,11000,"Serie A","Middle Club",7.3714033,51.4918469
+"275",275,"Lazio Italy","Ciro Immobile","2016/7/27","Sevilla FC",7.23,"
+                                Attacker                            ","Italy","Torre Annunziata",29,9,5,11,11,5,0,0,2,186,1673,47.1129363449692,"1990/2/20",26.4312114989733,26000,"Serie A","Middle Club",-109.9259886,27.4907255
+"276",276,"Lazio Italy","Wallace","2016/7/28","Braga",6.8,"
+                                Defender                            ","Brazil","Rio de Janeiro",34,1,0,1,1,10,0,1,0,3001,3001,35.0554414784394,"1994/10/14",21.7878165639973,404000,"Serie A","Middle Club",-8.426507,41.5454486
+"277",277,"Leicester UK","Islam Slimani","2016/8/31","Sporting CP",25.5,"
+                                Attacker                            ","Algeria","Algier",46,31,6,8,8,12,0,0,2,115,3568,45.9630390143737,"1988/6/18",28.2026009582478,78500,"Premier league","Top Club",-76.9714224,40.2313116
+"278",278,"Leicester UK","Luis Hernández","2016/7/1","Sporting Gijón",0,"
+                                Defender                            ","Spain","Madrid",37,0,0,0,0,4,1,0,0,NA,3314,NA,"1989/8/14",26.880219028063,17300,"Premier league","Top Club",-5.6386025,43.5347956
+"279",279,"Leicester UK","Ahmed Musa","2016/7/8","CSKA Moscow",16.58,"
+                                Attacker                            ","Nigeria","Jos",44,18,6,1,1,3,0,0,0,214,3857,35.7125256673511,"1992/10/14",23.7316906228611,99900,"Premier league","Top Club",37.436128,55.817478
+"280",280,"Leicester UK","Bartosz Kapustka","2016/8/3","Cracovia Kraków",7.65,"
+                                Midfield                            ","Poland","Tarnów",35,5,10,4,4,6,0,0,0,532,2660,22.8665297741273,"1996/12/23",19.6112251882272,7700,"Premier league","Top Club",19.9449799,50.0646501
+"281",281,"Leicester UK","Nampalys Mendy","2016/7/3","OGC Nice",13.18,"
+                                Midfield                            ","France","La Seyne-sur-Mer",40,1,2,0,0,2,0,1,0,3602,3602,11.8932238193018,"1992/6/23",24.0273785078713,8150,"Premier league","Top Club",NA,NA
+"282",282,"Liverpool UK","Ragnar Klavan","2016/7/20","FC Augsburg",4.25,"
+                                Defender                            ","Estonia","Viljandi",40,0,0,0,0,3,0,0,0,NA,3627,NA,"1985/10/30",30.7214236824093,24100,"Premier league","Middle Club",NA,NA
+"283",283,"Liverpool UK","Georginio Wijnaldum","2016/7/22","Newcastle",23.38,"
+                                Midfield                            ","Netherlands","Rotterdam",40,11,5,2,2,1,0,0,1,304,3347,NA,"1990/11/11",25.6947296372348,57400,"Premier league","Middle Club",-1.61778,54.978252
+"284",284,"Liverpool UK","Sadio Mané","2016/7/1","Southampton",35.02,"
+                                Attacker                            ","Senegal","Sedhiou",43,15,9,7,7,5,1,1,0,208,3114,NA,"1992/4/10",24.2245037645448,138000,"Premier league","Middle Club",-1.4043509,50.9097004
+"285",285,"Liverpool UK","Joel Matip","2016/7/1","FC Schalke 04",0,"
+                                Defender                            ","Cameroon","Bochum",41,4,5,0,0,3,0,0,0,923,3690,NA,"1991/8/8",24.8980150581793,34900,"Premier league","Middle Club",NA,NA
+"286",286,"LOSC Lille France","Éder","2016/7/1","Swansea",3.83,"
+                                Attacker                            ","Portugal","Bissau",29,6,4,12,12,1,0,0,1,264,1582,NA,"1987/12/22",28.5256673511294,19900,"Ligue 1","Top Club",-3.943646,51.62144
+"287",287,"LOSC Lille France","Julian Palmieri","2016/7/2","SC Bastia",0,"
+                                Defender                            ","France","Lyon",35,2,4,1,1,9,0,0,0,1502,3004,NA,"1986/12/7",29.5687885010267,13700,"Ligue 1","Top Club",-80.8614958,35.0383688
+"288",288,"Málaga CF Spain","Jony","2016/7/1","Sporting Gijón",0,"
+                                Attacker                            ","Spain","Cangas de Narcea",36,5,9,3,3,4,0,0,0,576,2882,NA,"1991/7/9",24.9801505817933,41900,"La Liga","Middle Club",-5.6386025,43.5347956
+"289",289,"Málaga CF Spain","Miguel Cifuentes","2016/7/1","Elche CF",0,"
+                                Defender                            ","Spain","Zújar",18,0,1,4,4,1,0,0,0,NA,1378,NA,"1990/10/5",25.7385352498289,395,"La Liga","Middle Club",-0.6690555,38.2645632
+"290",290,"Málaga CF Spain","Mikel Villanueva","2016/7/1","Deportivo Lara",0.255,"
+                                Defender                            ","Venezuela","San Cristóbal, ...",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"1993/4/14",23.2142368240931,1040,"La Liga","Middle Club",-97.4273474,20.5108831
+"291",291,"Málaga CF Spain","Keko","2016/7/1","SD Eibar",4.25,"
+                                Attacker                            ","Spain","Madrid",32,3,5,3,3,5,1,0,0,820,2461,NA,"1991/12/27",24.5119780971937,7200,"La Liga","Middle Club",NA,NA
+"292",292,"Málaga CF Spain","Sandro Ramírez","2016/7/7","FC Barcelona",0,"
+                                Attacker                            ","Spain","Las Palmas de Gran ...",20,3,2,11,11,0,0,0,0,284,851,11.7618069815195,"1995/7/9",20.9965776865161,7520,"La Liga","Middle Club",2.1178229,41.3806915
+"293",293,"Málaga CF Spain","Bakary Koné","2016/7/1","Olympique Lyon",0.68,"
+                                Defender                            ","Burkina Faso","Ouagadougou",12,0,0,3,3,1,0,0,0,NA,893,NA,"1988/4/27",28.1779603011636,78100,"La Liga","Middle Club",-87.7962098,41.7304326
+"294",294,"Málaga CF Spain","Michael Santos","2016/7/1","River Plate",3.4,"
+                                Attacker                            ","Uruguay","Montevideo",30,15,12,2,2,6,0,0,6,168,2515,NA,"1993/3/13",23.3018480492813,1130,"La Liga","Middle Club",-56.741207,-35.1944557
+"295",295,"Manchester City UK","John Stones","2016/8/9","Everton",47.26,"
+                                Defender                            ","England","Barnsley",41,0,0,3,3,4,0,0,0,NA,3416,34.6611909650924,"1994/5/28",22.2012320328542,140000,"Premier league","Top Club",-93.702428,37.3425477
+"296",296,"Manchester City UK","Nolito","2016/7/1","Celta de Vigo",15.3,"
+                                Attacker                            ","Spain","Sanlúcar de ...",29,12,7,2,2,8,0,0,1,204,2452,11.958932238193,"1986/10/15",29.7111567419576,105000,"Premier league","Top Club",-90.6163146,19.7894724
+"297",297,"Manchester City UK","Aaron Mooy","2016/7/1","Melbourne City",0,"
+                                Midfield                            ","Australia","Sydney",26,11,10,1,1,2,0,0,3,208,2283,23.9507186858316,"1990/9/15",25.7932922655715,22700,"Premier league","Top Club",-80.6081089,28.0836269
+"298",298,"Manchester City UK","Pablo Marí","2016/8/15","Gimnàstic",0.17,"
+                                Defender                            ","Spain","Valencia",25,1,1,0,0,6,1,0,0,2218,2218,22.4722792607803,"1993/8/31",22.9568788501027,1290,"Premier league","Top Club",-0.5222117,38.404561
+"299",299,"Manchester City UK","Leroy Sané","2016/8/2","FC Schalke 04",42.5,"
+                                Attacker                            ","Germany","Essen",42,9,7,13,13,5,0,0,0,325,2925,34.8911704312115,"1996/1/11",20.5585215605749,73300,"Premier league","Top Club",NA,NA
+"300",300,"Manchester City UK","Oleksandr Zinchenko","2016/7/4","Ufa",1.7,"
+                                Midfield                            ","Ukraine","Radomyshl, Zhytomyr ...",26,2,4,5,5,3,0,0,0,940,1880,29.8973305954825,"1996/12/15",19.5509924709103,8290,"Premier league","Top Club",55.9720554,54.7387621
+"301",301,"Manchester City UK","Ilkay Gündogan","2016/7/1","Bor. Dortmund",22.95,"
+                                Midfield                            ","Germany","Gelsenkirchen",40,3,7,6,6,2,0,0,1,1002,3006,11.958932238193,"1990/10/24",25.6865160848734,116000,"Premier league","Top Club",7.3714033,51.4918469
+"302",302,"Manchester City UK","Marlos Moreno","2016/8/5","Atl. Nacional",4.68,"
+                                Attacker                            ","Colombia","Medellín",16,3,4,3,3,1,0,0,0,375,1124,NA,"1996/9/20",19.8740588637919,11300,"Premier league","Top Club",-67.1107365,-17.9617328
+"303",303,"Manchester City UK","Gabriel Jesus","2017/1/2","Palmeiras",27.2,"
+                                Attacker                            ","Brazil","São Paulo",19,15,3,2,2,5,0,1,0,105,1578,35.482546201232,"1997/4/3",19.750855578371,719000,"Premier league","Top Club",-43.97962,-19.9708055
+"304",304,"Manchester Utd UK","Zlatan Ibrahimovic","2016/7/1","Paris SG",0,"
+                                Attacker                            ","Sweden","Malmö",51,50,19,4,4,4,0,0,7,83,4146,NA,"1981/10/3",34.7433264887064,9270000,"Premier league","Top Club",2.3350238,48.8533958
+"305",305,"Manchester Utd UK","Eric Bailly","2016/7/1","Villarreal CF",32.3,"
+                                Defender                            ","Cote d'Ivoire","Bingerville",35,1,1,0,0,12,1,0,0,2909,2909,NA,"1994/4/12",22.2203969883641,88100,"Premier league","Top Club",-0.1165001,39.9391986
+"306",306,"Manchester Utd UK","Henrikh Mkhitaryan","2016/7/6","Bor. Dortmund",35.7,"
+                                Midfield                            ","Armenia","Erewan",52,23,32,4,4,6,0,0,0,190,4379,11.7946611909651,"1989/1/21",27.4551676933607,175000,"Premier league","Top Club",7.3714033,51.4918469
+"307",307,"Manchester Utd UK","Paul Pogba","2016/8/9","Juventus",89.25,"
+                                Midfield                            ","France","Lagny-sur-Marne",49,10,16,3,3,12,0,0,1,428,4284,34.6611909650924,"1993/3/15",23.4031485284052,841000,"Premier league","Top Club",-100.363932,25.733185
+"308",308,"Marseille France","Rémy Cabella","2016/7/5","Newcastle",6.8,"
+                                Midfield                            ","France","Ajaccio",45,6,3,8,8,12,0,0,0,532,3194,NA,"1990/3/8",26.3271731690623,13600,"Ligue 1","Middle Club",-1.61778,54.978252
+"309",309,"Marseille France","Tomas Hubocan","2016/7/7","Dinamo Moscow",1.02,"
+                                Defender                            ","Slovakia","Žilina",24,1,1,0,0,5,0,1,0,1965,1965,NA,"1985/9/17",30.8035592060233,4770,"Ligue 1","Middle Club",37.5595953,55.7891159
+"310",310,"Marseille France","Saîf-Eddine Khaoui","2016/7/1","FC Tours",0.85,"
+                                Midfield                            ","Tunisia","Lyon",32,3,4,12,12,4,0,0,0,634,1903,11.958932238193,"1995/4/27",21.1800136892539,287,"Ligue 1","Middle Club",6.1591743,49.5756795
+"311",311,"Marseille France","Henri Bedimo","2016/7/1","Olympique Lyon",0,"
+                                Defender                            ","Cameroon","Douala",22,0,0,4,4,1,0,0,0,NA,1584,NA,"1984/6/4",32.0739219712526,7280,"Ligue 1","Middle Club",-87.7962098,41.7304326
+"312",312,"Marseille France","Hiroki Sakai","2016/7/1","Hannover 96",0,"
+                                Defender                            ","Japan","Kashiwa, Chiba",28,1,2,1,1,1,0,0,0,2474,2474,NA,"1990/4/12",26.2203969883641,28500,"Ligue 1","Middle Club",-70.8273689,42.118527
+"313",313,"Middlesbrough UK","Viktor Fischer","2016/7/1","AFC Ajax",4.25,"
+                                Attacker                            ","Denmark","Aarhus",45,12,4,20,20,0,0,0,0,191,2297,11.958932238193,"1994/6/9",22.0616016427105,24600,"Premier league","Promoted",NA,NA
+"314",314,"Middlesbrough UK","Antonio Barragán","2016/7/15","Valencia CF",2.3,"
+                                Defender                            ","Spain","Pontedeume",35,0,0,6,6,6,1,0,0,NA,2546,11.4989733059548,"1987/6/12",29.0924024640657,8780,"Premier league","Promoted",-0.5104759,39.0643597
+"315",315,"Middlesbrough UK","Fábio","2016/8/12","Cardiff",1.96,"
+                                Defender                            ","Brazil","Petrópolis",26,1,3,5,5,8,1,0,0,1818,1818,NA,"1990/7/9",26.0944558521561,61900,"Premier league","Promoted",-3.17909,51.481581
+"316",316,"Middlesbrough UK","Bernardo Espinosa","2016/7/1","Sporting Gijón",0,"
+                                Defender                            ","Colombia","Cali",17,2,0,0,0,5,1,0,0,714,1428,NA,"1989/7/11",26.9733059548255,27500,"Premier league","Promoted",-5.6386025,43.5347956
+"317",317,"Middlesbrough UK","Marten de Roon","2016/7/4","Atalanta",12.75,"
+                                Midfield                            ","Netherlands","Zwijndrecht",37,2,2,1,1,9,1,0,0,1593,3185,35.8439425051335,"1991/3/29",25.2676249144422,5040,"Premier league","Promoted",-49.7793508,-27.4224135
+"318",318,"Monaco France","Youssef Aït Bennasser","2016/7/1","AS Nancy",2.55,"
+                                Midfield                            ","Morocco","Toul",35,1,2,2,2,7,0,0,0,2788,2788,23.9507186858316,"1996/7/7",19.9835728952772,2840,"Ligue 1","Top Club",72.8495366,19.22594
+"319",319,"Monaco France","Djibril Sidibé","2016/7/8","LOSC Lille",12.75,"
+                                Defender                            ","France","Troyes",43,6,3,2,2,4,0,0,0,638,3829,35.7125256673511,"1992/7/29",23.9425051334702,119000,"Ligue 1","Top Club",3.057256,50.62925
+"320",320,"Monaco France","Benjamin Mendy","2016/7/1","Marseille",11.05,"
+                                Defender                            ","France","Longjumeau",36,1,5,2,2,11,0,1,0,2985,2985,35.9425051334702,"1994/7/17",21.9575633127995,3780,"Ligue 1","Top Club",5.36978,43.296482
+"321",321,"Monaco France","Kamil Glik","2016/7/4","Torino",9.35,"
+                                Defender                            ","Poland","Jastrzebie Zdrój",35,0,2,0,0,10,0,0,0,NA,3142,NA,"1988/2/3",28.4161533196441,35300,"Ligue 1","Top Club",7.6868565,45.070312
+"322",322,"Nice OGC France","Wylan Cyprien","2016/7/27","Lens",4.25,"
+                                Midfield                            ","France","Les Abymes",35,7,1,4,4,6,0,0,0,400,2797,23.0965092402464,"1995/1/28",21.4948665297741,1910,"Ligue 1","Top Club",2.83183,50.42893
+"323",323,"Nice OGC France","Arnaud Lusamba","2016/7/19","AS Nancy",2.13,"
+                                Midfield                            ","France","Metz",22,5,2,6,6,4,0,0,0,313,1563,23.3593429158111,"1997/1/4",19.5373032169747,207,"Ligue 1","Top Club",72.8495366,19.22594
+"324",324,"Nice OGC France","Dante","2016/8/23","VfL Wolfsburg",2.13,"
+                                Defender                            ","Brazil","Salvador da Bahia",35,1,0,2,2,6,2,0,0,2998,2998,22.2094455852156,"1983/10/18",32.8487337440109,164000,"Ligue 1","Top Club",10.7979685,52.4257066
+"325",325,"Nice OGC France","Dalbert","2016/7/6","Vit. Guimarães",1.7,"
+                                Defender                            ","Brazil","Barra Mansa",36,0,1,3,3,9,0,1,0,NA,2867,NA,"1993/9/8",22.8254620123203,5600,"Ligue 1","Top Club",-35.2946633,-8.1091303
+"326",326,"Nice OGC France","Arnaud Souquet","2016/7/25","Dijon",1.06,"
+                                Defender                            ","France","Paris",33,0,3,4,4,6,0,0,0,NA,2721,11.170431211499,"1992/2/12",24.4490075290897,1110,"Ligue 1","Top Club",5.04148,47.322047
+"327",327,"Nice OGC France","Paul Baysse","2016/7/1","Saint-Étienne",0.425,"
+                                Defender                            ","France","Bordeaux",33,0,0,1,1,4,0,1,0,NA,2914,11.958932238193,"1988/5/18",28.1204654346338,3920,"Ligue 1","Top Club",4.3871779,45.439695
+"328",328,"Nice OGC France","Mario Balotelli","2016/8/31","Liverpool",0,"
+                                Attacker                            ","Italy","Palermo",23,3,1,13,13,6,0,0,1,331,994,NA,"1990/8/12",26.0533880903491,518000,"Ligue 1","Top Club",-2.9915726,53.4083714
+"329",329,"Olympique Lyon France","Emanuel Mammana","2016/7/6","River Plate",6.38,"
+                                Defender                            ","Argentina","Merlo",14,2,0,2,2,4,0,0,0,516,1032,NA,"1996/2/10",20.4024640657084,2370,"Ligue 1","Top Club",-56.741207,-35.1944557
+"330",330,"Olympique Lyon France","Jean-Philippe Mateta","2016/9/16","LB Châteauroux",2.55,"
+                                Attacker                            ",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,21.4209445585216,"1997/6/28",19.2197125256674,1060,"Ligue 1","Top Club",1.686779,46.811434
+"331",331,"Olympique Lyon France","Nicolas N'Koulou","2016/7/1","Marseille",0,"
+                                Defender                            ","Cameroon","Yaoundé",41,0,0,0,0,11,0,1,0,NA,3691,NA,"1990/3/27",26.2642026009582,65400,"Ligue 1","Top Club",5.36978,43.296482
+"332",332,"Olympique Lyon France","Maciej Rybus","2016/7/1","Terek Grozny",0,"
+                                Defender                            ","Poland","Lowicz",31,8,4,7,7,2,0,0,1,278,2223,NA,"1989/8/19",26.8665297741273,26100,"Ligue 1","Top Club",NA,NA
+"333",333,"Paris SG France","Grzegorz Krychowiak","2016/7/3","Sevilla FC",28.56,"
+                                Midfield                            ","Poland","Gryfice",42,1,5,3,3,11,0,0,0,3655,3655,35.8767967145791,"1990/1/29",26.425735797399,20400,"Ligue 1","Top Club",-109.9259886,27.4907255
+"334",334,"Paris SG France","Jesé","2016/8/8","Real Madrid",21.25,"
+                                Attacker                            ","Spain","Las Palmas de Gran ...",38,6,8,27,27,0,0,0,0,209,1252,10.7104722792608,"1993/2/26",23.4469541409993,27800,"Ligue 1","Top Club",-99.136043,19.2932645
+"335",335,"Paris SG France","Giovani Lo Celso","2016/7/26","CA Rosario",8.5,"
+                                Midfield                            ","Argentina","Rosario",23,2,6,11,11,5,0,1,0,685,1369,23.129363449692,"1996/4/9",20.2956878850103,2980,"Ligue 1","Top Club",-117.6544499,33.5655301
+"336",336,"Paris SG France","Thomas Meunier","2016/7/3","Club Brugge",5.95,"
+                                Defender                            ","Belgium","Sainte-Ode",42,6,6,2,2,7,0,0,0,586,3516,47.9014373716632,"1991/9/12",24.807665982204,25000,"Ligue 1","Top Club",NA,NA
+"337",337,"Paris SG France","Hatem Ben Arfa","2016/7/1","OGC Nice",0,"
+                                Midfield                            ","France","Clamart",37,18,6,2,2,2,0,0,6,172,3100,NA,"1987/3/7",29.3196440793977,53100,"Ligue 1","Top Club",NA,NA
+"338",338,"Pescara Italy","Antonio Mazzotta","2016/7/1","AC Cesena",0.298,"
+                                Defender                            ","Italy","Palermo",23,0,4,6,6,4,0,0,0,NA,1548,11.958932238193,"1989/8/2",26.9130732375086,762,"Serie A","Promoted",12.2385741,44.1444936
+"339",339,"Pescara Italy","Alessandro Crescenzi","2016/7/13","AS Roma",0.255,"
+                                Defender                            ","Italy","Marino",28,0,1,2,2,3,0,0,0,NA,2194,23.5564681724846,"1991/9/25",24.7994524298426,19900,"Serie A","Promoted",-58.5214952,-34.6284822
+"340",340,"Pescara Italy","Alessio Di Massimo","2016/7/8","Sant'Omero",0.255,"
+                                Attacker                            ","Italy","Sant'Omero",33,11,3,11,11,2,0,0,2,165,1818,NA,"1996/5/7",20.1697467488022,366,"Serie A","Promoted",13.8054287,42.785078
+"341",341,"Pescara Italy","Andrea Coda","2016/7/1","Sampdoria",0.17,"
+                                Defender                            ","Italy","Massa",9,0,0,3,3,3,0,0,0,NA,393,12.9445585215606,"1985/4/25",31.1841204654346,17600,"Serie A","Promoted",-100.7169119,20.0188739
+"342",342,"Pescara Italy","Simone Pepe","2016/8/22","Chievo Verona",0,"
+                                Attacker                            ","Italy","Albano Laziale",23,3,3,17,17,2,1,0,0,275,825,NA,"1983/8/30",32.9801505817933,8010,"Serie A","Promoted",10.9466529,45.4575193
+"343",343,"Pescara Italy","Alessandro Polidori","2016/7/25","AC Rimini",0,"
+                                Attacker                            ","Italy","Viterbo",31,11,4,5,5,4,0,0,0,208,2284,NA,"1992/2/24",24.4161533196441,55,"Serie A","Promoted",NA,NA
+"344",344,"Pescara Italy","Cristiano Biraghi","2016/7/11","Inter",3.4,"
+                                Defender                            ","Italy","Cernusco sul ...",33,0,1,0,0,9,1,0,0,NA,2887,23.6221765913758,"1992/9/1",23.8576317590691,1460,"Serie A","Promoted",-89.6412899,20.9544631
+"345",345,"Pescara Italy","Valerio Verre","2016/7/1","Udinese Calcio",3.4,"
+                                Midfield                            ","Italy","Roma",37,2,5,3,3,5,0,1,0,1462,2924,NA,"1994/1/11",22.4695414099932,1320,"Serie A","Promoted",13.2056341,46.0408771
+"346",346,"Pescara Italy","Ahmad Benali","2016/7/1","US Palermo",0.85,"
+                                Midfield                            ","Libya","Manchester",40,5,7,2,2,4,0,1,0,598,2990,35.9425051334702,"1992/2/7",24.3969883641342,607,"Serie A","Promoted",-121.5380243,39.4354432
+"347",347,"Pescara Italy","Stefano Pettinari","2016/8/25","AS Roma",0.34,"
+                                Attacker                            ","Italy","Roma",26,2,2,11,11,4,0,0,0,664,1328,10.1519507186858,"1992/1/27",24.5776865160849,201,"Serie A","Promoted",-58.5214952,-34.6284822
+"348",348,"Pescara Italy","Alberto Aquilani","2016/8/25","Sporting CP",0,"
+                                Midfield                            ","Italy","Roma",32,5,2,16,16,4,0,0,2,319,1595,10.1519507186858,"1984/7/7",32.1341546885695,20800,"Serie A","Promoted",-76.9714224,40.2313116
+"349",349,"Pescara Italy","Francesco Nicastro","2016/7/1","Juve Stabia",0,"
+                                Attacker                            ","Italy","Campofranco",32,11,1,2,2,2,0,1,0,235,2582,NA,"1991/10/26",24.6817248459959,565,"Serie A","Promoted",NA,NA
+"350",350,"RB Leipzig Germany","Oliver Burke","2016/8/28","Nottm Forest",12.75,"
+                                Attacker                            ","Scotland","Kirkcaldy",21,2,1,13,13,0,0,0,0,463,926,22.0451745379877,"1997/4/7",19.3921971252567,16600,"Bundesliga","Promoted",-94.7096476,38.9059719
+"351",351,"RB Leipzig Germany","Timo Werner","2016/7/1","VfB Stuttgart",8.5,"
+                                Attacker                            ","Germany","Stuttgart",36,7,5,7,7,0,0,0,0,351,2454,23.9507186858316,"1996/3/6",20.3203285420945,3350,"Bundesliga","Promoted",NA,NA
+"352",352,"RB Leipzig Germany","Bernardo","2016/8/28","RB Salzburg",5.1,"
+                                Defender                            ","Brazil","São Paulo",17,0,1,6,6,1,1,0,0,NA,1089,46.0616016427105,"1995/5/14",21.2922655715264,209000,"Bundesliga","Promoted",13.000092,47.815426
+"353",353,"RB Leipzig Germany","Benno Schmitz","2016/7/1","RB Salzburg",0.68,"
+                                Defender                            ","Germany","München",32,0,3,3,3,7,0,0,0,NA,2726,11.958932238193,"1994/11/17",21.6208076659822,918,"Bundesliga","Promoted",13.000092,47.815426
+"354",354,"RB Leipzig Germany","Naby Keïta","2016/7/1","RB Salzburg",12.75,"
+                                Midfield                            ","Guinea","Conakry",37,14,8,6,6,7,0,0,0,201,2818,59.958932238193,"1995/2/10",21.388090349076,2930,"Bundesliga","Promoted",13.000092,47.815426
+"355",355,"Real Betis Sevilla Spain","Riza Durmisi","2016/7/1","Bröndby IF",1.7,"
+                                Defender                            ","Denmark","Kopenhagen",40,1,7,0,0,12,0,0,0,3552,3552,23.9507186858316,"1994/1/8",22.4777549623546,871,"La Liga","Middle Club",NA,NA
+"356",356,"Real Betis Sevilla Spain","Jonas Martin","2016/7/1","Montpellier",2.55,"
+                                Midfield                            ","France","Besançon",37,4,4,1,1,5,0,0,2,807,3229,NA,"1990/4/9",26.2286105407255,1830,"La Liga","Middle Club",3.876716,43.610769
+"357",357,"Real Betis Sevilla Spain","Roman Zozulya","2016/7/27","Dnipro",0,"
+                                Attacker                            ","Ukraine","Kiew",15,5,4,5,5,4,0,0,1,195,976,23.0965092402464,"1989/11/17",26.6913073237509,3870,"La Liga","Middle Club",35.046183,48.464717
+"358",358,"Real Betis Sevilla Spain","Aïssa Mandi","2016/7/1","Reims",3.4,"
+                                Defender                            ","Algeria","Châlons-en-Champagn...",33,5,1,0,0,3,0,1,0,590,2950,11.958932238193,"1991/10/22",24.6926762491444,7060,"La Liga","Middle Club",4.031696,49.258329
+"359",359,"Real Betis Sevilla Spain","Felipe Gutiérrez","2016/7/6","FC Twente",2.98,"
+                                Midfield                            ","Chile","Quintero",32,3,3,3,3,4,0,0,0,855,2566,11.7946611909651,"1990/10/8",25.7440109514031,5260,"La Liga","Middle Club",NA,NA
+"360",360,"Real Betis Sevilla Spain","Antonio Sanabria","2016/7/15","AS Roma",6.38,"
+                                Attacker                            ","Paraguay","San Lorenzo",30,11,1,3,3,5,0,0,1,207,2272,35.482546201232,"1996/3/4",20.3641341546886,5900,"La Liga","Middle Club",-58.5214952,-34.6284822
+"361",361,"Real Betis Sevilla Spain","Darko Brasanac","2016/8/24","Partizan",1.28,"
+                                Midfield                            ","Serbia","Cajetina",40,4,4,1,1,9,1,0,1,827,3306,NA,"1992/2/12",24.5311430527036,3930,"La Liga","Middle Club",131.9594688,43.6917713
+"362",362,"Real Madrid Spain","Álvaro Morata","2016/7/1","Juventus",25.5,"
+                                Attacker                            ","Spain","Madrid",47,12,12,21,21,9,0,0,2,198,2377,47.9671457905544,"1992/10/23",23.6878850102669,198000,"La Liga","Top Club",-100.363932,25.733185
+"363",363,"Real Sociedad Spain","Willian José","2016/7/31","Maldonado",5.1,"
+                                Attacker                            ","Brazil","Porto Calvo",34,10,1,11,11,7,0,0,0,209,2085,NA,"1991/11/23",24.6872005475702,41800,"La Liga","Middle Club",-54.9207695,-34.7905524
+"364",364,"Real Sociedad Spain","Juanmi","2016/7/1","Southampton",4.25,"
+                                Attacker                            ","Spain","Coín",21,0,2,17,17,0,0,0,0,NA,586,NA,"1993/5/20",23.1156741957563,7890,"La Liga","Middle Club",-1.4043509,50.9097004
+"365",365,"Rennes France","Ramy Bensebaini","2016/7/5","Paradou AC",1.7,"
+                                Defender                            ","Algeria","Constantine",25,2,0,7,7,7,0,0,0,808,1615,NA,"1995/4/16",21.2210814510609,2650,"Ligue 1","Middle Club",NA,NA
+"366",366,"Rennes France","Afonso Figueiredo","2016/7/1","Boavista",0.23,"
+                                Defender                            ","Portugal","Oeiras",26,1,1,1,1,5,0,0,0,2246,2246,NA,"1993/1/6",23.482546201232,1410,"Ligue 1","Middle Club",-22.8078335,16.0950108
+"367",367,"Rennes France","Clément Chantôme","2016/7/1","G. Bordeaux",0,"
+                                Midfield                            ","France","Sens",35,2,2,2,2,11,1,0,0,1430,2859,NA,"1987/9/11",28.8049281314168,75700,"Ligue 1","Middle Club",-0.57918,44.837789
+"368",368,"Rennes France","Anthony Ribelin","2016/7/1","HSC Montpellier B",0,"
+                                Midfield                            ","France","Nîmes",2,0,0,0,0,0,0,0,0,NA,142,NA,"1996/4/8",20.2299794661191,397,"Ligue 1","Middle Club",NA,NA
+"369",369,"Saint-Étienne France","Bryan Dabo","2016/7/1","Montpellier",3.4,"
+                                Midfield                            ","France","Marseille",39,5,1,4,4,7,0,0,0,625,3124,23.9507186858316,"1992/2/18",24.3668720054757,2810,"Ligue 1","Middle Club",3.876716,43.610769
+"370",370,"Saint-Étienne France","Léo Lacroix","2016/8/31","FC Sion",2.55,"
+                                Defender                            ","Switzerland","Lausanne",29,1,1,1,1,9,0,0,0,2451,2451,21.9466119096509,"1992/2/27",24.5092402464066,29000,"Ligue 1","Middle Club",-6.5030396,53.3655799
+"371",371,"Saint-Étienne France","Cheikh M'Bengue","2016/7/20","Rennes",0,"
+                                Defender                            ","Senegal","Toulouse",25,0,0,3,3,2,0,0,0,NA,2031,NA,"1988/7/23",27.9917864476386,3990,"Ligue 1","Middle Club",-1.6777926,48.117266
+"372",372,"Sampdoria Italy","Stanley Amuzie","2016/8/29","Olhanense",0,"
+                                Defender                            ","Nigeria","Lagos",14,1,0,8,8,0,0,0,0,589,589,NA,"1996/2/28",20.5010266940452,1820,"Serie A","Middle Club",-46.3472089,-23.9625591
+"373",373,"Sampdoria Italy","Bambo Diaby","2016/8/31","Cornellà Jugend",0,"
+                                    -                                ","Senegal","Mataró",1,0,0,1,1,0,0,0,0,NA,24,NA,"1997/12/17",18.7049965776865,6,"Serie A","Middle Club",NA,NA
+"374",374,"Sampdoria Italy","Dennis Praet","2016/8/24","RSC Anderlecht",8.5,"
+                                Midfield                            ","Belgium","Leuven",46,6,9,1,1,7,1,0,0,654,3922,10.1848049281314,"1994/5/14",22.280629705681,10900,"Serie A","Middle Club",NA,NA
+"375",375,"Sampdoria Italy","Jacopo Sala","2016/7/1","Hellas Verona",4.25,"
+                                Defender                            ","Italy","Alzano Lombardo",24,0,0,3,3,9,0,0,0,NA,1770,11.958932238193,"1991/12/5",24.5722108145106,3400,"Serie A","Middle Club",NA,NA
+"376",376,"Sampdoria Italy","Leonardo Capezzi","2016/8/29","Crotone",0.85,"
+                                Midfield                            ","Italy","Figline Valdarno",32,2,2,5,5,8,1,0,0,1238,2476,NA,"1995/3/29",21.4209445585216,18300,"Serie A","Middle Club",17.1271102,39.0807932
+"377",377,"Sampdoria Italy","Antonio Palumbo","2016/8/30","Ternana",0.595,"
+                                Midfield                            ","Italy","Napoli",16,3,2,6,6,7,0,0,0,290,870,21.9794661190965,"1996/8/6",20.0657084188912,118,"Serie A","Middle Club",12.8465236,42.4408552
+"378",378,"Sampdoria Italy","Karol Linetty","2016/7/29","Lech Poznan",2.72,"
+                                Midfield                            ","Poland","Znin",41,5,9,4,4,10,1,0,0,634,3169,23.0308008213552,"1995/2/2",21.4866529774127,5170,"Serie A","Middle Club",NA,NA
+"379",379,"Sampdoria Italy","Fabio Quagliarella","2016/7/1","Torino",2.3,"
+                                Attacker                            ","Italy","Castellammare di ...",34,8,3,4,4,1,0,0,1,337,2693,11.958932238193,"1983/1/31",33.4154688569473,17000,"Serie A","Middle Club",7.6868565,45.070312
+"380",380,"Sampdoria Italy","Daniel Pavlovic","2016/7/19","Grasshoppers",0,"
+                                Defender                            ","Switzerland","Rorschach",22,0,6,0,0,6,0,0,0,NA,1933,23.3593429158111,"1988/4/22",28.2409308692676,1420,"Serie A","Middle Club",-95.4987565,39.5838828
+"381",381,"Sampdoria Italy","Luca Cigarini","2016/7/20","Atalanta",2.98,"
+                                Midfield                            ","Italy","Montecchio Emilia",26,2,2,4,4,10,0,0,1,951,1902,23.3264887063655,"1986/6/20",30.0835044490075,19400,"Serie A","Middle Club",-49.7793508,-27.4224135
+"382",382,"Sampdoria Italy","Patrik Schick","2016/7/13","Sparta Praha",3.4,"
+                                Attacker                            ","Czech Republic","Praha",27,7,1,5,5,2,0,0,0,275,1925,11.564681724846,"1996/1/24",20.4681724845996,690,"Serie A","Middle Club",NA,NA
+"383",383,"Sampdoria Italy","Ante Budimir","2016/7/5","Crotone",1.53,"
+                                Attacker                            ","Croatia","Zenica",41,17,4,5,5,6,0,0,3,195,3322,35.8110882956879,"1991/7/22",24.9555099247091,3650,"Serie A","Middle Club",17.1271102,39.0807932
+"384",384,"Sassuolo Italy","Gianmarco Ferrari","2016/8/30","Crotone",3.4,"
+                                Defender                            ","Italy","Parma",44,1,2,0,0,9,0,0,0,3967,3967,21.9794661190965,"1992/5/15",24.2929500342231,21400,"Serie A","Middle Club",17.1271102,39.0807932
+"385",385,"Sassuolo Italy","Antonino Ragusa","2016/8/26","AC Cesena",1.96,"
+                                Attacker                            ","Italy","Messina",41,9,8,7,7,10,0,1,0,338,3041,22.1108829568789,"1990/3/27",26.4175222450376,962,"Serie A","Middle Club",12.2385741,44.1444936
+"386",386,"Sassuolo Italy","Alfred Duncan","2016/7/1","Sampdoria",5.1,"
+                                Midfield                            ","Ghana","Accra",35,1,4,6,6,5,0,0,0,2631,2631,35.9425051334702,"1993/3/10",23.3100616016427,10500,"Serie A","Middle Club",-100.7169119,20.0188739
+"387",387,"Sassuolo Italy","Timo Letschert","2016/8/3","FC Utrecht",2.98,"
+                                Defender                            ","Netherlands","Purmerend",40,3,2,0,0,4,0,0,0,1122,3366,22.8665297741273,"1993/5/25",23.192334017796,680,"Serie A","Middle Club",5.138643,52.0968554
+"388",388,"Sassuolo Italy","Matteo Politano","2016/7/1","AS Roma",2.98,"
+                                Attacker                            ","Italy","Roma",29,5,2,18,18,3,0,0,0,220,1100,35.9425051334702,"1993/8/3",22.9103353867214,3140,"Serie A","Middle Club",-58.5214952,-34.6284822
+"389",389,"Sassuolo Italy","Pietro Iemmello","2016/8/31","Spezia Calcio",1.96,"
+                                Attacker                            ","Italy","Catanzaro",42,37,6,3,3,8,0,0,5,95,3518,21.9466119096509,"1992/3/6",24.4873374401095,557,"Serie A","Middle Club",9.7994789,44.0727813
+"390",390,"Sassuolo Italy","Alessandro Matri","2016/8/16","AC Milan",0,"
+                                Attacker                            ","Italy","Sant`Angelo ...",31,7,3,16,16,3,0,1,0,215,1504,10.4476386036961,"1984/8/19",31.9917864476386,18300,"Serie A","Middle Club",6.2230139,50.7654394
+"391",391,"SC Bastia France","Jerson Cabral","2016/7/12","FC Twente",0,"
+                                Attacker                            ","Cape Verde","Rotterdam",28,8,5,3,3,2,0,0,0,285,2279,NA,"1991/1/3",25.5222450376454,870,"Ligue 1","Middle Club",NA,NA
+"392",392,"SC Bastia France","Thievy Bifouma","2016/7/28","Espanyol",0,"
+                                Attacker                            ","Congo","Saint Denis",22,4,1,12,12,2,0,0,0,288,1151,NA,"1992/5/13",24.208076659822,12400,"Ligue 1","Middle Club",2.641692,39.6293694
+"393",393,"SC Bastia France","Farid Boulaya","2016/8/31","Clermont Foot",0.213,"
+                                Midfield                            ","Algeria","Vitrolles",34,7,4,7,7,4,0,0,0,326,2280,9.95482546201232,"1993/2/25",23.5126625598905,917,"Ligue 1","Middle Club",-121.0715463,38.6832563
+"394",394,"SC Freiburg Germany","Janik Haberer","2016/7/1","TSG Hoffenheim",1.7,"
+                                Midfield                            ","Germany","Wangen im Allgäu",37,4,7,8,8,6,0,0,0,634,2536,23.9507186858316,"1994/4/2",22.2477754962355,1650,"Bundesliga","Promoted",NA,NA
+"395",395,"SC Freiburg Germany","Onur Bulut","2016/7/1","VfL Bochum",1.02,"
+                                Attacker                            ","Turkey","Werdohl",35,4,6,3,3,5,0,0,0,702,2806,11.958932238193,"1994/4/16",22.2094455852156,1020,"Bundesliga","Promoted",NA,NA
+"396",396,"SC Freiburg Germany","Manuel Gulde","2016/7/1","Karlsruher SC",1.02,"
+                                Defender                            ","Germany","Mannheim",28,2,0,0,0,5,0,1,0,1209,2417,11.958932238193,"1991/2/12",25.3826146475017,1230,"Bundesliga","Promoted",8.4145779,49.0168232
+"397",397,"SC Freiburg Germany","Jonas Meffert","2016/7/2","Bay. Leverkusen",1.02,"
+                                Midfield                            ","Germany","Köln",25,1,4,2,2,3,0,0,0,2019,2019,NA,"1994/9/4",21.8261464750171,302,"Bundesliga","Promoted",6.9946126,51.0157534
+"398",398,"SC Freiburg Germany","Aleksandar Ignjovski","2016/7/1","E. Frankfurt",0.638,"
+                                Defender                            ","Serbia","Pancevo",19,0,2,6,6,3,0,0,0,NA,1239,11.958932238193,"1991/1/27",25.4264202600958,28600,"Bundesliga","Promoted",8.6821267,50.1109221
+"399",399,"SC Freiburg Germany","Georg Niedermeier","2016/8/30","VfB Stuttgart",0,"
+                                Defender                            ","Germany","München",20,4,1,2,2,6,0,0,0,411,1642,NA,"1986/2/26",30.507871321013,3920,"Bundesliga","Promoted",NA,NA
+"400",400,"SC Freiburg Germany","Caglar Söyüncü","2016/7/1","Altinordu",2.13,"
+                                Defender                            ","Turkey","Izmir",30,2,0,0,0,11,0,0,0,1350,2700,35.9425051334702,"1996/5/23",20.1067761806982,1570,"Bundesliga","Promoted",27.1430197,38.4199427
+"401",401,"SCO Angers France","Karl Toko Ekambi","2016/7/1","FC Sochaux",0.85,"
+                                Attacker                            ","Cameroon","Paris",42,12,1,6,6,0,0,0,2,273,3274,NA,"1992/9/14",23.7946611909651,761,"Ligue 1","Middle Club",NA,NA
+"402",402,"SCO Angers France","Yoane Wissa","2016/7/1","LB Châteauroux",0,"
+                                Attacker                            ",NA,NA,1,0,0,0,0,0,0,0,0,NA,90,NA,"1996/9/3",19.8247775496235,168,"Ligue 1","Middle Club",1.686779,46.811434
+"403",403,"SCO Angers France","Famara Diédhiou","2016/7/2","Clermont Foot",1.36,"
+                                Attacker                            ","Senegal","Saint-Louis",38,22,4,2,2,1,0,0,8,146,3205,11.9260780287474,"1992/12/15",23.5455167693361,519,"Ligue 1","Middle Club",-121.0715463,38.6832563
+"404",404,"SCO Angers France","Pablo Martinez","2016/7/1","G. Ajaccio",0,"
+                                Defender                            ","France","Martigues",30,0,1,2,2,4,0,0,0,NA,2386,NA,"1989/2/21",27.356605065024,2890,"Ligue 1","Middle Club",8.738635,41.919229
+"405",405,"SCO Angers France","Flavien Tait","2016/7/1","LB Châteauroux",0,"
+                                Midfield                            ","France","Longjumeau",1,0,0,1,1,0,0,0,0,NA,14,NA,"1993/2/2",23.4086242299795,23100,"Ligue 1","Middle Club",1.686779,46.811434
+"406",406,"SCO Angers France","Mateo Pavlovic","2016/7/1","Werder Bremen",0,"
+                                Defender                            ","Croatia","Mostar",4,0,1,0,0,3,0,0,0,NA,298,NA,"1990/6/9",26.0616016427105,529,"Ligue 1","Middle Club",8.809285,53.0696545
+"407",407,"SCO Angers France","Baptiste Santamaría","2016/7/1","FC Tours",0.425,"
+                                Midfield                            ","France","Bourges",37,6,2,7,7,4,0,0,0,436,2617,11.958932238193,"1995/3/9",21.3141683778234,158,"Ligue 1","Middle Club",6.1591743,49.5756795
+"408",408,"SD Eibar Spain","Florian Lejeune","2016/7/1","Manchester City",1.28,"
+                                Defender                            ","France","Istres",41,3,2,0,0,16,1,1,0,1188,3564,35.9425051334702,"1991/5/20",25.1170431211499,551,"La Liga","Middle Club",-71.4547891,42.9956397
+"409",409,"SD Eibar Spain","Jon Ander  Amelibia ","2016/7/1","Bilbao Athletic",0,"
+                                    30.06.2017                                ",NA,NA,27,1,0,2,2,5,0,0,0,2225,2225,NA,"1994/1/13",22.4640657084189,51,"La Liga","Middle Club",-2.7530628,43.298455
+"410",410,"SD Eibar Spain","Bebé","2016/7/12","Benfica",1.28,"
+                                Attacker                            ","Portugal","Lisboa",37,3,9,8,8,3,0,0,0,804,2412,23.5893223819302,"1990/7/12",26.0013689253936,214000,"La Liga","Middle Club",-43.2397455,-22.8926246
+"411",411,"SD Eibar Spain","Nano","2016/8/27","CD Tenerife",2.72,"
+                                Attacker                            ","Spain","La Laguna",35,14,1,15,15,2,0,0,0,134,1873,22.0780287474333,"1995/2/5",21.5578370978782,119000,"La Liga","Middle Club",-16.2518467,28.4636296
+"412",412,"SD Eibar Spain","Jordi Calavera","2016/7/1","Gimnàstic",0,"
+                                Defender                            ","Spain","Valls",21,3,0,2,2,5,0,0,0,595,1784,NA,"1995/8/2",20.9144421629021,398,"La Liga","Middle Club",-0.5222117,38.404561
+"413",413,"SD Eibar Spain","Juanfran","2016/7/26","Villanovense",0,"
+                                Defender                            ","Spain","Madrid",34,1,2,5,5,4,0,0,0,2591,2591,NA,"1988/9/11",27.8713210130048,39300,"La Liga","Middle Club",NA,NA
+"414",414,"SD Eibar Spain","Alejandro Gálvez","2016/8/3","Werder Bremen",1.28,"
+                                Defender                            ","Spain","Granada",24,1,0,7,7,5,0,0,0,1481,1481,NA,"1989/6/6",27.1594798083504,2030,"La Liga","Middle Club",8.809285,53.0696545
+"415",415,"SD Eibar Spain","Anaitz Arbilla","2016/8/30","Espanyol",0.595,"
+                                Defender                            ","Spain","Pamplona",7,0,0,0,0,3,0,0,0,NA,630,NA,"1987/5/15",29.2950034223135,2210,"La Liga","Middle Club",2.641692,39.6293694
+"416",416,"SD Eibar Spain","Pedro León","2016/7/5","Getafe CF",0,"
+                                Attacker                            ","Spain","Mula",33,3,4,8,8,7,0,0,0,675,2026,NA,"1986/11/24",29.6125941136208,10500,"La Liga","Middle Club",NA,NA
+"417",417,"SD Eibar Spain","Pere Milla","2016/7/1","UD Logroñés",0,"
+                                Attacker                            ","Spain","Lleida",42,18,0,2,2,7,0,0,0,185,3335,NA,"1992/9/23",23.7700205338809,676,"La Liga","Middle Club",NA,NA
+"418",418,"SD Eibar Spain","Rubén Peña","2016/7/1","CD Leganés",0,"
+                                Attacker                            ","Spain","Ávila",34,9,4,14,14,4,0,0,0,222,1999,NA,"1991/7/18",24.9555099247091,355,"La Liga","Middle Club",-3.7686545,40.3319506
+"419",419,"SD Eibar Spain","Juanfran","2016/7/26","Villanovense",0,"
+                                Attacker                            ","Spain","Villanueva del Río ...",36,15,0,7,7,3,1,1,0,164,2458,NA,"1992/2/13",24.4490075290897,39300,"La Liga","Middle Club",NA,NA
+"420",420,"SD Eibar Spain","Roger Escoruela","2016/7/5","CF Gavà",0,"
+                                    30.06.2017                                ","Spain","Barcelona",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"1996/3/16",20.3039014373717,147,"La Liga","Middle Club",NA,NA
+"421",421,"SD Eibar Spain","Unai Elgezabal","2016/7/1","Barakaldo CF ",0,"
+                                Defender                            ","Spain","Barakaldo",33,2,0,1,1,14,1,0,0,1338,2676,NA,"1993/4/25",23.1841204654346,474,"La Liga","Middle Club",NA,NA
+"422",422,"Sevilla Fútbol Club Spain","Franco Vázquez","2016/7/16","US Palermo",12.75,"
+                                Attacker                            ","Italy","Tanti",38,8,6,0,0,11,0,1,1,412,3298,NA,"1989/2/22",27.3949349760438,13000,"La Liga","Middle Club",-121.5380243,39.4354432
+"423",423,"Sevilla Fútbol Club Spain","Pablo Sarabia","2016/7/1","Getafe CF",0.85,"
+                                Midfield                            ","Spain","Madrid",32,7,6,2,2,9,0,0,0,365,2553,35.9425051334702,"1992/5/11",24.1396303901437,8690,"La Liga","Middle Club",NA,NA
+"424",424,"Sevilla Fútbol Club Spain","Ganso","2016/7/21","São Paulo",8.08,"
+                                Midfield                            ","Brazil","Ananindeua",18,3,5,3,3,4,0,0,0,474,1422,13.9958932238193,"1989/10/12",26.7734428473648,35900,"La Liga","Middle Club",-46.6333094,-23.5505199
+"425",425,"Sevilla Fútbol Club Spain","Joaquín Correa","2016/7/10","Sampdoria",11.05,"
+                                Midfield                            ","Argentina","Juan Bautista ...",25,3,1,11,11,5,1,0,0,436,1308,35.64681724846,"1994/8/13",21.9082819986311,2350,"La Liga","Middle Club",-100.7169119,20.0188739
+"426",426,"Sevilla Fútbol Club Spain","Gabriel Mercado","2016/8/1","River Plate",1.87,"
+                                Defender                            ","Argentina","Puerto Madryn",29,1,3,0,0,8,0,0,0,2513,2513,16.9856262833676,"1987/3/18",29.3744010951403,6700,"La Liga","Middle Club",-56.741207,-35.1944557
+"427",427,"Sevilla Fútbol Club Spain","Wissam Ben Yedder","2016/7/30","Toulouse",7.65,"
+                                Attacker                            ","France","Sarcelles",41,23,5,2,2,2,0,0,2,146,3348,11.006160164271,"1990/8/12",25.9657768651608,7210,"La Liga","Middle Club",1.444209,43.604652
+"428",428,"Sevilla Fútbol Club Spain","Hiroshi Kiyotake","2016/7/1","Hannover 96",5.53,"
+                                Midfield                            ","Japan","Oita, Oita",22,5,6,2,2,0,0,0,2,356,1782,23.9507186858316,"1989/11/12",26.6338124572211,7600,"La Liga","Middle Club",-70.8273689,42.118527
+"429",429,"Stade Malherbe Caen France","Ronny Rodelin","2016/7/26","LOSC Lille",0.85,"
+                                Attacker                            ","France","Saint-Denis",37,10,2,1,1,1,0,0,0,307,3068,11.1375770020534,"1989/11/18",26.6858316221766,1860,"Ligue 1","Middle Club",3.057256,50.62925
+"430",430,"Stade Malherbe Caen France","Ivan Santini","2016/8/3","Standard Liège",2.13,"
+                                Attacker                            ","Croatia","Zadar",36,13,1,8,8,3,0,0,0,186,2423,34.8583162217659,"1989/5/21",27.2032854209446,2040,"Ligue 1","Middle Club",5.545162,50.610246
+"431",431,"Stade Malherbe Caen France","Steed Malbranque","2016/7/1","Olympique Lyon",0,"
+                                Midfield                            ","France","Mouscron",15,0,1,9,9,1,0,0,0,NA,515,NA,"1980/1/6",36.4845995893224,25200,"Ligue 1","Middle Club",-87.7962098,41.7304326
+"432",432,"Stade Malherbe Caen France","Mouhamadou Dabo","2016/7/1","Troyes",0,"
+                                Defender                            ","France","Dakar",18,0,0,3,3,3,0,1,0,NA,1185,NA,"1986/11/28",29.5906913073238,16600,"Ligue 1","Middle Club",4.0744009,48.2973451
+"433",433,"Stade Malherbe Caen France","Ismaël Diomandé","2016/7/1","Saint-Étienne",0.638,"
+                                Midfield                            ","Cote d'Ivoire","Abidjan",21,1,1,9,9,3,0,0,0,1091,1091,11.958932238193,"1992/8/28",23.8412046543463,1940,"Ligue 1","Middle Club",4.3871779,45.439695
+"434",434,"Southampton UK","Sofiane Boufal","2016/8/29","LOSC Lille",15.9,"
+                                Midfield                            ","Morocco","Paris",35,12,4,3,3,10,1,1,2,227,2726,NA,"1993/9/17",22.9486652977413,16700,"Premier league","Middle Club",3.057256,50.62925
+"435",435,"Southampton UK","Pierre-Emile Höjbjerg","2016/7/11","Bayern Munich ",12.75,"
+                                Midfield                            ","Denmark","Kopenhagen",31,0,2,14,14,7,0,0,0,NA,1690,23.6221765913758,"1995/8/5",20.933607118412,9600,"Premier league","Middle Club",11.5819806,48.1351253
+"436",436,"Southampton UK","Nathan Redmond","2016/7/1","Norwich",11.48,"
+                                Attacker                            ","England","Birmingham",37,6,2,12,12,0,0,0,0,414,2482,NA,"1994/3/6",22.321697467488,20000,"Premier league","Middle Club",1.297355,52.6308859
+"437",437,"Southampton UK","Jérémy Pied","2016/8/1","OGC Nice",0,"
+                                Midfield                            ","France","Grenoble",35,0,3,1,1,10,0,0,0,NA,3085,NA,"1989/2/23",27.4360027378508,86200,"Premier league","Middle Club",NA,NA
+"438",438,"Sporting Gijón Spain","Lillo Castellano","2016/7/5","SD Eibar",0,"
+                                Defender                            ","Spain","Aspe",13,0,0,6,6,5,1,0,0,NA,717,NA,"1989/3/27",27.27446954141,276,"La Liga","Bottom Club",NA,NA
+"439",439,"Sporting Gijón Spain","Fernando Amorebieta","2016/7/22","Fulham FC",0.255,"
+                                Defender                            ","Venezuela","Cantaura",30,0,1,2,2,8,1,0,0,NA,2490,11.2689938398357,"1985/3/29",31.315537303217,8200,"La Liga","Bottom Club",-0.2470864,51.3912756
+"440",440,"Sporting Gijón Spain","Xavi Torres","2016/8/16","Real Betis",0,"
+                                Midfield                            ","Spain","Xàbia",15,0,0,7,7,3,0,0,0,NA,823,10.4476386036961,"1986/11/21",29.7357973990418,6770,"La Liga","Bottom Club",-103.4456539,20.7908698
+"441",441,"Sporting Gijón Spain","Jean-Sylvain Babin","2016/8/4","Granada CF",0,"
+                                Defender                            ","Martinique","Corbeil-Essonnes",27,3,0,0,0,6,0,0,0,805,2416,22.8336755646817,"1986/10/14",29.8069815195072,1460,"La Liga","Bottom Club",-3.0106774,36.7460566
+"442",442,"Sporting Gijón Spain","Moi Gómez","2016/7/5","Villarreal CF",0,"
+                                Attacker                            ","Spain","Rojales",24,2,3,13,13,3,0,0,0,518,1035,23.8193018480493,"1994/6/23",22.0342231348392,3810,"La Liga","Bottom Club",-0.1165001,39.9391986
+"443",443,"Sporting Gijón Spain","Víctor Rodríguez","2016/7/1","Elche CF",0,"
+                                Midfield                            ","Spain","Sabadell",34,2,3,7,7,1,0,0,0,1199,2398,11.958932238193,"1989/7/23",26.9404517453799,61500,"La Liga","Bottom Club",-0.6690555,38.2645632
+"444",444,"Sporting Gijón Spain","Borja Viguera","2016/8/30","Athletic Bilbao",0,"
+                                Attacker                            ","Spain","Logroño",16,0,0,10,10,1,0,0,0,NA,621,9.98767967145791,"1987/3/26",29.4318959616701,2450,"La Liga","Bottom Club",-2.7530628,43.298455
+"445",445,"Spurs UK","Vincent Janssen","2016/7/12","AZ Alkmaar",18.79,"
+                                Attacker                            ","Netherlands","Heesch",49,32,7,2,2,3,0,0,5,124,3969,35.5811088295688,"1994/6/15",22.0752908966461,27600,"Premier league","Top Club",4.7601215,52.62921
+"446",446,"Spurs UK","Georges-Kevin N'Koudou","2016/8/31","Marseille",9.35,"
+                                Attacker                            ","France","Versailles",41,10,5,8,8,1,0,0,0,301,3007,45.9630390143737,"1995/2/13",21.5468856947296,60900,"Premier league","Top Club",5.36978,43.296482
+"447",447,"Spurs UK","Victor Wanyama","2016/7/1","Southampton",12.24,"
+                                Midfield                            ","Kenya","Nairobi",35,1,1,1,1,4,2,1,0,2949,2949,NA,"1991/6/25",25.0184804928131,96000,"Premier league","Top Club",-1.4043509,50.9097004
+"448",448,"Spurs UK","Moussa Sissoko","2016/8/31","Newcastle",29.75,"
+                                Midfield                            ","France","Le Blanc-Mesnil",39,1,8,0,0,3,0,0,0,3402,3402,NA,"1989/8/16",27.0417522245038,99900,"Premier league","Top Club",-1.61778,54.978252
+"449",449,"SSC Napoli Italy","Emanuele Giaccherini","2016/7/16","Sunderland",1.28,"
+                                Attacker                            ","Italy","Bibbiena",28,7,1,1,1,7,0,0,0,312,2185,11.4661190965092,"1985/5/5",31.1978097193703,17600,"Serie A","Top Club",-1.383801,54.906869
+"450",450,"SSC Napoli Italy","Amadou Diawara","2016/8/26","Bologna",12.33,"
+                                Midfield                            ","Guinea","Conakry",35,0,1,4,4,11,1,1,0,NA,2779,46.1273100616016,"1997/7/17",19.1101984941821,6690,"Serie A","Top Club",11.3426163,44.494887
+"451",451,"SSC Napoli Italy","Lorenzo Tonelli","2016/7/1","FC Empoli",8.5,"
+                                Defender                            ","Italy","Firenze",27,2,0,0,0,8,1,0,0,1190,2379,11.958932238193,"1990/1/17",26.4531143052704,1920,"Serie A","Top Club",12.2253049,44.1325193
+"452",452,"SSC Napoli Italy","Arkadiusz Milik","2016/8/1","AFC Ajax",27.2,"
+                                Attacker                            ","Poland","Tychy",42,24,12,5,5,3,0,0,3,136,3273,34.9240246406571,"1994/2/28",22.4229979466119,33200,"Serie A","Top Club",NA,NA
+"453",453,"SSC Napoli Italy","Piotr Zielinski","2016/8/4","Udinese Calcio",11.9,"
+                                Midfield                            ","Poland","Zabkowice Slaskie",71,10,12,0,0,10,2,0,0,616,6162,22.8336755646817,"1994/5/20",22.2094455852156,13500,"Serie A","Top Club",13.2056341,46.0408771
+"454",454,"Stoke City UK","Joe Allen","2016/7/25","Liverpool",13.18,"
+                                Midfield                            ","Wales","Carmarthen",37,3,3,18,18,3,0,0,0,583,1748,NA,"1990/3/14",26.3655030800821,81600,"Premier league","Middle Club",-2.9915726,53.4083714
+"455",455,"Stoke City UK","Ryan Sweeney","2016/8/5","AFC Wimbledon",0.25,"
+                                    30.06.2019                                ","Ireland","London",10,1,1,0,0,2,0,1,0,889,889,NA,"1997/4/15",19.3073237508556,1850,"Premier league","Middle Club",-0.2838047,51.4046999
+"456",456,"Stoke City UK","Ramadan Sobhi","2016/7/25","Ahly",4.25,"
+                                Attacker                            ","Egypt","Kairo",34,6,12,7,7,3,0,1,1,416,2495,47.1786447638604,"1997/6/27",19.0773442847365,8770,"Premier league","Middle Club",29.9971815,31.2424331
+"457",457,"Sunderland UK","Steven Pienaar","2016/8/19","Everton",0,"
+                                Attacker                            ","South Africa","Johannesburg, ...",6,0,0,4,4,0,0,0,0,NA,257,NA,"1982/3/17",34.425735797399,40100,"Premier league","Bottom Club",-93.702428,37.3425477
+"458",458,"Sunderland UK","Patrick McNair","2016/8/11","Manchester Utd.",4.46,"
+                                Defender                            ","Northern Ireland","Ballyclare",17,1,1,5,5,2,0,0,0,1120,1120,10.611909650924,"1995/4/27",21.2922655715264,2740,"Premier league","Bottom Club",-118.3425748,33.9600196
+"459",459,"Sunderland UK","Donald Love","2016/8/11","Man Utd U23",0.978,"
+                                    30.06.2020                                ","Scotland","Rochdale",24,1,3,4,4,4,0,0,0,1810,1810,NA,"1994/12/2",21.6919917864476,11400,"Premier league","Bottom Club",-118.4120366,33.9597525
+"460",460,"Sunderland UK","Papy Djilobodji","2016/8/5","Chelsea",8.08,"
+                                Defender                            ","Senegal","Kaolack",17,2,1,1,1,6,0,0,0,720,1440,34.7926078028747,"1988/12/1",27.6769336071184,14200,"Premier league","Bottom Club",-71.0328284,42.3917638
+"461",461,"Sunderland UK","Didier Ndong","2016/8/31","FC Lorient",17,"
+                                Midfield                            ","Gabon","Lambaréné",40,2,1,0,0,14,0,0,0,1815,3629,33.9383983572895,"1994/6/17",22.2067077344285,112000,"Premier league","Bottom Club",NA,NA
+"462",462,"SV Darmstadt  Germany","Änis Ben-Hatira","2016/8/22","E. Frankfurt",0,"
+                                Attacker                            ","Tunisia","Berlin",14,3,2,3,3,2,0,0,0,303,909,NA,"1988/7/18",28.0958247775496,2100,"Bundesliga","Middle Club",8.6821267,50.1109221
+"463",463,"SV Darmstadt  Germany","Victor Obinna","2016/8/5","MSV Duisburg",0,"
+                                Attacker                            ","Nigeria","Jos",16,3,3,3,3,3,0,1,0,381,1144,NA,"1987/3/25",29.3661875427789,10600,"Bundesliga","Middle Club",NA,NA
+"464",464,"SV Darmstadt  Germany","Roman Bezjak","2016/8/29","HNK Rijeka",1.7,"
+                                Attacker                            ","Slovenia","Slovenj Gradec",39,17,5,4,4,7,0,1,0,183,3111,22.0123203285421,"1989/2/21",27.5181382614647,683,"Bundesliga","Middle Club",14.4019282,45.3479003
+"465",465,"SV Darmstadt  Germany","Denys Oliynyk","2016/8/9","Vitesse",0,"
+                                Attacker                            ","Ukraine","Zaporizhya",29,6,2,7,7,3,0,1,1,330,1982,NA,"1987/6/16",29.1498973305955,2530,"Bundesliga","Middle Club",137.7577072,34.7298543
+"466",466,"SV Darmstadt  Germany","Artem Fedetsky","2016/7/27","Dnipro",0,"
+                                Defender                            ","Ukraine","Novovolynsk, Lutsk ...",23,0,1,2,2,7,0,0,0,NA,1715,NA,"1985/4/26",31.2525667351129,981,"Bundesliga","Middle Club",35.046183,48.464717
+"467",467,"SV Darmstadt  Germany","Immanuel Höhn","2016/7/1","SC Freiburg",0.638,"
+                                Defender                            ","Germany","Mainz",28,3,2,1,1,3,0,0,0,819,2456,11.958932238193,"1991/12/23",24.5229295003422,25500,"Bundesliga","Middle Club",8.274477,48.084436
+"468",468,"Swansea UK","Borja Bastón","2016/8/11","Atlético Madrid",15.3,"
+                                Attacker                            ","Spain","Madrid",39,19,4,8,8,4,0,0,3,141,2685,10.611909650924,"1992/8/25",23.9616700889801,8350,"Premier league","Middle Club",-3.7423397,40.3757325
+"469",469,"Swansea UK","Mike van der Hoorn","2016/7/6","AFC Ajax",2.13,"
+                                Defender                            ","Netherlands","Almere",22,2,2,2,2,2,1,0,0,866,1732,11.7946611909651,"1992/10/31",23.6796714579055,3150,"Premier league","Middle Club",NA,NA
+"470",470,"Swansea UK","Leroy Fer","2016/7/5","QPR",4.76,"
+                                Midfield                            ","Netherlands","Zoetermeer",30,2,4,7,7,4,0,1,0,1034,2067,11.8275154004107,"1990/1/5",26.4969199178645,34100,"Premier league","Middle Club",-8.4052158,53.8761086
+"471",471,"Swansea UK","Fernando Llorente","2016/8/5","Sevilla FC",5.02,"
+                                Attacker                            ","Spain","Pamplona",38,7,5,19,19,5,0,0,0,238,1665,22.8008213552361,"1985/2/26",31.4387405886379,48800,"Premier league","Middle Club",-109.9259886,27.4907255
+"472",472,"Swansea UK","Alfie Mawson","2016/8/30","Barnsley FC",5.02,"
+                                Defender                            ","England","London",58,7,0,0,0,3,0,0,0,753,5269,NA,"1994/1/19",22.611909650924,4220,"Premier league","Middle Club",NA,NA
+"473",473,"Torino Italy","Sasa Lukic","2016/7/29","Partizan",1.28,"
+                                Midfield                            ","Serbia","Šabac",31,2,1,10,10,7,0,0,0,892,1784,NA,"1996/8/13",19.958932238193,7680,"Serie A","Middle Club",131.9594688,43.6917713
+"474",474,"Torino Italy","Luca Rossettini","2016/8/16","Bologna",1.7,"
+                                Defender                            ","Italy","Padova",30,3,1,1,1,5,0,0,0,877,2631,22.4394250513347,"1985/5/9",31.2717316906229,11900,"Serie A","Middle Club",11.3426163,44.494887
+"475",475,"Torino Italy","Arlind Ajeti","2016/7/7","Frosinone",0,"
+                                Defender                            ","Albania","Basel",16,1,0,1,1,5,0,1,0,1219,1219,NA,"1993/9/25",22.7816563997262,2280,"Serie A","Middle Club",13.3426341,41.6396009
+"476",476,"Torino Italy","Lorenzo De Silvestri","2016/8/18","Sampdoria",3.06,"
+                                Defender                            ","Italy","Roma",17,1,2,0,0,4,0,0,0,1397,1397,34.3655030800821,"1988/5/23",28.2381930184805,5180,"Serie A","Middle Club",-100.7169119,20.0188739
+"477",477,"Torino Italy","Mirko Valdifiori","2016/8/31","SSC Napoli",2.98,"
+                                Midfield                            ","Italy","Lugo",15,0,2,0,0,5,0,0,0,NA,1253,33.9383983572895,"1986/4/21",30.362765229295,1620,"Serie A","Middle Club",NA,NA
+"478",478,"Torino Italy","Adem Ljajic","2016/7/18","AS Roma",7.23,"
+                                Attacker                            ","Serbia","Novi Pazar",29,4,3,10,10,2,0,0,0,423,1690,11.4004106776181,"1991/9/29",24.8021902806297,18500,"Serie A","Middle Club",-58.5214952,-34.6284822
+"479",479,"Torino Italy","Samuel Gustafson","2016/8/9","BK Häcken",0.425,"
+                                Midfield                            ",NA,NA,23,3,7,0,0,2,0,0,0,683,2050,16.7227926078029,"1995/1/11",21.5770020533881,698,"Serie A","Middle Club",NA,NA
+"480",480,"Torino Italy","Lucas Boyé","2016/7/1","River Plate",0,"
+                                Attacker                            ","Argentina","San Gregorio",16,1,3,1,1,1,0,0,0,1347,1347,NA,"1996/2/28",20.3394934976044,658,"Serie A","Middle Club",-56.741207,-35.1944557
+"481",481,"Torino Italy","Panagiotis Tachtsidis","2016/8/5","Genoa",1.11,"
+                                Midfield                            ","Greece","Nafplio",25,2,2,17,17,2,0,0,0,472,943,NA,"1991/2/15",25.4702258726899,24200,"Serie A","Middle Club",8.946256,44.4056499
+"482",482,"Toulouse France","Christopher Jullien","2016/7/1","SC Freiburg",2.38,"
+                                Defender                            ","France","Lagny-sur-Marne",38,10,1,0,0,9,0,0,0,344,3435,11.958932238193,"1993/3/22",23.2772073921971,1390,"Ligue 1","Bottom Club",8.274477,48.084436
+"483",483,"Toulouse France","Jimmy Durmaz","2016/8/20","Olympiacos",1.7,"
+                                Attacker                            ","Sweden","Örebro",27,7,10,4,4,4,0,0,1,278,1946,22.3080082135524,"1989/3/22",27.4140999315537,2660,"Ligue 1","Bottom Club",NA,NA
+"484",484,"Toulouse France","Ola Toivonen","2016/8/4","Rennes",1.28,"
+                                Attacker                            ","Sweden","Degerfors",17,3,3,4,4,1,0,0,0,336,1008,10.8418891170431,"1986/7/3",30.0889801505818,8060,"Ligue 1","Bottom Club",-1.6777926,48.117266
+"485",485,"Toulouse France","Jessy Pi","2016/7/1","Monaco",0.595,"
+                                Midfield                            ","France","Manosque",40,5,0,2,2,4,0,0,0,701,3507,11.958932238193,"1993/9/24",22.7679671457906,653,"Ligue 1","Bottom Club",7.4246158,43.7384176
+"486",486,"Hoffenheim Germany","Sandro Wagner","2016/7/1","SV Darmstadt 98",2.38,"
+                                Attacker                            ","Germany","München",34,15,4,5,5,8,1,0,2,177,2656,11.958932238193,"1987/11/29",28.5886379192334,3760,"Bundesliga","Middle Club",8.927711,50.108607
+"487",487,"Hoffenheim Germany","Lukas Rupp","2016/7/1","VfB Stuttgart",4.25,"
+                                Midfield                            ","Germany","Heidelberg",32,6,6,6,6,5,0,0,0,387,2324,23.9507186858316,"1991/1/8",25.4784394250513,1890,"Bundesliga","Middle Club",NA,NA
+"488",488,"Hoffenheim Germany","Kerem Demirbay","2016/7/13","Hamburger SV",1.45,"
+                                Midfield                            ","Germany","Herten",26,11,4,2,2,7,1,0,3,195,2150,11.564681724846,"1993/7/3",23.0280629705681,2740,"Bundesliga","Middle Club",16.3378572,57.6027778
+"489",489,"Hoffenheim Germany","Kevin Vogt","2016/7/1","1. FC Köln",2.55,"
+                                Midfield                            ","Germany","Witten",26,0,2,7,7,4,0,0,0,NA,1679,11.958932238193,"1991/9/23",24.7720739219713,1760,"Bundesliga","Middle Club",NA,NA
+"490",490,"Hoffenheim Germany","Andrej Kramaric","2016/7/1","Leicester",8.5,"
+                                Attacker                            ","Croatia","Zagreb",21,6,4,5,5,0,1,0,1,235,1409,23.9507186858316,"1991/6/19",25.0349075975359,8560,"Bundesliga","Middle Club",-1.1397592,52.6368778
+"491",491,"Hoffenheim Germany","Marco Terrazzino","2016/7/1","VfL Bochum",0,"
+                                Attacker                            ","Germany","Mannheim",34,7,12,4,4,4,0,0,0,350,2448,NA,"1991/4/15",25.2128678986995,17100,"Bundesliga","Middle Club",NA,NA
+"492",492,"Hoffenheim Germany","Benjamin Hübner","2016/7/1","FC Ingolstadt",0.68,"
+                                Defender                            ","Germany","Wiesbaden",31,1,0,0,0,7,0,0,0,2719,2719,11.958932238193,"1989/7/4",26.9924709103354,1030,"Bundesliga","Middle Club",11.4257541,48.7665351
+"493",493,"UD Las Palmas Spain","Hélder Lopes","2016/7/1","Paços Ferreira",0,"
+                                Defender                            ","Portugal","Vila Nova de Gaia",33,1,2,0,0,7,0,0,0,2900,2900,NA,"1989/1/4",27.4880219028063,709,"La Liga","Middle Club",-8.2211022,42.1299821
+"494",494,"UD Las Palmas Spain","Kevin-Prince Boateng","2016/8/1","AC Milan",0,"
+                                Midfield                            ","Ghana","Berlin",14,1,0,12,12,2,0,0,0,339,339,NA,"1987/3/6",29.4072553045859,120000,"La Liga","Middle Club",6.2230139,50.7654394
+"495",495,"UD Las Palmas Spain","Marko Livaja","2016/7/15","Rubin Kazan",0,"
+                                Attacker                            ","Croatia","Split",36,2,0,28,28,14,0,0,0,598,1196,NA,"1993/8/26",22.8856947296372,21600,"La Liga","Middle Club",49.0875913,55.8502192
+"496",496,"UD Las Palmas Spain","Mateo García","2016/8/5","Instituto AC Cordoba II",0.34,"
+                                Midfield                            ","Argentina","Córdoba",8,2,0,1,1,1,0,0,0,305,609,NA,"1996/9/10",19.9014373716632,41300,"La Liga","Middle Club",NA,NA
+"497",497,"UD Las Palmas Spain","Mauricio Lemos","2016/7/1","Rubin Kazan",1.7,"
+                                Defender                            ","Uruguay","Rivera",17,0,0,2,2,5,0,0,0,NA,1276,NA,"1995/12/28",20.5092402464066,1500,"La Liga","Middle Club",49.0875913,55.8502192
+"498",498,"UD Las Palmas Spain","Míchel","2016/7/15","UD Almería",0,"
+                                Defender                            ","Brazil","Rio de Janeiro",29,0,4,0,0,7,0,0,0,NA,2562,NA,"1990/2/15",26.4120465434634,8040,"La Liga","Middle Club",-2.4637136,36.834047
+"499",499,"Udinese Calcio Italy","Seko Fofana","2016/7/1","Man City U23",2.98,"
+                                Midfield                            ","France","Paris",33,1,2,7,7,3,0,1,0,2392,2392,11.958932238193,"1995/5/7",21.1526351813826,1920,"Serie A","Bottom Club",-90.2802175,38.6233669
+"500",500,"Udinese Calcio Italy","Gabriele Angella","2016/7/1","Watford",0,"
+                                Defender                            ","Italy","Firenze",19,1,1,1,1,3,0,0,0,1636,1636,47.9671457905544,"1989/4/28",27.1759069130732,3680,"Serie A","Bottom Club",-0.39032,51.656489
+"501",501,"Udinese Calcio Italy","Hamdi Harbaoui","2016/7/1","KSC Lokeren",0,"
+                                Attacker                            ","Tunisia","Bizerte",20,12,0,1,1,5,0,0,1,145,1744,NA,"1985/1/5",31.4852840520192,2670,"Serie A","Bottom Club",3.9940663,51.1023413
+"502",502,"Udinese Calcio Italy","Rodrigo de Paul","2016/7/20","Valencia CF",2.55,"
+                                Attacker                            ","Argentina","Sarandí",29,1,1,12,12,5,0,0,0,1491,1491,35.3182751540041,"1994/5/24",22.1574264202601,2260,"Serie A","Bottom Club",-0.5104759,39.0643597
+"503",503,"Udinese Calcio Italy","Ewandro","2016/7/6","São Paulo",2.55,"
+                                Attacker                            ","Brazil","Recife",11,1,2,2,2,1,0,0,0,684,684,32.2299794661191,"1996/3/15",20.3093771389459,2360,"Serie A","Bottom Club",-46.6333094,-23.5505199
+"504",504,"Udinese Calcio Italy","Stipe Perica","2016/7/1","Chelsea",3.4,"
+                                Attacker                            ","Croatia","Zadar",13,3,0,6,6,1,0,0,0,214,642,23.9507186858316,"1995/7/7",20.9856262833676,6580,"Serie A","Bottom Club",-71.0328284,42.3917638
+"505",505,"Udinese Calcio Italy","Yrondu Musavu-King","2016/7/1","Granada CF",0,"
+                                Defender                            ","Gabon","Libreville",4,0,0,1,1,0,0,0,0,NA,276,47.9671457905544,"1992/1/8",24.4791238877481,475,"Serie A","Bottom Club",-3.0106774,36.7460566
+"506",506,"FC Palermo Italy","Haitam Aleesami","2016/8/5","IFK Göteborg",1.02,"
+                                Defender                            ","Norway","Oslo",22,1,3,0,0,3,1,0,0,1971,1971,40.8377823408624,"1991/7/31",25.015742642026,1680,"Serie A","Bottom Club",NA,NA
+"507",507,"FC Palermo Italy","Bruno Henrique","2016/8/29","Corinthians",2.81,"
+                                Midfield                            ","Brazil","Apucarana",27,4,1,0,0,4,0,0,0,593,2371,4.07392197125257,"1989/10/21",26.8555783709788,85300,"Serie A","Bottom Club",-121.7174504,40.5618791
+"508",508,"FC Palermo Italy","Slobodan Rajkovic","2016/8/1","SV Darmstadt 98",1.28,"
+                                Defender                            ","Serbia","Belgrad",17,1,1,4,4,4,0,0,0,1098,1098,10.9404517453799,"1989/2/3",27.4907597535934,2520,"Serie A","Bottom Club",8.927711,50.108607
+"509",509,"FC Palermo Italy","Alessandro Diamanti","2016/8/29","GZ Evergrande",0,"
+                                Attacker                            ","Italy","Prato",19,1,1,10,10,4,0,0,0,926,926,5.09240246406571,"1983/5/2",33.3278576317591,11000,"Serie A","Bottom Club",113.3271346,23.1265915
+"510",510,"FC Palermo Italy","Alessandro Gazzi","2016/8/2","Torino",0.595,"
+                                Midfield                            ","Italy","Feltre",17,1,0,4,4,4,0,0,0,1145,1145,NA,"1983/1/28",33.5112936344969,2090,"Serie A","Bottom Club",7.6868565,45.070312
+"511",511,"FC Palermo Italy","Ilija Nestorovski","2016/8/1","Inter Zapresic",0.425,"
+                                Attacker                            ","Macedonia","Prilep",35,25,2,1,1,10,0,1,6,123,3087,4.99383983572895,"1990/3/12",26.3901437371663,605,"Serie A","Bottom Club",NA,NA
+"512",512,"Valencia CF Spain","Nani","2016/7/5","Fenerbahce",7.23,"
+                                Attacker                            ","Portugal","Praia",47,12,13,4,4,11,1,0,0,311,3730,23.8193018480493,"1986/11/17",29.6317590691307,363000,"La Liga","Middle Club",24.4447587,36.7252955
+"513",513,"Valencia CF Spain","Ezequiel Garay","2016/8/31","Zenit S-Pb",20.4,"
+                                Defender                            ","Argentina","Rosario",28,2,1,1,1,3,0,0,1,1228,2456,33.9383983572895,"1986/10/10",29.8918548939083,69700,"La Liga","Middle Club",75.8253215,30.9258866
+"514",514,"Valencia CF Spain","Álvaro Medrán","2016/7/11","Real Madrid",1.28,"
+                                Midfield                            ","Spain","Dos Torres ...",20,2,1,4,4,7,0,0,0,748,1496,11.6303901437372,"1994/3/15",22.3244353182752,2710,"La Liga","Middle Club",-99.136043,19.2932645
+"515",515,"Valencia CF Spain","Martín Montoya","2016/7/29","FC Barcelona",0,"
+                                Defender                            ","Spain","Gavà",17,0,1,0,0,4,0,0,0,NA,1513,23.0308008213552,"1991/4/14",25.2922655715264,17400,"La Liga","Middle Club",2.1178229,41.3806915
+"516",516,"VfL Wolfsburg Germany","Josip Brekalo","2016/7/1","Dinamo Zagreb",5.1,"
+                                Attacker                            ","Croatia","Zagreb",25,4,1,12,12,1,0,0,0,348,1392,11.4661190965092,"1998/6/23",18.0232717316906,8020,"Bundesliga","Middle Club",16.1163926,45.7062291
+"517",517,"VfL Wolfsburg Germany","Yannick Gerhardt","2016/7/1","1. FC Köln",11.05,"
+                                Midfield                            ","Germany","Würselen",30,2,5,8,8,3,0,0,0,947,1894,23.9507186858316,"1994/3/13",22.3025325119781,1050,"Bundesliga","Middle Club",NA,NA
+"518",518,"VfL Wolfsburg Germany","Jeffrey Bruma","2016/7/1","PSV Eindhoven",9.78,"
+                                Defender                            ","Netherlands","Rotterdam",44,0,2,2,2,8,0,0,0,NA,3738,23.9507186858316,"1991/11/13",24.6324435318275,11100,"Bundesliga","Middle Club",5.4660837,51.4432096
+"519",519,"VfL Wolfsburg Germany","Jakub Blaszczykowski","2016/8/1","Bor. Dortmund",4.25,"
+                                Attacker                            ","Poland","Truskolasy",20,2,4,8,8,1,0,0,0,504,1007,22.9322381930185,"1985/12/14",30.6310746064339,117000,"Bundesliga","Middle Club",7.3714033,51.4918469
+"520",520,"VfL Wolfsburg Germany","Daniel Didavi","2016/7/1","VfB Stuttgart",0,"
+                                Midfield                            ","Germany","Nürtingen",34,14,5,1,1,9,1,0,2,192,2694,NA,"1990/2/21",26.3572895277207,25000,"Bundesliga","Middle Club",NA,NA
+"521",521,"VfL Wolfsburg Germany","Josuha Guilavogui","2016/7/1","Atlético Madrid",2.55,"
+                                Midfield                            ","France","Toulon",42,2,1,5,5,4,0,0,0,1644,3287,23.9507186858316,"1990/9/19",25.782340862423,25500,"Bundesliga","Middle Club",-3.7423397,40.3757325
+"522",522,"VfL Wolfsburg Germany","Victor Osimhen","2017/1/1","Ult. Strikers",2.98,"
+                                Attacker                            ","Nigeria","Lagos",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"1998/12/29",18.009582477755,18400,"Bundesliga","Middle Club",NA,NA
+"523",523,"VfL Wolfsburg Germany","Mario Gómez","2016/8/17","Fiorentina",5.95,"
+                                Attacker                            ","Germany","Riedlingen",41,28,6,3,3,5,0,0,1,119,3328,10.4147843942505,"1985/7/10",31.1047227926078,122000,"Bundesliga","Middle Club",10.5355882,42.9636137
+"524",524,"Villarreal CF Spain","Alfred N'Diaye","2016/7/6","Real Betis",6.8,"
+                                Midfield                            ","Senegal","Paris",36,2,0,0,0,6,1,0,0,1594,3187,35.7782340862423,"1990/3/6",26.3353867214237,12600,"La Liga","Top Club",-103.4456539,20.7908698
+"525",525,"Villarreal CF Spain","Álvaro González","2016/8/31","Espanyol",3.4,"
+                                Defender                            ","Spain","Potes",38,0,1,0,0,11,0,0,0,NA,3407,NA,"1990/1/8",26.6447638603696,10900,"La Liga","Top Club",2.641692,39.6293694
+"526",526,"Villarreal CF Spain","Roberto Soriano","2016/8/2","Sampdoria",11.99,"
+                                Midfield                            ","Italy","Darmstadt",40,8,3,4,4,7,0,0,0,387,3093,46.9158110882957,"1991/2/8",25.4811772758385,5280,"La Liga","Top Club",-100.7169119,20.0188739
+"527",527,"Villarreal CF Spain","Alexandre Pato","2016/7/27","Corinthians",2.55,"
+                                Attacker                            ","Brazil","Pato Branco",2,1,0,1,1,0,0,0,1,131,131,NA,"1989/9/2",26.8993839835729,65200,"La Liga","Top Club",-121.7174504,40.5618791
+"528",528,"Villarreal CF Spain","Nicola Sansone","2016/8/7","Sassuolo",11.05,"
+                                Attacker                            ","Italy","München",37,7,5,8,8,8,0,0,0,368,2575,10.7433264887064,"1991/9/10",24.9089664613279,3380,"La Liga","Top Club",10.7847741,44.54433
+"529",529,"Villarreal CF Spain","Cristian Espinoza","2016/8/4","CA Huracán",6.12,"
+                                Attacker                            ","Argentina","Buenos Aires",29,7,9,2,2,3,0,0,0,326,2280,NA,"1995/4/3",21.3388090349076,1770,"La Liga","Top Club",-115.5627772,32.6306838
+"530",530,"Villarreal CF Spain","Denis Cheryshev","2016/7/1","Real Madrid",5.95,"
+                                Attacker                            ","Russia","Nizhniy Novgorod",14,4,1,7,7,4,0,0,0,158,632,NA,"1990/12/26",25.5140314852841,12600,"La Liga","Top Club",-99.136043,19.2932645
+"531",531,"Watford UK","Brice Dja Djedjé","2016/7/21","Marseille",3.06,"
+                                Defender                            ","Cote d'Ivoire","Aboudé",24,1,0,4,4,3,0,0,0,1764,1764,NA,"1990/12/23",25.5770020533881,4670,"Premier league","Middle Club",5.36978,43.296482
+"532",532,"Watford UK","Isaac Success","2016/7/1","Granada CF",12.75,"
+                                Attacker                            ","Nigeria","Benin City",33,6,5,3,3,10,1,0,0,434,2603,NA,"1996/1/7",20.4818617385353,15200,"Premier league","Middle Club",-3.0106774,36.7460566
+"533",533,"Watford UK","Younès Kaboul","2016/8/19","Sunderland",3.4,"
+                                Defender                            ","France","Saint-Julien-en-Gene...",23,0,1,1,1,3,1,0,0,NA,2009,34.3326488706366,"1986/1/4",30.6228610540726,614000,"Premier league","Middle Club",-1.383801,54.906869
+"534",534,"Watford UK","Daryl Janmaat","2016/8/24","Newcastle",7.57,"
+                                Defender                            ","Netherlands","Leidschendam",35,3,4,0,0,5,1,0,0,993,2980,NA,"1989/7/22",27.0910335386721,18000,"Premier league","Middle Club",-1.61778,54.978252
+"535",535,"Watford UK","Stefano Okaka","2016/8/29","RSC Anderlecht",5.1,"
+                                Attacker                            ","Italy","Castiglione del Lago",49,17,4,8,8,5,0,1,0,216,3677,NA,"1989/8/9",27.0554414784394,5460,"Premier league","Middle Club",NA,NA
+"536",536,"Watford UK","Christian Kabasele","2016/7/1","KRC Genk",5.91,"
+                                Defender                            ","Belgium","Lubumbashi",46,5,0,0,0,7,0,0,0,834,4170,23.9507186858316,"1991/2/24",25.3497604380561,3370,"Premier league","Middle Club",5.5021,50.96613
+"537",537,"Watford UK","Jerome Sinclair","2016/7/1","Liverpool U23",0,"
+                                Attacker                            ","England","Birmingham",17,6,2,2,2,0,0,0,0,223,1335,NA,"1996/9/20",19.7782340862423,9540,"Premier league","Middle Club",-81.5040171,38.8991063
+"538",538,"Watford UK","Adrian Mariappa","2016/8/30","Crystal Palace",0,"
+                                Defender                            ","Jamaica","London",7,0,0,1,1,0,0,0,0,NA,580,NA,"1986/10/3",29.9082819986311,44800,"Premier league","Middle Club",-80.0032,40.4398
+"539",539,"Watford UK","Sven Kums","2016/8/29","KAA Gent",8.5,"
+                                Midfield                            ","Belgium","Asse",52,16,8,0,0,6,0,0,9,284,4536,NA,"1988/2/26",28.5065023956194,2290,"Premier league","Middle Club",NA,NA
+"540",540,"Watford UK","Roberto Pereyra","2016/8/19","Juventus",11.05,"
+                                Midfield                            ","Argentina","San Miguel de ...",16,0,1,7,7,1,0,0,0,NA,855,34.3326488706366,"1991/1/7",25.6153319644079,12900,"Premier league","Middle Club",-100.363932,25.733185
+"541",541,"Werder Bremen Germany","Thanos Petsos","2016/7/1","Rapid Vienna",0,"
+                                Midfield                            ","Greece","Düsseldorf",33,2,3,2,2,6,0,0,0,1367,2733,NA,"1991/6/5",25.0732375085558,1240,"Bundesliga","Middle Club",-103.5459068,44.0382334
+"542",542,"Werder Bremen Germany","Lamine Sané","2016/8/4","G. Bordeaux",0,"
+                                Defender                            ","Senegal","Villeneuve-sur-Lot",21,0,1,4,4,8,0,1,0,NA,1562,NA,"1987/3/22",29.3716632443532,144000,"Bundesliga","Middle Club",-0.57918,44.837789
+"543",543,"Werder Bremen Germany","Serge Gnabry","2016/8/31","Arsenal",4.25,"
+                                Attacker                            ","Germany","Stuttgart",12,2,1,1,1,0,0,0,0,441,881,NA,"1995/7/14",21.1334702258727,29900,"Bundesliga","Middle Club",-98.496595,29.4148437
+"544",544,"Werder Bremen Germany","Justin Eilers","2016/7/1","Dynamo Dresden",0,"
+                                Attacker                            ","Germany","Braunschweig",40,23,7,2,2,1,0,0,3,148,3400,NA,"1988/6/13",28.0492813141684,630,"Bundesliga","Middle Club",NA,NA
+"545",545,"Werder Bremen Germany","Florian Kainz","2016/7/1","Rapid Vienna",2.98,"
+                                Attacker                            ","Austria","Graz",47,11,21,2,2,7,0,0,0,357,3926,11.958932238193,"1992/10/24",23.6851471594798,2090,"Bundesliga","Middle Club",-103.5459068,44.0382334
+"546",546,"Werder Bremen Germany","Max Kruse","2016/8/2","VfL Wolfsburg",6.38,"
+                                Attacker                            ","Germany","Reinbek",43,9,12,7,7,3,0,0,0,358,3221,34.8911704312115,"1988/3/19",28.37234770705,10200,"Bundesliga","Middle Club",10.7979685,52.4257066
+"547",547,"Werder Bremen Germany","Lennart Thy","2016/7/1","FC St. Pauli",0,"
+                                Attacker                            ","Germany","Frechen",31,8,4,2,2,1,0,0,0,319,2548,NA,"1992/2/25",24.3477070499658,902,"Bundesliga","Middle Club",NA,NA
+"548",548,"Werder Bremen Germany","Fallou Diagne","2016/7/8","Rennes",1.28,"
+                                Defender                            ","Senegal","Pikine",24,6,0,1,1,8,0,0,2,345,2068,NA,"1989/8/14",26.8993839835729,6500,"Bundesliga","Middle Club",-1.6777926,48.117266
+"549",549,"Werder Bremen Germany","Niklas Moisander","2016/7/9","Sampdoria",1.53,"
+                                Defender                            ","Finland","Turku",23,0,0,3,3,4,0,1,0,NA,1866,23.6878850102669,"1985/9/29",30.776180698152,28600,"Bundesliga","Middle Club",-100.7169119,20.0188739
+"550",550,"Werder Bremen Germany","Robert Bauer","2016/8/23","FC Ingolstadt",2.13,"
+                                Defender                            ","Germany","Pforzheim",27,1,1,6,6,7,0,0,0,1946,1946,22.2094455852156,"1995/4/9",21.3744010951403,1520,"Bundesliga","Middle Club",11.4257541,48.7665351
+"551",551,"Werder Bremen Germany","Thomas Delaney","2017/1/1","FC Copenhagen",1.7,"
+                                Midfield                            ","Denmark","Frederiksberg",38,6,5,1,1,11,0,0,0,557,3340,5.91375770020534,"1991/9/3",25.3305954825462,4930,"Bundesliga","Middle Club",12.1765189,55.4563854
+"552",552,"West Brom UK","Nacer Chadli","2016/8/29","Spurs",12.92,"
+                                Attacker                            ","Belgium","Liège",40,7,5,21,21,1,0,0,1,240,1682,22.0123203285421,"1989/8/2",27.0746064339493,36600,"Premier league","Middle Club",-109.30151,35.1709339
+"553",553,"West Brom UK","Matt Phillips","2016/7/6","QPR",5.53,"
+                                Attacker                            ","Scotland","Aylesbury",45,8,5,1,1,5,0,0,0,482,3859,11.7946611909651,"1991/3/13",25.3169062286105,30000,"Premier league","Middle Club",-8.4052158,53.8761086
+"554",554,"West Brom UK","Hal Robson-Kanu","2016/8/31","Reading",0,"
+                                Attacker                            ","Wales","London",35,5,7,7,7,6,0,0,1,473,2364,NA,"1989/5/21",27.2799452429843,31600,"Premier league","Middle Club",-75.9268747,40.3356483
+"555",555,"West Brom UK","Allan Nyom","2016/8/31","Watford",4,"
+                                Defender                            ","Cameroon","Neuilly-sur-Seine",36,0,1,3,3,8,0,0,0,NA,2826,45.9630390143737,"1988/5/10",28.3093771389459,33400,"Premier league","Middle Club",-0.39032,51.656489
+"556",556,"West Ham UK","Álvaro Arbeloa","2016/8/31","Real Madrid",0,"
+                                Defender                            ","Spain","Salamanca",9,0,0,4,4,1,0,0,0,NA,529,NA,"1983/1/17",33.6208076659822,53700,"Premier league","Middle Club",-99.136043,19.2932645
+"557",557,"West Ham UK","André Ayew","2016/8/8","Swansea",20.49,"
+                                Attacker                            ","Ghana","Seclin",35,12,5,1,1,5,0,0,0,245,2943,NA,"1989/12/17",26.6420260095825,1280000,"Premier league","Middle Club",-3.943646,51.62144
+"558",558,"West Ham UK","Sofiane Feghouli","2016/7/1","Valencia CF",0,"
+                                Attacker                            ","Algeria","Levallois-Perret",33,5,4,12,12,7,0,0,0,408,2042,NA,"1989/12/26",26.5133470225873,295000,"Premier league","Middle Club",-0.5104759,39.0643597
+"559",559,"West Ham UK","Ashley Fletcher","2016/7/12","Man Utd U23",0,"
+                                Attacker                            ","England","Keighley",31,9,5,12,12,2,0,0,0,204,1835,NA,"1995/10/2",20.7775496235455,10500,"Premier league","Middle Club",-118.4120366,33.9597525
+"560",560,"West Ham UK","Manuel Lanzini","2016/7/1","Al-Jazira",10.2,"
+                                Midfield                            ","Argentina","Ituzaingó",36,8,5,5,5,3,0,0,0,335,2682,23.9507186858316,"1993/2/15",23.3730321697468,15400,"Premier league","Middle Club",35.8028306,31.7049999
+"561",561,"West Ham UK","Edimilson Fernandes","2016/8/25","FC Sion",5.44,"
+                                Midfield                            ","Switzerland","Sion",39,3,6,5,5,7,0,0,0,1038,3113,NA,"1996/4/15",20.3613963039014,4700,"Premier league","Middle Club",-6.5030396,53.3655799
+"562",562,"West Ham UK","Havard Nordtveit","2016/7/1","Bor. M'gladbach",0,"
+                                Midfield                            ","Norway","Vats",39,4,1,6,6,4,0,0,0,749,2996,NA,"1990/6/21",26.0287474332649,10600,"Premier league","Middle Club",NA,NA
+"563",563,"West Ham UK","Arthur Masuaku","2016/8/8","Olympiacos",6.04,"
+                                Defender                            ","France","Lille",32,1,3,0,0,8,0,0,0,2910,2910,22.7022587268994,"1993/11/7",22.7515400410678,19500,"Premier league","Middle Club",NA,NA
