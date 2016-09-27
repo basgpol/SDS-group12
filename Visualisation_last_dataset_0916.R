@@ -194,18 +194,6 @@ transfer.data = player.data
 # transfer.data <- transfer.data[sample(1:nrow(transfer.data), 50,# taking a random 50 sample
 #                           replace=FALSE),]
 
-transfer.data.geo<-transfer.data %>%
-  group_by(club.from) %>%
-  dplyr::summarise()
-
-
-transfer.data.geo= completeFun(transfer.data.geo,"club.from") #function applied to transfer data to remove unknown origin
-
-###Looping for club coordinate
-
-geocodes.club.from <- geocode(as.character(transfer.data.geo$club.from))
-#transfer.path.origin <- data.frame(transfer.data,geocodes.club.from)
-
 #transfer.path.origin= data.frame(rep(i, nrow(transfer.data)), transfer.data$V1, transfer.data$lon, transfer.data$lat) #creating a dataset with destination coordinates
 transfer.path.origin= data.frame( player.data.geo$club.from, geocodes.club.from$lon, geocodes.club.from$lat) #creating a dataset with destination coordinates
 colnames(transfer.path.origin)[1] <- "club.from"#change "club.from"
@@ -214,7 +202,6 @@ colnames(transfer.path.origin)[1] <- "club.from"#change "club.from"
 ###CODE that takes the geocode from 1st visualisation
 #transfer path destination
 colnames(transfer.data)[2] <- "team"#change "club to" to "team"
-#colnames(transfer.data)[5] <- "club.from"#change "club to" to "team"
 
 #TEAM
 
@@ -225,15 +212,37 @@ transfer.data$team = str_replace(transfer.data$team,"[1234567890]","")
 transfer.data$team = str_replace(transfer.data$team,"*\\[.*?\\] *","")#removing the unwanted characters between brackets
 transfer.data$team = str_replace(transfer.data$team,"Borussia Mönchengladbach","Mönchengladbach Borussia")
 transfer.data$team = str_replace(transfer.data$team,"FC Augsburg","Augsburg FC")
-transfer.data$team = str_replace(transfer.data$team,"FC Köln","Cologne FC")
+transfer.data$team = str_replace(transfer.data$team,"FC Köln","Cologne FC RheinEnergieStadion")
 transfer.data$team = str_replace(transfer.data$team,"VfB Stuttgart","Stuttgart VfB")
 transfer.data$team = str_replace(transfer.data$team,"Hellas Verona","Verona FC")
+transfer.data$team = str_replace(transfer.data$team,"Celta de Vigo","Sede Real Club Celta de Vigo")
 transfer.data$team = str_replace(transfer.data$team,"BSC","Berlin")
+transfer.data$team = str_replace(transfer.data$team,"FC Schalke","Schalke 04 FC ")
+transfer.data$team = str_replace(transfer.data$team,"FC Lorient","Lorient FC")
+transfer.data$team = str_replace(transfer.data$team,"OGC Nice","Nice OGC")
+transfer.data$team = str_replace(transfer.data$team,"Burnley FC","Burnley Football Club")
 transfer.data$team = str_replace(transfer.data$team,"Juventus","Juventus Turin")
 transfer.data$team = str_replace(transfer.data$team,"Inter","Inter Milan")
+transfer.data$team = str_replace(transfer.data$team,"SM Caen","Stade Malherbe Caen")
+transfer.data$team = str_replace(transfer.data$team,"TSG Hoffenheim","Hoffenheim")
+transfer.data$team = str_replace(transfer.data$team,"Sevilla FC","Sevilla Fútbol Club")
+transfer.data$team = str_replace(transfer.data$team,"Real Betis","Real Betis Sevilla")
 transfer.data$team = str_replace(transfer.data$team,"US","FC")
 transfer.data$team = str_replace(transfer.data$team,"\\.","")
 transfer.data$team = str_replace(transfer.data$team," *\\(.*?\\) *","") #remove (C) for champions
+
+#class transforming to numeric value or character value
+transfer.data$transfer.fee.total <- as.numeric(transfer.data$transfer.fee.total)
+transfer.data$team <- as.character(transfer.data$team)
+
+###ADD COUNTRIES TO TEAM NAMES (in order to find them on gmap)
+
+transfer.data$team <- with(transfer.data, ifelse(league=="Bundesliga", paste(team,"Germany", sep = " "),
+                                                       ifelse(league=="Ligue 1", paste(team,"France", sep = " "),
+                                                              ifelse(league=="Serie A", paste(team,"Italy", sep = " "),
+                                                                     ifelse(league=="Premier league", paste(team,"UK", sep = " "),
+                                                                            ifelse(league=="La Liga", paste(team,"Spain", sep = " "),""))))))
+
 
 #class transforming to numeric value or character value
 transfer.data$transfer.fee <- as.numeric(transfer.data$transfer.fee)
@@ -247,8 +256,20 @@ transfer.data$team <- with(transfer.data, ifelse(league=="Bundesliga", paste(tea
                                                                      ifelse(league=="Premier league", paste(team,"UK", sep = " "),
                                                                             ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
 
+#transfer data geo
+transfer.data.geo<-transfer.data %>%
+  group_by(club.from) %>%
+  dplyr::summarise()
 
-#transfer.data= completeFun(transfer.data,"lon")#applying the function to remove NA/unidentified to transfer.path
+
+transfer.data.geo= completeFun(transfer.data.geo,"club.from") #function applied to transfer data to remove unknown origin
+
+###Looping for club coordinate
+
+geocodes.club.from <- geocode(as.character(transfer.data.geo$club.from))
+transfer.path.origin <- data.frame(transfer.data,geocodes.club.from)
+
+transfer.data= completeFun(transfer.data,"lon")#applying the function to remove NA/unidentified to transfer.path
 
 #transfer path origin
 
@@ -257,7 +278,7 @@ transfer.path1<-dplyr::left_join(transfer.data, transfer.path.origin, by = "club
 
 #read geocode and adding it to data frame
 geocodes<- read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/geocodes.csv", encoding = "UTF8", header = TRUE)
-transfer.data.destination <- data.frame(df.spending.club[1:3],geocodes)
+transfer.data.destination <- data.frame(transfer.data[1:3],geocodes)
 
 #building destination list
 transfer.path2<-dplyr::left_join(transfer.data, transfer.data.destination, by = "team")
