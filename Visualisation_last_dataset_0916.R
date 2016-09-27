@@ -111,7 +111,7 @@ df.spending.club$lat = as.numeric(df.spending.club$lat)
 write.csv(df.spending.club,"df_spending_club_with_geo.csv")
 
 #GETTING DATA
-df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Latest%20transferdata/transferdata16.final.csv", encoding = "UTF8", header = TRUE)
+df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Final%20documents/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
 
 #data.frame[row_number, column_number] = new_value
 
@@ -188,7 +188,7 @@ p2
 #================ 3.2 CLUB MAP WITH TRANSFER PATHS ================
 
 #Getting data from df
-player.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", header=TRUE, stringsAsFactors=TRUE, fileEncoding="UTF8") # loading saved version of uncleaned player data
+player.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Latest%20transferdata/transferdata16.final.csv", header=TRUE, stringsAsFactors=TRUE, fileEncoding="UTF8") # loading saved version of uncleaned player data
 transfer.data = player.data
 
 # transfer.data <- transfer.data[sample(1:nrow(transfer.data), 50,# taking a random 50 sample
@@ -248,7 +248,7 @@ transfer.data$team <- with(transfer.data, ifelse(league=="Bundesliga", paste(tea
                                                                             ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
 
 
-transfer.data= completeFun(transfer.data,"lon")#applying the function to remove NA/unidentified to transfer.path
+#transfer.data= completeFun(transfer.data,"lon")#applying the function to remove NA/unidentified to transfer.path
 
 #transfer path origin
 
