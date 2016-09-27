@@ -1,11 +1,6 @@
-################################################################################################################################################
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################              FINAL VISUALISATIONS           ############################################################### 
-####################################                                             ###############################################################
-################################################################################################################################################
-################################################################################################################################################library(plotly)
-
+##=========================================================================================
+##------------------------- 3. Visualisation --- ------------------------------------------
+##=========================================================================================
 ##LIBRARIES
 library(plotly)
 #install.packages("extrafont")
@@ -19,14 +14,10 @@ library(dplyr)#tidying dataset
 library(rworldmap)
 library(stringr)#dealing with strings and replacing strings in observations
 library(RCurl)
-font_import()
-font_import(pattern = "/Library/Fonts/lmroman10-bold.ttf")
 
-Sys.setenv("plotly_username"="Guillaume_Slize")
-Sys.setenv("plotly_api_key"="ini5kjkwyl")
 
 #creating dataset
-df.viz<- read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", encoding = "UTF8", header = TRUE)
+df.viz<- read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Latest%20transferdata/transferdata16.final.csv", encoding = "UTF8", header = TRUE)
 
 ####remove player with transfer fee= 0 et contract time left=0
 df.viz<- filter(df.viz,transfer.fee>0)
@@ -46,66 +37,70 @@ myLocation <- "Zurich"
 myMap <- get_map(location= myLocation,
                  source="stamen",maptype="toner", crop=FALSE,zoom=4)
 ggmap(myMap)
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         CLUB MAP W TRANSFER SPENDING        ############################################################### 
-####################################                                             ###############################################################
-################################################################################################################################################
 
+##================ 3.1 CLUB MAP WITH TRANSFER SPENDING ================
 
 # #grouping by clubs
-# df.spending.club = df.viz %>%
-#   group_by(club.to,league)%>%
-#   dplyr::summarise(transfer.fee.total = sum(transfer.fee))
-# 
-# #tidying data frame
-# colnames(df.spending.club)[1] <- "team"#change "club to" to "team"
-# 
-# #TEAM
-# 
-# df.spending.club$team = str_replace(df.spending.club$team,"[1234567890]","")#removing the unwanted numbers*3 because it only take one out at a time
-# df.spending.club$team = str_replace(df.spending.club$team,"[1234567890]","")
-# df.spending.club$team = str_replace(df.spending.club$team,"[1234567890]","")
-# df.spending.club$team = str_replace(df.spending.club$team,"[1234567890]","")
-# df.spending.club$team = str_replace(df.spending.club$team,"*\\[.*?\\] *","")#removing the unwanted characters between brackets
-# df.spending.club$team = str_replace(df.spending.club$team,"Borussia Mönchengladbach","Mönchengladbach Borussia")
-# df.spending.club$team = str_replace(df.spending.club$team,"FC Augsburg","Augsburg FC")
-# df.spending.club$team = str_replace(df.spending.club$team,"FC Köln","Cologne FC")
-# df.spending.club$team = str_replace(df.spending.club$team,"VfB Stuttgart","Stuttgart VfB")
-# df.spending.club$team = str_replace(df.spending.club$team,"Hellas Verona","Verona FC")
-# df.spending.club$team = str_replace(df.spending.club$team,"BSC","Berlin")
-# df.spending.club$team = str_replace(df.spending.club$team,"Juventus","Juventus Turin")
-# df.spending.club$team = str_replace(df.spending.club$team,"Inter","Inter Milan")
-# df.spending.club$team = str_replace(df.spending.club$team,"US","FC")
-# df.spending.club$team = str_replace(df.spending.club$team,"\\.","")
-# df.spending.club$team = str_replace(df.spending.club$team," *\\(.*?\\) *","") #remove (C) for champions
-# 
-# #class transforming to numeric value or character value
-# df.spending.club$transfer.fee.total <- as.numeric(df.spending.club$transfer.fee.total)
-# df.spending.club$team <- as.character(df.spending.club$team)
-# 
-# ###ADD COUNTRIES TO TEAM NAMES (in order to find them on gmap)
-# 
-# df.spending.club$team <- with(df.spending.club, ifelse(league=="Bundesliga", paste(team,"GERMANY", sep = " "),
-#                                                        ifelse(league=="Ligue 1", paste(team,"FRANCE", sep = " "),
-#                                                               ifelse(league=="Serie A", paste(team,"ITALY", sep = " "),
-#                                                                      ifelse(league=="Premier league", paste(team,"UK", sep = " "),
-#                                                                             ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
-# 
-# 
-# #geocode team
-# # geocodes <- geocode(as.character(df.spending.club$team))
-# # write_csv(geocodes,"geocodes.csv")
+df.spending.club = df.viz %>%
+  group_by(club.to,league)%>%
+  dplyr::summarise(transfer.fee.total = sum(transfer.fee))
+
+#tidying data frame
+colnames(df.spending.club)[1] <- "team"#change "club to" to "team"
+
+#TEAM
+
+df.spending.club$team = str_replace(df.spending.club$team,"[1234567890]","")#removing the unwanted numbers*3 because it only take one out at a time
+df.spending.club$team = str_replace(df.spending.club$team,"[1234567890]","")
+df.spending.club$team = str_replace(df.spending.club$team,"[1234567890]","")
+df.spending.club$team = str_replace(df.spending.club$team,"[1234567890]","")
+df.spending.club$team = str_replace(df.spending.club$team,"*\\[.*?\\] *","")#removing the unwanted characters between brackets
+df.spending.club$team = str_replace(df.spending.club$team,"Borussia Mönchengladbach","Mönchengladbach Borussia")
+df.spending.club$team = str_replace(df.spending.club$team,"FC Augsburg","Augsburg FC")
+df.spending.club$team = str_replace(df.spending.club$team,"FC Köln","Cologne FC RheinEnergieStadion")
+df.spending.club$team = str_replace(df.spending.club$team,"VfB Stuttgart","Stuttgart VfB")
+df.spending.club$team = str_replace(df.spending.club$team,"Hellas Verona","Verona FC")
+df.spending.club$team = str_replace(df.spending.club$team,"Celta de Vigo","Sede Real Club Celta de Vigo")
+df.spending.club$team = str_replace(df.spending.club$team,"BSC","Berlin")
+df.spending.club$team = str_replace(df.spending.club$team,"FC Schalke","Schalke 04 FC ")
+df.spending.club$team = str_replace(df.spending.club$team,"FC Lorient","Lorient FC")
+df.spending.club$team = str_replace(df.spending.club$team,"OGC Nice","Nice OGC")
+df.spending.club$team = str_replace(df.spending.club$team,"Burnley FC","Burnley Football Club")
+df.spending.club$team = str_replace(df.spending.club$team,"Juventus","Juventus Turin")
+df.spending.club$team = str_replace(df.spending.club$team,"Inter","Inter Milan")
+df.spending.club$team = str_replace(df.spending.club$team,"SM Caen","Stade Malherbe Caen")
+df.spending.club$team = str_replace(df.spending.club$team,"TSG Hoffenheim","Hoffenheim")
+df.spending.club$team = str_replace(df.spending.club$team,"Sevilla FC","Sevilla Fútbol Club")
+df.spending.club$team = str_replace(df.spending.club$team,"US","FC")
+df.spending.club$team = str_replace(df.spending.club$team,"\\.","")
+df.spending.club$team = str_replace(df.spending.club$team," *\\(.*?\\) *","") #remove (C) for champions
+
+#class transforming to numeric value or character value
+df.spending.club$transfer.fee.total <- as.numeric(df.spending.club$transfer.fee.total)
+df.spending.club$team <- as.character(df.spending.club$team)
+
+###ADD COUNTRIES TO TEAM NAMES (in order to find them on gmap)
+
+df.spending.club$team <- with(df.spending.club, ifelse(league=="Bundesliga", paste(team,"GERMANY", sep = " "),
+                                                       ifelse(league=="Ligue 1", paste(team,"FRANCE", sep = " "),
+                                                              ifelse(league=="Serie A", paste(team,"ITALY", sep = " "),
+                                                                     ifelse(league=="Premier league", paste(team,"UK", sep = " "),
+                                                                            ifelse(league=="La Liga", paste(team,"SPAIN", sep = " "),""))))))
+
+
+#geocode team
+geocodes <- geocode(as.character(df.spending.club$team))
+# write_csv(geocodes,"geocodes.csv")
 # read_csv("geocodes.csv")
-# 
-# #new dataframe with geocode
-# df.spending.club <- data.frame(df.spending.club[1:3],geocodes)
-# 
-# out.of.europe<-filter(df.spending.club, lon < -10 |lat < 35)
-# out.of.europe.2<- filter(df.spending.club, lon>20 |lat>60)
-# out.full= rbind(out.of.europe.2, out.of.europe)
-# 
-# write_csv(df.spending.club,"df_spending_club_with_geo.csv")
+
+#new dataframe with geocode
+df.spending.club <- data.frame(df.spending.club[1:3],geocodes)
+
+out.of.europe<-filter(df.spending.club, lon < -10 |lat < 35)
+out.of.europe.2<- filter(df.spending.club, lon>20 |lat>60)
+out.full= rbind(out.of.europe.2, out.of.europe)
+
+write.csv(df.spending.club,"df_spending_club_with_geo.csv")
 
 #GETTING DATA
 df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
@@ -123,7 +118,7 @@ map.clubs <- ggmap(myMap) +
   scale_size(breaks = c(5.0e+7,1.0e+8,1.5e+8),labels = c("50M£","100M£","150M£"))
 
 map.clubs
-#####with plotly
+####with plotly
 m <- list(
   colorbar = list(title = "Total transfer spending"),
   size = 10, opacity = 0.8, symbol = 'circle'
@@ -142,21 +137,15 @@ g <- list(
 )
 g
 
-g<-plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
+plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
         #text = team,
         hoverinfo = "text" ,
-        text=paste("Team = ", df.spending.club$team, "Total transfer = ","\n", df.spending.club$transfer.fee.total),
+        text=paste("Team = ", df.spending.club$team,"\n", "Total transfer = ", df.spending.club$transfer.fee.total),
         type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers',
         marker = m) %>%
   layout(title = 'Football teams in Europe and transfer spending', geo = g)
 
-plotly_POST(g, filename = "map",sharing = "secret")
-
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         MAPS WITH TRANSFER PATHS            ############################################################### 
-####################################                                             ###############################################################
-################################################################################################################################################
+#================ 3.2 CLUB MAP WITH TRANSFER PATHS ================
 
 # #Getting data from df
 # player.data = read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/transferdata.final.csv", header=TRUE, stringsAsFactors=TRUE, fileEncoding="UTF8") # loading saved version of uncleaned player data
@@ -295,16 +284,12 @@ full.map<-ggmap(myMap)+#calling map
 
 full.map
 
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         TRANSFER FEE BY AGE SCATTER PLOT    ############################################################### 
-####################################                                             ###############################################################
-################################################################################################################################################
+#================ 3.3 TRANSFER FEE BY AGE SCATTER PLOT ================
 
 p.age = ggplot(df.viz, aes(x = transferage , y = transfer.fee))
 p.age<-p.age + geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste("Name:",name)))+ #to use for ggplot
-          geom_smooth(aes(colour = transferage, fill = transferage))+
-          ggtitle("Age repartition of transfers in European leagues")+
+  geom_smooth(aes(colour = transferage, fill = transferage))+
+  ggtitle("Age repartition of transfers in European leagues")+
   labs(y="Transfer price\nin M£",x="Age") +
   theme(axis.ticks.y= element_line(color=NA),
         axis.ticks.x=element_line(colour="#CACACA", size=0.2),
@@ -327,11 +312,7 @@ p.age
 plotly.p.age<-ggplotly(p.age)
 plotly.p.age
 
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         TRANSFER FEE BY TIME LEFT PLOT      ############################################################### 
-####################################                                             ###############################################################
-################################################################################################################################################
+#================ 3.4 TRANSFER FEE BY TIME LEFT ON CONTRACT SCATTER PLOT ================
 
 p.time <- ggplot(data=df.viz, aes(x = contract.left.month , y = transfer.fee)) +
   geom_point(stat = "identity",col="red",alpha=0.4,aes(text = paste("Name:",name)))+
@@ -362,12 +343,7 @@ p.time
 # plotly.p.time <- ggplotly(p.time)
 # plotly.p.time
 
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         AVERAGE SPENDING PER CLUB           ############################################################### 
-####################################                PER LEAGUE                   ###############################################################
-####################################                                             ###############################################################
-################################################################################################################################################
+#================ 3.5 AVERAGE SPENDING PER CLUB PER LEAGUE  ================
 
 #finding mean for every league
 df.viz.ave<-df.viz %>% 
@@ -403,12 +379,8 @@ total.league<-total.league + geom_bar(stat="identity",alpha=1)+
 
 total.league
 
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         AVERAGE SPENDING PER PLAYER         ############################################################### 
-####################################                PER LEAGUE                   ###############################################################
-####################################                                             ###############################################################
-################################################################################################################################################
+#================ 3.6 AVERAGE SPENDING PER PLAYER PER LEAGUE  ================
+
 
 #finding mean spending per player for different leagues
 df.viz.player.league<-df.viz %>% 
@@ -417,7 +389,7 @@ df.viz.player.league<-df.viz %>%
 
 #ordering
 df.viz.player.league <- transform(df.viz.player.league, 
-                        league = reorder(league, average.spending.per.player))
+                                  league = reorder(league, average.spending.per.player))
 #plotting it
 ave.player = ggplot(df.viz.player.league, aes( x =league, y=average.spending.per.player, fill=league))
 ave.player<-ave.player + geom_bar(stat="identity",alpha=1)+
@@ -438,12 +410,8 @@ ave.player<-ave.player + geom_bar(stat="identity",alpha=1)+
   labs(y="Average transfer price\nper player in M£") 
 ave.player
 
-################################################################################################################################################
-####################################                                             ###############################################################          
-####################################         AVERAGE SPENDING PER PLAYERS        ############################################################### 
-####################################                 PER CLUB STATUS             ###############################################################
-####################################                                             ###############################################################
-################################################################################################################################################
+#================ 3.7 AVERAGE SPENDING PER PLAYER PER CLUB STATUS  ================
+
 
 df.viz.status<-df.viz %>% 
   group_by(Status) %>% 
@@ -451,7 +419,7 @@ df.viz.status<-df.viz %>%
 
 #Ordering
 df.viz.status <- transform(df.viz.status, 
-                                  Status = reorder(Status, mean.transfer))
+                           Status = reorder(Status, mean.transfer))
 
 #Plotting
 
