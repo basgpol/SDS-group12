@@ -71,6 +71,7 @@ df.spending.club$team = str_replace(df.spending.club$team,"Inter","Inter Milan")
 df.spending.club$team = str_replace(df.spending.club$team,"SM Caen","Stade Malherbe Caen")
 df.spending.club$team = str_replace(df.spending.club$team,"TSG Hoffenheim","Hoffenheim")
 df.spending.club$team = str_replace(df.spending.club$team,"Sevilla FC","Sevilla Fútbol Club")
+df.spending.club$team = str_replace(df.spending.club$team,"Real Betis","Real Betis Sevilla")
 df.spending.club$team = str_replace(df.spending.club$team,"US","FC")
 df.spending.club$team = str_replace(df.spending.club$team,"\\.","")
 df.spending.club$team = str_replace(df.spending.club$team," *\\(.*?\\) *","") #remove (C) for champions
@@ -90,8 +91,8 @@ df.spending.club$team <- with(df.spending.club, ifelse(league=="Bundesliga", pas
 
 #geocode team
 geocodes <- geocode(as.character(df.spending.club$team))
-# write_csv(geocodes,"geocodes.csv")
-# read_csv("geocodes.csv")
+#write.csv(geocodes,"geocodes.csv")
+#read_csv("geocodes.csv")
 
 #new dataframe with geocode
 df.spending.club <- data.frame(df.spending.club[1:3],geocodes)
@@ -99,11 +100,19 @@ df.spending.club <- data.frame(df.spending.club[1:3],geocodes)
 out.of.europe<-filter(df.spending.club, lon < -10 |lat < 35)
 out.of.europe.2<- filter(df.spending.club, lon>20 |lat>60)
 out.full= rbind(out.of.europe.2, out.of.europe)
-
+df.spending.club[35,5] = 51.558816
+df.spending.club[35,6] = 7.063850
+df.spending.club[55,c(5,6)]= c(43.683284, 7.197926)
+df.spending.club[19,c(5,6)]= c(42.230694, -8.720006)
+df.spending.club$lat = str_replace(df.spending.club$lat,"40.37573","40.38000")
+df.spending.club$lat = as.numeric(df.spending.club$lat)
 write.csv(df.spending.club,"df_spending_club_with_geo.csv")
 
 #GETTING DATA
-df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Exam_project/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
+df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Final%20documents/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
+
+#data.frame[row_number, column_number] = new_value
+
 
 #WITH GGPLOT
 map.clubs <- ggmap(myMap) +
