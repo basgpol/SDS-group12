@@ -130,12 +130,35 @@ map.clubs <- ggmap(myMap) +
 
 map.clubs
 ####with plotly
-m <- list(
-  colorbar = list(title = "Total transfer spending"),
-  size = log(df.spending.club$transfer.fee.total)*6 , opacity = 0.8, symbol = 'circle'
+f <- list(
+  family = "Goudy Old Style, serif",
+  size = 16,
+  color = "#525252"
+)
+x <- list(
+  title = "Age",
+  titlefont = f
+)
+y <- list(
+  title ="Transfer fee in M£", 
+  titlefont = f
 )
 
-# geo styling
+mar = list(
+  l = 10,
+  r = 10,
+  b = 30,
+  t = 70,
+  pad = 4
+)
+
+
+# m <- list(
+#   colorbar = list(title = "Total transfer spending"),
+#   size = log(df.spending.club$transfer.fee.total)*6 , opacity = 0.8, symbol = 'circle'
+# )
+
+#geo styling
 g <- list(
   scope = 'europe',
   projection = list(type = 'mercator'),
@@ -148,23 +171,27 @@ g <- list(
 )
 g
 
-p<- plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total, size = transfer.fee.total,opacity=0.7,
-        #text = team,
-        hoverinfo = "text" ,
-        text=paste("", df.spending.club$team, "<br>", df.spending.club$transfer.fee.total,"M£"),
-        type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers',
-        marker = m) %>%
-  layout(title = 'Football teams in Europe and transfer spending', geo = g)
-p
+# p<- plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total, marker=list(size = transfer.fee.total),opacity=0.7,
+#         #text = team,
+#         hoverinfo = "text" ,
+#         text=paste("", df.spending.club$team, "<br>", df.spending.club$transfer.fee.total,"M£"),
+#         type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers',
+#         marker = m) %>%
+#   layout(title = 'Football teams in Europe and transfer spending', geo = g)
+# p
 
-p2<- plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total, marker=list(size =18), opacity=0.5,
+p2<- plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
+            marker=list(size = log(df.spending.club$transfer.fee.total)*6, colorbar=list(title = "M£", borderwidth=0,outlinecolor="white")),
+            # marker=list(size =18),
+            opacity=0.5,
             #text = team,
             hoverinfo = "text" ,
             text=paste("", df.spending.club$team, "<br>", df.spending.club$transfer.fee.total,"M£"),
             type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers',
             marker = m) %>%
-  layout(title = 'Football teams in Europe and transfer spending', geo = g)
+  layout(title = 'Transfer spendings per<br>Football teams in Europe', font=f, margin=mar, geo = g)
 p2
+
 Sys.setenv("plotly_username"="Guillaume_slize")
 Sys.setenv("plotly_api_key"="ini5kjkwyl")
 plotly_POST(p, sharing = 'private', filename = "r-docs/magic")
