@@ -1,0 +1,228 @@
+---
+title: "Summer 2016 Transfers Visualised"
+author: "Bjorn August Skeel-Gjorling & Guillaume Slizewicz"
+date: "27 sep 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+##LIBRARIES
+library(plotly)
+#install.packages("extrafont")
+#install.packages("Cairo")
+library(extrafont)
+library("ggmap")# getting maps and coordinates from google
+library(maptools)# getting maps and coordinates from google
+library(maps)# getting maps and coordinates from google
+library("ggplot2")# plotting the data
+library(dplyr)#tidying dataset
+library(rworldmap)
+library(stringr)#dealing with strings and replacing strings in observations
+library(RCurl)
+library(extrafont)
+loadfonts()
+
+
+#creating dataset
+df.viz<- read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Latest%20transferdata/transferdata16.final.csv", encoding = "UTF8", header = TRUE)
+
+####remove player with transfer fee= 0 et contract time left=0
+df.viz<- filter(df.viz,transfer.fee>0)
+
+#GETTING DATA
+df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Final%20documents/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
+
+f <- list(
+  family = "Goudy Old Style",
+  size = 16,
+  color = "#525252"
+)
+
+mar = list(
+  l = 10,
+  r = 10,
+  b = 30,
+  t = 70,
+  pad = 4
+)
+
+#geo styling
+g <- list(
+  scope = 'europe',
+  projection = list(type = 'mercator'),
+  showland = TRUE,
+  landcolor = toRGB("gray95"),
+  subunitcolor = toRGB("gray85"),
+  countrycolor = toRGB("gray85"),
+  countrywidth = 0.5,
+  subunitwidth = 0.5
+)
+g
+
+
+p2<- plot_ly(df.spending.club, lat =df.spending.club$lat, lon =df.spending.club$lon,  color = df.spending.club$transfer.fee.total,
+            marker=list(size = log(df.spending.club$transfer.fee.total)*6, colorbar=list(title = "M£", borderwidth=0,outlinecolor="white")),
+            # marker=list(size =18),
+            opacity=0.5,
+            #text = team,
+            hoverinfo = "text" ,
+            text=paste("", df.spending.club$team, "<br>", df.spending.club$transfer.fee.total,"M£"),
+            type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers') %>%
+  layout(title = 'Transfer spendings per<br>Football teams in Europe', font=f, margin=mar, geo = g)
+
+#finding mean for every league
+df.viz.ave<-df.viz %>% 
+  group_by(league) %>% 
+  dplyr::summarise(
+    sum.transfer=sum(transfer.fee))
+
+df.viz.ave<-df.viz.ave %>% 
+  mutate(number.of.clubs = ifelse(league=="Bundesliga",18,20)) %>% 
+  mutate(average.spending=sum.transfer/number.of.clubs)
+#ordering
+df.viz.ave <- transform(df.viz.ave, 
+                        league = reorder(league, average.spending))
+#plotting it
+total.league = ggplot(df.viz.ave, aes( x =league, y=average.spending, fill=league))
+total.league<-total.league + geom_bar(stat="identity",alpha=1)+
+  theme(axis.title.x=element_blank(),
+        axis.title.y =element_text(angle = 0,
+                                   colour="#525252",
+                                   vjust = 1,
+                                   hjust = 0 ),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
+        axis.ticks= element_line(color=NA),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank(),
+        legend.position="none",
+        panel.background = element_blank(),
+        text=element_text(family="Goudy Old Style"))+
+  ggtitle("Premier League Clubs spend far more on \n average than any other leagues' clubs\n")+
+  scale_fill_manual("National leagues",
+                    values=c( "#F2E7DA", "#E89090","#92A0B0", "#C0CFAE", "#525252", "#DEE3DC"))+
+  labs(y="Average transfer spending\nper league in M£")
+
+#================ 3.7 AVERAGE SPENDING PER PLAYER PER CLUB STATUS  ================
+
+
+df.viz.status<-df.viz %>% 
+  group_by(Status) %>% 
+  dplyr::summarise(mean.transfer=mean(transfer.fee))
+
+#Ordering
+df.viz.status <- transform(df.viz.status, 
+                           Status = reorder(Status, mean.transfer))
+
+#Plotting
+
+p.club = ggplot(df.viz.status, aes(y= mean.transfer, x = Status, fill=Status))
+p.club<- p.club + geom_bar(stat = "identity")+
+  theme(axis.title.x=element_blank(),
+        axis.text.x =element_text(size  = 9),
+        axis.title.y =element_text(angle = 0,
+                                   colour="#525252",
+                                   vjust = 1),
+        axis.ticks= element_line(color=NA),
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(colour="#CACACA", size=0.2), #add grid
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        legend.text=element_blank(),
+        legend.title=element_blank(),
+        legend.position="none",
+        text=element_text(family="Goudy Old Style"))+
+  ggtitle("Top Club spend far more\non average than other leagues' clubs\n")+
+  scale_fill_manual(values=c( "#CFF09E", "#A8DBA8", "#79BD9A", "#3B8686"))+
+  labs(y="Average transfer price\nper player in M£") 
+
+
+f <- list(
+  family = "Goudy Old Style, serif",
+  size = 16,
+  color = "#525252"
+)
+x <- list(
+  title = "Age",
+  titlefont = f
+)
+y <- list(
+  title ="Transfer fee in M£", 
+  titlefont = f
+)
+
+m = list(
+  l = 50,
+  r = 50,
+  b = 100,
+  t = 100,
+  pad = 4
+)
+
+p <- df.viz %>% 
+  plot_ly(x = df.viz$transferage, y = df.viz$transfer.fee, mode = "markers",color = df.viz$league , marker = list(size = 15), opacity=0.6,
+          hoverinfo = "text",
+          text = paste("", df.viz$name, "<br>", round(df.viz$transferage, digits = 1), "years old","<br>", df.viz$transfer.fee, "M£", "<br>", df.viz$club.to)) %>% 
+  layout(title ="Transfer price per age", xaxis = x, yaxis = y, font = f, margin=m)
+
+```
+
+## Introduction
+
+This document presents a number of different datavisualizations of the summer transfer trades. Data is based on all transfered players in the five biggest Eu football leagues (Premier League, La Liga, Bundesliga 1, Serie A and Ligue 1) in the last transfer season (summer 2016). Data was retrieved from Transfermarkt.co.uk.  and visualizations can only be reproduced with the agreement of Bjorn August Skeel-Gjorling (basg@outlook.com) and Guillaume Slizewicz (guillaume.slizewicz@gmail.com). In addition, the total data for the past three transfer season are subject to agreement. The document is structured so  that every visualization has its own title and a brief description. The graphs have titles / axes in English and can be translated. The prices are measured in millions of pounds but can be changed in any currency.
+
+
+\n
+\n
+  
+## Premier League dominate the transfer market
+
+The next graph clearly shows the Premier League club's economic superiority. PL clubs spent an average of 58 million. pounds per players in the summer of 2016.On the second place we find Serie A clubs with a transfer price average of 30 millions pounds. On the last place we find the French clubs in Ligue 1 with only 8 million.
+
+```{r, echo=FALSE,warning=FALSE, comment=FALSE,  cache=FALSE, results=FALSE}
+
+total.league
+
+```
+\n
+\n
+
+## Top clubs buy for future success
+
+The next graph shows that the top clubs spend far more money on new football players than of those other clubs. The Top clubs spent an average of 14 million. pounds per player in the summer of 2016.
+Note: Top clubs means that the club ended up among the top five in the league the previous year. Middle Club indicates that the club ended up between 6th and 16th place in the league the previous year before. The remaining clubs are divided into bottom clubs and promoted clubs.
+
+
+```{r, echo=FALSE, warning=FALSE}
+
+p.club
+
+```
+\n
+\n
+  
+## Europe Transfer Season 
+
+The next visualization shows clubs' total consumption of Players in the summer of 2016 shown on a map of Europe. The graph shows that the English clubs have a larger transfer budget. We see also Clubs with a large transfer consumption of those other four leagues. The graph is interactive, created so that you can zoom in on the individual clubs and see the total transfer amounts.
+
+```{r, echo=FALSE, warning=FALSE}
+
+p2
+
+```
+\n
+\n
+
+
+## Unusually high prices for Pogba and Higuain
+
+The graph below shows that Paul Pogba and Gonzalo Higuain were traded for  uncommon high prices. Respectively 89.25 millions and 76.5 millions. The graph also shows that football player are more expensive around 25 years. The graph is interactive, which makes that you can hover your mouse over each specific trade and find information about the player's name, age, transfer pricing and the buying club.
+
+```{r, echo=FALSE, warning=FALSE, comment=FALSE,  cache=FALSE, results=FALSE, message=FALSE}
+
+p
+```
+\n
+\n
+
+

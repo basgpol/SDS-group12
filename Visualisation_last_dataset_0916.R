@@ -2,7 +2,7 @@
 ##------------------------- 3. Visualisation --- ------------------------------------------
 ##=========================================================================================
 ##LIBRARIES
-install.packages("plotly")
+#install.packages("plotly")
 library(plotly)
 #install.packages("extrafont")
 #install.packages("Cairo")
@@ -109,11 +109,11 @@ df.spending.club[84,c(5,6)]= c(28.100462, -15.456771)
 df.spending.club$lat = str_replace(df.spending.club$lat,"40.37573","40.38000")
 df.spending.club$lat = as.numeric(df.spending.club$lat)
 
-write.csv(df.spending.club,"df_spending_club_with_geo.csv")
+#write.csv(df.spending.club,"df_spending_club_with_geo.csv")
 
 #GETTING DATA
 df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Final%20documents/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
-
+df.spending.club$V6 <- NULL
 #data.frame[row_number, column_number] = new_value
 
 
@@ -165,15 +165,14 @@ g <- list(
 g
 
 
-p2<- plot_ly(df.spending.club, lat = lat, lon = lon,  color = transfer.fee.total,
+p2<- plot_ly(df.spending.club, lat =df.spending.club$lat, lon =df.spending.club$lon,  color = df.spending.club$transfer.fee.total,
             marker=list(size = log(df.spending.club$transfer.fee.total)*6, colorbar=list(title = "M£", borderwidth=0,outlinecolor="white")),
             # marker=list(size =18),
             opacity=0.5,
             #text = team,
             hoverinfo = "text" ,
             text=paste("", df.spending.club$team, "<br>", df.spending.club$transfer.fee.total,"M£"),
-            type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers',
-            marker = m) %>%
+            type = 'scattergeo', locationmode = 'ISO-3', mode = 'markers') %>%
   layout(title = 'Transfer spendings per<br>Football teams in Europe', font=f, margin=mar, geo = g)
 p2
 
