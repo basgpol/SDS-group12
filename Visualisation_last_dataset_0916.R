@@ -3,9 +3,11 @@
 ##=========================================================================================
 ##LIBRARIES
 #install.packages("plotly")
-library(plotly)
+
 #install.packages("extrafont")
 #install.packages("Cairo")
+#install.packages("bitops")
+library(bitops)
 library(extrafont)
 library("ggmap")# getting maps and coordinates from google
 library(maptools)# getting maps and coordinates from google
@@ -15,7 +17,7 @@ library(dplyr)#tidying dataset
 library(rworldmap)
 library(stringr)#dealing with strings and replacing strings in observations
 library(RCurl)
-
+library(plotly)
 
 #creating dataset
 df.viz<- read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Latest%20transferdata/transferdata16.final.csv", encoding = "UTF8", header = TRUE)
@@ -97,23 +99,26 @@ df.spending.club$team <- with(df.spending.club, ifelse(league=="Bundesliga", pas
 
 #new dataframe with geocode
 df.spending.club <- data.frame(df.spending.club[1:3],geocodes)
-
-out.of.europe<-filter(df.spending.club, lon < -10 |lat < 35)
-out.of.europe.2<- filter(df.spending.club, lon>20 |lat>60)
-out.full= rbind(out.of.europe.2, out.of.europe)
-df.spending.club[35,5] = 51.558816
-df.spending.club[35,6] = 7.063850
-df.spending.club[55,c(5,6)]= c(43.683284, 7.197926)
-df.spending.club[19,c(5,6)]= c(42.230694, -8.720006)
-df.spending.club[84,c(5,6)]= c(28.100462, -15.456771)
-df.spending.club$lat = str_replace(df.spending.club$lat,"40.37573","40.38000")
-df.spending.club$lat = as.numeric(df.spending.club$lat)
-
 #write.csv(df.spending.club,"df_spending_club_with_geo.csv")
 
 #GETTING DATA
 df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Final%20documents/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
 df.spending.club$V6 <- NULL
+df.spending.club$X <- NULL
+df.spending.club$X.1 <- NULL
+df.spending.club$X.2 <- NULL
+
+df.spending.club[35,c(4,5)] = c(7.063850,51.558816)
+df.spending.club[55,c(4,5)]= c(7.197926,43.683284 )
+df.spending.club[19,c(4,5)]= c(8.720006, 42.230694)
+df.spending.club[84,c(4,5)]= c(-15.456771, 28.100462)
+df.spending.club$lat = str_replace(df.spending.club$lat,"40.37573","40.38000")
+df.spending.club$lat = as.numeric(df.spending.club$lat)
+df.spending.club$lon = as.numeric(df.spending.club$lon)
+out.of.europe<-filter(df.spending.club, lon < -10 |lat < 35)
+out.of.europe.2<- filter(df.spending.club, lon>20 |lat>60)
+out.full= rbind(out.of.europe.2, out.of.europe)
+#write.csv(df.spending.club,"df_spending_club_with_geo_g.csv")
 #data.frame[row_number, column_number] = new_value
 
 

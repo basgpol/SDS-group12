@@ -31,7 +31,7 @@ df.viz<- read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/
 df.viz<- filter(df.viz,transfer.fee>0)
 
 #GETTING DATA
-df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Final%20documents/df_spending_club_with_geo.csv", encoding = "UTF8", header = TRUE)
+df.spending.club<-read.csv("https://raw.githubusercontent.com/basgpol/SDS-group12/master/Final%20documents/df_spending_club_with_geo_g.csv", encoding = "UTF8", header = TRUE)
 
 f <- list(
   family = "Goudy Old Style",
